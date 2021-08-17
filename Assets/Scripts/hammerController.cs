@@ -37,9 +37,11 @@ public class hammerController : MonoBehaviour
         {
             Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, device.role.ToString()));
             device.IsPressed(InputHelpers.Button.TriggerPressed, out rightPress);
-            if ( rightPress )
+            device.IsPressed(InputHelpers.Button.TriggerPressed, out leftPress);
+            if ( rightPress || leftPress )
             {
-                hammer.transform.position = leftHand.transform.position;
+                //hammer.transform.position = leftHand.transform.position;
+                hammer.transform.position = rightHand.transform.position;
             }
         }
     }
