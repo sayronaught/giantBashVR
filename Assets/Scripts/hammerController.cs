@@ -19,6 +19,9 @@ public class hammerController : MonoBehaviour
 
     public List<Vector3> rightHoldPositions;
 
+    public UnityEngine.XR.InputDevice lefty;
+    public UnityEngine.XR.InputDevice righty;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,19 +30,25 @@ public class hammerController : MonoBehaviour
         interactorLeft = leftHand.GetComponent<XRRayInteractor>();
         interactorRight = rightHand.GetComponent<XRRayInteractor>();
 
-        
+        var leftHandDevices = new List<UnityEngine.XR.InputDevice>();
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
+        lefty = leftHandDevices[0];
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, leftHandDevices);
+        righty = leftHandDevices[0];
     }
     // Update is called once per frame
     void Update()
     {
+        righty.IsPressed(InputHelpers.Button.PrimaryButton,out rightPress);
         //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller & InputDeviceCharacteristics.TrackedDevice, _inputDevices);
         var inputDevices = new List<UnityEngine.XR.InputDevice>();
         UnityEngine.XR.InputDevices.GetDevices(inputDevices);
         foreach (var device in inputDevices)
         {
             Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, device.role.ToString()));
-            device.IsPressed(InputHelpers.Button.TriggerPressed, out rightPress);
-            device.IsPressed(InputHelpers.Button.TriggerPressed, out leftPress);
+            //device.IsPressed(InputHelpers.Button.TriggerPressed, out rightPress);
+            device.IsPressed(InputHelpers.Button.PrimaryButton, out leftPress);
+            //righty.IsPressed(InputHelpers.Button.PrimaryButton, out rightPress);
             if ( rightPress || leftPress )
             { // press
                 //hammer.transform.position = leftHand.transform.position;
