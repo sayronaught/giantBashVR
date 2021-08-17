@@ -22,6 +22,8 @@ public class hammerController : MonoBehaviour
     public UnityEngine.XR.InputDevice lefty;
     public UnityEngine.XR.InputDevice righty;
 
+    private Rigidbody hammerRB;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,12 +49,14 @@ public class hammerController : MonoBehaviour
         {
             Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, device.role.ToString()));
             //device.IsPressed(InputHelpers.Button.TriggerPressed, out rightPress);
-            device.IsPressed(InputHelpers.Button.PrimaryButton, out leftPress);
+            //device.IsPressed(InputHelpers.Button.PrimaryButton, out leftPress);
             //righty.IsPressed(InputHelpers.Button.PrimaryButton, out rightPress);
-            if ( rightPress || leftPress )
+            if ( rightPress )
             { // press
                 //hammer.transform.position = leftHand.transform.position;
                 hammer.transform.position = rightHand.transform.position;
+                hammerRB.velocity = Vector3.zero;
+                hammerRB.angularVelocity = Vector3.zero;
                 rightHoldPositions.Add(rightHand.transform.position);
             } else { // not pressed
                 if ( rightHoldPositions.Count > 0) 
