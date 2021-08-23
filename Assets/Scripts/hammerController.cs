@@ -33,10 +33,11 @@ public class hammerController : MonoBehaviour
         interactorRight = rightHand.GetComponent<XRRayInteractor>();
 
         var leftHandDevices = new List<UnityEngine.XR.InputDevice>();
+        var rightHandDevices = new List<UnityEngine.XR.InputDevice>();
         UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
         lefty = leftHandDevices[0];
-        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, leftHandDevices);
-        righty = leftHandDevices[0];
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
+        righty = rightHandDevices[0];
     }
     // Update is called once per frame
     void Update()
@@ -44,13 +45,18 @@ public class hammerController : MonoBehaviour
         lefty.IsPressed(InputHelpers.Button.Trigger,out leftPress);
         righty.IsPressed(InputHelpers.Button.PrimaryButton, out rightPress);
         //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller & InputDeviceCharacteristics.TrackedDevice, _inputDevices);
-        if (rightPress||leftPress)
+        if ( rightPress )
         { // press
           //hammer.transform.position = leftHand.transform.position;
             hammer.transform.position = rightHand.transform.position;
             hammerRB.velocity = Vector3.zero;
             hammerRB.angularVelocity = Vector3.zero;
             rightHoldPositions.Add(rightHand.transform.position);
+        } else if ( leftPress ) {
+            hammer.transform.position = leftHand.transform.position;
+            hammerRB.velocity = Vector3.zero;
+            hammerRB.angularVelocity = Vector3.zero;
+            rightHoldPositions.Add(leftHand.transform.position);
         } else { // not pressed
             if (rightHoldPositions.Count > 0)
             { // just released, have list of held positions
