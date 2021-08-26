@@ -27,6 +27,18 @@ public class hammerController : MonoBehaviour
     public UnityEngine.XR.InputDevice righty;
 
     private Rigidbody hammerRB;
+    private float updateControllerTimer = 2f;
+    private int releaseCounter = 0;
+
+    void updatecontroller()
+    {
+        var leftHandDevices = new List<UnityEngine.XR.InputDevice>();
+        var rightHandDevices = new List<UnityEngine.XR.InputDevice>();
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
+        lefty = leftHandDevices[0];
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
+        righty = rightHandDevices[0];
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -35,13 +47,7 @@ public class hammerController : MonoBehaviour
         controllerRight = rightHand.GetComponent<XRController>();
         interactorLeft = leftHand.GetComponent<XRRayInteractor>();
         interactorRight = rightHand.GetComponent<XRRayInteractor>();
-
-        var leftHandDevices = new List<UnityEngine.XR.InputDevice>();
-        var rightHandDevices = new List<UnityEngine.XR.InputDevice>();
-        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
-        lefty = leftHandDevices[0];
-        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
-        righty = rightHandDevices[0];
+        updatecontroller();
     }
     // Update is called once per frame
     void Update()
@@ -53,32 +59,44 @@ public class hammerController : MonoBehaviour
         //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller & InputDeviceCharacteristics.TrackedDevice, _inputDevices);
         if ( rightPress )
         { // press
-            hammer.transform.position = rightHand.transform.position;
-            //hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, rightHand.transform.position, Time.deltaTime*magnetspeed*100000000000f);
-            hammerRB.isKinematic = true;
+            //hammer.transform.position = rightHand.transform.position;
+            hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, rightHand.transform.position, Time.deltaTime*magnetspeed);
+            hammerRB.velocity = Vector3.zero;
+            hammerRB.angularVelocity = Vector3.zero;
+            magnetspeed *= magnetmultiplier;
             rightHoldPositions.Add(rightHand.transform.position);
+            releaseCounter = 0;
         } else if ( leftPress ) {
             hammer.transform.position = leftHand.transform.position;
             hammer.transform.rotation = leftHand.transform.rotation;
-            hammer.transform.Rotate(0, 90, 0);
-            hammerRB.isKinematic = true;
+            hammer.transform.Rotate(-90, 0, 0);
+            hammerRB.velocity = Vector3.zero;
+            hammerRB.angularVelocity = Vector3.zero;
             rightHoldPositions.Add(leftHand.transform.position);
-        } else { // not pressed
-            if (rightHoldPositions.Count > 0)
+            releaseCounter = 0;
+        }
+        if ( !rightPress && !leftPress )
+        { // not pressed
+            releaseCounter++;
+            //magnetspeed = magnetminimum;
+            if (rightHoldPositions.Count > 0 && releaseCounter > 5)
             { // just released, have list of held positions
               // calculate hammer speed and trajectory
               // add to hammers rigidbody before releasing
-                
                 int framesBack = 100;
                 if (framesBack < rightHoldPositions.Count) framesBack = rightHoldPositions.Count;
-                Vector3 force = rightHoldPositions[rightHoldPositions.Count] - rightHoldPositions[rightHoldPositions.Count - framesBack];
-                hammerRB.velocity = Vector3.zero;
-                hammerRB.angularVelocity = Vector3.zero;
-                hammerRB.AddForce(force*1000000f);
-                hammerRB.isKinematic = false;
+                Vector3 force = rightHoldPositions[rightHoldPositions.Count - framesBack] - rightHoldPositions[rightHoldPositions.Count];
+                force = Vector3.Normalize(force);
+                hammerRB.AddForce(force*100f);
                 rightHoldPositions.Clear();
                 magnetspeed = magnetminimum;
             }
+        }
+        updateControllerTimer -= Time.deltaTime;
+        if ( updateControllerTimer < 0f )
+        {
+            updatecontroller();
+            updateControllerTimer = 2f;
         }
     }
 }

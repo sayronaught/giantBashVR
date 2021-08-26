@@ -2864,8 +2864,8 @@ MonoBehaviour:
   rightPress: 0
   leftPress: 0
   magnetspeed: 0
-  magnetmultiplier: 1.1
-  magnetminimum: 1
+  magnetmultiplier: 1.02
+  magnetminimum: 0.1
   rightHoldPositions: []
 --- !u!1 &1857767225
 GameObject:
