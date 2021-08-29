@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
+using UnityEngine.UI;
 
 public class hammerController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class hammerController : MonoBehaviour
     public XRRayInteractor interactorRight;
     public bool rightPress;
     public bool leftPress;
+
+    public Text debugText;
 
     public float magnetspeed;
     public float magnetmultiplier=1.1f;
@@ -47,7 +50,9 @@ public class hammerController : MonoBehaviour
         controllerRight = rightHand.GetComponent<XRController>();
         interactorLeft = leftHand.GetComponent<XRRayInteractor>();
         interactorRight = rightHand.GetComponent<XRRayInteractor>();
+        hammerRB = hammer.GetComponent<Rigidbody>();
         updatecontroller();
+        rightHoldPositions = new List<Vector3>();
     }
     // Update is called once per frame
     void Update()
@@ -65,7 +70,6 @@ public class hammerController : MonoBehaviour
             hammerRB.angularVelocity = Vector3.zero;
             magnetspeed *= magnetmultiplier;
             rightHoldPositions.Add(rightHand.transform.position);
-            releaseCounter = 0;
         } else if ( leftPress ) {
             hammer.transform.position = leftHand.transform.position;
             hammer.transform.rotation = leftHand.transform.rotation;
@@ -73,22 +77,25 @@ public class hammerController : MonoBehaviour
             hammerRB.velocity = Vector3.zero;
             hammerRB.angularVelocity = Vector3.zero;
             rightHoldPositions.Add(leftHand.transform.position);
-            releaseCounter = 0;
-        }
-        if ( !rightPress && !leftPress )
+        } else 
+//        if ( !rightPress && !leftPress )
         { // not pressed
-            releaseCounter++;
             //magnetspeed = magnetminimum;
-            if (rightHoldPositions.Count > 0 && releaseCounter > 5)
+            
+            if (rightHoldPositions.Count > 0)
             { // just released, have list of held positions
-              // calculate hammer speed and trajectory
-              // add to hammers rigidbody before releasing
+                debugText.text = "Debug: hammerpos held " + rightHoldPositions.Count.ToString();
                 int framesBack = 100;
                 if (framesBack < rightHoldPositions.Count) framesBack = rightHoldPositions.Count;
                 Vector3 force = rightHoldPositions[rightHoldPositions.Count - framesBack] - rightHoldPositions[rightHoldPositions.Count];
-                force = Vector3.Normalize(force);
+                //force = Vector3.Normalize(force);
+                force = Vector3.forward;
+                hammerRB.velocity = Vector3.zero;
+                hammerRB.angularVelocity = Vector3.zero;
                 hammerRB.AddForce(force*100f);
-                rightHoldPositions.Clear();
+                debugText.text += "\n"+"Force "+hammerRB.velocity;
+                hammer.transform.position = Vector3.zero;
+                rightHoldPositions = new List<Vector3>();
                 magnetspeed = magnetminimum;
             }
         }
