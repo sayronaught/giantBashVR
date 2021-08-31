@@ -20,9 +20,9 @@ public class hammerController : MonoBehaviour
 
     public Text debugText;
 
-    public float magnetspeed;
-    public float magnetmultiplier=1.1f;
-    public float magnetminimum=1f;
+    private float magnetspeed;
+    private float magnetmultiplier=1.1f;
+    private float magnetminimum=2f;
 
     public List<Vector3> rightHoldPositions;
 
@@ -30,8 +30,10 @@ public class hammerController : MonoBehaviour
     public UnityEngine.XR.InputDevice righty;
 
     private Rigidbody hammerRB;
+    private XRGrabInteractable hammerGrabScript;
     private float updateControllerTimer = 2f;
     private int releaseCounter = 0;
+    private float distance;
 
     void updatecontroller()
     {
@@ -51,6 +53,7 @@ public class hammerController : MonoBehaviour
         interactorLeft = leftHand.GetComponent<XRRayInteractor>();
         interactorRight = rightHand.GetComponent<XRRayInteractor>();
         hammerRB = hammer.GetComponent<Rigidbody>();
+        hammerGrabScript = hammer.GetComponent<XRGrabInteractable>();
         updatecontroller();
         rightHoldPositions = new List<Vector3>();
     }
@@ -64,12 +67,21 @@ public class hammerController : MonoBehaviour
         //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller & InputDeviceCharacteristics.TrackedDevice, _inputDevices);
         if ( rightPress )
         { // press
-            //hammer.transform.position = rightHand.transform.position;
-            hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, rightHand.transform.position, Time.deltaTime*magnetspeed);
-            hammerRB.velocity = Vector3.zero;
-            hammerRB.angularVelocity = Vector3.zero;
-            magnetspeed *= magnetmultiplier;
-            rightHoldPositions.Add(rightHand.transform.position);
+            distance = Vector3.Distance(hammer.transform.position, rightHand.transform.position);
+            if ( distance > 0.5f)
+            {
+                //hammer.transform.position = rightHand.transform.position;
+                hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, rightHand.transform.position, Time.deltaTime * magnetspeed);
+                hammerRB.velocity = Vector3.zero;
+                hammerRB.angularVelocity = Vector3.zero;
+                magnetspeed *= magnetmultiplier;
+            } else {
+                hammer.transform.position = rightHand.transform.position;
+                hammer.transform.rotation = rightHand.transform.rotation;
+                hammer.transform.Rotate(-90, -90, 0);
+                rightHoldPositions.Add(rightHand.transform.position);
+            }
+            
         } else if ( leftPress ) {
             hammer.transform.position = leftHand.transform.position;
             hammer.transform.rotation = leftHand.transform.rotation;
@@ -80,7 +92,7 @@ public class hammerController : MonoBehaviour
         } else 
 //        if ( !rightPress && !leftPress )
         { // not pressed
-            //magnetspeed = magnetminimum;
+            magnetspeed = magnetminimum;
             
             if (rightHoldPositions.Count > 0)
             { // just released, have list of held positions
