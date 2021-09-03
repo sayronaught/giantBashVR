@@ -64,18 +64,18 @@ public class hammerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lefty.IsPressed(InputHelpers.Button.Grip, out leftPress);
-        righty.IsPressed(InputHelpers.Button.Grip, out rightPress);
+        lefty.IsPressed(InputHelpers.Button.Trigger, out leftPress);
+        righty.IsPressed(InputHelpers.Button.Trigger, out rightPress);
         //lefty.IsPressed(InputHelpers.Button.PrimaryButton, out leftPress);
         //righty.IsPressed(InputHelpers.Button.PrimaryButton, out rightPress);
         //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller & InputDeviceCharacteristics.TrackedDevice, _inputDevices);
         if (rightPress)
         { // press
             distance = Vector3.Distance(hammer.transform.position, rightHand.transform.position);
-            if (distance > 0.5f)
+            if (distance > 0.75f)
             {
                 //hammer.transform.position = rightHand.transform.position;
-                hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, rightHand.transform.position, Time.deltaTime * magnetspeed);
+                hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.5f), Time.deltaTime * magnetspeed);
                 hammerRB.velocity = Vector3.zero;
                 hammerRB.angularVelocity = Vector3.zero;
                 magnetspeed *= magnetmultiplier;
@@ -93,10 +93,10 @@ public class hammerController : MonoBehaviour
         else if (leftPress)
         {
             distance = Vector3.Distance(hammer.transform.position, rightHand.transform.position);
-            if (distance > 0.5f)
+            if (distance > 0.75f)
             {
                 //hammer.transform.position = rightHand.transform.position;
-                hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, leftHand.transform.position, Time.deltaTime * magnetspeed);
+                hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, leftHand.transform.position+(leftHand.transform.forward*0.5f), Time.deltaTime * magnetspeed);
                 hammerRB.velocity = Vector3.zero;
                 hammerRB.angularVelocity = Vector3.zero;
                 magnetspeed *= magnetmultiplier;
