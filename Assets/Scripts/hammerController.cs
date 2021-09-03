@@ -36,6 +36,7 @@ public class hammerController : MonoBehaviour
     private float updateControllerTimer = 2f;
     private int releaseCounter = 0;
     private float distance;
+    private bool held = false;
 
     void updatecontroller()
     {
@@ -71,52 +72,60 @@ public class hammerController : MonoBehaviour
         //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller & InputDeviceCharacteristics.TrackedDevice, _inputDevices);
         if (rightPress)
         { // press
-            distance = Vector3.Distance(hammer.transform.position, rightHand.transform.position);
-            if (distance > 0.75f)
+            distance = Vector3.Distance(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.1f));
+            if (distance > 0.15f)
             {
                 //hammer.transform.position = rightHand.transform.position;
-                hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.5f), Time.deltaTime * magnetspeed);
+                hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.1f), Time.deltaTime * magnetspeed);
                 hammerRB.velocity = Vector3.zero;
                 hammerRB.angularVelocity = Vector3.zero;
                 magnetspeed *= magnetmultiplier;
+                held = false;
             }
             else
             {
                 hammer.transform.position = rightHand.transform.position;
                 hammer.transform.rotation = rightHand.transform.rotation;
                 hammer.transform.Rotate(-75, 0, 90);
+                hammerRB.velocity = Vector3.zero;
+                hammerRB.angularVelocity = Vector3.zero;
                 rightHoldPositions.Add(rightHand.transform.position);
                 //hammerGrabScript.attachTransform = rightHand.transform;
-                rightHandRay.SendHapticImpulse(1f, 0.1f);
+                if ( !held )
+                    rightHandRay.SendHapticImpulse(1f, 0.2f);
+                held = true;
             }
         }
         else if (leftPress)
         {
-            distance = Vector3.Distance(hammer.transform.position, rightHand.transform.position);
-            if (distance > 0.75f)
+            distance = Vector3.Distance(hammer.transform.position, leftHand.transform.position + (leftHand.transform.forward * 0.1f));
+            if (distance > 0.15f)
             {
                 //hammer.transform.position = rightHand.transform.position;
-                hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, leftHand.transform.position+(leftHand.transform.forward*0.5f), Time.deltaTime * magnetspeed);
+                hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, leftHand.transform.position+(leftHand.transform.forward*0.1f), Time.deltaTime * magnetspeed);
                 hammerRB.velocity = Vector3.zero;
                 hammerRB.angularVelocity = Vector3.zero;
                 magnetspeed *= magnetmultiplier;
+                held = false;
             }
             else
             {
                 hammer.transform.position = leftHand.transform.position;
                 hammer.transform.rotation = leftHand.transform.rotation;
                 hammer.transform.Rotate(-75, 0, 90);
+                hammerRB.velocity = Vector3.zero;
+                hammerRB.angularVelocity = Vector3.zero;
                 rightHoldPositions.Add(leftHand.transform.position);
-                leftHandRay.SendHapticImpulse(1f, 0.1f);
-                //hammerGrabScript.attachTransform = leftHand.transform;
-
+                if ( !held )
+                    leftHandRay.SendHapticImpulse(1f, 0.2f);
+                held = true;
             }
         }
         else
         //        if ( !rightPress && !leftPress )
         { // not pressed
             magnetspeed = magnetminimum;
-
+            held = false;
             if (rightHoldPositions.Count > 0)
             { // just released, have list of held positions
                 debugText.text = "Debug: hammerpos held " + rightHoldPositions.Count.ToString();
