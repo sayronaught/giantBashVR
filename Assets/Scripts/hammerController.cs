@@ -36,8 +36,18 @@ public class hammerController : MonoBehaviour
     private float updateControllerTimer = 2f;
     private int releaseCounter = 0;
     private float distance;
-    private bool held = false;
+    private float heldLeft = 0f;
+    private float heldRight = 0f;
 
+    public bool beingSummoned()
+    {
+        if (magnetspeed > magnetminimum) return true;
+        return false;
+    }
+    public float summonSpeed()
+    {
+        return magnetspeed - magnetminimum;
+    }
     void updatecontroller()
     {
         var leftHandDevices = new List<UnityEngine.XR.InputDevice>();
@@ -70,7 +80,7 @@ public class hammerController : MonoBehaviour
         //lefty.IsPressed(InputHelpers.Button.PrimaryButton, out leftPress);
         //righty.IsPressed(InputHelpers.Button.PrimaryButton, out rightPress);
         //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller & InputDeviceCharacteristics.TrackedDevice, _inputDevices);
-        if (rightPress)
+        if (rightPress && heldLeft == 0f)
         { // press
             distance = Vector3.Distance(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.1f));
             if (distance > 0.15f)
@@ -80,7 +90,6 @@ public class hammerController : MonoBehaviour
                 hammerRB.velocity = Vector3.zero;
                 hammerRB.angularVelocity = Vector3.zero;
                 magnetspeed *= magnetmultiplier;
-                held = false;
             }
             else
             {
@@ -91,12 +100,15 @@ public class hammerController : MonoBehaviour
                 hammerRB.angularVelocity = Vector3.zero;
                 rightHoldPositions.Add(rightHand.transform.position);
                 //hammerGrabScript.attachTransform = rightHand.transform;
-                if ( !held )
+                if (heldRight == 0f )
                     rightHandRay.SendHapticImpulse(1f, 0.2f);
-                held = true;
+                heldRight += Time.deltaTime;
+                if (heldRight > 5f) heldRight = 5f;
+                if ( heldRight > 0.5f) rightHandRay.SendHapticImpulse(heldRight*0.2f, 0.1f);
+                hammerGrabScript.throwVelocityScale = 2f + heldRight;
             }
         }
-        else if (leftPress)
+        else if (leftPress && heldRight == 0f)
         {
             distance = Vector3.Distance(hammer.transform.position, leftHand.transform.position + (leftHand.transform.forward * 0.1f));
             if (distance > 0.15f)
@@ -106,7 +118,6 @@ public class hammerController : MonoBehaviour
                 hammerRB.velocity = Vector3.zero;
                 hammerRB.angularVelocity = Vector3.zero;
                 magnetspeed *= magnetmultiplier;
-                held = false;
             }
             else
             {
@@ -116,16 +127,20 @@ public class hammerController : MonoBehaviour
                 hammerRB.velocity = Vector3.zero;
                 hammerRB.angularVelocity = Vector3.zero;
                 rightHoldPositions.Add(leftHand.transform.position);
-                if ( !held )
+                if (heldLeft == 0f )
                     leftHandRay.SendHapticImpulse(1f, 0.2f);
-                held = true;
+                heldLeft += Time.deltaTime;
+                if (heldLeft > 5f) heldLeft = 5f;
+                if(heldLeft > 0.5f) leftHandRay.SendHapticImpulse(heldLeft * 0.2f, 0.1f);
+                hammerGrabScript.throwVelocityScale = 2f + heldLeft;
             }
         }
         else
         //        if ( !rightPress && !leftPress )
         { // not pressed
             magnetspeed = magnetminimum;
-            held = false;
+            heldLeft = 0f;
+            heldRight = 0f;
             if (rightHoldPositions.Count > 0)
             { // just released, have list of held positions
                 debugText.text = "Debug: hammerpos held " + rightHoldPositions.Count.ToString();
