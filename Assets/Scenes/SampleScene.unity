@@ -1273,7 +1273,7 @@ GameObject:
   - component: {fileID: 708715614}
   - component: {fileID: 708715613}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: SKY UI Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8750,6 +8750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1928650045}
+  - component: {fileID: 1928650046}
   m_Layer: 0
   m_Name: _gameController
   m_TagString: Untagged
@@ -8772,6 +8773,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1928650046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928650044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb473605f65ad340a5fe19e63a12c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titlescreen: {fileID: 1337909270}
 --- !u!1001 &1973914428
 PrefabInstance:
   m_ObjectHideFlags: 0

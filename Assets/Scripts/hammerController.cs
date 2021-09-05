@@ -104,7 +104,7 @@ public class hammerController : MonoBehaviour
             }
             else
             {
-                hammer.transform.position = rightHand.transform.position;
+                hammer.transform.position = rightHand.transform.position+(rightHand.transform.up*0.1f);
                 hammer.transform.rotation = rightHand.transform.rotation;
                 hammer.transform.Rotate(-75, 0, 90);
                 hammerRB.velocity = Vector3.zero;
@@ -138,7 +138,7 @@ public class hammerController : MonoBehaviour
             }
             else
             {
-                hammer.transform.position = leftHand.transform.position;
+                hammer.transform.position = leftHand.transform.position+(leftHand.transform.up*0.1f);
                 hammer.transform.rotation = leftHand.transform.rotation;
                 hammer.transform.Rotate(-75, 0, 90);
                 hammerRB.velocity = Vector3.zero;
