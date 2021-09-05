@@ -21,7 +21,7 @@ public class hammerFX : MonoBehaviour
     void Update()
     {
         myAS.volume = myRB.velocity.magnitude * 0.05f;
-        if (myHC.beingSummoned()) myAS.volume = myHC.summonSpeed() * 0.1f;
+        if (myHC.beingSummoned()) myAS.volume = myHC.summonSpeed() * 0.05f;
         if (myHC.beingHeld())
         {
             myAS.volume = 0f;

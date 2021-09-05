@@ -85,11 +85,9 @@ public class hammerController : MonoBehaviour
     {
         lefty.IsPressed(InputHelpers.Button.Trigger, out leftPress);
         righty.IsPressed(InputHelpers.Button.Trigger, out rightPress);
-        //lefty.IsPressed(InputHelpers.Button.PrimaryButton, out leftPress);
-        //righty.IsPressed(InputHelpers.Button.PrimaryButton, out rightPress);
         //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller & InputDeviceCharacteristics.TrackedDevice, _inputDevices);
         inverseTransformDummy = rightHand.transform.InverseTransformPoint(hammer.transform.position);
-        debugText.text = "Debug:inverse transform right " + inverseTransformDummy.x.ToString() + " " + inverseTransformDummy.y.ToString() + " " + inverseTransformDummy.z.ToString();
+        debugText.text = "Debug:inverse transform right hand\n" + inverseTransformDummy.x.ToString() + " " + inverseTransformDummy.y.ToString() + " " + inverseTransformDummy.z.ToString();
         if (rightPress && heldLeft == 0f)
         { // press
             distance = Vector3.Distance(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.1f));
