@@ -7,7 +7,7 @@ public class hammerFX : MonoBehaviour
     public ParticleSystem myTrail;
     public hammerController myHC;
 
-    private AudioSource myAS;
+    public AudioSource myAS;
     private Rigidbody myRB;
 
     // Start is called before the first frame update
@@ -22,6 +22,11 @@ public class hammerFX : MonoBehaviour
     {
         myAS.volume = myRB.velocity.magnitude * 0.05f;
         if (myHC.beingSummoned()) myAS.volume = myHC.summonSpeed() * 0.1f;
-        myTrail.emissionRate = myRB.velocity.magnitude * 0.05f;
+        if (myHC.beingHeld())
+        {
+            myAS.volume = 0f;
+        } else {
+            myTrail.emissionRate = myRB.velocity.magnitude * 0.05f;
+        }
     }
 }

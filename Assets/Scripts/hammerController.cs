@@ -30,6 +30,7 @@ public class hammerController : MonoBehaviour
     public UnityEngine.XR.InputDevice righty;
 
     private Rigidbody hammerRB;
+    private hammerFX hammerFXScript;
     private XRGrabInteractable hammerGrabScript;
     private XRRayInteractor leftHandRay;
     private XRRayInteractor rightHandRay;
@@ -42,6 +43,11 @@ public class hammerController : MonoBehaviour
     public bool beingSummoned()
     {
         if (magnetspeed > magnetminimum) return true;
+        return false;
+    }
+    public bool beingHeld()
+    {
+        if (heldLeft > 0f || heldRight > 0f) return true;
         return false;
     }
     public float summonSpeed()
@@ -69,6 +75,7 @@ public class hammerController : MonoBehaviour
         hammerGrabScript = hammer.GetComponent<XRGrabInteractable>();
         leftHandRay = leftHand.GetComponent<XRRayInteractor>();
         rightHandRay = rightHand.GetComponent<XRRayInteractor>();
+        hammerFXScript = hammer.GetComponent<hammerFX>();
         updatecontroller();
         rightHoldPositions = new List<Vector3>();
     }
@@ -104,7 +111,12 @@ public class hammerController : MonoBehaviour
                     rightHandRay.SendHapticImpulse(1f, 0.2f);
                 heldRight += Time.deltaTime;
                 if (heldRight > 5f) heldRight = 5f;
-                if ( heldRight > 0.5f) rightHandRay.SendHapticImpulse(heldRight*0.2f, 0.1f);
+                if (heldRight > 0.25f)
+                {
+                    rightHandRay.SendHapticImpulse(heldRight * 0.2f, 0.1f);
+                    hammerFXScript.myTrail.emissionRate = heldRight;
+                    hammer.transform.Rotate(Random.RandomRange(-heldRight, heldRight), Random.RandomRange(-heldRight, heldRight), Random.RandomRange(-heldRight, heldRight));
+                }
                 hammerGrabScript.throwVelocityScale = 2f + heldRight;
             }
         }
@@ -131,7 +143,12 @@ public class hammerController : MonoBehaviour
                     leftHandRay.SendHapticImpulse(1f, 0.2f);
                 heldLeft += Time.deltaTime;
                 if (heldLeft > 5f) heldLeft = 5f;
-                if(heldLeft > 0.5f) leftHandRay.SendHapticImpulse(heldLeft * 0.2f, 0.1f);
+                if (heldLeft > 0.25f)
+                {
+                    leftHandRay.SendHapticImpulse(heldLeft * 0.2f, 0.1f);
+                    hammerFXScript.myTrail.emissionRate = heldLeft;
+                    hammer.transform.Rotate(Random.RandomRange(-heldLeft, heldLeft), Random.RandomRange(-heldLeft, heldLeft), Random.RandomRange(-heldLeft, heldLeft));
+                }
                 hammerGrabScript.throwVelocityScale = 2f + heldLeft;
             }
         }
