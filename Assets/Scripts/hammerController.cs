@@ -39,6 +39,7 @@ public class hammerController : MonoBehaviour
     private float distance;
     private float heldLeft = 0f;
     private float heldRight = 0f;
+    private Vector3 inverseTransformDummy;
 
     public bool beingSummoned()
     {
@@ -87,10 +88,13 @@ public class hammerController : MonoBehaviour
         //lefty.IsPressed(InputHelpers.Button.PrimaryButton, out leftPress);
         //righty.IsPressed(InputHelpers.Button.PrimaryButton, out rightPress);
         //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller & InputDeviceCharacteristics.TrackedDevice, _inputDevices);
+        inverseTransformDummy = rightHand.transform.InverseTransformPoint(hammer.transform.position);
+        debugText.text = "Debug:inverse transform right " + inverseTransformDummy.x.ToString() + " " + inverseTransformDummy.y.ToString() + " " + inverseTransformDummy.z.ToString();
         if (rightPress && heldLeft == 0f)
         { // press
             distance = Vector3.Distance(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.1f));
-            if (distance > 0.15f)
+            inverseTransformDummy = rightHand.transform.InverseTransformPoint(hammer.transform.position);
+            if (distance > 0.15f || inverseTransformDummy.z < 0f)
             {
                 //hammer.transform.position = rightHand.transform.position;
                 hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.1f), Time.deltaTime * magnetspeed);
@@ -123,7 +127,8 @@ public class hammerController : MonoBehaviour
         else if (leftPress && heldRight == 0f)
         {
             distance = Vector3.Distance(hammer.transform.position, leftHand.transform.position + (leftHand.transform.forward * 0.1f));
-            if (distance > 0.15f)
+            inverseTransformDummy = leftHand.transform.InverseTransformPoint(hammer.transform.position);
+            if (distance > 0.15f || inverseTransformDummy.z < 0f)
             {
                 //hammer.transform.position = rightHand.transform.position;
                 hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, leftHand.transform.position+(leftHand.transform.forward*0.1f), Time.deltaTime * magnetspeed);
@@ -160,7 +165,7 @@ public class hammerController : MonoBehaviour
             heldRight = 0f;
             if (rightHoldPositions.Count > 0)
             { // just released, have list of held positions
-                debugText.text = "Debug: hammerpos held " + rightHoldPositions.Count.ToString();
+                //debugText.text = "Debug: hammerpos held " + rightHoldPositions.Count.ToString();
                 int framesBack = 100;
                 if (framesBack < rightHoldPositions.Count) framesBack = rightHoldPositions.Count;
                 Vector3 force = rightHoldPositions[rightHoldPositions.Count - framesBack] - rightHoldPositions[rightHoldPositions.Count];
