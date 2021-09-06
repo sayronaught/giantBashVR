@@ -9093,6 +9093,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titlescreen: {fileID: 1337909270}
+  thePlayer: {fileID: 1856612625}
+  posTutorial: {fileID: 923385772}
+  posGameOn: {fileID: 779379848}
 --- !u!82 &1928650047
 AudioSource:
   m_ObjectHideFlags: 0
