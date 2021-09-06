@@ -6,6 +6,8 @@ public class hammerFX : MonoBehaviour
 {
     public ParticleSystem myTrail;
     public hammerController myHC;
+    public ParticleSystem myLightning;
+    public AudioSource myLightningSFX;
 
     public AudioSource myAS;
     private Rigidbody myRB;
