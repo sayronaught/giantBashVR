@@ -10,11 +10,15 @@ public class gameController : MonoBehaviour
     public GameObject thePlayer;
     public Transform posTutorial;
     public Transform posGameOn;
+    public AudioSource musicTutorial;
+    public AudioSource musicGameOn;
+    public GameObject targetLocations;
 
     public Text uiTime;
     public Text uiPoints;
 
     private float gamestageCountDown = 10f;
+    private float targetSpawnTimer = 0f;
     private int gameStage = 0; // 0 tutorial, 1 approach, 2 game on, 3 post score
     private int gamePoints = 0;
 
@@ -51,12 +55,28 @@ public class gameController : MonoBehaviour
                     thePlayer.transform.position = posGameOn.position;
                     gameStage = 2;
                     gamestageCountDown = 300f;
+                    musicGameOn.Play();
+                    musicTutorial.Stop();
                 }
             break;
             case 2: // game on
                 titlescreen.color = new Color(1f, 1f, 1f, titlescreen.color.a - (Time.deltaTime * 0.1f));
                 var ts = TimeSpan.FromSeconds((double)gamestageCountDown);
                 uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
+                targetSpawnTimer -= Time.deltaTime;
+                if ( targetSpawnTimer < 0f)
+                {
+                    Transform[] targets = gameObject.GetComponentsInChildren<Transform>();
+                    Transform randomLocation = targets[UnityEngine.Random.Range(0, targets.Length)];
+                    if (randomLocation.childCount == 0)
+                    {
+                        var newTarget = Instantiate(Resources.Load("Target"),randomLocation.position,Quaternion.identity) as GameObject;
+                        newTarget.transform.SetParent(randomLocation);
+                        newTarget.transform.position = Vector3.zero;
+                        newTarget.GetComponent<targetScript>().mainGC = this;
+                        targetSpawnTimer = 3f;
+                    }
+                }
             break;
             case 3: // post score
             break;

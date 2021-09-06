@@ -14,9 +14,9 @@ public class targetScript : MonoBehaviour
     {
         if ( !isHit )
         {
-            myRB.isKinematic = false;
             mainGC.addPoints(1);
             isHit = true;
+            myRB.isKinematic = false;
         }
     }
 
