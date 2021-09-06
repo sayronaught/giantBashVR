@@ -39,8 +39,19 @@ public class hammerController : MonoBehaviour
     private float distance;
     private float heldLeft = 0f;
     private float heldRight = 0f;
+    private float chargeLightning = 0f;
     private Vector3 inverseTransformDummy;
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        changeLightning(0f);
+    }
+    private void changeLightning(float value)
+    {
+        chargeLightning = value;
+        hammerFXScript.myLightning.emissionRate = value;
+        hammerFXScript.myLightningSFX.volume = value * 0.05f;
+    }
     public bool beingSummoned()
     {
         if (magnetspeed > magnetminimum) return true;
@@ -112,6 +123,7 @@ public class hammerController : MonoBehaviour
                 if (heldRight == 0f )
                     rightHandRay.SendHapticImpulse(1f, 0.2f);
                 heldRight += Time.deltaTime;
+                changeLightning(heldRight);
                 if (heldRight > 5f) heldRight = 5f;
                 if (heldRight > 0.25f)
                 {
@@ -145,6 +157,7 @@ public class hammerController : MonoBehaviour
                 if (heldLeft == 0f )
                     leftHandRay.SendHapticImpulse(1f, 0.2f);
                 heldLeft += Time.deltaTime;
+                changeLightning(0f);
                 if (heldLeft > 5f) heldLeft = 5f;
                 if (heldLeft > 0.25f)
                 {

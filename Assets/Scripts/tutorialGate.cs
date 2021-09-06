@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class tutorialGate : MonoBehaviour
 {
-    public gameController mainCG;
-    private Rigidbody myRB;
-    
+    public gameController mainCG; 
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.rigidbody.velocity.magnitude > 3f)
+        if (collision.rigidbody.velocity.magnitude > 2f)
         {
-            myRB.isKinematic = false;
+            foreach (Transform child in transform)
+            {
+                child.GetComponent<Rigidbody>().isKinematic = false;
+            }
             mainCG.smashedGate();
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        myRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
