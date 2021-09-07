@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class tutorialGate : MonoBehaviour
 {
-    public gameController mainCG; 
+    public gameController mainGC;
+
+    private float deleteTimer = 10f;
+    private bool smashed = false;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -14,7 +17,8 @@ public class tutorialGate : MonoBehaviour
             {
                 child.GetComponent<Rigidbody>().isKinematic = false;
             }
-            mainCG.smashedGate();
+            mainGC.smashedGate();
+            smashed = true;
         }
     }
     // Start is called before the first frame update
@@ -25,6 +29,11 @@ public class tutorialGate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       if ( smashed )
+        {
+            deleteTimer -= Time.deltaTime;
+            if (deleteTimer < 0f)
+                Destroy(gameObject);
+        }
     }
 }

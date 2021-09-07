@@ -94,6 +94,7 @@ public class hammerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!hammer.activeSelf) return;
         lefty.IsPressed(InputHelpers.Button.Trigger, out leftPress);
         righty.IsPressed(InputHelpers.Button.Trigger, out rightPress);
         //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller & InputDeviceCharacteristics.TrackedDevice, _inputDevices);

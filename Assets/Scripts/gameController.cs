@@ -13,6 +13,7 @@ public class gameController : MonoBehaviour
     public AudioSource musicTutorial;
     public AudioSource musicGameOn;
     public GameObject targetLocations;
+    public GameObject hammerGameObject;
 
     public Text uiTime;
     public Text uiPoints;
@@ -23,7 +24,7 @@ public class gameController : MonoBehaviour
 
     private float gamestageCountDown = 10f;
     private float targetSpawnTimer = 0f;
-    private int gameStage = 2; // 0 tutorial, 1 approach, 2 game on, 3 post score
+    private int gameStage = 0; // 0 tutorial, 1 approach, 2 game on, 3 post score
     private int gamePoints = 0;
 
     public void smashedGate()
@@ -40,6 +41,9 @@ public class gameController : MonoBehaviour
     void Start()
     {
         thePlayer.transform.position = posTutorial.position;
+        //var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
+        //newTarget.GetComponent<tutorialGate>().mainGC = this;
+        //newTarget.transform.localPosition = new Vector3(-6.5f, 1.26f, 2.83f);
     }
 
     // Update is called once per frame
@@ -84,10 +88,30 @@ public class gameController : MonoBehaviour
                         targetSpawnTimer = 3f;
                     }
                 }
+                if (gamestageCountDown < 0f)
+                {
+                    gamestageCountDown = 60f;
+                    gameStage = 3;
+                    uiTime.text = "-";
+                    hammerGameObject.SetActive(false);
+                }
             break;
             case 3: // post score
-            break;
+                if (gamestageCountDown < 0f)
+                {
+                    gameStage = 0;
+                    titlescreen.color = new Color(1f, 1f, 1f, 1f);
+                    thePlayer.transform.position = posTutorial.position;
+                    gamePoints = 0;
+                    uiPoints.text = "-";
+                    var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
+                    newTarget.GetComponent<tutorialGate>().mainGC = this;
+                    newTarget.transform.localPosition = new Vector3(-6.5f, 1.26f, 2.83f);
+                    hammerGameObject.SetActive(true);
+                }
+                break;
             default: // tutorial
+                
             break;
         }
     }

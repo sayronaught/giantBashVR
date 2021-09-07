@@ -14400,6 +14400,7 @@ MonoBehaviour:
   musicTutorial: {fileID: 1170068042}
   musicGameOn: {fileID: 667401195}
   targetLocations: {fileID: 1351886639}
+  hammerGameObject: {fileID: 2033999382}
   uiTime: {fileID: 73684709}
   uiPoints: {fileID: 571205064}
   debugText: {fileID: 0}
@@ -15091,8 +15092,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: gate1
       objectReference: {fileID: 0}
+    - target: {fileID: 1457830503459418958, guid: 6d5edc371aeb0f246b24ecd249b187ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1799795873050283547, guid: 6d5edc371aeb0f246b24ecd249b187ee, type: 3}
       propertyPath: mainCG
+      value: 
+      objectReference: {fileID: 1928650046}
+    - target: {fileID: 1799795873050283547, guid: 6d5edc371aeb0f246b24ecd249b187ee, type: 3}
+      propertyPath: mainGC
       value: 
       objectReference: {fileID: 1928650046}
     - target: {fileID: 2265470810281814516, guid: 6d5edc371aeb0f246b24ecd249b187ee, type: 3}
