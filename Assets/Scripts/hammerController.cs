@@ -110,6 +110,7 @@ public class hammerController : MonoBehaviour
                 hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.1f), Time.deltaTime * magnetspeed);
                 hammerRB.velocity = Vector3.zero;
                 hammerRB.angularVelocity = Vector3.zero;
+                hammerRB.mass = 1;
                 magnetspeed *= magnetmultiplier;
             }
             else
@@ -128,6 +129,7 @@ public class hammerController : MonoBehaviour
                 if (heldRight > 5f) heldRight = 5f;
                 if (heldRight > 0.25f)
                 {
+                    hammerRB.mass = heldRight+2f;
                     rightHandRay.SendHapticImpulse(heldRight * 0.2f, 0.1f);
                     hammerFXScript.myTrail.emissionRate = heldRight;
                     hammer.transform.Rotate(Random.RandomRange(-heldRight, heldRight), Random.RandomRange(-heldRight, heldRight), Random.RandomRange(-heldRight, heldRight));
@@ -145,6 +147,7 @@ public class hammerController : MonoBehaviour
                 hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, leftHand.transform.position+(leftHand.transform.forward*0.1f), Time.deltaTime * magnetspeed);
                 hammerRB.velocity = Vector3.zero;
                 hammerRB.angularVelocity = Vector3.zero;
+                hammerRB.mass = 1;
                 magnetspeed *= magnetmultiplier;
             }
             else
@@ -162,6 +165,7 @@ public class hammerController : MonoBehaviour
                 if (heldLeft > 5f) heldLeft = 5f;
                 if (heldLeft > 0.25f)
                 {
+                    hammerRB.mass = heldLeft + 2f;
                     leftHandRay.SendHapticImpulse(heldLeft * 0.2f, 0.1f);
                     hammerFXScript.myTrail.emissionRate = heldLeft;
                     hammer.transform.Rotate(Random.RandomRange(-heldLeft, heldLeft), Random.RandomRange(-heldLeft, heldLeft), Random.RandomRange(-heldLeft, heldLeft));

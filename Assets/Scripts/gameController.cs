@@ -45,7 +45,18 @@ public class gameController : MonoBehaviour
         //newTarget.GetComponent<tutorialGate>().mainGC = this;
         //newTarget.transform.localPosition = new Vector3(-6.5f, 1.26f, 2.83f);
     }
-
+    void spawnTarget()
+    {
+        Transform randomLocation = targetLocations.transform.GetChild(UnityEngine.Random.Range(0, targetLocations.transform.childCount));
+        if (randomLocation.childCount == 0)
+        {
+            var newTarget = Instantiate(prefabTargets[0], Vector3.zero, Quaternion.identity) as GameObject;
+            newTarget.transform.SetParent(randomLocation);
+            newTarget.GetComponent<targetScript>().mainGC = this;
+            newTarget.transform.localPosition = Vector3.zero;
+            targetSpawnTimer = 10f;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -66,6 +77,7 @@ public class gameController : MonoBehaviour
                     gamestageCountDown = 300f;
                     musicGameOn.Play();
                     musicTutorial.Stop();
+                    for (int i = 0; i < 5; i++) spawnTarget();
                 }
             break;
             case 2: // game on
@@ -75,18 +87,7 @@ public class gameController : MonoBehaviour
                 targetSpawnTimer -= Time.deltaTime;
                 if ( targetSpawnTimer < 0f)
                 {
-                    //Transform[] targets = targetLocations.GetComponentsInChildren<Transform>();
-                    //Transform randomLocation = targets[UnityEngine.Random.Range(0, targets.Length)];
-                    Transform randomLocation = targetLocations.transform.GetChild(UnityEngine.Random.Range(0, targetLocations.transform.childCount));
-                    if (randomLocation.childCount == 0)
-                    {
-                        //var newTarget = Instantiate(Resources.Load("Target"), randomLocation.position, Quaternion.identity) as GameObject;
-                        var newTarget = Instantiate(prefabTargets[0], Vector3.zero, Quaternion.identity) as GameObject;
-                        newTarget.transform.SetParent(randomLocation);
-                        newTarget.GetComponent<targetScript>().mainGC = this;
-                        newTarget.transform.localPosition = Vector3.zero;
-                        targetSpawnTimer = 3f;
-                    }
+                    spawnTarget();
                 }
                 if (gamestageCountDown < 0f)
                 {
