@@ -107,6 +107,8 @@ public class gameController : MonoBehaviour
                     var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
                     newTarget.GetComponent<tutorialGate>().mainGC = this;
                     newTarget.transform.localPosition = new Vector3(-6.5f, 1.26f, 2.83f);
+                    musicGameOn.Stop();
+                    musicTutorial.Play();
                     hammerGameObject.SetActive(true);
                 }
                 break;
