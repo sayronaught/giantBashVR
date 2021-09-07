@@ -16,10 +16,14 @@ public class gameController : MonoBehaviour
 
     public Text uiTime;
     public Text uiPoints;
+    public Text debugText;
+
+    public GameObject prefabGate;
+    public GameObject[] prefabTargets;
 
     private float gamestageCountDown = 10f;
     private float targetSpawnTimer = 0f;
-    private int gameStage = 0; // 0 tutorial, 1 approach, 2 game on, 3 post score
+    private int gameStage = 2; // 0 tutorial, 1 approach, 2 game on, 3 post score
     private int gamePoints = 0;
 
     public void smashedGate()
@@ -41,6 +45,7 @@ public class gameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //debugText.text = "Debug:spawn 1:" + ;
         gamestageCountDown -= Time.deltaTime;
         if ( gamestageCountDown < 0f )
         {
@@ -66,14 +71,16 @@ public class gameController : MonoBehaviour
                 targetSpawnTimer -= Time.deltaTime;
                 if ( targetSpawnTimer < 0f)
                 {
-                    Transform[] targets = gameObject.GetComponentsInChildren<Transform>();
-                    Transform randomLocation = targets[UnityEngine.Random.Range(0, targets.Length)];
+                    //Transform[] targets = targetLocations.GetComponentsInChildren<Transform>();
+                    //Transform randomLocation = targets[UnityEngine.Random.Range(0, targets.Length)];
+                    Transform randomLocation = targetLocations.transform.GetChild(UnityEngine.Random.Range(0, targetLocations.transform.childCount));
                     if (randomLocation.childCount == 0)
                     {
-                        var newTarget = Instantiate(Resources.Load("Target"),randomLocation.position,Quaternion.identity) as GameObject;
+                        //var newTarget = Instantiate(Resources.Load("Target"), randomLocation.position, Quaternion.identity) as GameObject;
+                        var newTarget = Instantiate(prefabTargets[0], Vector3.zero, Quaternion.identity) as GameObject;
                         newTarget.transform.SetParent(randomLocation);
-                        newTarget.transform.position = Vector3.zero;
                         newTarget.GetComponent<targetScript>().mainGC = this;
+                        newTarget.transform.localPosition = Vector3.zero;
                         targetSpawnTimer = 3f;
                     }
                 }
