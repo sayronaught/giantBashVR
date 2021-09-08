@@ -12,6 +12,8 @@ public class gameController : MonoBehaviour
     public Transform posGameOn;
     public AudioSource musicTutorial;
     public AudioSource musicGameOn;
+    public AudioSource fxHorn;
+    public AudioSource fxApplause;
     public GameObject targetLocations;
     public GameObject hammerGameObject;
 
@@ -81,6 +83,7 @@ public class gameController : MonoBehaviour
                     gamestageCountDown = gameTimeGameOn;
                     musicGameOn.Play();
                     musicTutorial.Stop();
+                    fxHorn.Play();
                     for (int i = 0; i < 5; i++) spawnTarget();
                 }
             break;
@@ -99,6 +102,7 @@ public class gameController : MonoBehaviour
                     gameStage = 3;
                     uiTime.text = "-";
                     hammerGameObject.SetActive(false);
+                    fxApplause.Play();
                 }
             break;
             case 3: // post score
