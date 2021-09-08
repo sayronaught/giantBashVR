@@ -37,7 +37,6 @@ public class hammerController : MonoBehaviour
     private XRRayInteractor leftHandRay;
     private XRRayInteractor rightHandRay;
     private float updateControllerTimer = 2f;
-    private int releaseCounter = 0;
     private float distance;
     private float heldLeft = 0f;
     private float heldRight = 0f;

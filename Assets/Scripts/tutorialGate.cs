@@ -6,6 +6,7 @@ public class tutorialGate : MonoBehaviour
 {
     public gameController mainGC;
 
+    private AudioSource myAS;
     private float deleteTimer = 10f;
     private bool smashed = false;
 
@@ -19,11 +20,13 @@ public class tutorialGate : MonoBehaviour
             }
             mainGC.smashedGate();
             smashed = true;
+            myAS.Play();
         }
     }
     // Start is called before the first frame update
     void Start()
     {
+        myAS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
