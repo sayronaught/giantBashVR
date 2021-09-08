@@ -8,7 +8,6 @@ public class gameController : MonoBehaviour
 {
     public Image titlescreen;
     public GameObject thePlayer;
-    public GameObject theHammer;
     public Transform posTutorial;
     public Transform posGameOn;
     public AudioSource musicTutorial;
@@ -22,6 +21,9 @@ public class gameController : MonoBehaviour
 
     public GameObject prefabGate;
     public GameObject[] prefabTargets;
+
+    public float gameTimeGameOn = 300f;
+    public float gameTimeResetWait = 60f;
 
     private float gamestageCountDown = 10f;
     private float targetSpawnTimer = 0f;
@@ -76,7 +78,7 @@ public class gameController : MonoBehaviour
                 {
                     thePlayer.transform.position = posGameOn.position;
                     gameStage = 2;
-                    gamestageCountDown = 300f;
+                    gamestageCountDown = gameTimeGameOn;
                     musicGameOn.Play();
                     musicTutorial.Stop();
                     for (int i = 0; i < 5; i++) spawnTarget();
@@ -93,7 +95,7 @@ public class gameController : MonoBehaviour
                 }
                 if (gamestageCountDown < 0f)
                 {
-                    gamestageCountDown = 60f;
+                    gamestageCountDown = gameTimeResetWait;
                     gameStage = 3;
                     uiTime.text = "-";
                     hammerGameObject.SetActive(false);
@@ -105,7 +107,7 @@ public class gameController : MonoBehaviour
                     gameStage = 0;
                     titlescreen.color = new Color(1f, 1f, 1f, 1f);
                     thePlayer.transform.position = posTutorial.position;
-                    theHammer.transform.position = posTutorial.position;
+                    hammerGameObject.transform.position = posTutorial.position;
                     gamePoints = 0;
                     uiPoints.text = "-";
                     var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
