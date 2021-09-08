@@ -8,6 +8,8 @@ public class hammerFX : MonoBehaviour
     public hammerController myHC;
     public ParticleSystem myLightning;
     public AudioSource myLightningSFX;
+    public ParticleSystem myFire;
+    public AudioSource myFireSFX;
     public hammerController mainHC;
 
     public AudioSource myAS;
@@ -17,6 +19,8 @@ public class hammerFX : MonoBehaviour
     {
         mainHC.changeLightning(0f);
         myLightning.Clear();
+        mainHC.changeFire(0f);
+        myFire.Clear();
     }
 
     // Start is called before the first frame update
@@ -30,12 +34,17 @@ public class hammerFX : MonoBehaviour
     void Update()
     {
         myAS.volume = myRB.velocity.magnitude * 0.05f;
-        if (myHC.beingSummoned()) myAS.volume = myHC.summonSpeed() * 0.05f;
-        if (myHC.beingHeld())
+        if (myHC.beingSummoned())
         {
-            myAS.volume = 0f;
+            if (myHC.beingHeld())
+            {
+                myAS.volume = 0f;
+            } else
+            {
+                myAS.volume = myHC.summonSpeed() * 0.05f;
+            }
         } else {
-            myTrail.emissionRate = myRB.velocity.magnitude * 0.05f;
+            myTrail.emissionRate = myRB.velocity.magnitude * 0.1f;
         }
     }
 }

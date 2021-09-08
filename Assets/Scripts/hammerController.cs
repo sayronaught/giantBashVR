@@ -41,6 +41,7 @@ public class hammerController : MonoBehaviour
     private float heldLeft = 0f;
     private float heldRight = 0f;
     private float chargeLightning = 0f;
+    private float chargeFire = 0f;
     private Vector3 inverseTransformDummy;
 
     public void changeLightning(float value)
@@ -48,6 +49,12 @@ public class hammerController : MonoBehaviour
         chargeLightning = value;
         hammerFXScript.myLightning.emissionRate = value;
         hammerFXScript.myLightningSFX.volume = value * 0.05f;
+    }
+    public void changeFire(float value)
+    {
+        chargeFire = value;
+        hammerFXScript.myFire.emissionRate = value;
+        hammerFXScript.myFireSFX.volume = value * 0.05f;
     }
     public bool beingSummoned()
     {
@@ -114,7 +121,7 @@ public class hammerController : MonoBehaviour
             else
             {
                 rightAnim.SetBool("grab", true);
-                hammer.transform.position = rightHand.transform.position+(rightHand.transform.up*0.1f);
+                hammer.transform.position = rightHand.transform.position+(rightHand.transform.up*0.15f);
                 hammer.transform.rotation = rightHand.transform.rotation;
                 hammer.transform.Rotate(-75, 0, 90);
                 hammerRB.velocity = Vector3.zero;
@@ -125,6 +132,7 @@ public class hammerController : MonoBehaviour
                     rightHandRay.SendHapticImpulse(1f, 0.2f);
                 heldRight += Time.deltaTime;
                 changeLightning(heldRight);
+                changeFire(0f);
                 if (heldRight > 5f) heldRight = 5f;
                 if (heldRight > 0.25f)
                 {
@@ -139,7 +147,7 @@ public class hammerController : MonoBehaviour
         else if (leftPress && heldRight == 0f)
         {
             leftAnim.SetBool("summoning", true);
-            distance = Vector3.Distance(hammer.transform.position, leftHand.transform.position + (leftHand.transform.forward * 0.1f));
+            distance = Vector3.Distance(hammer.transform.position, leftHand.transform.position + (leftHand.transform.forward * 0.10f));
             inverseTransformDummy = leftHand.transform.InverseTransformPoint(hammer.transform.position);
             if (distance > 0.15f || inverseTransformDummy.z < 0f)
             {
@@ -153,7 +161,8 @@ public class hammerController : MonoBehaviour
             else
             {
                 leftAnim.SetBool("grab", true);
-                hammer.transform.position = leftHand.transform.position+(leftHand.transform.up*0.1f);
+                hammerFXScript.myLightning.Clear();
+                hammer.transform.position = leftHand.transform.position+(leftHand.transform.up*0.15f);
                 hammer.transform.rotation = leftHand.transform.rotation;
                 hammer.transform.Rotate(-75, 0, 90);
                 hammerRB.velocity = Vector3.zero;
@@ -163,6 +172,7 @@ public class hammerController : MonoBehaviour
                     leftHandRay.SendHapticImpulse(1f, 0.2f);
                 heldLeft += Time.deltaTime;
                 changeLightning(0f);
+                changeFire(heldLeft);
                 if (heldLeft > 5f) heldLeft = 5f;
                 if (heldLeft > 0.25f)
                 {
