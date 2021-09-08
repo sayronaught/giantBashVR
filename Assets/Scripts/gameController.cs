@@ -51,7 +51,8 @@ public class gameController : MonoBehaviour
         Transform randomLocation = targetLocations.transform.GetChild(UnityEngine.Random.Range(0, targetLocations.transform.childCount));
         if (randomLocation.childCount == 0)
         {
-            var newTarget = Instantiate(prefabTargets[0], Vector3.zero, Quaternion.identity) as GameObject;
+            int targetpref = UnityEngine.Random.Range(0, prefabTargets.Length);
+            var newTarget = Instantiate(prefabTargets[targetpref], Vector3.zero, Quaternion.identity) as GameObject;
             newTarget.transform.SetParent(randomLocation);
             newTarget.GetComponent<targetScript>().mainGC = this;
             newTarget.transform.localPosition = Vector3.zero;

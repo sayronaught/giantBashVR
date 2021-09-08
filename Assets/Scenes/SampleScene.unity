@@ -14412,6 +14412,8 @@ MonoBehaviour:
   prefabGate: {fileID: 1457830503459418958, guid: 6d5edc371aeb0f246b24ecd249b187ee, type: 3}
   prefabTargets:
   - {fileID: 38630269000163424, guid: f6f4e73accb06d14a8aee810c3588475, type: 3}
+  - {fileID: 2056201417201417062, guid: 3252fd6d8c8771b45be67ec76f58e68a, type: 3}
+  - {fileID: 4472594817413776547, guid: 4f6ab423178b9ab49816df58466a9a2c, type: 3}
 --- !u!1001 &1973914428
 PrefabInstance:
   m_ObjectHideFlags: 0
