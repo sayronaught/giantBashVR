@@ -9,6 +9,8 @@ public class hammerController : MonoBehaviour
 {
     public GameObject leftHand;
     public GameObject rightHand;
+    public Animator leftAnim;
+    public Animator rightAnim;
     public GameObject hammer;
 
     public XRController controllerLeft;
@@ -102,6 +104,7 @@ public class hammerController : MonoBehaviour
         //debugText.text = "Debug:inverse transform right hand\n" + inverseTransformDummy.x.ToString() + " " + inverseTransformDummy.y.ToString() + " " + inverseTransformDummy.z.ToString();
         if (rightPress && heldLeft == 0f)
         { // press
+            rightAnim.SetBool("summoning", true);
             distance = Vector3.Distance(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.1f));
             inverseTransformDummy = rightHand.transform.InverseTransformPoint(hammer.transform.position);
             if (distance > 0.15f || inverseTransformDummy.z < 0f)
@@ -115,6 +118,7 @@ public class hammerController : MonoBehaviour
             }
             else
             {
+                rightAnim.SetBool("grab", true);
                 hammer.transform.position = rightHand.transform.position+(rightHand.transform.up*0.1f);
                 hammer.transform.rotation = rightHand.transform.rotation;
                 hammer.transform.Rotate(-75, 0, 90);
@@ -139,6 +143,7 @@ public class hammerController : MonoBehaviour
         }
         else if (leftPress && heldRight == 0f)
         {
+            leftAnim.SetBool("summoning", true);
             distance = Vector3.Distance(hammer.transform.position, leftHand.transform.position + (leftHand.transform.forward * 0.1f));
             inverseTransformDummy = leftHand.transform.InverseTransformPoint(hammer.transform.position);
             if (distance > 0.15f || inverseTransformDummy.z < 0f)
@@ -152,6 +157,7 @@ public class hammerController : MonoBehaviour
             }
             else
             {
+                leftAnim.SetBool("grab", true);
                 hammer.transform.position = leftHand.transform.position+(leftHand.transform.up*0.1f);
                 hammer.transform.rotation = leftHand.transform.rotation;
                 hammer.transform.Rotate(-75, 0, 90);
@@ -179,6 +185,10 @@ public class hammerController : MonoBehaviour
             magnetspeed = magnetminimum;
             heldLeft = 0f;
             heldRight = 0f;
+            leftAnim.SetBool("summoning", false);
+            leftAnim.SetBool("grab", false);
+            rightAnim.SetBool("summoning", false);
+            rightAnim.SetBool("grab", false);
             if (rightHoldPositions.Count > 0)
             { // just released, have list of held positions
                 //debugText.text = "Debug: hammerpos held " + rightHoldPositions.Count.ToString();
