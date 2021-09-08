@@ -8,6 +8,7 @@ public class gameController : MonoBehaviour
 {
     public Image titlescreen;
     public GameObject thePlayer;
+    public GameObject theHammer;
     public Transform posTutorial;
     public Transform posGameOn;
     public AudioSource musicTutorial;
@@ -103,6 +104,7 @@ public class gameController : MonoBehaviour
                     gameStage = 0;
                     titlescreen.color = new Color(1f, 1f, 1f, 1f);
                     thePlayer.transform.position = posTutorial.position;
+                    theHammer.transform.position = posTutorial.position;
                     gamePoints = 0;
                     uiPoints.text = "-";
                     var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
