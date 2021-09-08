@@ -8,9 +8,16 @@ public class hammerFX : MonoBehaviour
     public hammerController myHC;
     public ParticleSystem myLightning;
     public AudioSource myLightningSFX;
+    public hammerController mainHC;
 
     public AudioSource myAS;
     private Rigidbody myRB;
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        mainHC.changeLightning(0f);
+        myLightning.Clear();
+    }
 
     // Start is called before the first frame update
     void Start()

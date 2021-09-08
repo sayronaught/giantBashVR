@@ -7,6 +7,7 @@ public class targetScript : MonoBehaviour
     public gameController mainGC;
 
     private Rigidbody myRB;
+    private AudioSource myAS;
     private bool isHit = false;
     private float disappearTimer = 5f;
 
@@ -17,13 +18,15 @@ public class targetScript : MonoBehaviour
             mainGC.addPoints(1);
             isHit = true;
             myRB.isKinematic = false;
+            myAS.Play();
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        myRB = GetComponent<Rigidbody>(); 
+        myRB = GetComponent<Rigidbody>();
+        myAS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

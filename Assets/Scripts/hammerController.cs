@@ -43,11 +43,7 @@ public class hammerController : MonoBehaviour
     private float chargeLightning = 0f;
     private Vector3 inverseTransformDummy;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        changeLightning(0f);
-    }
-    private void changeLightning(float value)
+    public void changeLightning(float value)
     {
         chargeLightning = value;
         hammerFXScript.myLightning.emissionRate = value;
