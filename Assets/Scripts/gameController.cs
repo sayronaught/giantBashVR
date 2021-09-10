@@ -20,6 +20,10 @@ public class gameController : MonoBehaviour
 
     public Text uiTime;
     public Text uiPoints;
+    public GameObject uiTimeSilver;
+    public GameObject uiTimeGold;
+    public GameObject uiPointsSilver;
+    public GameObject uiPointsGold;
     public Text debugText;
 
     public GameObject prefabGate;
@@ -68,7 +72,7 @@ public class gameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //debugText.text = "Debug:spawn 1:" + ;
+        debugText.text = "Debug: music/state timer " + gamestageCountDown.ToString();
         gamestageCountDown -= Time.deltaTime;
         if ( gamestageCountDown < 0f )
         {
@@ -99,14 +103,12 @@ public class gameController : MonoBehaviour
                     spawnTarget();
                     targetSpawnTimer = 10f;
                 }
-                if (gamestageCountDown < 150f)
+                if (gamestageCountDown < 155f)
                 {
-                    gamestageCountDown = gameTimeResetWait;
                     gameStage = 3;
-                    uiTime.text = "-";
-                    hammerGameObject.SetActive(false);
-                    musicGameOn.Stop();
                     musicBossLevel.Play();
+                    uiTimeGold.SetActive(true);
+                    uiTimeSilver.SetActive(false);
                 }
             break;
             case 3: // boss level
@@ -121,11 +123,14 @@ public class gameController : MonoBehaviour
                 if (gamestageCountDown < 0f)
                 {
                     gamestageCountDown = gameTimeResetWait;
-                    gameStage = 3;
+                    gameStage = 4;
+                    uiPointsGold.SetActive(true);
+                    uiPointsSilver.SetActive(false);
                     uiTime.text = "-";
+                    uiTimeGold.SetActive(false);
+                    uiTimeSilver.SetActive(true);
                     hammerGameObject.SetActive(false);
                     fxApplause.Play();
-                    musicBossLevel.Stop();
                 }
             break;
             case 4: // post score
@@ -137,6 +142,8 @@ public class gameController : MonoBehaviour
                     hammerGameObject.transform.position = posTutorial.position;
                     gamePoints = 0;
                     uiPoints.text = "-";
+                    uiPointsSilver.SetActive(true);
+                    uiPointsGold.SetActive(false);
                     var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
                     newTarget.GetComponent<tutorialGate>().mainGC = this;
                     newTarget.transform.localPosition = new Vector3(-6.5f, 1.26f, 2.83f);

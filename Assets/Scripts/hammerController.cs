@@ -11,6 +11,8 @@ public class hammerController : MonoBehaviour
     public GameObject rightHand;
     public Animator leftAnim;
     public Animator rightAnim;
+    public AudioSource leftCatch;
+    public AudioSource rightCatch;
     public GameObject hammer;
 
     public XRController controllerLeft;
@@ -53,7 +55,7 @@ public class hammerController : MonoBehaviour
     public void changeFire(float value)
     {
         chargeFire = value;
-        hammerFXScript.myFire.emissionRate = value;
+        hammerFXScript.myFire.emissionRate = value*3f;
         hammerFXScript.myFireSFX.volume = value * 0.05f;
     }
     public bool beingSummoned()
@@ -96,7 +98,8 @@ public class hammerController : MonoBehaviour
         rightHoldPositions = new List<Vector3>();
     }
     // Update is called once per frame
-    void Update()
+    //void Update()
+    void FixedUpdate()
     {
         if (!hammer.activeSelf) return;
         lefty.IsPressed(InputHelpers.Button.Trigger, out leftPress);
@@ -129,12 +132,15 @@ public class hammerController : MonoBehaviour
                 rightHoldPositions.Add(rightHand.transform.position);
                 //hammerGrabScript.attachTransform = rightHand.transform;
                 if (heldRight == 0f )
+                {
                     rightHandRay.SendHapticImpulse(1f, 0.2f);
+                    rightCatch.Play();
+                }                    
                 heldRight += Time.deltaTime;
                 changeLightning(heldRight);
                 changeFire(0f);
                 if (heldRight > 5f) heldRight = 5f;
-                if (heldRight > 0.25f)
+                if (heldRight > 0.5f)
                 {
                     hammerRB.mass = heldRight+2f;
                     rightHandRay.SendHapticImpulse(heldRight * 0.2f, 0.1f);
@@ -169,12 +175,15 @@ public class hammerController : MonoBehaviour
                 hammerRB.angularVelocity = Vector3.zero;
                 rightHoldPositions.Add(leftHand.transform.position);
                 if (heldLeft == 0f )
+                {
                     leftHandRay.SendHapticImpulse(1f, 0.2f);
+                    leftCatch.Play();
+                }                    
                 heldLeft += Time.deltaTime;
                 changeLightning(0f);
                 changeFire(heldLeft);
                 if (heldLeft > 5f) heldLeft = 5f;
-                if (heldLeft > 0.25f)
+                if (heldLeft > 0.5f)
                 {
                     hammerRB.mass = heldLeft + 2f;
                     leftHandRay.SendHapticImpulse(heldLeft * 0.2f, 0.1f);
