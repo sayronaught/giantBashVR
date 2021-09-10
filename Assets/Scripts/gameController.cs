@@ -12,6 +12,7 @@ public class gameController : MonoBehaviour
     public Transform posGameOn;
     public AudioSource musicTutorial;
     public AudioSource musicGameOn;
+    public AudioSource musicBossLevel;
     public AudioSource fxHorn;
     public AudioSource fxApplause;
     public GameObject targetLocations;
@@ -29,8 +30,10 @@ public class gameController : MonoBehaviour
 
     private float gamestageCountDown = 10f;
     private float targetSpawnTimer = 0f;
-    private int gameStage = 0; // 0 tutorial, 1 approach, 2 game on, 3 post score
+    private int gameStage = 0; // 0 tutorial, 1 approach, 2 game on, 3 boss level, 4 post score
     private int gamePoints = 0;
+
+    private TimeSpan ts;
 
     public void smashedGate()
     {
@@ -60,7 +63,6 @@ public class gameController : MonoBehaviour
             newTarget.transform.SetParent(randomLocation);
             newTarget.GetComponent<targetScript>().mainGC = this;
             newTarget.transform.localPosition = Vector3.zero;
-            targetSpawnTimer = 10f;
         }
     }
     // Update is called once per frame
@@ -89,12 +91,32 @@ public class gameController : MonoBehaviour
             break;
             case 2: // game on
                 titlescreen.color = new Color(1f, 1f, 1f, titlescreen.color.a - (Time.deltaTime * 0.1f));
-                var ts = TimeSpan.FromSeconds((double)gamestageCountDown);
+                ts = TimeSpan.FromSeconds((double)gamestageCountDown);
                 uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
                 targetSpawnTimer -= Time.deltaTime;
                 if ( targetSpawnTimer < 0f)
                 {
                     spawnTarget();
+                    targetSpawnTimer = 10f;
+                }
+                if (gamestageCountDown < 150f)
+                {
+                    gamestageCountDown = gameTimeResetWait;
+                    gameStage = 3;
+                    uiTime.text = "-";
+                    hammerGameObject.SetActive(false);
+                    musicGameOn.Stop();
+                    musicBossLevel.Play();
+                }
+            break;
+            case 3: // boss level
+                ts = TimeSpan.FromSeconds((double)gamestageCountDown);
+                uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
+                targetSpawnTimer -= Time.deltaTime;
+                if (targetSpawnTimer < 0f)
+                {
+                    spawnTarget();
+                    targetSpawnTimer = 3f;
                 }
                 if (gamestageCountDown < 0f)
                 {
@@ -103,9 +125,10 @@ public class gameController : MonoBehaviour
                     uiTime.text = "-";
                     hammerGameObject.SetActive(false);
                     fxApplause.Play();
+                    musicBossLevel.Stop();
                 }
             break;
-            case 3: // post score
+            case 4: // post score
                 if (gamestageCountDown < 0f)
                 {
                     gameStage = 0;
@@ -117,7 +140,6 @@ public class gameController : MonoBehaviour
                     var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
                     newTarget.GetComponent<tutorialGate>().mainGC = this;
                     newTarget.transform.localPosition = new Vector3(-6.5f, 1.26f, 2.83f);
-                    musicGameOn.Stop();
                     musicTutorial.Play();
                     hammerGameObject.SetActive(true);
                 }
