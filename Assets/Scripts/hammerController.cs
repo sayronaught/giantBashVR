@@ -42,7 +42,7 @@ public class hammerController : MonoBehaviour
     private float distance;
     private float heldLeft = 0f;
     private float heldRight = 0f;
-    private float chargeLightning = 0f;
+    public float chargeLightning = 0f;
     private float chargeFire = 0f;
     private Vector3 inverseTransformDummy;
 
@@ -136,10 +136,10 @@ public class hammerController : MonoBehaviour
                     rightHandRay.SendHapticImpulse(1f, 0.2f);
                     rightCatch.Play();
                 }                    
-                heldRight += Time.deltaTime;
+                heldRight += Time.deltaTime*3f;
                 changeLightning(heldRight);
                 changeFire(0f);
-                if (heldRight > 5f) heldRight = 5f;
+                if (heldRight > 9f) heldRight = 9f;
                 if (heldRight > 0.5f)
                 {
                     hammerRB.mass = heldRight+2f;
@@ -147,7 +147,7 @@ public class hammerController : MonoBehaviour
                     hammerFXScript.myTrail.emissionRate = heldRight;
                     hammer.transform.Rotate(Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight));
                 }
-                hammerGrabScript.throwVelocityScale = 2f + heldRight;
+                hammerGrabScript.throwVelocityScale = 3f + heldRight;
             }
         }
         else if (leftPress && heldRight == 0f)
@@ -179,10 +179,10 @@ public class hammerController : MonoBehaviour
                     leftHandRay.SendHapticImpulse(1f, 0.2f);
                     leftCatch.Play();
                 }                    
-                heldLeft += Time.deltaTime;
+                heldLeft += Time.deltaTime*3f;
                 changeLightning(0f);
                 changeFire(heldLeft);
-                if (heldLeft > 5f) heldLeft = 5f;
+                if (heldLeft > 9f) heldLeft = 9f;
                 if (heldLeft > 0.5f)
                 {
                     hammerRB.mass = heldLeft + 2f;
@@ -190,7 +190,7 @@ public class hammerController : MonoBehaviour
                     hammerFXScript.myTrail.emissionRate = heldLeft;
                     hammer.transform.Rotate(Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft));
                 }
-                hammerGrabScript.throwVelocityScale = 2f + heldLeft;
+                hammerGrabScript.throwVelocityScale = 3f + heldLeft;
             }
         }
         else

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class hammerFX : MonoBehaviour
 {
+    public GameObject prefabLightningExp;
+
     public ParticleSystem myTrail;
     public hammerController myHC;
     public ParticleSystem myLightning;
@@ -17,6 +19,12 @@ public class hammerFX : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (mainHC.chargeLightning > 0f)
+        {
+            var explosion = Instantiate(prefabLightningExp);
+            explosion.transform.position = transform.position;
+            explosion.transform.localScale = new Vector3(mainHC.chargeLightning, mainHC.chargeLightning, mainHC.chargeLightning);
+        }
         mainHC.changeLightning(0f);
         myLightning.Clear();
         mainHC.changeFire(0f);
