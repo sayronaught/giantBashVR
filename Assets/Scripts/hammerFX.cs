@@ -11,6 +11,7 @@ public class hammerFX : MonoBehaviour
     public ParticleSystem myLightning;
     public AudioSource myLightningSFX;
     public hammerController mainHC;
+    public gameController mainGC;
 
     public AudioClip[] thunderclaps;
 
@@ -36,6 +37,26 @@ public class hammerFX : MonoBehaviour
                 explosionAS.clip = thunderclaps[0];
             }
             explosionAS.Play();
+            int valid = 0;
+            foreach( targetScript target in mainGC.targetList )
+            {
+                if ( Vector3.Distance(target.transform.position, transform.position) < (mainHC.chargeLightning*25f+3f))
+                {
+                    valid++;
+                    if ( target.isHit)
+                    {
+                        target.myRB.velocity = Vector3.zero;
+                        target.myRB.rotation = Quaternion.identity;
+                    } else {
+                        mainGC.addPoints(target.pointValue);
+                        target.isHit = true;
+                        target.myRB.isKinematic = false;
+                    }
+                    Vector3 force = transform.position - target.transform.position;
+                    myRB.AddForce(force.normalized * (50f*mainHC.chargeLightning));
+                }
+            }
+            mainGC.debugText.text = "Debug: Explosion " + mainGC.targetList.Count.ToString() + " / " + valid.ToString() + " / " + mainHC.chargeLightning.ToString();
         }
         mainHC.changeLightning(0f);
         mainHC.supercharged = false;
@@ -68,7 +89,7 @@ public class hammerFX : MonoBehaviour
         if ( mainHC.supercharged == false && transform.position.y > 10f )
         {
             mainHC.supercharged = true;
-            mainHC.changeLightning(mainHC.chargeLightning * 2f);
+            mainHC.changeLightning(mainHC.chargeLightning * 3f);
         }
     }
 }

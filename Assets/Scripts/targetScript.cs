@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class targetScript : MonoBehaviour
 {
+    public int pointValue = 1;
     public gameController mainGC;
 
-    private Rigidbody myRB;
-    private AudioSource myAS;
-    private bool isHit = false;
-    private float disappearTimer = 5f;
-
+    public Rigidbody myRB;
+    public AudioSource myAS;
+    public bool isHit = false;
+    public float disappearTimer = 5f;
+    
     private void OnCollisionEnter(Collision collision)
     {
         if ( !isHit )
         {
-            mainGC.addPoints(1);
+            mainGC.addPoints(pointValue);
             isHit = true;
             myRB.isKinematic = false;
+            Vector3 force = collision.transform.position - transform.position;
+            myRB.AddForce(force.normalized * 150f);
             myAS.Play();
         }
     }
@@ -37,6 +40,7 @@ public class targetScript : MonoBehaviour
             disappearTimer -= Time.deltaTime;
             if ( disappearTimer < 0f )
             {
+                mainGC.targetList.Remove(this);
                 Destroy(this.gameObject);
             }
         }

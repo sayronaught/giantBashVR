@@ -29,6 +29,8 @@ public class gameController : MonoBehaviour
     public GameObject prefabGate;
     public GameObject[] prefabTargets;
 
+    public List<targetScript> targetList;
+
     public float gameTimeGameOn = 300f;
     public float gameTimeResetWait = 60f;
 
@@ -67,6 +69,7 @@ public class gameController : MonoBehaviour
             newTarget.transform.SetParent(randomLocation);
             newTarget.GetComponent<targetScript>().mainGC = this;
             newTarget.transform.localPosition = Vector3.zero;
+            targetList.Add(newTarget.GetComponent<targetScript>());
         }
     }
     // Update is called once per frame
