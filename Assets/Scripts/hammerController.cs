@@ -138,7 +138,7 @@ public class hammerController : MonoBehaviour
                     hammerRB.mass = heldRight+2f;
                     rightHandRay.SendHapticImpulse(heldRight * 0.2f, 0.1f);
                     //hammerFXScript.myTrail.emissionRate = heldRight;
-                    hammer.transform.Rotate(Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight));
+                    //hammer.transform.Rotate(Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight));
                 }
                 hammerGrabScript.throwVelocityScale = 3f + heldRight;
             }
@@ -181,7 +181,7 @@ public class hammerController : MonoBehaviour
                     hammerRB.mass = heldLeft + 2f;
                     leftHandRay.SendHapticImpulse(heldLeft * 0.2f, 0.1f);
                     //hammerFXScript.myTrail.emissionRate = heldLeft;
-                    hammer.transform.Rotate(Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft));
+                    //hammer.transform.Rotate(Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft));
                 }
                 hammerGrabScript.throwVelocityScale = 3f + heldLeft;
             }

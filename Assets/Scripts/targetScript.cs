@@ -7,6 +7,8 @@ public class targetScript : MonoBehaviour
     public int pointValue = 1;
     public gameController mainGC;
 
+    public Material[] targetMats;
+
     public Rigidbody myRB;
     public AudioSource myAS;
     public bool isHit = false;
@@ -30,6 +32,8 @@ public class targetScript : MonoBehaviour
     {
         myRB = GetComponent<Rigidbody>();
         myAS = GetComponent<AudioSource>();
+        int mat = Random.Range(0, targetMats.Length);
+        transform.GetChild(0).GetComponent<MeshRenderer>().material = targetMats[mat];
     }
 
     // Update is called once per frame
@@ -40,7 +44,7 @@ public class targetScript : MonoBehaviour
             disappearTimer -= Time.deltaTime;
             if ( disappearTimer < 0f )
             {
-                mainGC.targetList.Remove(this);
+                mainGC.targetList.Remove(gameObject);
                 Destroy(this.gameObject);
             }
         }
