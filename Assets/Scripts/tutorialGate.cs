@@ -10,9 +10,9 @@ public class tutorialGate : MonoBehaviour
     private float deleteTimer = 10f;
     private bool smashed = false;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.rigidbody.velocity.magnitude > 2f)
+        if (other.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 2f)
         {
             foreach (Transform child in transform)
             {
@@ -23,6 +23,7 @@ public class tutorialGate : MonoBehaviour
             myAS.Play();
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -150,7 +150,7 @@ public class gameController : MonoBehaviour
                     uiPointsGold.SetActive(false);
                     var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
                     newTarget.GetComponent<tutorialGate>().mainGC = this;
-                    newTarget.transform.localPosition = new Vector3(-6.5f, 1.26f, 2.83f);
+                    newTarget.transform.localPosition = new Vector3(-6.76f, 1.45f, 2.32f);
                     musicTutorial.Play();
                     hammerGameObject.SetActive(true);
                 }
