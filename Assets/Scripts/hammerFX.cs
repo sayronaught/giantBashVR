@@ -25,12 +25,12 @@ public class hammerFX : MonoBehaviour
             explosion.transform.position = transform.position;
             explosion.transform.localScale = new Vector3(mainHC.chargeLightning, mainHC.chargeLightning, mainHC.chargeLightning);
             var explosionAS = explosion.GetComponent<AudioSource>();
-            if ( mainHC.chargeLightning > 5f )
+            if ( mainHC.chargeLightning > 6f )
             {
                 explosionAS.clip = thunderclaps[3];
-            } else if (mainHC.chargeLightning > 2.5f) {
+            } else if (mainHC.chargeLightning > 4f) {
                 explosionAS.clip = thunderclaps[2];
-            } else if (mainHC.chargeLightning > 1f) {
+            } else if (mainHC.chargeLightning > 2f) {
                 explosionAS.clip = thunderclaps[1];
             } else {
                 explosionAS.clip = thunderclaps[0];
