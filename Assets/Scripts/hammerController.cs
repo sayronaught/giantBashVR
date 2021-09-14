@@ -161,9 +161,9 @@ public class hammerController : MonoBehaviour
             {
                 leftAnim.SetBool("grab", true);
                 hammerFXScript.myLightning.Clear();
-                //hammer.transform.position = leftHand.transform.position+(leftHand.transform.up*0.15f);
-                //hammer.transform.rotation = leftHand.transform.rotation;
-                //hammer.transform.Rotate(-75, 0, 90);
+                hammer.transform.position = leftHand.transform.position+(leftHand.transform.up*0.15f);
+                hammer.transform.rotation = leftHand.transform.rotation;
+                hammer.transform.Rotate(-75, 0, 90);
                 hammerRB.velocity = Vector3.zero;
                 hammerRB.angularVelocity = Vector3.zero;
                 rightHoldPositions.Add(leftHand.transform.position);
