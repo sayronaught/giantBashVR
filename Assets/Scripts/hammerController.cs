@@ -137,7 +137,7 @@ public class hammerController : MonoBehaviour
                 {
                     hammerRB.mass = heldRight+2f;
                     rightHandRay.SendHapticImpulse(heldRight * 0.2f, 0.1f);
-                    hammerFXScript.myTrail.emissionRate = heldRight;
+                    //hammerFXScript.myTrail.emissionRate = heldRight;
                     hammer.transform.Rotate(Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight));
                 }
                 hammerGrabScript.throwVelocityScale = 3f + heldRight;
@@ -148,7 +148,7 @@ public class hammerController : MonoBehaviour
             leftAnim.SetBool("summoning", true);
             distance = Vector3.Distance(hammer.transform.position, leftHand.transform.position + (leftHand.transform.forward * 0.10f));
             inverseTransformDummy = leftHand.transform.InverseTransformPoint(hammer.transform.position);
-            if (distance > 0.15f || inverseTransformDummy.z < 0f)
+            if (distance > 0.25f || inverseTransformDummy.z < 0f)
             {
                 //hammer.transform.position = rightHand.transform.position;
                 hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, leftHand.transform.position+(leftHand.transform.forward*0.1f), Time.deltaTime * magnetspeed);
@@ -180,7 +180,7 @@ public class hammerController : MonoBehaviour
                 {
                     hammerRB.mass = heldLeft + 2f;
                     leftHandRay.SendHapticImpulse(heldLeft * 0.2f, 0.1f);
-                    hammerFXScript.myTrail.emissionRate = heldLeft;
+                    //hammerFXScript.myTrail.emissionRate = heldLeft;
                     hammer.transform.Rotate(Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft));
                 }
                 hammerGrabScript.throwVelocityScale = 3f + heldLeft;
