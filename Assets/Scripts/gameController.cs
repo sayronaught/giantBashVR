@@ -17,6 +17,7 @@ public class gameController : MonoBehaviour
     public AudioSource fxApplause;
     public GameObject targetLocations;
     public GameObject hammerGameObject;
+    public GameObject bigBossGnot;
 
     public Text uiTime;
     public Text uiPoints;
@@ -113,6 +114,7 @@ public class gameController : MonoBehaviour
                     musicBossLevel.Play();
                     uiTimeGold.SetActive(true);
                     uiTimeSilver.SetActive(false);
+                    bigBossGnot.GetComponent<Animator>().SetBool("wakeup", true);
                 }
             break;
             case 3: // boss level
