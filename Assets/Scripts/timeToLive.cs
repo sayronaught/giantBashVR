@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class timeToLive : MonoBehaviour
 {
-    private float myTimeToLive = 0.5f;
+    private float myTimeToLive = 7f;
 
     // Start is called before the first frame update
     void Start()

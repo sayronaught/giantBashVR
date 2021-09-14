@@ -27,6 +27,7 @@ public class hammerController : MonoBehaviour
     private float magnetspeed;
     private float magnetmultiplier = 1.1f;
     private float magnetminimum = 2f;
+    public bool supercharged = false;
 
     public List<Vector3> rightHoldPositions;
 
@@ -43,7 +44,6 @@ public class hammerController : MonoBehaviour
     private float heldLeft = 0f;
     private float heldRight = 0f;
     public float chargeLightning = 0f;
-    private float chargeFire = 0f;
     private Vector3 inverseTransformDummy;
 
     public void changeLightning(float value)
@@ -51,12 +51,6 @@ public class hammerController : MonoBehaviour
         chargeLightning = value;
         hammerFXScript.myLightning.emissionRate = value;
         hammerFXScript.myLightningSFX.volume = value * 0.05f;
-    }
-    public void changeFire(float value)
-    {
-        chargeFire = value;
-        hammerFXScript.myFire.emissionRate = value*3f;
-        hammerFXScript.myFireSFX.volume = value * 0.05f;
     }
     public bool beingSummoned()
     {
@@ -130,7 +124,7 @@ public class hammerController : MonoBehaviour
                 hammerRB.velocity = Vector3.zero;
                 hammerRB.angularVelocity = Vector3.zero;
                 rightHoldPositions.Add(rightHand.transform.position);
-                //hammerGrabScript.attachTransform = rightHand.transform;
+                supercharged = false;
                 if (heldRight == 0f )
                 {
                     rightHandRay.SendHapticImpulse(1f, 0.2f);
@@ -138,7 +132,6 @@ public class hammerController : MonoBehaviour
                 }                    
                 heldRight += Time.deltaTime*3f;
                 changeLightning(heldRight);
-                changeFire(0f);
                 if (heldRight > 9f) heldRight = 9f;
                 if (heldRight > 0.5f)
                 {
@@ -168,20 +161,20 @@ public class hammerController : MonoBehaviour
             {
                 leftAnim.SetBool("grab", true);
                 hammerFXScript.myLightning.Clear();
-                hammer.transform.position = leftHand.transform.position+(leftHand.transform.up*0.15f);
-                hammer.transform.rotation = leftHand.transform.rotation;
-                hammer.transform.Rotate(-75, 0, 90);
+                //hammer.transform.position = leftHand.transform.position+(leftHand.transform.up*0.15f);
+                //hammer.transform.rotation = leftHand.transform.rotation;
+                //hammer.transform.Rotate(-75, 0, 90);
                 hammerRB.velocity = Vector3.zero;
                 hammerRB.angularVelocity = Vector3.zero;
                 rightHoldPositions.Add(leftHand.transform.position);
+                supercharged = false;
                 if (heldLeft == 0f )
                 {
                     leftHandRay.SendHapticImpulse(1f, 0.2f);
                     leftCatch.Play();
                 }                    
                 heldLeft += Time.deltaTime*3f;
-                changeLightning(0f);
-                changeFire(heldLeft);
+                changeLightning(heldLeft);
                 if (heldLeft > 9f) heldLeft = 9f;
                 if (heldLeft > 0.5f)
                 {

@@ -10,9 +10,9 @@ public class hammerFX : MonoBehaviour
     public hammerController myHC;
     public ParticleSystem myLightning;
     public AudioSource myLightningSFX;
-    public ParticleSystem myFire;
-    public AudioSource myFireSFX;
     public hammerController mainHC;
+
+    public AudioClip[] thunderclaps;
 
     public AudioSource myAS;
     private Rigidbody myRB;
@@ -24,11 +24,22 @@ public class hammerFX : MonoBehaviour
             var explosion = Instantiate(prefabLightningExp);
             explosion.transform.position = transform.position;
             explosion.transform.localScale = new Vector3(mainHC.chargeLightning, mainHC.chargeLightning, mainHC.chargeLightning);
+            var explosionAS = explosion.GetComponent<AudioSource>();
+            if ( mainHC.chargeLightning > 15f )
+            {
+                explosionAS.clip = thunderclaps[3];
+            } else if (mainHC.chargeLightning > 10f) {
+                explosionAS.clip = thunderclaps[2];
+            } else if (mainHC.chargeLightning > 5f) {
+                explosionAS.clip = thunderclaps[1];
+            } else {
+                explosionAS.clip = thunderclaps[0];
+            }
+
         }
         mainHC.changeLightning(0f);
+        mainHC.supercharged = false;
         myLightning.Clear();
-        mainHC.changeFire(0f);
-        myFire.Clear();
     }
 
     // Start is called before the first frame update
@@ -53,6 +64,11 @@ public class hammerFX : MonoBehaviour
             }
         } else {
             myTrail.emissionRate = myRB.velocity.magnitude * 0.1f;
+        }
+        if ( mainHC.supercharged == false && transform.position.y > 20f )
+        {
+            mainHC.supercharged = true;
+            mainHC.changeLightning(mainHC.chargeLightning * 2f);
         }
     }
 }
