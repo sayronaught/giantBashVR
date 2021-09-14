@@ -127,7 +127,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c198e4c89c500448814244efc0d27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointValue: 1
   mainGC: {fileID: 0}
+  targetMats:
+  - {fileID: 2100000, guid: a6380f48bb8bfe24ba43a274c931e9f4, type: 2}
+  - {fileID: 2100000, guid: 9cd92092af5b08648a126c11806ce459, type: 2}
+  - {fileID: 2100000, guid: d63b141bea4f2af4eb9429ab93432f85, type: 2}
+  - {fileID: 2100000, guid: d789eecca8a1f7a4089e7c5d0de370e5, type: 2}
+  - {fileID: 2100000, guid: a2c44cfb7385a9246a0e7fcbc88f44d7, type: 2}
+  myRB: {fileID: 0}
+  myAS: {fileID: 0}
+  isHit: 0
+  disappearTimer: 5
 --- !u!82 &5984043142322734732
 AudioSource:
   m_ObjectHideFlags: 0

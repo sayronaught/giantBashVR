@@ -29,7 +29,7 @@ public class gameController : MonoBehaviour
     public GameObject prefabGate;
     public GameObject[] prefabTargets;
 
-    public List<targetScript> targetList;
+    public List<GameObject> targetList;
 
     public float gameTimeGameOn = 300f;
     public float gameTimeResetWait = 60f;
@@ -54,6 +54,7 @@ public class gameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        targetList = new List<GameObject>();
         thePlayer.transform.position = posTutorial.position;
         //var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
         //newTarget.GetComponent<tutorialGate>().mainGC = this;
@@ -69,13 +70,13 @@ public class gameController : MonoBehaviour
             newTarget.transform.SetParent(randomLocation);
             newTarget.GetComponent<targetScript>().mainGC = this;
             newTarget.transform.localPosition = Vector3.zero;
-            targetList.Add(newTarget.GetComponent<targetScript>());
+            targetList.Add(newTarget);
         }
     }
     // Update is called once per frame
     void Update()
     {
-        debugText.text = "Debug: music/state timer " + gamestageCountDown.ToString();
+        //debugText.text = "Debug: music/state timer " + gamestageCountDown.ToString();
         gamestageCountDown -= Time.deltaTime;
         if ( gamestageCountDown < 0f )
         {
