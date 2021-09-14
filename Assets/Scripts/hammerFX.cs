@@ -10,9 +10,9 @@ public class hammerFX : MonoBehaviour
     public hammerController myHC;
     public ParticleSystem myLightning;
     public AudioSource myLightningSFX;
-    public ParticleSystem myFire;
-    public AudioSource myFireSFX;
     public hammerController mainHC;
+
+    public AudioClip[] thunderclaps;
 
     public AudioSource myAS;
     private Rigidbody myRB;
@@ -24,11 +24,22 @@ public class hammerFX : MonoBehaviour
             var explosion = Instantiate(prefabLightningExp);
             explosion.transform.position = transform.position;
             explosion.transform.localScale = new Vector3(mainHC.chargeLightning, mainHC.chargeLightning, mainHC.chargeLightning);
+            var explosionAS = explosion.GetComponent<AudioSource>();
+            if ( mainHC.chargeLightning > 5f )
+            {
+                explosionAS.clip = thunderclaps[3];
+            } else if (mainHC.chargeLightning > 2.5f) {
+                explosionAS.clip = thunderclaps[2];
+            } else if (mainHC.chargeLightning > 1f) {
+                explosionAS.clip = thunderclaps[1];
+            } else {
+                explosionAS.clip = thunderclaps[0];
+            }
+            explosionAS.Play();
         }
         mainHC.changeLightning(0f);
+        mainHC.supercharged = false;
         myLightning.Clear();
-        mainHC.changeFire(0f);
-        myFire.Clear();
     }
 
     // Start is called before the first frame update
@@ -41,7 +52,7 @@ public class hammerFX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myAS.volume = myRB.velocity.magnitude * 0.05f;
+        myAS.volume = myRB.velocity.magnitude * 0.1f;
         if (myHC.beingSummoned())
         {
             if (myHC.beingHeld())
@@ -49,10 +60,15 @@ public class hammerFX : MonoBehaviour
                 myAS.volume = 0f;
             } else
             {
-                myAS.volume = myHC.summonSpeed() * 0.05f;
+                myAS.volume = myHC.summonSpeed() * 0.1f;
             }
         } else {
-            myTrail.emissionRate = myRB.velocity.magnitude * 0.1f;
+            myTrail.emissionRate = myRB.velocity.magnitude * 0.2f;
+        }
+        if ( mainHC.supercharged == false && transform.position.y > 10f )
+        {
+            mainHC.supercharged = true;
+            mainHC.changeLightning(mainHC.chargeLightning * 2f);
         }
     }
 }
