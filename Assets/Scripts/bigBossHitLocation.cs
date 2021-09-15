@@ -11,7 +11,8 @@ public class bigBossHitLocation : MonoBehaviour
     {
         if ( collision.transform.tag == "Hammer")
         {
-
+            float dam = (bigBossScript.mainHC.chargeLightning + 1f)*damageMultiplier;
+            bigBossScript.takeDamage(dam);
         }
     }
 
