@@ -18,7 +18,6 @@ public class gameController : MonoBehaviour
     public AudioSource fxApplause;
     public GameObject targetLocations;
     public GameObject hammerGameObject;
-    public GameObject bigBossGnot;
 
     public Text uiTime;
     public Text uiPoints;
@@ -28,6 +27,7 @@ public class gameController : MonoBehaviour
     public GameObject uiPointsGold;
     public GameObject uiBossBar;
     public Text debugText;
+    public bigBossGnot bigBossScript;
 
     public GameObject prefabGate;
     public GameObject[] prefabTargets;
@@ -121,7 +121,7 @@ public class gameController : MonoBehaviour
                         target.isHit = true;
                         target.disappearTimer = 0f;
                     }
-                    bigBossGnot.GetComponent<Animator>().SetBool("wakeup", true);
+                    bigBossScript.wakeUp();
                     uiBossBar.SetActive(true);
                 }
             break;
