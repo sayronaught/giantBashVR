@@ -9,6 +9,8 @@ public class bigBossGnot : MonoBehaviour
     public float Hitpoints = 281f;
     public RawImage hitPointBar;
 
+    public AudioClip clipRoar;
+    public AudioClip[] footSteps;
 
     private AudioSource myAS;
     private Animator myAnim;

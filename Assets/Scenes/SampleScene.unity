@@ -9256,8 +9256,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ba94abdfe60e64793e4c6ff4ae2a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAwake: 0
   Hitpoints: 100
   hitPointBar: {fileID: 340884748}
+  clipRoar: {fileID: 0}
+  footSteps: []
+--- !u!1 &1206493143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3897462237488877691, guid: 329ff41e602108a40be092b940bf61fd, type: 3}
+  m_PrefabInstance: {fileID: 1206493138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1206493144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206493143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61e97f72e4be4142afb1f98178e7156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bigBossScript: {fileID: 1206493142}
+  damageMultiplier: 5
+--- !u!65 &1206493145
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206493143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28, y: 0.41, z: 0.14}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1206493146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2453550708452717748, guid: 329ff41e602108a40be092b940bf61fd, type: 3}
+  m_PrefabInstance: {fileID: 1206493138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1206493147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206493146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61e97f72e4be4142afb1f98178e7156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bigBossScript: {fileID: 1206493142}
+  damageMultiplier: 1
+--- !u!65 &1206493148
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206493146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.31, y: 0.95, z: 0.25}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1206642869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8263499382980546204, guid: 67e207bd4c1d0e943b8a8e357e63d970, type: 3}
@@ -15539,7 +15606,6 @@ MonoBehaviour:
   fxApplause: {fileID: 166911278}
   targetLocations: {fileID: 1351886639}
   hammerGameObject: {fileID: 2033999382}
-  bigBossGnot: {fileID: 1206493139}
   uiTime: {fileID: 73684709}
   uiPoints: {fileID: 571205064}
   uiTimeSilver: {fileID: 1026442349}
@@ -15548,6 +15614,7 @@ MonoBehaviour:
   uiPointsGold: {fileID: 1411466738}
   uiBossBar: {fileID: 525455983}
   debugText: {fileID: 1278599639}
+  bigBossScript: {fileID: 0}
   prefabGate: {fileID: 1457830503459418958, guid: 6d5edc371aeb0f246b24ecd249b187ee, type: 3}
   prefabTargets:
   - {fileID: 4472594817413776547, guid: 4f6ab423178b9ab49816df58466a9a2c, type: 3}
