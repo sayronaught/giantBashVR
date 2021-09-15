@@ -34,6 +34,7 @@ public class targetScript : MonoBehaviour
         myAS = GetComponent<AudioSource>();
         int mat = Random.Range(0, targetMats.Length);
         transform.GetChild(0).GetComponent<MeshRenderer>().material = targetMats[mat];
+        transform.localPosition = new Vector3(0f, -2f, 0f);
     }
 
     // Update is called once per frame
@@ -47,6 +48,8 @@ public class targetScript : MonoBehaviour
                 mainGC.targetList.Remove(this);
                 Destroy(this.gameObject);
             }
+        } else {
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, Vector3.zero, Time.deltaTime * 0.25f);
         }
     }
 }
