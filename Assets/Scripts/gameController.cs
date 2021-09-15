@@ -30,14 +30,14 @@ public class gameController : MonoBehaviour
     public GameObject prefabGate;
     public GameObject[] prefabTargets;
 
-    public List<GameObject> targetList;
+    public List<targetScript> targetList;
 
     public float gameTimeGameOn = 300f;
     public float gameTimeResetWait = 60f;
 
-    private float gamestageCountDown = 10f;
+    public float gamestageCountDown = 10f;
     private float targetSpawnTimer = 0f;
-    private int gameStage = 0; // 0 tutorial, 1 approach, 2 game on, 3 boss level, 4 post score
+    public int gameStage = 0; // 0 tutorial, 1 approach, 2 game on, 3 boss level, 4 post score
     private int gamePoints = 0;
 
     private TimeSpan ts;
@@ -55,7 +55,7 @@ public class gameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetList = new List<GameObject>();
+        targetList = new List<targetScript>();
         thePlayer.transform.position = posTutorial.position;
         //var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
         //newTarget.GetComponent<tutorialGate>().mainGC = this;
@@ -71,7 +71,7 @@ public class gameController : MonoBehaviour
             newTarget.transform.SetParent(randomLocation);
             newTarget.GetComponent<targetScript>().mainGC = this;
             newTarget.transform.localPosition = Vector3.zero;
-            targetList.Add(newTarget);
+            targetList.Add(newTarget.GetComponent<targetScript>());
         }
     }
     // Update is called once per frame
@@ -114,6 +114,11 @@ public class gameController : MonoBehaviour
                     musicBossLevel.Play();
                     uiTimeGold.SetActive(true);
                     uiTimeSilver.SetActive(false);
+                    foreach ( targetScript target in targetList)
+                    {
+                        target.isHit = true;
+                        target.disappearTimer = 0f;
+                    }
                     bigBossGnot.GetComponent<Animator>().SetBool("wakeup", true);
                 }
             break;
@@ -121,11 +126,6 @@ public class gameController : MonoBehaviour
                 ts = TimeSpan.FromSeconds((double)gamestageCountDown);
                 uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
                 targetSpawnTimer -= Time.deltaTime;
-                if (targetSpawnTimer < 0f)
-                {
-                    spawnTarget();
-                    targetSpawnTimer = 3f;
-                }
                 if (gamestageCountDown < 0f)
                 {
                     gamestageCountDown = gameTimeResetWait;

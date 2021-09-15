@@ -15345,6 +15345,8 @@ MonoBehaviour:
   targetList: []
   gameTimeGameOn: 310
   gameTimeResetWait: 60
+  gamestageCountDown: 10
+  gameStage: 0
 --- !u!82 &1928650047
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15595,15 +15597,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 308a744f28e285a48a345566c03f9cf2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.236
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 308a744f28e285a48a345566c03f9cf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.9
+      value: 0.526
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 308a744f28e285a48a345566c03f9cf2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.74
+      value: -0.104
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 308a744f28e285a48a345566c03f9cf2, type: 3}
       propertyPath: m_LocalRotation.w

@@ -44,7 +44,7 @@ public class targetScript : MonoBehaviour
             disappearTimer -= Time.deltaTime;
             if ( disappearTimer < 0f )
             {
-                mainGC.targetList.Remove(gameObject);
+                mainGC.targetList.Remove(this);
                 Destroy(this.gameObject);
             }
         }

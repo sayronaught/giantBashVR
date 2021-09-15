@@ -49,7 +49,7 @@ public class hammerController : MonoBehaviour
     public void changeLightning(float value)
     {
         chargeLightning = value;
-        hammerFXScript.myLightning.emissionRate = value;
+        hammerFXScript.myLightning.emissionRate=value;
         hammerFXScript.myLightningSFX.volume = value * 0.05f;
     }
     public bool beingSummoned()
