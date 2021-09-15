@@ -10,6 +10,7 @@ public class gameController : MonoBehaviour
     public GameObject thePlayer;
     public Transform posTutorial;
     public Transform posGameOn;
+    public Transform posAdvance;
     public AudioSource musicTutorial;
     public AudioSource musicGameOn;
     public AudioSource musicBossLevel;
