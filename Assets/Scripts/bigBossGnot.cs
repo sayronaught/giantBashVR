@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class bigBossGnot : MonoBehaviour
 {
 
-    public float Hitpoints = 100f;
+    public float Hitpoints = 281f;
+    public RawImage hitPointBar;
 
     private AudioSource myAS;
 

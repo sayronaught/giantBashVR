@@ -26,6 +26,7 @@ public class gameController : MonoBehaviour
     public GameObject uiTimeGold;
     public GameObject uiPointsSilver;
     public GameObject uiPointsGold;
+    public GameObject uiBossBar;
     public Text debugText;
 
     public GameObject prefabGate;
@@ -121,6 +122,7 @@ public class gameController : MonoBehaviour
                         target.disappearTimer = 0f;
                     }
                     bigBossGnot.GetComponent<Animator>().SetBool("wakeup", true);
+                    uiBossBar.SetActive(true);
                 }
             break;
             case 3: // boss level
@@ -151,6 +153,7 @@ public class gameController : MonoBehaviour
                     uiPoints.text = "-";
                     uiPointsSilver.SetActive(true);
                     uiPointsGold.SetActive(false);
+                    uiBossBar.SetActive(false);
                     var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
                     newTarget.GetComponent<tutorialGate>().mainGC = this;
                     newTarget.transform.localPosition = new Vector3(-6.76f, 1.45f, 2.32f);
