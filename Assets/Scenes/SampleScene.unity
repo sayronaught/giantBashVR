@@ -15893,8 +15893,8 @@ MonoBehaviour:
   myLightning: {fileID: 1281635029}
   myLightningSFX: {fileID: 1281635030}
   mainHC: {fileID: 1856612629}
-  mainGC: {fileID: 0}
-  debugText: {fileID: 0}
+  mainGC: {fileID: 1928650046}
+  debugText: {fileID: 1278599639}
   thunderclaps:
   - {fileID: 8300000, guid: c797b02b2e32bfb4fba83c3926419c2f, type: 3}
   - {fileID: 8300000, guid: 8ff63b0310f54604a8751b6603d75599, type: 3}

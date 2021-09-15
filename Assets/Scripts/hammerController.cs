@@ -68,6 +68,7 @@ public class hammerController : MonoBehaviour
     }
     void updatecontroller()
     {
+        if (Application.isEditor) return;
         var leftHandDevices = new List<UnityEngine.XR.InputDevice>();
         var rightHandDevices = new List<UnityEngine.XR.InputDevice>();
         UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
