@@ -16,7 +16,7 @@ public class targetScript : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if ( !isHit )
+        if ( !isHit && collision.transform.tag == "Hammer" )
         {
             mainGC.addPoints(pointValue);
             isHit = true;
