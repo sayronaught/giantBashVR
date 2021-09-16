@@ -124,15 +124,15 @@ public class bigBossGnot : MonoBehaviour
                     }
                     break;
                 case 2: // throw1
-                    transform.LookAt(throwTarget1.transform.position);
+                    transform.LookAt(throwTarget1.position);
                     if ( !flyingProjectile )
                     {
                         myAnim.SetBool("throw", true);
                         myAnim.SetBool("dance", true);
                     } else {
                         myAnim.SetBool("throw", false);
-                        distance = Vector3.Distance(flyingProjectile.transform.position, throwTarget1.transform.position);
-                        flyingProjectile.transform.position = Vector3.MoveTowards(flyingProjectile.transform.position, throwTarget1.transform.position + (Vector3.up*distance*0.45f), Time.deltaTime * 5f);
+                        distance = Vector3.Distance(flyingProjectile.transform.position, throwTarget1.position);
+                        flyingProjectile.transform.position = Vector3.MoveTowards(flyingProjectile.transform.position, throwTarget1.position + (Vector3.up*distance*0.45f), Time.deltaTime * 5f);
                         if ( distance < 1f)
                         {
                             throwTarget1GO.SetActive(false);
@@ -155,8 +155,32 @@ public class bigBossGnot : MonoBehaviour
                     }
                     break;
                 case 4: // throw 2
+                    transform.LookAt(throwTarget2.position);
+                    if (!flyingProjectile)
+                    {
+                        myAnim.SetBool("throw", true);
+                    } else {
+                        myAnim.SetBool("throw", false);
+                        distance = Vector3.Distance(flyingProjectile.transform.position, throwTarget2.position);
+                        flyingProjectile.transform.position = Vector3.MoveTowards(flyingProjectile.transform.position, throwTarget2.position + (Vector3.up * distance * 0.45f), Time.deltaTime * 5f);
+                        if (distance < 1f)
+                        {
+                            throwTarget2GO.SetActive(false);
+                            Destroy(flyingProjectile);
+                            bossStage = 5;
+                        }
+                    }
                     break;
                 case 5: // walk to final
+                    myAnim.SetBool("walking", true);
+                    transform.position = Vector3.MoveTowards(transform.position, posFinal.position, Time.deltaTime * 1.5f);
+                    transform.LookAt(posFinal.position);
+                    distance = Vector3.Distance(transform.position, posFinal.position);
+                    if (distance < 1f)
+                    {
+                        myAnim.SetBool("walking", false);
+                        bossStage = 6;
+                    }
                     break;
                 case 6: // attack player
                     break;

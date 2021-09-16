@@ -130,6 +130,12 @@ public class gameController : MonoBehaviour
                 ts = TimeSpan.FromSeconds((double)gamestageCountDown);
                 uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
                 targetSpawnTimer -= Time.deltaTime;
+                if ( bigBossScript.bossStage == 0 )
+                {// waking up
+                    thePlayer.transform.position = Vector3.MoveTowards(thePlayer.transform.position, posAdvance.position, Time.deltaTime * 0.5f);
+                } else { // isawake
+                    thePlayer.transform.position = Vector3.MoveTowards(thePlayer.transform.position, posGameOn.position, Time.deltaTime * 0.15f);
+                }
                 if (gamestageCountDown < 0f)
                 {
                     gamestageCountDown = gameTimeResetWait;
