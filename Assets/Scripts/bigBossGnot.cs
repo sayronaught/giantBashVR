@@ -65,6 +65,13 @@ public class bigBossGnot : MonoBehaviour
         flyingProjectile = heldProjectile;
         heldProjectile = null;
     }
+    public void Reset()
+    {
+        isAwake = false;
+        myAnim.SetTrigger("reset");
+        transform.position = new Vector3(-4.01f, 0.48f, 55.92f);
+        transform.LookAt(throwTarget1.position);
+    }
     public void wakeUp()
     {
         isAwake = true;

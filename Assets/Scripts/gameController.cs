@@ -155,6 +155,9 @@ public class gameController : MonoBehaviour
                     uiPointsSilver.SetActive(true);
                     uiPointsGold.SetActive(false);
                     uiBossBar.SetActive(false);
+                    bigBossScript.throwTarget1GO.SetActive(true);
+                    bigBossScript.throwTarget2GO.SetActive(true);
+                    bigBossScript.Reset();
                     var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
                     newTarget.GetComponent<tutorialGate>().mainGC = this;
                     newTarget.transform.localPosition = new Vector3(-6.76f, 1.45f, 2.32f);
