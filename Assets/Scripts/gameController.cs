@@ -113,6 +113,7 @@ public class gameController : MonoBehaviour
                 if (gamestageCountDown < 155f)
                 {
                     gameStage = 3;
+                    musicGameOn.Stop();
                     musicBossLevel.Play();
                     uiTimeGold.SetActive(true);
                     uiTimeSilver.SetActive(false);
