@@ -16,6 +16,11 @@ public class bigBossGnot : MonoBehaviour
     public Transform posThrow1;
     public Transform posThrow2;
     public Transform posFinal;
+    public Transform posProjectileSpawn;
+    public GameObject throwTarget1;
+    public GameObject throwTarget2;
+    public GameObject currentProjectile;
+    public GameObject prefabProjectile;
     public bool reeling = false;
 
     private AudioSource myAS;
@@ -58,6 +63,8 @@ public class bigBossGnot : MonoBehaviour
             reeling = true;
             myAnim.SetBool("walking", false);
             myAnim.SetBool("running", false);
+            myAnim.SetBool("throw", false);
+            myAnim.SetBool("dance", false);
         }
         myAnim.SetFloat("hitpoints", Hitpoints);
     }
@@ -86,6 +93,8 @@ public class bigBossGnot : MonoBehaviour
                     if (distance < 1f)
                     {
                         myAnim.SetBool("walking", false);
+                        myAnim.SetBool("throw", true);
+                        myAnim.SetBool("dance", true);
                         bossStage = 2;
                     }
                     break;
