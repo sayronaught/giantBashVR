@@ -2322,7 +2322,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7cff33ccd59013b41a1132d5d345efa3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8709,7 +8709,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bde65d70b4273db4ebb5a547c6d4f609, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9586,7 +9586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAwake: 0
-  Hitpoints: 100
+  Hitpoints: 280
   hitPointBar: {fileID: 340884748}
   mainHC: {fileID: 1856612629}
   clipRoar: {fileID: 8300000, guid: 557c0b2356ed78b438b6020fb6952806, type: 3}
@@ -15851,6 +15851,7 @@ MonoBehaviour:
   leftCatch: {fileID: 799693292}
   rightCatch: {fileID: 1175011655}
   hammer: {fileID: 2033999382}
+  mainGC: {fileID: 1928650046}
   controllerLeft: {fileID: 0}
   controllerRight: {fileID: 0}
   interactorLeft: {fileID: 0}
@@ -16971,7 +16972,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 116339a9a5db41a4c8d44cdf56e5c1c7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
