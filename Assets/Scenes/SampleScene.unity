@@ -472,6 +472,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 629447758}
+  - {fileID: 197445119}
+  - {fileID: 1955326232}
   m_Father: {fileID: 1928650045}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -663,6 +665,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &197445118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 197445119}
+  m_Layer: 0
+  m_Name: Throw1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &197445119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197445118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.35, y: 0.813, z: 45.81}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 152070400}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &204253585
 GameObject:
   m_ObjectHideFlags: 0
@@ -9264,6 +9296,13 @@ MonoBehaviour:
   footSteps:
   - {fileID: 8300000, guid: cf1d85aaed9147a4d861684ca5ea6974, type: 3}
   - {fileID: 8300000, guid: 3d7985d6c6f97a94d95ad99a6752a36d, type: 3}
+  posThrow1: {fileID: 197445119}
+  posThrow2: {fileID: 1955326232}
+  posFinal: {fileID: 629447758}
+  reeling: 0
+  currentTarget: {fileID: 629447758}
+  distance: 0
+  bossStage: 0
 --- !u!1 &1206493143 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3897462237488877691, guid: 329ff41e602108a40be092b940bf61fd, type: 3}
@@ -15601,7 +15640,7 @@ MonoBehaviour:
   thePlayer: {fileID: 1856612625}
   posTutorial: {fileID: 923385772}
   posGameOn: {fileID: 779379848}
-  posAdvance: {fileID: 0}
+  posAdvance: {fileID: 669036336}
   musicTutorial: {fileID: 1170068042}
   musicGameOn: {fileID: 667401195}
   musicBossLevel: {fileID: 2130041736}
@@ -15617,7 +15656,7 @@ MonoBehaviour:
   uiPointsGold: {fileID: 1411466738}
   uiBossBar: {fileID: 525455983}
   debugText: {fileID: 1278599639}
-  bigBossScript: {fileID: 0}
+  bigBossScript: {fileID: 1206493142}
   prefabGate: {fileID: 1457830503459418958, guid: 6d5edc371aeb0f246b24ecd249b187ee, type: 3}
   prefabTargets:
   - {fileID: 4472594817413776547, guid: 4f6ab423178b9ab49816df58466a9a2c, type: 3}
@@ -15722,6 +15761,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1955326231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1955326232}
+  m_Layer: 0
+  m_Name: Throw2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1955326232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955326231}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.76, y: 0.582, z: 40.67}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 152070400}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1973914428
 PrefabInstance:
   m_ObjectHideFlags: 0
