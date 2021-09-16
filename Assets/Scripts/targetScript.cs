@@ -21,7 +21,7 @@ public class targetScript : MonoBehaviour
             mainGC.addPoints(pointValue);
             isHit = true;
             myRB.isKinematic = false;
-            Vector3 force = collision.transform.position - transform.position;
+            Vector3 force = (collision.transform.position - transform.position)*100f;
             myRB.AddForce(force.normalized * 150f);
             myAS.Play();
         }

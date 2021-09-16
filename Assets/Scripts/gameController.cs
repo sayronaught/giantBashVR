@@ -127,6 +127,7 @@ public class gameController : MonoBehaviour
                 }
             break;
             case 3: // boss level
+                debugText.text = "Debug: boss hitpoints " + bigBossScript.Hitpoints.ToString();
                 ts = TimeSpan.FromSeconds((double)gamestageCountDown);
                 uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
                 targetSpawnTimer -= Time.deltaTime;
