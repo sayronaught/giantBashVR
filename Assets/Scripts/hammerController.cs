@@ -142,10 +142,7 @@ public class hammerController : MonoBehaviour
                     //hammerFXScript.myTrail.emissionRate = heldRight;
                     //hammer.transform.Rotate(Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight));
                 }
-                if ( mainGC.gameStage == 3 )// boss level
-                    hammerGrabScript.throwVelocityScale = 5f + heldRight*3f;
-                else // not boss level
-                    hammerGrabScript.throwVelocityScale = 3f + heldRight;
+                hammerGrabScript.throwVelocityScale = 3f + heldRight;
             }
         }
         else if (leftPress && heldRight == 0f)
@@ -188,10 +185,7 @@ public class hammerController : MonoBehaviour
                     //hammerFXScript.myTrail.emissionRate = heldLeft;
                     //hammer.transform.Rotate(Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft));
                 }
-                /*if (mainGC.gameStage == 3)// boss level
-                    hammerGrabScript.throwVelocityScale = 5f + heldLeft * 3f;
-                else // not boss level*/
-                    hammerGrabScript.throwVelocityScale = 3f + heldLeft;
+                hammerGrabScript.throwVelocityScale = 3f + heldLeft;
             }
         }
         else
