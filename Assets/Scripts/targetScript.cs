@@ -8,6 +8,7 @@ public class targetScript : MonoBehaviour
     public gameController mainGC;
 
     public Material[] targetMats;
+    public Material[] memeMats;
 
     public Rigidbody myRB;
     public AudioSource myAS;
@@ -34,6 +35,9 @@ public class targetScript : MonoBehaviour
         myAS = GetComponent<AudioSource>();
         int mat = Random.Range(0, targetMats.Length);
         transform.GetChild(0).GetComponent<MeshRenderer>().material = targetMats[mat];
+        mat = Random.Range(0, memeMats.Length);
+        if ( Random.Range(0,15)==1 )
+            transform.GetChild(0).GetComponent<MeshRenderer>().material = memeMats[mat];
         transform.localPosition = new Vector3(0f, -2f, 0f);
     }
 
