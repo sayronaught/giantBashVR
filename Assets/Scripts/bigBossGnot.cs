@@ -48,6 +48,10 @@ public class bigBossGnot : MonoBehaviour
     {
         bossStage = 1;
     }
+    public void eventReeling()
+    {
+        reeling = true;
+    }
     public void eventReelingRecover()
     {
         reeling = false;
