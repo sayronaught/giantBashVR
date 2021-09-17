@@ -20,6 +20,7 @@ public class tutorialGate : MonoBehaviour
             }
             mainGC.smashedGate();
             smashed = true;
+            GetComponent<BoxCollider>().enabled = false;
             myAS.Play();
         }
     }

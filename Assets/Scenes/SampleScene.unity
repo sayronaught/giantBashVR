@@ -9818,6 +9818,7 @@ MonoBehaviour:
   Hitpoints: 280
   hitPointBar: {fileID: 340884748}
   mainHC: {fileID: 1856612629}
+  mainGC: {fileID: 1928650046}
   clipRoar: {fileID: 8300000, guid: 557c0b2356ed78b438b6020fb6952806, type: 3}
   footSteps:
   - {fileID: 8300000, guid: cf1d85aaed9147a4d861684ca5ea6974, type: 3}
@@ -17685,6 +17686,10 @@ PrefabInstance:
     - target: {fileID: 1457830503459418958, guid: 6d5edc371aeb0f246b24ecd249b187ee, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1799795873050283546, guid: 6d5edc371aeb0f246b24ecd249b187ee, type: 3}
+      propertyPath: m_Size.z
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 1799795873050283546, guid: 6d5edc371aeb0f246b24ecd249b187ee, type: 3}
       propertyPath: m_IsTrigger
