@@ -142,7 +142,7 @@ public class hammerController : MonoBehaviour
                     //hammerFXScript.myTrail.emissionRate = heldRight;
                     //hammer.transform.Rotate(Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight));
                 }
-                hammerGrabScript.throwVelocityScale = 3f + heldRight;
+                hammerGrabScript.throwVelocityScale = 3f + heldRight*2f;
             }
         }
         else if (leftPress && heldRight == 0f)
@@ -185,7 +185,7 @@ public class hammerController : MonoBehaviour
                     //hammerFXScript.myTrail.emissionRate = heldLeft;
                     //hammer.transform.Rotate(Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft));
                 }
-                hammerGrabScript.throwVelocityScale = 3f + heldLeft;
+                hammerGrabScript.throwVelocityScale = 3f + heldLeft*2f;
             }
         }
         else

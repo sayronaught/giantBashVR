@@ -99,8 +99,9 @@ public class gameController : MonoBehaviour
             break;
             case 2: // game on
                 titlescreen.color = new Color(1f, 1f, 1f, titlescreen.color.a - (Time.deltaTime * 0.1f));
-                ts = TimeSpan.FromSeconds((double)gamestageCountDown);
-                uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
+                //ts = TimeSpan.FromSeconds((double)gamestageCountDown);
+                //uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
+                uiTime.text = TimeSpan.FromSeconds((double)gamestageCountDown).ToString("mm:ss");
                 targetSpawnTimer -= Time.deltaTime;
                 if ( targetSpawnTimer < 0f)
                 {
@@ -126,8 +127,9 @@ public class gameController : MonoBehaviour
             break;
             case 3: // boss level
                 debugText.text = "Debug: boss hitpoints " + bigBossScript.Hitpoints.ToString();
-                ts = TimeSpan.FromSeconds((double)gamestageCountDown);
-                uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
+                //ts = TimeSpan.FromSeconds((double)gamestageCountDown);
+                //uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
+                uiTime.text = TimeSpan.FromSeconds((double)gamestageCountDown).ToString("mm:ss");
                 targetSpawnTimer -= Time.deltaTime;
                 if ( bigBossScript.bossStage == 0 )
                 { // waking up

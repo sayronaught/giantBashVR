@@ -12,7 +12,7 @@ public class tutorialGate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 2f)
+        if (other.transform.tag == "Hammer")
         {
             foreach (Transform child in transform)
             {

@@ -9,7 +9,7 @@ public class bigBossHitLocation : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if ( collision.transform.tag == "Hammer")
+        if ( collision.transform.tag == "Hammer" && bigBossScript.isAwake )
         {
             float dam = (bigBossScript.mainHC.chargeLightning*5f + 5f)*damageMultiplier;
             bigBossScript.takeDamage(dam);
