@@ -37,7 +37,8 @@ public class hammerController : MonoBehaviour
 
     private Rigidbody hammerRB;
     private hammerFX hammerFXScript;
-    private XRGrabInteractable hammerGrabScript;
+    //private XRGrabInteractable hammerGrabScript;
+    private XrOffsetGrab hammerGrabScript;
     private XRRayInteractor leftHandRay;
     private XRRayInteractor rightHandRay;
     private float updateControllerTimer = 2f;
@@ -86,7 +87,8 @@ public class hammerController : MonoBehaviour
         interactorLeft = leftHand.GetComponent<XRRayInteractor>();
         interactorRight = rightHand.GetComponent<XRRayInteractor>();
         hammerRB = hammer.GetComponent<Rigidbody>();
-        hammerGrabScript = hammer.GetComponent<XRGrabInteractable>();
+        //hammerGrabScript = hammer.GetComponent<XRGrabInteractable>();
+        hammerGrabScript = hammer.GetComponent<XrOffsetGrab>();
         leftHandRay = leftHand.GetComponent<XRRayInteractor>();
         rightHandRay = rightHand.GetComponent<XRRayInteractor>();
         hammerFXScript = hammer.GetComponent<hammerFX>();
