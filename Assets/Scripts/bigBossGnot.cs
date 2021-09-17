@@ -30,7 +30,8 @@ public class bigBossGnot : MonoBehaviour
     private AudioSource myAS;
     private Animator myAnim;
     public float distance;
-    public int bossStage = 0; // 0 = wake up, 1 = advance to throw1, 2= throw1, 3 = advance to throw2, 4= throw2, 5 = advance fully, 6 = attack player
+    public int bossStage = 0; // 0 = wake up, 1 = advance to throw1, 2= throw1, 3 = advance to throw2, 4= throw2, 5 = dance until spawners destroyed, 6 = advance fully, 7 = attack player
+    public bool spawnersDestroyed = false; // when they are destroyed, he roars and runs to kill player
 
     public void playRoar()
     {
@@ -87,7 +88,7 @@ public class bigBossGnot : MonoBehaviour
     public void takeDamage(float damage)
     {
         Hitpoints -= damage;
-        hitPointBar.GetComponent<RectTransform>().sizeDelta = new Vector2(Hitpoints, 70);
+        hitPointBar.GetComponent<RectTransform>().sizeDelta = new Vector2(Hitpoints, 65);
         if (damage > 40f)
         {
             myAnim.SetTrigger("takedamage");
@@ -137,7 +138,6 @@ public class bigBossGnot : MonoBehaviour
                     if ( !flyingProjectile )
                     {
                         myAnim.SetBool("throw", true);
-                        myAnim.SetBool("dance", true);
                     } else {
                         myAnim.SetBool("throw", false);
                         distance = Vector3.Distance(flyingProjectile.transform.position, throwTarget1.position);
@@ -180,7 +180,16 @@ public class bigBossGnot : MonoBehaviour
                         }
                     }
                     break;
-                case 5: // walk to final
+                case 5: // dance until spawners destroyed
+                    myAnim.SetBool("dancing", true);
+                    transform.LookAt(posFinal.position);
+                    if (spawnersDestroyed)
+                    {
+                        myAnim.SetBool("roar", true);
+                        bossStage = 6;
+                    }
+                    break;
+                case 6: // walk to final
                     myAnim.SetBool("walking", true);
                     transform.position = Vector3.MoveTowards(transform.position, posFinal.position, Time.deltaTime * 1.5f);
                     transform.LookAt(posFinal.position);
@@ -191,7 +200,23 @@ public class bigBossGnot : MonoBehaviour
                         bossStage = 6;
                     }
                     break;
-                case 6: // attack player
+                case 7: // attack player
+                    transform.LookAt(mainGC.posGameOn.position);
+                    if (!flyingProjectile)
+                    {
+                        myAnim.SetBool("throw", true);
+                    }
+                    else
+                    {
+                        myAnim.SetBool("throw", false);
+                        distance = Vector3.Distance(flyingProjectile.transform.position, mainGC.posGameOn.position);
+                        flyingProjectile.transform.position = Vector3.MoveTowards(flyingProjectile.transform.position, mainGC.posGameOn.position + (Vector3.up * distance * 0.45f), Time.deltaTime * 5f);
+                        if (distance < 0.5f)
+                        {
+                            // something bad
+                            Destroy(flyingProjectile);
+                        }
+                    }
                     break;
                 default: // wake up
                     break;
