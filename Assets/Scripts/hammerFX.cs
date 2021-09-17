@@ -54,7 +54,8 @@ public class hammerFX : MonoBehaviour
                         target.myRB.isKinematic = false;
                     }
                     Vector3 force = (transform.position - target.transform.position)*100f;
-                    myRB.AddForce((force.normalized*100f) * (250f+(25f*mainHC.chargeLightning)));
+                    target.gameObject.GetComponent<Rigidbody>().AddForce((force.normalized * 100f) * (250f + (25f * mainHC.chargeLightning)));
+                    //myRB.AddForce((force.normalized*100f) * (250f+(25f*mainHC.chargeLightning)));
                 }
             }                
         }
