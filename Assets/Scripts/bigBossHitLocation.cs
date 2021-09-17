@@ -12,7 +12,7 @@ public class bigBossHitLocation : MonoBehaviour
         if ( collision.transform.tag == "Hammer" && bigBossScript.isAwake )
         {
             float dam = (bigBossScript.mainHC.chargeLightning*5f + 5f)*damageMultiplier;
-            bigBossScript.takeDamage(dam);
+            bigBossScript.takeDamage(dam+ collision.rigidbody.velocity.magnitude);
         }
     }
 

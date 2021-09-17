@@ -101,7 +101,11 @@ public class gameController : MonoBehaviour
                 titlescreen.color = new Color(1f, 1f, 1f, titlescreen.color.a - (Time.deltaTime * 0.1f));
                 //ts = TimeSpan.FromSeconds((double)gamestageCountDown);
                 //uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
-                uiTime.text = TimeSpan.FromSeconds((double)gamestageCountDown).ToString("mm:ss");
+                //uiTime.text = TimeSpan.FromSeconds((double)gamestageCountDown).ToString("mm:ss");
+                int timeInSecondsInt = (int)gamestageCountDown;  //We don't care about fractions of a second, so easy to drop them by just converting to an int
+                int minutes = timeInSecondsInt / 60;  //Get total minutes
+                int seconds = timeInSecondsInt - (minutes * 60);  //Get seconds for display alongside minutes
+                uiTime.text = minutes.ToString("D2") + ":" + seconds.ToString("D2");  //Create the string representation, where both seconds and minutes are at minimum 2 digits
                 targetSpawnTimer -= Time.deltaTime;
                 if ( targetSpawnTimer < 0f)
                 {
@@ -129,7 +133,11 @@ public class gameController : MonoBehaviour
                 debugText.text = "Debug: boss hitpoints " + bigBossScript.Hitpoints.ToString();
                 //ts = TimeSpan.FromSeconds((double)gamestageCountDown);
                 //uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
-                uiTime.text = TimeSpan.FromSeconds((double)gamestageCountDown).ToString("mm:ss");
+                //uiTime.text = TimeSpan.FromSeconds((double)gamestageCountDown).ToString("mm:ss");
+                int timeInSecondsInt2 = (int)gamestageCountDown;  //We don't care about fractions of a second, so easy to drop them by just converting to an int
+                int minutes2 = timeInSecondsInt2 / 60;  //Get total minutes
+                int seconds2 = timeInSecondsInt2 - (minutes2 * 60);  //Get seconds for display alongside minutes
+                uiTime.text = minutes2.ToString("D2") + ":" + seconds2.ToString("D2");  //Create the string representation, where both seconds and minutes are at minimum 2 digits
                 targetSpawnTimer -= Time.deltaTime;
                 if ( bigBossScript.bossStage == 0 )
                 { // waking up
