@@ -9,6 +9,7 @@ public class bigBossGnot : MonoBehaviour
     public float Hitpoints = 281f;
     public RawImage hitPointBar;
     public hammerController mainHC;
+    public gameController mainGC;
 
     public AudioClip clipRoar;
     public AudioClip[] footSteps;
@@ -83,7 +84,7 @@ public class bigBossGnot : MonoBehaviour
     {
         Hitpoints -= damage;
         hitPointBar.GetComponent<RectTransform>().sizeDelta = new Vector2(Hitpoints, 70);
-        if (damage > 5f)
+        if (damage > 25f)
         {
             myAnim.SetTrigger("takedamage");
             reeling = true;
@@ -92,6 +93,10 @@ public class bigBossGnot : MonoBehaviour
             myAnim.SetBool("throw", false);
             myAnim.SetBool("dance", false);
             if (heldProjectile) Destroy(heldProjectile);
+        }
+        if ( damage > 10f)
+        {
+            mainGC.addPoints((int)(damage * 0.1f));
         }
         myAnim.SetFloat("hitpoints", Hitpoints);
     }
