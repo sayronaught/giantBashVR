@@ -87,7 +87,7 @@ public class bigBossGnot : MonoBehaviour
     public void takeDamage(float damage)
     {
         Hitpoints -= damage;
-        hitPointBar.GetComponent<RectTransform>().sizeDelta = new Vector2(Hitpoints, 70);
+        hitPointBar.GetComponent<RectTransform>().sizeDelta = new Vector2(Hitpoints, 65);
         if (damage > 40f)
         {
             myAnim.SetTrigger("takedamage");
