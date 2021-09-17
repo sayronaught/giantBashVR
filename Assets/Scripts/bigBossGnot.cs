@@ -84,7 +84,7 @@ public class bigBossGnot : MonoBehaviour
     {
         Hitpoints -= damage;
         hitPointBar.GetComponent<RectTransform>().sizeDelta = new Vector2(Hitpoints, 70);
-        if (damage > 25f)
+        if (damage > 40f)
         {
             myAnim.SetTrigger("takedamage");
             reeling = true;

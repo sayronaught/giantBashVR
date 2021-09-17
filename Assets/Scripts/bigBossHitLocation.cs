@@ -13,6 +13,7 @@ public class bigBossHitLocation : MonoBehaviour
         {
             float dam = (bigBossScript.mainHC.chargeLightning*5f + 5f)*damageMultiplier;
             bigBossScript.takeDamage(dam+ collision.rigidbody.velocity.magnitude);
+            bigBossScript.mainGC.maxSpeed = (int)collision.rigidbody.velocity.magnitude;
         }
     }
 

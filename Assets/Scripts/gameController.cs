@@ -41,6 +41,8 @@ public class gameController : MonoBehaviour
     public int gameStage = 0; // 0 tutorial, 1 approach, 2 game on, 3 boss level, 4 post score
     private int gamePoints = 0;
 
+    public int maxSpeed = 0;
+
     private TimeSpan ts;
 
     public void smashedGate()
@@ -129,8 +131,8 @@ public class gameController : MonoBehaviour
                     uiBossBar.SetActive(true);
                 }
             break;
-            case 3: // boss level
-                debugText.text = "Debug: boss hitpoints " + bigBossScript.Hitpoints.ToString();
+            case 3: // boss level 
+                debugText.text = "Debug: boss hitpoints " + bigBossScript.Hitpoints.ToString()+"\n HS "+maxSpeed.ToString();
                 //ts = TimeSpan.FromSeconds((double)gamestageCountDown);
                 //uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
                 //uiTime.text = TimeSpan.FromSeconds((double)gamestageCountDown).ToString("mm:ss");
