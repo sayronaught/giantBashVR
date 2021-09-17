@@ -188,9 +188,9 @@ public class hammerController : MonoBehaviour
                     //hammerFXScript.myTrail.emissionRate = heldLeft;
                     //hammer.transform.Rotate(Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft));
                 }
-                if (mainGC.gameStage == 3)// boss level
+                /*if (mainGC.gameStage == 3)// boss level
                     hammerGrabScript.throwVelocityScale = 5f + heldLeft * 3f;
-                else // not boss level
+                else // not boss level*/
                     hammerGrabScript.throwVelocityScale = 3f + heldLeft;
             }
         }

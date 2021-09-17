@@ -108,7 +108,7 @@ public class gameController : MonoBehaviour
                 if ( targetSpawnTimer < 0f)
                 {
                     spawnTarget();
-                    targetSpawnTimer = 5f;
+                    targetSpawnTimer = 2f;
                 }
                 if (gamestageCountDown < 155f)
                 {
