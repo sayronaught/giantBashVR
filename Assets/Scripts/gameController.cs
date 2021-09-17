@@ -12,7 +12,6 @@ public class gameController : MonoBehaviour
     public Transform posGameOn;
     public Transform posAdvance;
     public AudioSource musicTutorial;
-    public AudioSource musicGameOn;
     public AudioSource musicBossLevel;
     public AudioSource fxHorn;
     public AudioSource fxApplause;
@@ -94,8 +93,6 @@ public class gameController : MonoBehaviour
                     thePlayer.transform.position = posGameOn.position;
                     gameStage = 2;
                     gamestageCountDown = gameTimeGameOn;
-                    musicGameOn.Play();
-                    musicTutorial.Stop();
                     fxHorn.Play();
                     for (int i = 0; i < 5; i++) spawnTarget();
                 }
@@ -110,10 +107,11 @@ public class gameController : MonoBehaviour
                     spawnTarget();
                     targetSpawnTimer = 2f;
                 }
-                if (gamestageCountDown < 155f)
+                if (gamestageCountDown < 0f)
                 {
                     gameStage = 3;
-                    musicGameOn.Stop();
+                    gamestageCountDown = 90f;
+                    musicTutorial.Stop();
                     musicBossLevel.Play();
                     uiTimeGold.SetActive(true);
                     uiTimeSilver.SetActive(false);
