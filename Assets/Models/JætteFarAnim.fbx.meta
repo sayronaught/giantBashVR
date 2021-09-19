@@ -381,6 +381,13 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.011730206
+        functionName: eventReeling
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.19061585
         functionName: eventPickupProjectile
         data: 
@@ -395,14 +402,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.011730206
-        functionName: eventReeling
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.98533726
+      - time: 0.90569127
         functionName: eventReelingRecover
         data: 
         objectReferenceParameter: {instanceID: 0}

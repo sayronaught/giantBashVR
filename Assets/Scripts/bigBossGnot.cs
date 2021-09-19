@@ -64,6 +64,7 @@ public class bigBossGnot : MonoBehaviour
         heldProjectile.transform.localScale=new Vector3(0.1f, 0.1f, 0.1f);
         heldProjectile.transform.localPosition = Vector3.zero;
         heldProjectile.transform.localRotation = Quaternion.identity;
+        myAnim.SetBool("throw", false);
     }
     public void eventReleaseProjectile()
     {
@@ -116,6 +117,41 @@ public class bigBossGnot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ( flyingProjectile )
+        {
+            switch (bossStage)
+            {
+                case 2:
+                    distance = Vector3.Distance(flyingProjectile.transform.position, throwTarget1.position);
+                    flyingProjectile.transform.position = Vector3.MoveTowards(flyingProjectile.transform.position, throwTarget1.position + (Vector3.up * distance * 0.45f), Time.deltaTime * 5f);
+                    if (distance < 1f)
+                    {
+                        throwTarget1GO.SetActive(false);
+                        Destroy(flyingProjectile);
+                        bossStage = 3;
+                    }
+                    break;
+                case 4:
+                    distance = Vector3.Distance(flyingProjectile.transform.position, throwTarget2.position);
+                    flyingProjectile.transform.position = Vector3.MoveTowards(flyingProjectile.transform.position, throwTarget2.position + (Vector3.up * distance * 0.45f), Time.deltaTime * 5f);
+                    if (distance < 1f)
+                    {
+                        throwTarget2GO.SetActive(false);
+                        Destroy(flyingProjectile);
+                        bossStage = 5;
+                    }
+                    break;
+                default:
+                    distance = Vector3.Distance(flyingProjectile.transform.position, mainGC.posGameOn.position);
+                    flyingProjectile.transform.position = Vector3.MoveTowards(flyingProjectile.transform.position, mainGC.posGameOn.position + (Vector3.up * distance * 0.45f), Time.deltaTime * 5f);
+                    if (distance < 0.5f)
+                    {
+                        // something bad
+                        Destroy(flyingProjectile);
+                    }
+                    break;
+            }
+        }
         //distance = Vector3.Distance(transform.position, currentTarget.position);
         //myAnim.SetFloat("moveSpeed", distance);
         if ( !reeling && isAwake )
@@ -139,15 +175,7 @@ public class bigBossGnot : MonoBehaviour
                     {
                         myAnim.SetBool("throw", true);
                     } else {
-                        myAnim.SetBool("throw", false);
-                        distance = Vector3.Distance(flyingProjectile.transform.position, throwTarget1.position);
-                        flyingProjectile.transform.position = Vector3.MoveTowards(flyingProjectile.transform.position, throwTarget1.position + (Vector3.up*distance*0.45f), Time.deltaTime * 5f);
-                        if ( distance < 1f)
-                        {
-                            throwTarget1GO.SetActive(false);
-                            Destroy(flyingProjectile);
-                            bossStage = 3;
-                        }
+                        myAnim.SetBool("throw", false);  
                     }
                     break;
                 case 3: // run to throw 2
@@ -170,22 +198,15 @@ public class bigBossGnot : MonoBehaviour
                         myAnim.SetBool("throw", true);
                     } else {
                         myAnim.SetBool("throw", false);
-                        distance = Vector3.Distance(flyingProjectile.transform.position, throwTarget2.position);
-                        flyingProjectile.transform.position = Vector3.MoveTowards(flyingProjectile.transform.position, throwTarget2.position + (Vector3.up * distance * 0.45f), Time.deltaTime * 5f);
-                        if (distance < 1f)
-                        {
-                            throwTarget2GO.SetActive(false);
-                            Destroy(flyingProjectile);
-                            bossStage = 5;
-                        }
                     }
                     break;
                 case 5: // dance until spawners destroyed
-                    myAnim.SetBool("dancing", true);
+                    myAnim.SetBool("dance", true);
                     transform.LookAt(posFinal.position);
                     if (spawnersDestroyed)
                     {
-                        myAnim.SetBool("roar", true);
+                        //myAnim.SetTrigger("roar");
+                        myAnim.SetBool("dance", false);
                         bossStage = 6;
                     }
                     break;
@@ -197,7 +218,7 @@ public class bigBossGnot : MonoBehaviour
                     if (distance < 1f)
                     {
                         myAnim.SetBool("walking", false);
-                        bossStage = 6;
+                        bossStage = 7;
                     }
                     break;
                 case 7: // attack player
@@ -209,13 +230,6 @@ public class bigBossGnot : MonoBehaviour
                     else
                     {
                         myAnim.SetBool("throw", false);
-                        distance = Vector3.Distance(flyingProjectile.transform.position, mainGC.posGameOn.position);
-                        flyingProjectile.transform.position = Vector3.MoveTowards(flyingProjectile.transform.position, mainGC.posGameOn.position + (Vector3.up * distance * 0.45f), Time.deltaTime * 5f);
-                        if (distance < 0.5f)
-                        {
-                            // something bad
-                            Destroy(flyingProjectile);
-                        }
                     }
                     break;
                 default: // wake up
