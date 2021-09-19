@@ -40,6 +40,7 @@ public class gameController : MonoBehaviour
     private float targetSpawnTimer = 0f;
     public int gameStage = 0; // 0 tutorial, 1 approach, 2 game on, 3 boss level, 4 post score
     private int gamePoints = 0;
+    private GameObject currentGate;
 
     public int maxSpeed = 0;
 
@@ -55,14 +56,44 @@ public class gameController : MonoBehaviour
         gamePoints += points;
         uiPoints.text = gamePoints.ToString();
     }
+    public void spawnGate()
+    {
+        var newGate = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
+        newGate.GetComponent<tutorialGate>().mainGC = this;
+        newGate.transform.localPosition = new Vector3(-6.76f, 1.45f, 2.32f);
+        currentGate = newGate;
+    }
+    public void destroyTargets()
+    {
+        foreach (targetScript target in targetList)
+        {
+            target.isHit = true;
+            target.disappearTimer = 0f;
+        }
+    }
+    public void bigReset()
+    { // the big reset button/function that can be called from any controller/ui at any time
+        gameStage = 0;
+        titlescreen.color = new Color(1f, 1f, 1f, 1f);
+        thePlayer.transform.position = posTutorial.position;
+        hammerGameObject.transform.position = posTutorial.position;
+        gamePoints = 0;
+        uiPoints.text = "-";
+        uiPointsSilver.SetActive(true);
+        uiPointsGold.SetActive(false);
+        uiBossBar.SetActive(false);
+        bigBossScript.throwTarget1GO.SetActive(true);
+        bigBossScript.throwTarget2GO.SetActive(true);
+        bigBossScript.Reset();
+        if (!currentGate) spawnGate();
+        musicTutorial.Play();
+        hammerGameObject.SetActive(true);
+    }
     // Start is called before the first frame update
     void Start()
     {
         targetList = new List<targetScript>();
         thePlayer.transform.position = posTutorial.position;
-        //var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
-        //newTarget.GetComponent<tutorialGate>().mainGC = this;
-        //newTarget.transform.localPosition = new Vector3(-6.5f, 1.26f, 2.83f);
     }
     void spawnTarget()
     {
@@ -122,11 +153,7 @@ public class gameController : MonoBehaviour
                     musicBossLevel.Play();
                     uiTimeGold.SetActive(true);
                     uiTimeSilver.SetActive(false);
-                    foreach ( targetScript target in targetList)
-                    {
-                        target.isHit = true;
-                        target.disappearTimer = 0f;
-                    }
+                    destroyTargets();
                     bigBossScript.wakeUp();
                     uiBossBar.SetActive(true);
                 }
@@ -163,23 +190,7 @@ public class gameController : MonoBehaviour
             case 4: // post score
                 if (gamestageCountDown < 0f)
                 {
-                    gameStage = 0;
-                    titlescreen.color = new Color(1f, 1f, 1f, 1f);
-                    thePlayer.transform.position = posTutorial.position;
-                    hammerGameObject.transform.position = posTutorial.position;
-                    gamePoints = 0;
-                    uiPoints.text = "-";
-                    uiPointsSilver.SetActive(true);
-                    uiPointsGold.SetActive(false);
-                    uiBossBar.SetActive(false);
-                    bigBossScript.throwTarget1GO.SetActive(true);
-                    bigBossScript.throwTarget2GO.SetActive(true);
-                    bigBossScript.Reset();
-                    var newTarget = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
-                    newTarget.GetComponent<tutorialGate>().mainGC = this;
-                    newTarget.transform.localPosition = new Vector3(-6.76f, 1.45f, 2.32f);
-                    musicTutorial.Play();
-                    hammerGameObject.SetActive(true);
+                    bigReset();
                 }
                 break;
             default: // tutorial
