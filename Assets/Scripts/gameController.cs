@@ -25,6 +25,7 @@ public class gameController : MonoBehaviour
     public GameObject uiPointsSilver;
     public GameObject uiPointsGold;
     public GameObject uiBossBar;
+    public GameObject uiPointPopupPrefab;
     public Text debugText;
     public bigBossGnot bigBossScript;
     public uiEffects uiEffScript;
@@ -47,6 +48,8 @@ public class gameController : MonoBehaviour
 
     private TimeSpan ts;
 
+    public bool debugAddPoints = false;
+
     public void smashedGate()
     {
         gameStage = 1;
@@ -58,6 +61,8 @@ public class gameController : MonoBehaviour
         uiPoints.text = gamePoints.ToString();
         uiEffScript.transform.localScale = new Vector3(0.03f,0.03f,0.1f);
         uiEffScript.scaleTo = true;
+        debugAddPoints = false;
+        var pointPopup = Instantiate(uiPointPopupPrefab,uiEffScript.transform);
     }
     public void spawnGate()
     {
@@ -114,6 +119,7 @@ public class gameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (debugAddPoints) addPoints(1);
         //debugText.text = "Debug: music/state timer " + gamestageCountDown.ToString();
         gamestageCountDown -= Time.deltaTime;
         if ( gamestageCountDown < 0f )
