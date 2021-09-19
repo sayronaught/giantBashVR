@@ -27,6 +27,7 @@ public class gameController : MonoBehaviour
     public GameObject uiBossBar;
     public Text debugText;
     public bigBossGnot bigBossScript;
+    public uiEffects uiEffScript;
 
     public GameObject prefabGate;
     public GameObject[] prefabTargets;
@@ -55,6 +56,8 @@ public class gameController : MonoBehaviour
     {
         gamePoints += points;
         uiPoints.text = gamePoints.ToString();
+        uiEffScript.transform.localScale = new Vector3(0.03f,0.03f,0.1f);
+        uiEffScript.scaleTo = true;
     }
     public void spawnGate()
     {
