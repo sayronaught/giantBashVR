@@ -45,11 +45,9 @@ public class targetScript : MonoBehaviour
         if ( isHit )
         {
             disappearTimer -= Time.deltaTime;
-            if ( disappearTimer < 0f )
-            {
-                mainGC.targetList.Remove(this);
-                Destroy(this.gameObject);
-            }
+            if (!(disappearTimer < 0f)) return;
+            mainGC.targetList.Remove(this);
+            Destroy(this.gameObject);
         } else {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, Vector3.zero, Time.deltaTime * 0.25f);
         }
