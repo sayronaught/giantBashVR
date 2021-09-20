@@ -5,6 +5,7 @@ using UnityEngine;
 public class tutorialGate : MonoBehaviour
 {
     public gameController mainGC;
+    public GameObject RamPorten;
 
     private AudioSource myAS;
     private float deleteTimer = 10f;
@@ -18,6 +19,7 @@ public class tutorialGate : MonoBehaviour
             child.GetComponent<Rigidbody>().isKinematic = false;
         }
         mainGC.smashedGate();
+        RamPorten.SetActive(false);
         smashed = true;
         GetComponent<BoxCollider>().enabled = false;
         myAS.Play();
