@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="bigBossGnot.cs" t="Include" />
+          <e p="bigBossHitLocation.cs" t="Include" />
+          <e p="fractureObject.cs" t="Include" />
+          <e p="gameController.cs" t="Include" />
+          <e p="hammerController.cs" t="Include" />
+          <e p="hammerFX.cs" t="Include" />
+          <e p="popup.cs" t="Include" />
+          <e p="SimpleCameraController.cs" t="Include" />
+          <e p="targetScript.cs" t="Include" />
+          <e p="timeToLive.cs" t="Include" />
+          <e p="tutorialGate.cs" t="Include" />
+          <e p="uiEffects.cs" t="Include" />
+          <e p="XrOffsetGrab.cs" t="Include" />
+        </e>
+        <e p="TutorialInfo" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ReadmeEditor.cs" t="Include" />
+            </e>
+            <e p="Readme.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="giantBashVR.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp/Bin" t="ExcludeRecursive" />
+    </e>
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.3/resharper-host/local/Transient/Rider/v203/SolutionCaches/_giantBashVR.-1271017761.00" t="ExcludeRecursive" />
+  </component>
+</project>

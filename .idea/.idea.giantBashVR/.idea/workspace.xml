@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="55813e0a-a3d1-43b0-bf6a-cf981efbfbd9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FractureObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/bigBossGnot.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/gameController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/bigBossGnot.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/bigBossHitLocation.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/hammerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/hammerFX.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/popup.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/timeToLive.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/tutorialGate.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/uiEffects.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/fractureObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/targetScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/FractureObject.cs" />
+    </changedPaths>
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/bigBossGnot.cs</url>
+          <line>84</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/bigBossGnot.cs" initialLine="75" containingFunctionPresentation="method 'Reset'">
+            <startOffsets>
+              <option value="2965" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2966" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

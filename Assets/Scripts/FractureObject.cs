@@ -18,7 +18,7 @@ public class FractureObject : MonoBehaviour
         doFracture();
     }
 
-    private void doFracture()
+    private void doFracture()   
     {
         Instantiate(fracturedVersion, transform.position, transform.rotation);
         Destroy(this.gameObject);     
