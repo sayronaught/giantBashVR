@@ -53,7 +53,7 @@ public class hammerFX : MonoBehaviour
                     target.isHit = true;
                     target.myRB.isKinematic = false;
                 }
-                var force = (transform.position - target.transform.position)*100f;
+                var force = (target.transform.position - transform.position)*100f;
                 target.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (25f + (25f * mainHC.chargeLightning)));
             }                
         }
