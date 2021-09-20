@@ -72,7 +72,7 @@ public class hammerFX : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        myAS.volume = myRB.velocity.magnitude * 0.05f;
+        myAS.volume = myRB.velocity.magnitude * 0.025f;
         if (myHC.beingSummoned())
         {
             if (myHC.beingHeld())
@@ -80,10 +80,10 @@ public class hammerFX : MonoBehaviour
                 myAS.volume = 0f;
             } else
             {
-                myAS.volume = myHC.summonSpeed() * 0.05f;
+                myAS.volume = myHC.summonSpeed() * 0.025f;
             }
         } else {
-            myTrail.emissionRate = myRB.velocity.magnitude * 0.2f;
+            myTrail.emissionRate = myRB.velocity.magnitude * 0.5f;
         }
 
         if (mainHC.supercharged != false || !(transform.position.y > 10f)) return;
