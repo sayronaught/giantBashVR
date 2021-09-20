@@ -2163,6 +2163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 586154412}
   - component: {fileID: 586154414}
+  - component: {fileID: 586154413}
   m_Layer: 0
   m_Name: PointsBG
   m_TagString: Untagged
@@ -2192,6 +2193,21 @@ RectTransform:
   m_AnchoredPosition: {x: -6.36, y: 11.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &586154413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586154411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee6b954be1e0c84ca9ec058f6e39b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleTo: 0
+  targetScale: {x: 0.02, y: 0.02, z: 0.02}
+  scaleSpeed: 0.5
 --- !u!222 &586154414
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11707,8 +11723,10 @@ MonoBehaviour:
   uiPointsSilver: {fileID: 2012234313}
   uiPointsGold: {fileID: 1411466738}
   uiBossBar: {fileID: 525455983}
+  uiPointPopupPrefab: {fileID: 130113110096441784, guid: 2654112e6384f66489ffcf91311c6496, type: 3}
   debugText: {fileID: 1278599639}
   bigBossScript: {fileID: 1206493142}
+  uiEffScript: {fileID: 586154413}
   prefabGate: {fileID: 1457830503459418958, guid: 6d5edc371aeb0f246b24ecd249b187ee, type: 3}
   prefabTargets:
   - {fileID: 4472594817413776547, guid: 4f6ab423178b9ab49816df58466a9a2c, type: 3}
@@ -11718,6 +11736,7 @@ MonoBehaviour:
   gamestageCountDown: 10
   gameStage: 0
   maxSpeed: 0
+  debugAddPoints: 0
 --- !u!82 &1928650047
 AudioSource:
   m_ObjectHideFlags: 0
