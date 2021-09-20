@@ -64,14 +64,14 @@ public class gameController : MonoBehaviour
         debugAddPoints = false;
         var pointPopup = Instantiate(uiPointPopupPrefab,uiEffScript.transform);
     }
-    public void spawnGate()
+    private void spawnGate()
     {
         var newGate = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
         newGate.GetComponent<tutorialGate>().mainGC = this;
         newGate.transform.localPosition = new Vector3(-6.76f, 1.45f, 2.32f);
         currentGate = newGate;
     }
-    public void destroyTargets()
+    private void destroyTargets()
     {
         foreach (targetScript target in targetList)
         {
@@ -79,7 +79,7 @@ public class gameController : MonoBehaviour
             target.disappearTimer = 0f;
         }
     }
-    public void bigReset()
+    private void bigReset()
     { // the big reset button/function that can be called from any controller/ui at any time
         gameStage = 0;
         titlescreen.color = new Color(1f, 1f, 1f, 1f);
@@ -103,21 +103,19 @@ public class gameController : MonoBehaviour
         targetList = new List<targetScript>();
         thePlayer.transform.position = posTutorial.position;
     }
-    void spawnTarget()
+    private void spawnTarget()
     {
-        Transform randomLocation = targetLocations.transform.GetChild(UnityEngine.Random.Range(0, targetLocations.transform.childCount));
-        if (randomLocation.childCount == 0)
-        {
-            int targetpref = UnityEngine.Random.Range(0, prefabTargets.Length);
-            var newTarget = Instantiate(prefabTargets[targetpref], Vector3.zero, Quaternion.identity) as GameObject;
-            newTarget.transform.SetParent(randomLocation);
-            newTarget.GetComponent<targetScript>().mainGC = this;
-            newTarget.transform.localPosition = Vector3.zero;
-            targetList.Add(newTarget.GetComponent<targetScript>());
-        }
+        var randomLocation = targetLocations.transform.GetChild(UnityEngine.Random.Range(0, targetLocations.transform.childCount));
+        if (randomLocation.childCount != 0) return;
+        var targetPref = UnityEngine.Random.Range(0, prefabTargets.Length);
+        var newTarget = Instantiate(prefabTargets[targetPref], Vector3.zero, Quaternion.identity) as GameObject;
+        newTarget.transform.SetParent(randomLocation);
+        newTarget.GetComponent<targetScript>().mainGC = this;
+        newTarget.transform.localPosition = Vector3.zero;
+        targetList.Add(newTarget.GetComponent<targetScript>());
     }
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (debugAddPoints) addPoints(1);
         //debugText.text = "Debug: music/state timer " + gamestageCountDown.ToString();
@@ -136,17 +134,17 @@ public class gameController : MonoBehaviour
                     gameStage = 2;
                     gamestageCountDown = gameTimeGameOn;
                     fxHorn.Play();
-                    for (int i = 0; i < 5; i++) spawnTarget();
+                    for (var i = 0; i < 5; i++) spawnTarget();
                 }
-            break;
+                break;
             case 2: // game on
                 titlescreen.color = new Color(1f, 1f, 1f, titlescreen.color.a - (Time.deltaTime * 0.1f));
                 //ts = TimeSpan.FromSeconds((double)gamestageCountDown);
                 //uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
                 //uiTime.text = TimeSpan.FromSeconds((double)gamestageCountDown).ToString("mm:ss");
-                int timeInSecondsInt = (int)gamestageCountDown;  //We don't care about fractions of a second, so easy to drop them by just converting to an int
-                int minutes = timeInSecondsInt / 60;  //Get total minutes
-                int seconds = timeInSecondsInt - (minutes * 60);  //Get seconds for display alongside minutes
+                var timeInSecondsInt = (int)gamestageCountDown;  //We don't care about fractions of a second, so easy to drop them by just converting to an int
+                var minutes = timeInSecondsInt / 60;  //Get total minutes
+                var seconds = timeInSecondsInt - (minutes * 60);  //Get seconds for display alongside minutes
                 uiTime.text = minutes.ToString("D2") + ":" + seconds.ToString("D2");  //Create the string representation, where both seconds and minutes are at minimum 2 digits
                 targetSpawnTimer -= Time.deltaTime;
                 if ( targetSpawnTimer < 0f)
@@ -166,23 +164,18 @@ public class gameController : MonoBehaviour
                     bigBossScript.wakeUp();
                     uiBossBar.SetActive(true);
                 }
-            break;
+                break;
             case 3: // boss level 
                 debugText.text = "Debug: boss hitpoints " + bigBossScript.Hitpoints.ToString()+"\n HS "+maxSpeed.ToString();
                 //ts = TimeSpan.FromSeconds((double)gamestageCountDown);
                 //uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
                 //uiTime.text = TimeSpan.FromSeconds((double)gamestageCountDown).ToString("mm:ss");
-                int timeInSecondsInt2 = (int)gamestageCountDown;  //We don't care about fractions of a second, so easy to drop them by just converting to an int
-                int minutes2 = timeInSecondsInt2 / 60;  //Get total minutes
-                int seconds2 = timeInSecondsInt2 - (minutes2 * 60);  //Get seconds for display alongside minutes
+                var timeInSecondsInt2 = (int)gamestageCountDown;  //We don't care about fractions of a second, so easy to drop them by just converting to an int
+                var minutes2 = timeInSecondsInt2 / 60;  //Get total minutes
+                var seconds2 = timeInSecondsInt2 - (minutes2 * 60);  //Get seconds for display alongside minutes
                 uiTime.text = minutes2.ToString("D2") + ":" + seconds2.ToString("D2");  //Create the string representation, where both seconds and minutes are at minimum 2 digits
                 targetSpawnTimer -= Time.deltaTime;
-                if ( bigBossScript.bossStage == 0 )
-                { // waking up
-                    thePlayer.transform.position = Vector3.MoveTowards(thePlayer.transform.position, posAdvance.position, Time.deltaTime * 0.5f);
-                } else { // isawake
-                    thePlayer.transform.position = Vector3.MoveTowards(thePlayer.transform.position, posGameOn.position, Time.deltaTime * 0.15f);
-                }
+                thePlayer.transform.position = bigBossScript.bossStage == 0 ? Vector3.MoveTowards(thePlayer.transform.position, posAdvance.position, Time.deltaTime * 0.5f) : Vector3.MoveTowards(thePlayer.transform.position, posGameOn.position, Time.deltaTime * 0.15f);
                 if (gamestageCountDown < 0f)
                 {
                     gamestageCountDown = gameTimeResetWait;
@@ -195,7 +188,7 @@ public class gameController : MonoBehaviour
                     hammerGameObject.SetActive(false);
                     fxApplause.Play();
                 }
-            break;
+                break;
             case 4: // post score
                 if (gamestageCountDown < 0f)
                 {

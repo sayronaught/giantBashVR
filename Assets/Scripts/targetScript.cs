@@ -17,23 +17,21 @@ public class targetScript : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if ( !isHit && collision.transform.tag == "Hammer" )
-        {
-            mainGC.addPoints(pointValue);
-            isHit = true;
-            myRB.isKinematic = false;
-            Vector3 force = (collision.transform.position - transform.position)*100f;
-            myRB.AddForce(force.normalized * 150f);
-            myAS.Play();
-        }
+        if (isHit || !collision.transform.CompareTag("Hammer")) return;
+        mainGC.addPoints(pointValue);
+        isHit = true;
+        myRB.isKinematic = false;
+        var force = (collision.transform.position - transform.position)*100f;
+        myRB.AddForce(force.normalized * 150f);
+        myAS.Play();
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         myRB = GetComponent<Rigidbody>();
         myAS = GetComponent<AudioSource>();
-        int mat = Random.Range(0, targetMats.Length);
+        var mat = Random.Range(0, targetMats.Length);
         transform.GetChild(0).GetComponent<MeshRenderer>().material = targetMats[mat];
         mat = Random.Range(0, memeMats.Length);
         if ( Random.Range(0,15)==1 )
@@ -42,7 +40,7 @@ public class targetScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if ( isHit )
         {

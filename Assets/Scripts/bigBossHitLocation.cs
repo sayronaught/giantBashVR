@@ -9,12 +9,10 @@ public class bigBossHitLocation : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if ( collision.transform.tag == "Hammer" && bigBossScript.isAwake )
-        {
-            float dam = (bigBossScript.mainHC.chargeLightning*5f + 5f)*damageMultiplier;
-            bigBossScript.takeDamage(dam+ collision.rigidbody.velocity.magnitude);
-            bigBossScript.mainGC.maxSpeed = (int)collision.rigidbody.velocity.magnitude;
-        }
+        if (collision.transform.tag != "Hammer" || !bigBossScript.isAwake) return;
+        var dam = (bigBossScript.mainHC.chargeLightning*5f + 5f)*damageMultiplier;
+        bigBossScript.takeDamage(dam+ collision.rigidbody.velocity.magnitude);
+        bigBossScript.mainGC.maxSpeed = (int)collision.rigidbody.velocity.magnitude;
     }
 
     // Start is called before the first frame update

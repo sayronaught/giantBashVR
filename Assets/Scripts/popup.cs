@@ -11,14 +11,14 @@ public class popup : MonoBehaviour
     private RectTransform myRect;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         myImg = GetComponent<RawImage>();
         myRect = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         myImg.color = new Color(1f, 1f, 1f, Mathf.Clamp(opacity,0f,1f));
         //myMR.material.color = new Color(1f, 1f, 1f, opacity);

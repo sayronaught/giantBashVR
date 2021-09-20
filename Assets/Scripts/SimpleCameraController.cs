@@ -10,7 +10,7 @@ namespace UnityTemplateProjects
 {
     public class SimpleCameraController : MonoBehaviour
     {
-        class CameraState
+        private class CameraState
         {
             public float yaw;
             public float pitch;
@@ -84,7 +84,7 @@ namespace UnityTemplateProjects
 
         Vector3 GetInputTranslationDirection()
         {
-            Vector3 direction = new Vector3();
+            var direction = new Vector3();
             if (Input.GetKey(KeyCode.W))
             {
                 direction += Vector3.forward;
@@ -112,9 +112,9 @@ namespace UnityTemplateProjects
             return direction;
         }
         
-        void Update()
+        private void Update()
         {
-            Vector3 translation = Vector3.zero;
+            var translation = Vector3.zero;
 
 #if ENABLE_LEGACY_INPUT_MANAGER
 

@@ -10,19 +10,11 @@ public class uiEffects : MonoBehaviour
     public Vector3 targetScale;
     public float scaleSpeed = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if ( scaleTo )
-        {
-            transform.localScale = Vector3.MoveTowards(transform.localScale, targetScale, Time.deltaTime*scaleSpeed);
-            if (transform.localScale == targetScale) scaleTo = false;
-        }
+        if (!scaleTo) return;
+        transform.localScale = Vector3.MoveTowards(transform.localScale, targetScale, Time.deltaTime*scaleSpeed);
+        if (transform.localScale == targetScale) scaleTo = false;
     }
 }

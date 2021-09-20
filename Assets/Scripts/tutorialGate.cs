@@ -12,33 +12,29 @@ public class tutorialGate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Hammer")
+        if (!other.transform.CompareTag("Hammer")) return;
+        foreach (Transform child in transform)
         {
-            foreach (Transform child in transform)
-            {
-                child.GetComponent<Rigidbody>().isKinematic = false;
-            }
-            mainGC.smashedGate();
-            smashed = true;
-            GetComponent<BoxCollider>().enabled = false;
-            myAS.Play();
+            child.GetComponent<Rigidbody>().isKinematic = false;
         }
+        mainGC.smashedGate();
+        smashed = true;
+        GetComponent<BoxCollider>().enabled = false;
+        myAS.Play();
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         myAS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-       if ( smashed )
-        {
-            deleteTimer -= Time.deltaTime;
-            if (deleteTimer < 0f)
-                Destroy(gameObject);
-        }
+        if (!smashed) return;
+        deleteTimer -= Time.deltaTime;
+        if (deleteTimer < 0f)
+            Destroy(gameObject);
     }
 }

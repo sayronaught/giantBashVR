@@ -56,19 +56,17 @@ public class hammerController : MonoBehaviour
     }
     public bool beingSummoned()
     {
-        if (magnetspeed > magnetminimum) return true;
-        return false;
+        return magnetspeed > magnetminimum;
     }
     public bool beingHeld()
     {
-        if (heldLeft > 0f || heldRight > 0f) return true;
-        return false;
+        return heldLeft > 0f || heldRight > 0f;
     }
     public float summonSpeed()
     {
         return magnetspeed - magnetminimum;
     }
-    void updatecontroller()
+    private void updateController()
     {
         if (Application.isEditor) return;
         var leftHandDevices = new List<UnityEngine.XR.InputDevice>();
@@ -80,7 +78,7 @@ public class hammerController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         controllerLeft = leftHand.GetComponent<XRController>();
         controllerRight = rightHand.GetComponent<XRController>();
@@ -92,12 +90,12 @@ public class hammerController : MonoBehaviour
         leftHandRay = leftHand.GetComponent<XRRayInteractor>();
         rightHandRay = rightHand.GetComponent<XRRayInteractor>();
         hammerFXScript = hammer.GetComponent<hammerFX>();
-        updatecontroller();
+        updateController();
         rightHoldPositions = new List<Vector3>();
     }
     // Update is called once per frame
     //void Update()
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (!hammer.activeSelf) return;
         lefty.IsPressed(InputHelpers.Button.Trigger, out leftPress);
@@ -220,10 +218,8 @@ public class hammerController : MonoBehaviour
             }
         }
         updateControllerTimer -= Time.deltaTime;
-        if (updateControllerTimer < 0f)
-        {
-            updatecontroller();
-            updateControllerTimer = 2f;
-        }
+        if (!(updateControllerTimer < 0f)) return;
+        updateController();
+        updateControllerTimer = 2f;
     }
 }
