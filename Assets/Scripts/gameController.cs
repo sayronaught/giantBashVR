@@ -29,6 +29,8 @@ public class gameController : MonoBehaviour
     public Text debugText;
     public bigBossGnot bigBossScript;
     public uiEffects uiEffScript;
+    public GameObject uiVinder;
+    public GameObject uiTaber;
 
     public GameObject prefabGate;
     public GameObject[] prefabTargets;
