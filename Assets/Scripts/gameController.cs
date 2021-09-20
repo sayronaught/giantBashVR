@@ -194,7 +194,7 @@ public class gameController : MonoBehaviour
             case 4: // post score
                 if (gamestageCountDown < 0f)
                 {
-                    bigReset();
+                    uiTaber.SetActive(true);
                 }
                 break;
             default: // tutorial
