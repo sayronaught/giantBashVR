@@ -113,6 +113,10 @@ public class bigBossGnot : MonoBehaviour
         {
             mainGC.addPoints((int)(damage * 0.1f));
         }
+        if ( Hitpoints <= 0f )
+        {
+            mainGC.uiVinder.SetActive(true);
+        }
         myAnim.SetFloat(Hitpoints1, Hitpoints);
     }
 
