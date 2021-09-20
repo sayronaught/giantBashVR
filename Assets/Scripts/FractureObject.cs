@@ -20,7 +20,7 @@ public class FractureObject : MonoBehaviour
 
     private void doFracture()
     {
-        Instantiate(fracturedVersion, transform);
-        Destroy(this);     
+        Instantiate(fracturedVersion, transform.position, transform.rotation);
+        Destroy(this.gameObject);     
     }
 }
