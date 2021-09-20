@@ -10,7 +10,7 @@ public class bigBossHitLocation : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag != "Hammer" || !bigBossScript.isAwake) return;
-        var dam = (bigBossScript.mainHC.chargeLightning*3f + 5f)*damageMultiplier;
+        var dam = (bigBossScript.mainHC.chargeLightning*2f + 10f)*damageMultiplier;
         bigBossScript.takeDamage(dam+ collision.rigidbody.velocity.magnitude);
         bigBossScript.mainGC.maxSpeed = (int)collision.rigidbody.velocity.magnitude;
     }
