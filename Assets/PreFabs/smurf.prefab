@@ -1402,8 +1402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa711ea1cf7415f40abf60bd619406c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0
   target: {fileID: 0}
+  bloodPrefab: {fileID: 9219578356075885194, guid: 9ede50a5a6538ad409210e80df6a6e5e, type: 3}
 --- !u!65 &7701779971048585931
 BoxCollider:
   m_ObjectHideFlags: 0

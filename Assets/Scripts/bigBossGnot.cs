@@ -152,6 +152,7 @@ public class bigBossGnot : MonoBehaviour
                         throwTarget2GO.SetActive(false);
                         Destroy(flyingProjectile);
                         bossStage = 5;
+                        mainGC.releaseTheSmurfs();
                     }
                     break;
                 default:

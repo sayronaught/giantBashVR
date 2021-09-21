@@ -34,6 +34,7 @@ public class gameController : MonoBehaviour
 
     public GameObject prefabGate;
     public GameObject[] prefabTargets;
+    public GameObject[] smurfs;
 
     public List<targetScript> targetList;
 
@@ -52,6 +53,20 @@ public class gameController : MonoBehaviour
 
     public bool debugAddPoints = false;
 
+    public void addSmurf()
+    {
+        int smurf = UnityEngine.Random.Range(0, smurfs.Length - 1);
+        //Debug.Log(smurf);
+        var randomSmurf = smurfs[smurf];
+        if (randomSmurf) randomSmurf.gameObject.SetActive(true);
+    }
+    public void releaseTheSmurfs()
+    {
+        for ( int i = 0; i < smurfs.Length;i++)
+        {
+            if (smurfs[i]) smurfs[i].gameObject.SetActive(true);
+        }
+    }
     public void smashedGate()
     {
         gameStage = 1;
@@ -115,6 +130,7 @@ public class gameController : MonoBehaviour
         newTarget.GetComponent<targetScript>().mainGC = this;
         newTarget.transform.localPosition = Vector3.zero;
         targetList.Add(newTarget.GetComponent<targetScript>());
+        if (UnityEngine.Random.Range(0, 30) == 1) addSmurf();
     }
     // Update is called once per frame
     private void Update()
@@ -187,8 +203,9 @@ public class gameController : MonoBehaviour
                     uiTime.text = "-";
                     uiTimeGold.SetActive(false);
                     uiTimeSilver.SetActive(true);
-                    hammerGameObject.SetActive(false);
+                    //hammerGameObject.SetActive(false);
                     fxApplause.Play();
+                    uiTaber.SetActive(true);
                 }
                 break;
             case 4: // post score
