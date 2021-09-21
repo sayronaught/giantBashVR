@@ -80,7 +80,7 @@ public class hammerFX : MonoBehaviour
                 myAS.volume = 0f;
             } else
             {
-                myAS.volume = myHC.summonSpeed() * 0.05f;
+                myAS.volume = myHC.summonSpeed() * 0.10f;
             }
         } else {
             myTrail.emissionRate = myRB.velocity.magnitude * 0.5f;
