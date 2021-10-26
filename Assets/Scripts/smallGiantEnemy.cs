@@ -35,6 +35,8 @@ public class smallGiantEnemy : MonoBehaviour
     void Awake()
     {
         myAnim = GetComponent<Animator>();
+        float size = Random.Range(1f, 4f);
+        transform.localScale = new Vector3(size, size, size);
     }
 
     void Update()
