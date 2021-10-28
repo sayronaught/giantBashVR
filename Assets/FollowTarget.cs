@@ -35,13 +35,15 @@ public class FollowTarget : MonoBehaviour
             rb.MovePosition(pos);
             transform.LookAt(target);
             anima.SetBool("isChasing", true);
-           
+            anima.SetBool("isStop", false);
+
 
         }
         else
         {
             speed = 0;
             anima.SetBool("isChasing", false);
+            anima.SetBool("isStop", true);
         }
         
 
