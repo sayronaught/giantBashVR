@@ -12584,7 +12584,7 @@ MonoBehaviour:
   throwTarget2GO: {fileID: 464843652}
   heldProjectile: {fileID: 0}
   flyingProjectile: {fileID: 0}
-  prefabProjectile: {fileID: 4613978632528201075, guid: 52e45f0554af2e94fab1329de5573e7f, type: 3}
+  prefabProjectile: {fileID: 715015385496581599, guid: b431815fa85323f4a876ef7200e1ef0e, type: 3}
   reeling: 0
   distance: 0
   bossStage: 0
