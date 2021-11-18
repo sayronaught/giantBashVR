@@ -48,6 +48,22 @@ public class dynamicEnemy : MonoBehaviour
     public soundList sounds;
 
     public float Hitpoints = 100f;
+    [System.Serializable]
+    public class aiAction
+    {
+        public string name;
+        public float percentageChance;
+        public float timeBeforeReevaluate;
+        public void set(string newName, float newPercent, float newTime) 
+        {
+            name = newName; percentageChance = newPercent; timeBeforeReevaluate = newTime;
+        }
+    }
+    public class aiActionTable
+    {
+        public aiAction attack;
+    }
+    public aiActionTable actionTable;
 
     private Animator myAnim;
     private AudioSource mySound;
