@@ -535,7 +535,7 @@ Transform:
   - {fileID: 11275582}
   - {fileID: 1053644397}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &107127020 stripped
 GameObject:
@@ -1492,7 +1492,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &197445118
 GameObject:
@@ -2392,7 +2392,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &414949191
 PrefabInstance:
@@ -3679,7 +3679,7 @@ Transform:
   - {fileID: 1030742512}
   - {fileID: 2119779967}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &590269940 stripped
 Transform:
@@ -3898,7 +3898,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0dcd7d1f91c9ec148a0884afb9e16e8f, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0dcd7d1f91c9ec148a0884afb9e16e8f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10796,12 +10796,11 @@ Transform:
   - {fileID: 913427945}
   - {fileID: 1298083482}
   - {fileID: 380733336}
-  - {fileID: 2033999388}
   - {fileID: 1206493150}
   - {fileID: 8093328468696032508}
   - {fileID: 44744232}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &999166578
 PrefabInstance:
@@ -12611,7 +12610,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 329ff41e602108a40be092b940bf61fd, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 329ff41e602108a40be092b940bf61fd, type: 3}
       propertyPath: m_LocalScale.x
@@ -12806,7 +12805,7 @@ MonoBehaviour:
   isAwake: 0
   Hitpoints: 280
   hitPointBar: {fileID: 340884748}
-  mainHC: {fileID: 1856612629}
+  mainHC: {fileID: 0}
   mainGC: {fileID: 1928650046}
   clipRoar: {fileID: 8300000, guid: 557c0b2356ed78b438b6020fb6952806, type: 3}
   footSteps:
@@ -13726,7 +13725,7 @@ Transform:
   m_LocalScale: {x: 5.8505, y: 1.1701, z: 5.8505}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1410597295
 PrefabInstance:
@@ -14363,7 +14362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &1603114476
 TerrainCollider:
@@ -15465,7 +15464,6 @@ GameObject:
   - component: {fileID: 1856612628}
   - component: {fileID: 1856612627}
   - component: {fileID: 1856612626}
-  - component: {fileID: 1856612629}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Untagged
@@ -15521,36 +15519,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1856612629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856612625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccb09fb44bf40c24ea02534f36d569aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftHand: {fileID: 799693286}
-  rightHand: {fileID: 1175011649}
-  leftAnim: {fileID: 89292843}
-  rightAnim: {fileID: 480654926}
-  leftCatch: {fileID: 799693292}
-  rightCatch: {fileID: 1175011655}
-  hammer: {fileID: 2033999382}
-  mainGC: {fileID: 1928650046}
-  controllerLeft: {fileID: 0}
-  controllerRight: {fileID: 0}
-  interactorLeft: {fileID: 0}
-  interactorRight: {fileID: 0}
-  rightPress: 0
-  leftPress: 0
-  debugText: {fileID: 1278599639}
-  supercharged: 0
-  rightHoldPositions: []
-  chargeLightning: 0
 --- !u!1 &1857767225
 GameObject:
   m_ObjectHideFlags: 0
@@ -16402,11 +16370,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 942034500}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 308a744f28e285a48a345566c03f9cf2, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 308a744f28e285a48a345566c03f9cf2, type: 3}
       propertyPath: m_LocalScale.x
@@ -16422,15 +16390,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 308a744f28e285a48a345566c03f9cf2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.467669
+      value: -1.2360001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 308a744f28e285a48a345566c03f9cf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.923987
+      value: 12.0060005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 308a744f28e285a48a345566c03f9cf2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.8476943
+      value: -0.10399997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 308a744f28e285a48a345566c03f9cf2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16618,7 +16586,7 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
-  mainHC: {fileID: 1856612629}
+  mainHC: {fileID: 0}
 --- !u!82 &2033999386
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16729,10 +16697,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabLightningExp: {fileID: 3464515406283139693, guid: f8117c1e1c795b34d9d5872e0c0ff1ec, type: 3}
   myTrail: {fileID: 806975258}
-  myHC: {fileID: 1856612629}
+  myHC: {fileID: 0}
   myLightning: {fileID: 925476610}
   myLightningSFX: {fileID: 1221451696}
-  mainHC: {fileID: 1856612629}
+  mainHC: {fileID: 2033999389}
   mainGC: {fileID: 1928650046}
   debugText: {fileID: 1278599639}
   thunderclaps:
@@ -16746,6 +16714,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 308a744f28e285a48a345566c03f9cf2, type: 3}
   m_PrefabInstance: {fileID: 2033999381}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2033999389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033999382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb09fb44bf40c24ea02534f36d569aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 799693286}
+  rightHand: {fileID: 1175011649}
+  leftAnim: {fileID: 89292843}
+  rightAnim: {fileID: 480654926}
+  leftCatch: {fileID: 799693292}
+  rightCatch: {fileID: 1175011655}
+  hammer: {fileID: 2033999382}
+  mainGC: {fileID: 1928650046}
+  controllerLeft: {fileID: 0}
+  controllerRight: {fileID: 0}
+  interactorLeft: {fileID: 0}
+  interactorRight: {fileID: 0}
+  rightPress: 0
+  leftPress: 0
+  debugText: {fileID: 1278599639}
+  supercharged: 0
+  rightHoldPositions: []
+  chargeLightning: 0
 --- !u!135 &2033999391
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18227,7 +18225,7 @@ Transform:
   m_Children:
   - {fileID: 5724212052747868858}
   m_Father: {fileID: 942034500}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -13.287, z: -11.273}
 --- !u!1001 &8159660559914870329
 PrefabInstance:
