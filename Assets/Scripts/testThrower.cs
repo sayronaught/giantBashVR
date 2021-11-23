@@ -10,7 +10,16 @@ public class testThrower : MonoBehaviour
 
     private GameObject heldMissile;
 
-    public void AnimEventPickup()
+    private Vector3 targetRandomizer(Vector3 target,float variation)
+    {
+        target += new Vector3(Random.Range(-variation,variation), Random.Range(-variation, variation), Random.Range(-variation, variation));
+        return target;
+    }
+    public void eventReeling()
+    { }
+    public void eventReelingRecover()
+    { }
+    public void eventPickupProjectile()
     {
         Debug.Log(".: Event -> Pickup :.");
         var missile = Instantiate(prefabMissile);
@@ -19,13 +28,17 @@ public class testThrower : MonoBehaviour
         heldMissile = missile;
     }
 
-    public void AnimEventThrow()
+    public void eventReleaseProjectile()
     {
         Debug.Log(".: Another Event -> Throw :.");
         heldMissile.transform.SetParent(null);
-        heldMissile.GetComponent<Rigidbody>().isKinematic = false;
-        heldMissile.GetComponent<Rigidbody>().AddForce((target.position - heldMissile.transform.position)*500f);
-        Destroy(heldMissile, 15f);
+        //heldMissile.transform.rotation = Quaternion.identity;
+        var rb = heldMissile.GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        rb.AddForce(((targetRandomizer(target.position, 1f) + (Vector3.up*5f)) - heldMissile.transform.position)*50f);
+        heldMissile.GetComponent<enemyThrowingAxe>().isThrown = true;
+        heldMissile.GetComponent<AudioSource>().Play();
+        //Destroy(heldMissile, 15f);
         heldMissile = null;
     }
 
