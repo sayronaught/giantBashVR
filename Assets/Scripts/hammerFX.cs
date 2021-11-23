@@ -11,7 +11,6 @@ public class hammerFX : MonoBehaviour
     public hammerController myHC;
     public ParticleSystem myLightning;
     public AudioSource myLightningSFX;
-    public hammerController mainHC;
     public gameController mainGC;
     public Text debugText;
 
@@ -23,18 +22,18 @@ public class hammerFX : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         debugText.text = "Debug: Explosion collision";
-        if (mainHC.chargeLightning > 0f)
+        if (myHC.chargeLightning > 0f)
         {
             var explosion = Instantiate(prefabLightningExp);
             explosion.transform.position = transform.position;
-            explosion.transform.localScale = new Vector3(mainHC.chargeLightning, mainHC.chargeLightning, mainHC.chargeLightning);
+            explosion.transform.localScale = new Vector3(myHC.chargeLightning, myHC.chargeLightning, myHC.chargeLightning);
             var explosionAS = explosion.GetComponent<AudioSource>();
-            if ( mainHC.chargeLightning > 5f )
+            if (myHC.chargeLightning > 5f )
             {
                 explosionAS.clip = thunderclaps[3];
-            } else if (mainHC.chargeLightning > 3f) {
+            } else if (myHC.chargeLightning > 3f) {
                 explosionAS.clip = thunderclaps[2];
-            } else if (mainHC.chargeLightning > 1f) {
+            } else if (myHC.chargeLightning > 1f) {
                 explosionAS.clip = thunderclaps[1];
             } else {
                 explosionAS.clip = thunderclaps[0];
@@ -43,7 +42,7 @@ public class hammerFX : MonoBehaviour
             foreach ( var target in mainGC.targetList )
             {
                 if (!(Vector3.Distance(target.transform.position, transform.position) <
-                      (mainHC.chargeLightning + 1f))) continue;
+                      (myHC.chargeLightning + 1f))) continue;
                 if (target.isHit)
                 {
                     target.myRB.velocity = Vector3.zero;
@@ -54,11 +53,11 @@ public class hammerFX : MonoBehaviour
                     target.myRB.isKinematic = false;
                 }
                 var force = (target.transform.position - transform.position)*100f;
-                target.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (25f + (25f * mainHC.chargeLightning)));
+                target.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (25f + (25f * myHC.chargeLightning)));
             }                
         }
-        mainHC.changeLightning(0f);
-        mainHC.supercharged = false;
+        myHC.changeLightning(0f);
+        myHC.supercharged = false;
         myLightning.Clear();
     }
 
@@ -86,8 +85,8 @@ public class hammerFX : MonoBehaviour
             myTrail.emissionRate = myRB.velocity.magnitude * 0.5f;
         }
 
-        if (mainHC.supercharged != false || !(transform.position.y > 10f)) return;
-        mainHC.supercharged = true;
-        mainHC.changeLightning(mainHC.chargeLightning * 3f);
+        if (myHC.supercharged != false || !(transform.position.y > 10f)) return;
+        myHC.supercharged = true;
+        myHC.changeLightning(myHC.chargeLightning * 3f);
     }
 }

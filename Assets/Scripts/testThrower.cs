@@ -10,10 +10,10 @@ public class testThrower : MonoBehaviour
 
     private GameObject heldMissile;
 
-    private Vector3 targetRandomizer(Vector3 target,float variation)
+    private Vector3 targetRandomizer(Vector3 thisTarget,float variation)
     {
-        target += new Vector3(Random.Range(-variation,variation), Random.Range(-variation, variation), Random.Range(-variation, variation));
-        return target;
+        thisTarget += new Vector3(Random.Range(-variation,variation), Random.Range(-variation, variation), Random.Range(-variation, variation));
+        return thisTarget;
     }
     public void eventReeling()
     { }

@@ -18,7 +18,7 @@ public class FollowTarget : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        anima = transform.GetChild(1).GetComponent<Animator>();         
+        anima = transform.GetChild(0).GetComponent<Animator>();         
     }
 
 

@@ -2300,7 +2300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabMissile: {fileID: 3621637244518926105, guid: 4dc45b3a52b96634cbcc3a13c7139752, type: 3}
   hand: {fileID: 1737258860}
-  target: {fileID: 833800183}
+  target: {fileID: 1857767226}
 --- !u!1 &402556855
 GameObject:
   m_ObjectHideFlags: 0
@@ -10485,11 +10485,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 418318, guid: f38d72c8d378e5747a7b576753451c15, type: 3}
   m_PrefabInstance: {fileID: 1829779324}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &833800183 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8363411348565854315, guid: fdb802bf2e3decc48bd21dee409f0bcb, type: 3}
-  m_PrefabInstance: {fileID: 3620083306061191784}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &838406797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a7483cac44dc060429ddc8787a0dda4f, type: 3}
@@ -16697,10 +16692,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabLightningExp: {fileID: 3464515406283139693, guid: f8117c1e1c795b34d9d5872e0c0ff1ec, type: 3}
   myTrail: {fileID: 806975258}
-  myHC: {fileID: 0}
+  myHC: {fileID: 2033999389}
   myLightning: {fileID: 925476610}
   myLightningSFX: {fileID: 1221451696}
-  mainHC: {fileID: 2033999389}
   mainGC: {fileID: 1928650046}
   debugText: {fileID: 1278599639}
   thunderclaps:
