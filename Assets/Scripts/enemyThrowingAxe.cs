@@ -30,12 +30,13 @@ public class enemyThrowingAxe : MonoBehaviour
     {
         myRB = GetComponent<Rigidbody>();
         myAS = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if ( isThrown && !isStuck ) myRB.AddRelativeTorque(Vector3.up * 15000f);
+        //if ( isThrown && !isStuck ) myRB.AddRelativeTorque(Vector3.up * .1f);
         
     }
 }

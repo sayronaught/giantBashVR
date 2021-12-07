@@ -36,6 +36,8 @@ public class testThrower : MonoBehaviour
         var rb = heldMissile.GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.AddForce(((targetRandomizer(target.position, 1f) + (Vector3.up*5f)) - heldMissile.transform.position)*50f);
+        rb.maxAngularVelocity = Mathf.Infinity;
+        rb.AddRelativeTorque(Vector3.up * 4f);
         heldMissile.GetComponent<enemyThrowingAxe>().isThrown = true;
         heldMissile.GetComponent<AudioSource>().Play();
         //Destroy(heldMissile, 15f);
