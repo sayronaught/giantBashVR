@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class simpleInteractableOption : MonoBehaviour
 {
+    public _MenuHandler myMenu;
 
     private XRSimpleInteractable mySimple;
     private TextMesh myTxt;
