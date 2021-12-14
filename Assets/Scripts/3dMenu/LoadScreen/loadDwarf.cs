@@ -22,6 +22,7 @@ public class loadDwarf : MonoBehaviour
     void Start()
     {
         vikingFact.text = "Fact: "+vikingFacts[Random.Range(0, vikingFacts.Length)];
+        vikingFact.text = vikingFact.text.Replace("\\n", "\n");
     }
 
     // Update is called once per frame

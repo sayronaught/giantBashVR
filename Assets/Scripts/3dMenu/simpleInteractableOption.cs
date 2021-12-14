@@ -27,11 +27,8 @@ public class simpleInteractableOption : MonoBehaviour
     }
     public void clickedThis()
     {
-        //Scene scene = SceneManager.GetSceneByName("stableJætteBasker(Messe).scene");
-        //Scene scene = SceneManager.GetSceneAt(1);
         SceneManager.LoadSceneAsync(1,LoadSceneMode.Single);
-        myTxt.text = "Loading";
-        //SceneManager.LoadScene(scene.name);
+        myMenu.beginLoadScreen();
     }
 
     // Start is called before the first frame update

@@ -8,7 +8,7 @@ public class _MenuHandler : MonoBehaviour
     public GameObject village;
     public GameObject loadScreen;
 
-    public void startLoadScreen()
+    public void beginLoadScreen()
     {
         village.SetActive(false);
         loadScreen.SetActive(true);
