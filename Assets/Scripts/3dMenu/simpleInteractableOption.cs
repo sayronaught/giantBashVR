@@ -27,7 +27,7 @@ public class simpleInteractableOption : MonoBehaviour
     }
     public void clickedThis()
     {
-        SceneManager.LoadSceneAsync(1,LoadSceneMode.Single);
+        //SceneManager.LoadSceneAsync(1,LoadSceneMode.Single);
         myMenu.beginLoadScreen();
     }
 

@@ -14,7 +14,7 @@ public class loadDwarf : MonoBehaviour
     public void eventHitAnvil()
     {
         sfAnvil.clip = anvilSounds[Random.Range(0,anvilSounds.Length)];
-        sfAnvil.pitch = Random.Range(0.8f, 1.2f);
+        sfAnvil.pitch = Random.Range(0.6f, 0.8f);
         sfAnvil.Play();
     }
 
