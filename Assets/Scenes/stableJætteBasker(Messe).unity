@@ -16470,7 +16470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabLightningExp: {fileID: 3464515406283139693, guid: f8117c1e1c795b34d9d5872e0c0ff1ec, type: 3}
   myTrail: {fileID: 806975258}
-  myHC: {fileID: 0}
+  myHC: {fileID: 2033999389}
   myLightning: {fileID: 925476610}
   myLightningSFX: {fileID: 1221451696}
   mainGC: {fileID: 1928650046}
