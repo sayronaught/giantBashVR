@@ -446,7 +446,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bukly Jotunn Rig|BulJot_Walk
+  m_Name: Bukly Jotunn Rig|BulJot_Run
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -459,7 +459,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 6039735826534959666, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
+  m_Motion: {fileID: -8240418010380774179, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -500,8 +500,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bukly Jotunn Rig|BulJot_Run
-  m_Speed: 0.75
+  m_Name: Bukly Jotunn Rig|BulJot_Walk
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 9010708327841792744}
@@ -515,7 +515,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -8240418010380774179, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
+  m_Motion: {fileID: 6039735826534959666, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
