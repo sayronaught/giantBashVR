@@ -32,6 +32,7 @@ public class EnemyJotunBoss : MonoBehaviour
     {       
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
     }
 
 
