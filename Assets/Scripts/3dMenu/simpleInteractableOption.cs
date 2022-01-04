@@ -10,6 +10,9 @@ public class simpleInteractableOption : MonoBehaviour
 {
     public _MenuHandler myMenu;
 
+    public int doLoadScene = -1;
+    public Transform doTeleport;
+
     private XRSimpleInteractable mySimple;
     private TextMesh myTxt;
 
@@ -27,8 +30,21 @@ public class simpleInteractableOption : MonoBehaviour
     }
     public void clickedThis()
     {
-        SceneManager.LoadSceneAsync(1,LoadSceneMode.Single);
-        myMenu.beginLoadScreen();
+        if (doLoadScene > -1)
+        {
+            SceneManager.LoadSceneAsync(doLoadScene, LoadSceneMode.Single);
+            myMenu.beginLoadScreen();
+        }
+        if (doTeleport)
+        {
+            foreach (Transform child in transform.parent)
+            {
+                child.gameObject.SetActive(true);
+            }
+            //transform.parent.GetChild
+            GameObject.Find("XR Rig").transform.position = doTeleport.position;
+            gameObject.SetActive(false);
+        }
     }
 
     // Start is called before the first frame update
