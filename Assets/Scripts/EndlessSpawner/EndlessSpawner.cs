@@ -50,7 +50,7 @@ public class EndlessSpawner : MonoBehaviour
             await Task.Delay(waitTimer(200,10000,0.0001f));
             randomSpawnPoint = Random.Range(0, 2);
             var spawn = Instantiate(enemyBoss, spawnPoints[randomSpawnPoint].position, Quaternion.identity);
-            spawn.GetComponent<EnemyJotunBoss>().health = (int)(time * 5f);
+            spawn.GetComponent<EnemyJotunBoss>().health = time * 5f;
         }
     }
 
@@ -61,7 +61,7 @@ public class EndlessSpawner : MonoBehaviour
             await Task.Delay(waitTimer(100, 5000, 0.001f));
             randomSpawnPoint = Random.Range(0, 2);
             var spawn = Instantiate(enemy[Random.Range(0,1)], spawnPoints[randomSpawnPoint].position, Quaternion.identity);
-            spawn.GetComponent<EnemyJotunBoss>().health = (int)(time * 0.5f);
+            spawn.GetComponent<EnemyJotunBoss>().health = time * 0.5f;
         }
     }
 }

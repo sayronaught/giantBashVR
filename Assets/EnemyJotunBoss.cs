@@ -14,14 +14,10 @@ public class EnemyJotunBoss : MonoBehaviour
     private Animator anim;
     
     public float speed = 5f;    
-    public float health = 5;
+    public float health = 5f;
     
     public bool ifCollision = false;
     static int score;
-
-
-
-
 
     private void Awake()
     {
@@ -63,10 +59,6 @@ public class EnemyJotunBoss : MonoBehaviour
 
         }
     }
-
-
-
-
 
 }
 
