@@ -58,6 +58,17 @@ public class EnemyJotunBoss : MonoBehaviour
             anim.SetBool("isIdle", true);
 
         }
+        if (collision.gameObject.tag == "Hammer")
+        {
+            //health-= collision.gameObject.GetComponent<hammerController>()
+            float dam = (collision.gameObject.GetComponent<hammerController>().chargeLightning * 3f + 5f);
+            dam += (collision.rigidbody.velocity.magnitude * 0.2f);
+            health -= dam;
+            if (health < 0f)
+            {
+                Destroy(gameObject, 0f);
+            }
+        }
     }
 
 }
