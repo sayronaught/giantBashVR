@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class EndlessSpawner : MonoBehaviour
@@ -27,35 +28,40 @@ public class EndlessSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(EnemySpawner());
-        StartCoroutine(EnemyBossSpawner());
+        EnemySpawner();
+        EnemyBossSpawner();
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime * 0.001f;
+        time += Time.deltaTime;
     }
 
+    private int waitTimer(int min, int startTimer, float reduxModifier)
+    {
+        return min;
+    }
 
-    IEnumerator EnemyBossSpawner()
+    private async void EnemyBossSpawner()
     {
         while (true)
         {
-            yield return new WaitForSeconds(10 - time);
+            await Task.Delay(waitTimer(200,10000,0.0001f));
             randomSpawnPoint = Random.Range(0, 2);
-            Instantiate(enemyBoss, spawnPoints[randomSpawnPoint].position, transform.rotation);
-
+            var spawn = Instantiate(enemyBoss, spawnPoints[randomSpawnPoint].position, Quaternion.identity);
+            spawn.GetComponent<EnemyJotunBoss>().health = (int)(time * 5f);
         }
     }
 
-    IEnumerator EnemySpawner()
+    private async void EnemySpawner()
     {
         while (true)
         {
-            yield return new WaitForSeconds(5 - time);
+            await Task.Delay(waitTimer(100, 5000, 0.001f));
             randomSpawnPoint = Random.Range(0, 2);
-            Instantiate(enemy[Random.Range(0,1)], spawnPoints[randomSpawnPoint].position, transform.rotation);
+            var spawn = Instantiate(enemy[Random.Range(0,1)], spawnPoints[randomSpawnPoint].position, Quaternion.identity);
+            spawn.GetComponent<EnemyJotunBoss>().health = (int)(time * 0.5f);
         }
     }
 }
