@@ -21,7 +21,7 @@ public class hammerFX : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        debugText.text = "Debug: Explosion collision";
+        //debugText.text = "Debug: Explosion collision";
         if (myHC.chargeLightning > 0f)
         {
             var explosion = Instantiate(prefabLightningExp);

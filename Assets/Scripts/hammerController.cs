@@ -80,6 +80,7 @@ public class hammerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        hammer = gameObject;
         controllerLeft = leftHand.GetComponent<XRController>();
         controllerRight = rightHand.GetComponent<XRController>();
         interactorLeft = leftHand.GetComponent<XRRayInteractor>();
@@ -97,6 +98,7 @@ public class hammerController : MonoBehaviour
     //void Update()
     private void FixedUpdate()
     {
+        if (!hammer) return;
         if (!hammer.activeSelf) return;
         lefty.IsPressed(InputHelpers.Button.Trigger, out leftPress);
         righty.IsPressed(InputHelpers.Button.Trigger, out rightPress);
