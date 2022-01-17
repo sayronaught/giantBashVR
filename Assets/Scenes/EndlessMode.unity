@@ -3514,6 +3514,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2164056135047429603, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
+      propertyPath: mainHC
+      value: 
+      objectReference: {fileID: 515469175}
+    - target: {fileID: 2164056135047429603, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 97088603}
     - target: {fileID: 2164056135047429607, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
       propertyPath: hammer
       value: 
