@@ -14,7 +14,7 @@ public class crows : MonoBehaviour
     void Update()
     {
         cawTimer -= Time.deltaTime;
-        if (cawTimer > 0f) return;
+        if (cawTimer > 0f || myAS.isPlaying) return;
         myAS.clip = cawing[Random.Range(0, cawing.Length)];
         myAS.pitch = Random.Range(0.9f, 1.1f);
         myAS.Play();
