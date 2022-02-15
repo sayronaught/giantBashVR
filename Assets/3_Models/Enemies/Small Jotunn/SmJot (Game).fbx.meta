@@ -32,7 +32,7 @@ ModelImporter:
     second: SmJot Rig|SmJot_R_Throw_01
   - first:
       74: 4967965314040362515
-    second: SmJot Rig|SmJot_Roar_01
+    second: SmJot_Roar_01
   - first:
       74: -9048304623095151127
     second: SmJot Rig|SmJot_Run
@@ -74,12 +74,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Brown
-    second: {fileID: 2100000, guid: 2fc5333a4c4aa924db5a8b0aa9dca0e7, type: 2}
+    second: {fileID: 2100000, guid: 2c219e03c321ff040a8a10a30eb2385f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Metal
-    second: {fileID: 2100000, guid: 2a424866c4060a044b343d47e662c7f3, type: 2}
+    second: {fileID: 2100000, guid: 0aa9072f72244ff44b081da9d9e5d025, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -269,7 +269,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -345,7 +345,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: SmJot Rig|SmJot_Roar_01
+      name: SmJot_Roar_01
       takeName: SmJot Rig|SmJot_Roar_01
       internalID: 0
       firstFrame: 0
@@ -385,7 +385,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -414,7 +414,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

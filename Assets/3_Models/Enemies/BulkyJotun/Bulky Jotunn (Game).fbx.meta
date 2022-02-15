@@ -57,7 +57,25 @@ ModelImporter:
   - first:
       74: 7875743460920390020
     second: Bukly Jotunn Rig|F_Fist
+  - first:
+      74: 3581952360608520214
+    second: BulJot_Drink_Potion_Add
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BulJot Body
+    second: {fileID: 2100000, guid: a688943edce5e7541b5ad0346428c330, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BulJot_Leather
+    second: {fileID: 2100000, guid: 2c219e03c321ff040a8a10a30eb2385f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BulJot_Metal
+    second: {fileID: 2100000, guid: 0aa9072f72244ff44b081da9d9e5d025, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -66,18 +84,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Eye.001
+    second: {fileID: 2100000, guid: 0b9a05d4035e0214db1da4f05d768053, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: PH Teeth
     second: {fileID: 2100000, guid: 6a5410c6ea35f3d49a6ba976a573f14c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: PH_Leather
+      name: PH Teeth.001
     second: {fileID: 2100000, guid: a688943edce5e7541b5ad0346428c330, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: PH_Leather
+    second: {fileID: 2100000, guid: c10bf2aa6b4f7c74691f9a99a8a1d0c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: PH_Metal
-    second: {fileID: 2100000, guid: a688943edce5e7541b5ad0346428c330, type: 2}
+    second: {fileID: 2100000, guid: 0aa9072f72244ff44b081da9d9e5d025, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -505,6 +533,35 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BulJot_Drink_Potion_Add
+      takeName: Bukly Jotunn Rig|BulJot_Drink_Potion_Add
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 220
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

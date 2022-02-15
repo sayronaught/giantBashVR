@@ -1,0 +1,28 @@
+
+
+	- Floats -
+- CurrentSpeed
+
+	- Bools -
+- isDead
+- isRoar
+
+
+
+
+
+	- Animation State Names -
+- Movement (Main movement blend tree, controls Idle, Walk & Run, uses CurrentSpeed float)
+
+- Attack_(01-02-03 etc)
+
+- RangedAttack_(01-02-03 etc)
+
+- Death_(01-02-03 etc)
+
+- Roar_(01-02-03 etc)
+
+
+- DrinkPotion (Additive Anim)
+
+- Hurt_(01-02-03 etc)   (Additive Anim)
