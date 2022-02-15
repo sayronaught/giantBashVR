@@ -80,7 +80,7 @@ public class hammerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        hammer = gameObject;
+        //hammer = gameObject;
         controllerLeft = leftHand.GetComponent<XRController>();
         controllerRight = rightHand.GetComponent<XRController>();
         interactorLeft = leftHand.GetComponent<XRRayInteractor>();

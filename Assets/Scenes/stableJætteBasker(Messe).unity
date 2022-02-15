@@ -12287,6 +12287,22 @@ PrefabInstance:
       propertyPath: rightCatch
       value: 
       objectReference: {fileID: 1175011655}
+    - target: {fileID: 2164056135047429607, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
+      propertyPath: controllerLeft
+      value: 
+      objectReference: {fileID: 799693291}
+    - target: {fileID: 2164056135047429607, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
+      propertyPath: interactorLeft
+      value: 
+      objectReference: {fileID: 799693290}
+    - target: {fileID: 2164056135047429607, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
+      propertyPath: controllerRight
+      value: 
+      objectReference: {fileID: 1175011654}
+    - target: {fileID: 2164056135047429607, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
+      propertyPath: interactorRight
+      value: 
+      objectReference: {fileID: 1175011653}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
 --- !u!1001 &2183042938390372633
