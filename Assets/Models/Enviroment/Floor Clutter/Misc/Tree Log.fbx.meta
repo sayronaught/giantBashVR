@@ -1,9 +1,49 @@
 fileFormatVersion: 2
-guid: 9a66dc9d3bb802e4aa87ec915aaedf46
+guid: ad109f2d319773c46a8c3f2db3898522
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
-  externalObjects: {}
+  internalIDToNameTable:
+  - first:
+      74: -4479433308758613750
+    second: Log_01_LOD0|Log_01_LOD0Action
+  - first:
+      74: -4015839005472430857
+    second: Log_01_LOD0|Log_01_LOD1Action
+  - first:
+      74: 6708405115801211026
+    second: Log_01_LOD0|pine_tree_01_m_LOD0Action
+  - first:
+      74: -9123204375112422395
+    second: Log_01_LOD0|pine_tree_01_m_LOD1Action
+  - first:
+      74: 8283291458201276896
+    second: Log_01_LOD0|pine_tree_01_m_LOD2Action
+  - first:
+      74: 2892541231542521487
+    second: Log_01_LOD1|Log_01_LOD0Action
+  - first:
+      74: -1446165860865874804
+    second: Log_01_LOD1|Log_01_LOD1Action
+  - first:
+      74: 7737736944993175748
+    second: Log_01_LOD1|pine_tree_01_m_LOD0Action
+  - first:
+      74: 7408861823492503709
+    second: Log_01_LOD1|pine_tree_01_m_LOD1Action
+  - first:
+      74: -7683361212732189120
+    second: Log_01_LOD1|pine_tree_01_m_LOD2Action
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood Bark
+    second: {fileID: 2100000, guid: 02863e075bd9a0a44beb0f0b785671dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood Grain
+    second: {fileID: 2100000, guid: 66241eb60bb01fa4196c683b93f875b2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -33,7 +73,9 @@ ModelImporter:
     clipAnimations: []
     isReadable: 0
   meshes:
-    lODScreenPercentages: []
+    lODScreenPercentages:
+    - 0.25
+    - 0.01
     globalScale: 1
     meshCompression: 0
     addColliders: 0
