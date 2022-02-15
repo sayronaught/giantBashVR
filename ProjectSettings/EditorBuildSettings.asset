@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/stableMenu.unity
+    path: Assets/5_Scenes/stableMenu.unity
     guid: 6396c0fc80bc0ad4cbc570af2e691934
   - enabled: 1
-    path: "Assets/Scenes/stableJ\xE6tteBasker(Messe).unity"
+    path: "Assets/5_Scenes/stableJ\xE6tteBasker(Messe).unity"
     guid: a0e7898ba40de954faec0b72baf0eada
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e1a49ce44cd4072459317986bcbd0b36, type: 2}
