@@ -3073,6 +3073,10 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 2164056135047429601, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
+      propertyPath: myHC
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2164056135047429601, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
       propertyPath: mainGC
       value: 
       objectReference: {fileID: 0}
@@ -3082,7 +3086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2164056135047429601, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2164056135047429603, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
       propertyPath: m_InteractionManager

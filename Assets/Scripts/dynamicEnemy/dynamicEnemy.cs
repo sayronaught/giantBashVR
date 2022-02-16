@@ -61,6 +61,7 @@ public class dynamicEnemy : MonoBehaviour
 
     private Animator myAnim;
     private AudioSource mySound;
+    private Rigidbody myRB;
 
     public void animEventBackToIdle()
     {
@@ -91,6 +92,7 @@ public class dynamicEnemy : MonoBehaviour
         Hitpoints = stats.maxHealth;
         myAnim = GetComponent<Animator>();
         mySound = GetComponent<AudioSource>();
+        myRB = GetComponent<Rigidbody>();
         float size = Random.Range(1f, 3f);
         transform.localScale = new Vector3(size, size, size);
     }
@@ -103,7 +105,12 @@ public class dynamicEnemy : MonoBehaviour
             transform.LookAt(temporaryTarget);
         else
             transform.LookAt(finalWaypoint);
-
+        lastActionDelay -= Time.deltaTime;
+        if (lastActionDelay > 0f) return; // still doing animation
+        stats.speed = stats.maxSpeed;
+        Transform target = waypoints[currentWaypoint];
+        Vector3 pos = Vector3.MoveTowards(transform.position, target.position, stats.speed * Time.fixedDeltaTime);
+        myRB.MovePosition(pos);
     }
 
     void playRandomAnim( string[] animlist )

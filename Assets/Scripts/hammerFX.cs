@@ -39,25 +39,33 @@ public class hammerFX : MonoBehaviour
                 explosionAS.clip = thunderclaps[0];
             }
             explosionAS.Play();
-            foreach ( var target in mainGC.targetList )
+            if (mainGC)
             {
-                if (!(Vector3.Distance(target.transform.position, transform.position) <
-                      (myHC.chargeLightning + 1f))) continue;
-                if (target.isHit)
+                foreach (var target in mainGC.targetList)
                 {
-                    target.myRB.velocity = Vector3.zero;
-                    target.myRB.rotation = Quaternion.identity;
-                } else {
-                    mainGC.addPoints(target.pointValue);
-                    target.isHit = true;
-                    target.myRB.isKinematic = false;
+                    if (!(Vector3.Distance(target.transform.position, transform.position) <
+                          (myHC.chargeLightning + 1f))) continue;
+                    if (target.isHit)
+                    {
+                        target.myRB.velocity = Vector3.zero;
+                        target.myRB.rotation = Quaternion.identity;
+                    }
+                    else
+                    {
+                        mainGC.addPoints(target.pointValue);
+                        target.isHit = true;
+                        target.myRB.isKinematic = false;
+                    }
+                    var force = (target.transform.position - transform.position) * 100f;
+                    target.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (25f + (25f * myHC.chargeLightning)));
                 }
-                var force = (target.transform.position - transform.position)*100f;
-                target.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (25f + (25f * myHC.chargeLightning)));
-            }                
+            }
         }
-        myHC.changeLightning(0f);
-        myHC.supercharged = false;
+        if ( myHC )
+        {
+            myHC.changeLightning(0f);
+            myHC.supercharged = false;
+        }
         myLightning.Clear();
     }
 
@@ -72,21 +80,26 @@ public class hammerFX : MonoBehaviour
     private void Update()
     {
         myAS.volume = myRB.velocity.magnitude * 0.05f;
-        if (myHC.beingSummoned())
+        if (myHC)
         {
-            if (myHC.beingHeld())
+            if (myHC.beingSummoned())
             {
-                myAS.volume = 0f;
-            } else
-            {
-                myAS.volume = myHC.summonSpeed() * 0.10f;
+                if (myHC.beingHeld())
+                {
+                    myAS.volume = 0f;
+                }
+                else
+                {
+                    myAS.volume = myHC.summonSpeed() * 0.10f;
+                }
             }
-        } else {
-            myTrail.emissionRate = myRB.velocity.magnitude * 0.5f;
+            else
+            {
+                myTrail.emissionRate = myRB.velocity.magnitude * 0.5f;
+            }
+            if (myHC.supercharged != false || !(transform.position.y > 10f)) return;
+            myHC.supercharged = true;
+            myHC.changeLightning(myHC.chargeLightning * 3f);
         }
-
-        if (myHC.supercharged != false || !(transform.position.y > 10f)) return;
-        myHC.supercharged = true;
-        myHC.changeLightning(myHC.chargeLightning * 3f);
     }
 }
