@@ -5706,15 +5706,15 @@ PrefabInstance:
     - target: {fileID: -253125175280905568, guid: 6c6f00d3be013ae43893136086b7827b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2c219e03c321ff040a8a10a30eb2385f, type: 2}
+      objectReference: {fileID: 2100000, guid: 5dcfe5240f2817c4baf5a0565b6a908e, type: 2}
     - target: {fileID: -253125175280905568, guid: 6c6f00d3be013ae43893136086b7827b, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: b7d4e3014dbb3fb45885d496929a3d59, type: 2}
+      objectReference: {fileID: 2100000, guid: ad67353cbe6e6f84ca7b7967a0576b69, type: 2}
     - target: {fileID: -253125175280905568, guid: 6c6f00d3be013ae43893136086b7827b, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 7eb27a2ee77fda146904b2cdd9c9b53d, type: 2}
+      objectReference: {fileID: 2100000, guid: 25c28e255754986428a3ee4ba7e22334, type: 2}
     - target: {fileID: 919132149155446097, guid: 6c6f00d3be013ae43893136086b7827b, type: 3}
       propertyPath: m_Name
       value: thor_hammer_3
@@ -5726,7 +5726,7 @@ PrefabInstance:
     - target: {fileID: 6485195861021171495, guid: 6c6f00d3be013ae43893136086b7827b, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: b7d4e3014dbb3fb45885d496929a3d59, type: 2}
+      objectReference: {fileID: 2100000, guid: 4c11c576013f77f4e875dd6cd62312d2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c6f00d3be013ae43893136086b7827b, type: 3}
 --- !u!4 &1838309687513904503 stripped
