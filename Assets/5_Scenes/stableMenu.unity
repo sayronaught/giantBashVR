@@ -902,6 +902,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: thor_hammer_2
       objectReference: {fileID: 0}
+    - target: {fileID: 2974696329068051137, guid: ea104b77a61aac747b7e4ed6b0eafcdf, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c219e03c321ff040a8a10a30eb2385f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea104b77a61aac747b7e4ed6b0eafcdf, type: 3}
 --- !u!4 &87712621 stripped
@@ -3092,6 +3096,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7664728788398519507, guid: 4e4bc36c19a4e1543acc35c691fd471b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0e2286038e1fa04d99a96668314fa40, type: 2}
+    - target: {fileID: -5293936662160175238, guid: 4e4bc36c19a4e1543acc35c691fd471b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c219e03c321ff040a8a10a30eb2385f, type: 2}
+    - target: {fileID: -4683669308469848369, guid: 4e4bc36c19a4e1543acc35c691fd471b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0e2286038e1fa04d99a96668314fa40, type: 2}
+    - target: {fileID: -678588488315902003, guid: 4e4bc36c19a4e1543acc35c691fd471b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b66f514e4742eb04caf30eee8bad384e, type: 2}
     - target: {fileID: 919132149155446097, guid: 4e4bc36c19a4e1543acc35c691fd471b, type: 3}
       propertyPath: m_Name
       value: viking hus2
@@ -5797,6 +5817,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7664728788398519507, guid: 4e4bc36c19a4e1543acc35c691fd471b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0e2286038e1fa04d99a96668314fa40, type: 2}
+    - target: {fileID: -5293936662160175238, guid: 4e4bc36c19a4e1543acc35c691fd471b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c219e03c321ff040a8a10a30eb2385f, type: 2}
+    - target: {fileID: -3195828791156449804, guid: 4e4bc36c19a4e1543acc35c691fd471b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2010e7e48ed309e4686abff96af10a7d, type: 2}
+    - target: {fileID: -678588488315902003, guid: 4e4bc36c19a4e1543acc35c691fd471b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b66f514e4742eb04caf30eee8bad384e, type: 2}
     - target: {fileID: 919132149155446097, guid: 4e4bc36c19a4e1543acc35c691fd471b, type: 3}
       propertyPath: m_Name
       value: viking hus
@@ -13238,7 +13274,7 @@ PrefabInstance:
     - target: {fileID: 4474121582383943032, guid: 9d10ac8637881194e9a63eb64662847c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c03b8eac2b4da9f4da4569ff4355e026, type: 2}
+      objectReference: {fileID: 2100000, guid: 2c219e03c321ff040a8a10a30eb2385f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d10ac8637881194e9a63eb64662847c, type: 3}
 --- !u!4 &5670483832214464295 stripped
