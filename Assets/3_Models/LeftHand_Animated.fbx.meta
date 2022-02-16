@@ -5,19 +5,25 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 436906715577551516
-    second: hand_l_armature|Hand_Catch_Hammer
+    second: Hand_Catch_Hammer
   - first:
       74: 3924779081472213506
-    second: hand_l_armature|Hand_Close
+    second: Hand_Close
   - first:
       74: -7089785013103917110
-    second: hand_l_armature|Hand_Hammer_Grip
+    second: Hand_Hammer_Grip
   - first:
       74: -8518000135919384510
-    second: hand_l_armature|Hand_Idle (Anim)
+    second: Hand_Idle (Anim)
   - first:
       74: 7120854337986683805
     second: hand_l_armature|Hand_Idle (Static)
+  - first:
+      74: 5518118668400914578
+    second: Hand_Open
+  - first:
+      74: -8838240908057090104
+    second: Hand_Idle (Static)
   - first:
       74: 5518118668400914578
     second: hand_l_armature|Hand_Open
@@ -50,7 +56,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: hand_l_armature|Hand_Catch_Hammer
+      name: Hand_Catch_Hammer
       takeName: hand_l_armature|Hand_Catch_Hammer
       internalID: 0
       firstFrame: 0
@@ -79,7 +85,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: hand_l_armature|Hand_Close
+      name: Hand_Close
       takeName: hand_l_armature|Hand_Close
       internalID: 0
       firstFrame: 0
@@ -108,7 +114,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: hand_l_armature|Hand_Hammer_Grip
+      name: Hand_Hammer_Grip
       takeName: hand_l_armature|Hand_Hammer_Grip
       internalID: 0
       firstFrame: 0
@@ -137,11 +143,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: hand_l_armature|Hand_Idle (Anim)
+      name: Hand_Idle (Anim)
       takeName: hand_l_armature|Hand_Idle (Anim)
       internalID: 0
-      firstFrame: 0
-      lastFrame: 108
+      firstFrame: 31
+      lastFrame: 91
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -149,7 +155,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -166,7 +172,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: hand_l_armature|Hand_Idle (Static)
+      name: Hand_Idle (Static)
       takeName: hand_l_armature|Hand_Idle (Static)
       internalID: 0
       firstFrame: 0
