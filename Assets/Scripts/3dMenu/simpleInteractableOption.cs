@@ -12,6 +12,7 @@ public class simpleInteractableOption : MonoBehaviour
 
     public int doLoadScene = -1;
     public Transform doTeleport;
+    public bool doQuit = false;
 
     private XRSimpleInteractable mySimple;
     private TextMesh myTxt;
@@ -44,6 +45,10 @@ public class simpleInteractableOption : MonoBehaviour
             //transform.parent.GetChild
             GameObject.Find("XR Rig").transform.position = doTeleport.position;
             gameObject.SetActive(false);
+        }
+        if ( doQuit )
+        {
+            Application.Quit();
         }
     }
 
