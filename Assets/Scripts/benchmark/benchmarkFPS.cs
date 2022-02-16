@@ -73,7 +73,7 @@ public class benchmarkFPS : MonoBehaviour
         if ( reset )
         {
             Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
+            SceneManager.LoadScene(0);
         }
     }
 }

@@ -1561,6 +1561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground Smoke Particles
       objectReference: {fileID: 0}
+    - target: {fileID: 1164118389160060988, guid: ec1322e7550b0cf489fd0f907b848017, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1164118389160060991, guid: ec1322e7550b0cf489fd0f907b848017, type: 3}
       propertyPath: m_RootOrder
       value: 1
