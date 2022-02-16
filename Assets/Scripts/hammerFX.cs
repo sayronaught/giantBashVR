@@ -9,6 +9,7 @@ public class hammerFX : MonoBehaviour
 
     public ParticleSystem myTrail;
     public hammerController myHC;
+    public hammerControllerEndlessMode myHcEm;
     public ParticleSystem myLightning;
     public AudioSource myLightningSFX;
     public gameController mainGC;
@@ -21,19 +22,22 @@ public class hammerFX : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        float charge = 0f;
+        if (myHC) charge = myHC.chargeLightning;
+        if (myHcEm) charge = myHcEm.chargeLightning;
         //debugText.text = "Debug: Explosion collision";
-        if (myHC.chargeLightning > 0f)
+        if (charge > 0f)
         {
             var explosion = Instantiate(prefabLightningExp);
             explosion.transform.position = transform.position;
-            explosion.transform.localScale = new Vector3(myHC.chargeLightning, myHC.chargeLightning, myHC.chargeLightning);
+            explosion.transform.localScale = new Vector3(charge, charge, charge);
             var explosionAS = explosion.GetComponent<AudioSource>();
-            if (myHC.chargeLightning > 5f )
+            if (charge > 5f )
             {
                 explosionAS.clip = thunderclaps[3];
-            } else if (myHC.chargeLightning > 3f) {
+            } else if (charge > 3f) {
                 explosionAS.clip = thunderclaps[2];
-            } else if (myHC.chargeLightning > 1f) {
+            } else if (charge > 1f) {
                 explosionAS.clip = thunderclaps[1];
             } else {
                 explosionAS.clip = thunderclaps[0];
@@ -57,7 +61,7 @@ public class hammerFX : MonoBehaviour
                         target.myRB.isKinematic = false;
                     }
                     var force = (target.transform.position - transform.position) * 100f;
-                    target.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (25f + (25f * myHC.chargeLightning)));
+                    target.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (25f + (25f * charge)));
                 }
             }
         }
@@ -65,6 +69,11 @@ public class hammerFX : MonoBehaviour
         {
             myHC.changeLightning(0f);
             myHC.supercharged = false;
+        }
+        if ( myHcEm )
+        {
+            myHcEm.changeLightning(0f);
+            myHcEm.supercharged = false;
         }
         myLightning.Clear();
     }
