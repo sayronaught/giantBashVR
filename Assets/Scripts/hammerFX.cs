@@ -9,6 +9,7 @@ public class hammerFX : MonoBehaviour
 
     public ParticleSystem myTrail;
     public hammerController myHC;
+    public hammerControllerEndlessMode myHcEm;
     public ParticleSystem myLightning;
     public AudioSource myLightningSFX;
     public gameController mainGC;
@@ -21,43 +22,59 @@ public class hammerFX : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        float charge = 0f;
+        if (myHC) charge = myHC.chargeLightning;
+        if (myHcEm) charge = myHcEm.chargeLightning;
         //debugText.text = "Debug: Explosion collision";
-        if (myHC.chargeLightning > 0f)
+        if (charge > 0f)
         {
             var explosion = Instantiate(prefabLightningExp);
             explosion.transform.position = transform.position;
-            explosion.transform.localScale = new Vector3(myHC.chargeLightning, myHC.chargeLightning, myHC.chargeLightning);
+            explosion.transform.localScale = new Vector3(charge, charge, charge);
             var explosionAS = explosion.GetComponent<AudioSource>();
-            if (myHC.chargeLightning > 5f )
+            if (charge > 5f )
             {
                 explosionAS.clip = thunderclaps[3];
-            } else if (myHC.chargeLightning > 3f) {
+            } else if (charge > 3f) {
                 explosionAS.clip = thunderclaps[2];
-            } else if (myHC.chargeLightning > 1f) {
+            } else if (charge > 1f) {
                 explosionAS.clip = thunderclaps[1];
             } else {
                 explosionAS.clip = thunderclaps[0];
             }
             explosionAS.Play();
-            foreach ( var target in mainGC.targetList )
+            if (mainGC)
             {
-                if (!(Vector3.Distance(target.transform.position, transform.position) <
-                      (myHC.chargeLightning + 1f))) continue;
-                if (target.isHit)
+                foreach (var target in mainGC.targetList)
                 {
-                    target.myRB.velocity = Vector3.zero;
-                    target.myRB.rotation = Quaternion.identity;
-                } else {
-                    mainGC.addPoints(target.pointValue);
-                    target.isHit = true;
-                    target.myRB.isKinematic = false;
+                    if (!(Vector3.Distance(target.transform.position, transform.position) <
+                          (myHC.chargeLightning + 1f))) continue;
+                    if (target.isHit)
+                    {
+                        target.myRB.velocity = Vector3.zero;
+                        target.myRB.rotation = Quaternion.identity;
+                    }
+                    else
+                    {
+                        mainGC.addPoints(target.pointValue);
+                        target.isHit = true;
+                        target.myRB.isKinematic = false;
+                    }
+                    var force = (target.transform.position - transform.position) * 100f;
+                    target.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (25f + (25f * charge)));
                 }
-                var force = (target.transform.position - transform.position)*100f;
-                target.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (25f + (25f * myHC.chargeLightning)));
-            }                
+            }
         }
-        myHC.changeLightning(0f);
-        myHC.supercharged = false;
+        if ( myHC )
+        {
+            myHC.changeLightning(0f);
+            myHC.supercharged = false;
+        }
+        if ( myHcEm )
+        {
+            myHcEm.changeLightning(0f);
+            myHcEm.supercharged = false;
+        }
         myLightning.Clear();
     }
 
@@ -72,21 +89,26 @@ public class hammerFX : MonoBehaviour
     private void Update()
     {
         myAS.volume = myRB.velocity.magnitude * 0.05f;
-        if (myHC.beingSummoned())
+        if (myHC)
         {
-            if (myHC.beingHeld())
+            if (myHC.beingSummoned())
             {
-                myAS.volume = 0f;
-            } else
-            {
-                myAS.volume = myHC.summonSpeed() * 0.10f;
+                if (myHC.beingHeld())
+                {
+                    myAS.volume = 0f;
+                }
+                else
+                {
+                    myAS.volume = myHC.summonSpeed() * 0.10f;
+                }
             }
-        } else {
-            myTrail.emissionRate = myRB.velocity.magnitude * 0.5f;
+            else
+            {
+                myTrail.emissionRate = myRB.velocity.magnitude * 0.5f;
+            }
+            if (myHC.supercharged != false || !(transform.position.y > 10f)) return;
+            myHC.supercharged = true;
+            myHC.changeLightning(myHC.chargeLightning * 3f);
         }
-
-        if (myHC.supercharged != false || !(transform.position.y > 10f)) return;
-        myHC.supercharged = true;
-        myHC.changeLightning(myHC.chargeLightning * 3f);
     }
 }
