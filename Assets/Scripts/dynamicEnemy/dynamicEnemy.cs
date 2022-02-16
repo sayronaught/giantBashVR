@@ -66,10 +66,12 @@ public class dynamicEnemy : MonoBehaviour
     {
         animIdle = true;
     }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.transform.tag != "Hammer") return;
+        if (collision.transform.tag != "Hammer") return;
+        var dam = (collision.gameObject.GetComponent<hammerController>().chargeLightning * 3f + 5f) - stats.damageReduction;
+        Hitpoints -= (dam + (collision.rigidbody.velocity.magnitude * 0.2f));
+
         if (Hitpoints < 0f)
         {
             if ( instantDeathPrefab )
