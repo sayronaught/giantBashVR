@@ -69,7 +69,7 @@ public class dynamicEnemy : MonoBehaviour
         Hitpoints *= modifier;
         stats.strength *= modifier;
         stats.damageReduction *= modifier;
-        stats.maxSpeed = Random.Range(0.5f, 1f);
+        stats.maxSpeed *= Random.Range(0.75f, 1.25f);
     }
 
     public void setWaypoints(Transform spawnpoint)
@@ -126,7 +126,8 @@ public class dynamicEnemy : MonoBehaviour
         if ( distance > 1f)
         { // far away
             transform.LookAt(target);
-            transform.position = Vector3.MoveTowards(transform.position, target.position, stats.maxSpeed * Time.fixedDeltaTime);
+            //transform.position = Vector3.MoveTowards(transform.position, target.position, stats.maxSpeed * Time.fixedDeltaTime);
+            myRB.MovePosition(Vector3.MoveTowards(transform.position, target.position, stats.maxSpeed * Time.fixedDeltaTime));
             stats.speed = stats.maxSpeed;
         } else { // close
             stats.speed = 0f;

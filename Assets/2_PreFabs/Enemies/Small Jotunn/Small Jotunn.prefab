@@ -49,24 +49,28 @@ MonoBehaviour:
   stats:
     mass: 1
     strength: 1
-    speed: 1
-    maxSpeed: 1
+    speed: 0
+    maxSpeed: 2
     jumpForce: 1000
     damageReduction: 1
-    maxHealth: 100
+    maxHealth: 20
   anims:
     idles: []
     hurt: []
-    death: []
-    attackMeleeLight: []
+    death:
+    - Death_01
+    attackMeleeLight:
+    - Attack_01
     attackMeleeheavy: []
-    attackRangeLight: []
+    attackRangeLight:
+    - Ranged Attack 01
     attackRangeHeavy: []
     conversations: []
-    taunts: []
+    taunts:
+    - Roar_01
     surrenders: []
   animIdle: 1
-  instantDeathPrefab: {fileID: 0}
+  instantDeathPrefab: {fileID: 9219578356075885194, guid: 9ede50a5a6538ad409210e80df6a6e5e, type: 3}
   sounds:
     steps: []
     idleChatter: []
@@ -76,7 +80,7 @@ MonoBehaviour:
     attackHeavy: []
     taunts: []
     surrenders: []
-  Hitpoints: 100
+  Hitpoints: 20
   waypoints: []
 --- !u!65 &4423596014192864406
 BoxCollider:
