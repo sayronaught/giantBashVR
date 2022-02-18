@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1232811757879020692}
+  - component: {fileID: -980701313926051929}
   m_Layer: 0
   m_Name: Shaman Jotunn
   m_TagString: Untagged
@@ -31,6 +32,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-980701313926051929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232811757879020695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19d66890a0f2324fa99377ecb412f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+    mass: 1
+    strength: 1
+    speed: 1
+    maxSpeed: 1
+    jumpForce: 1000
+    damageReduction: 1
+    maxHealth: 100
+  anims:
+    idles: []
+    hurt: []
+    death: []
+    attackMeleeLight: []
+    attackMeleeheavy: []
+    attackRangeLight: []
+    attackRangeHeavy: []
+    conversations: []
+    taunts: []
+    surrenders: []
+  animIdle: 1
+  instantDeathPrefab: {fileID: 0}
+  sounds:
+    steps: []
+    idleChatter: []
+    hurt: []
+    death: []
+    attackLight: []
+    attackHeavy: []
+    taunts: []
+    surrenders: []
+  Hitpoints: 100
+  waypoints: []
 --- !u!95 &1232811759129974601
 Animator:
   serializedVersion: 3

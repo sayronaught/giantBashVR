@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &8800940159079132554
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8566499189418396245}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4fd3be3ac51436e43a0675af8fb5acfa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8800940158332830910
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,6 +28,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8800940158332830849}
+  - component: {fileID: 6162154403864821231}
   m_Layer: 0
   m_Name: Bulky Jotunn
   m_TagString: Untagged
@@ -31,25 +51,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8800940159079132554
-Animator:
-  serializedVersion: 3
+--- !u!114 &6162154403864821231
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8566499189418396245}
+  m_GameObject: {fileID: 8800940158332830910}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4fd3be3ac51436e43a0675af8fb5acfa, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19d66890a0f2324fa99377ecb412f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+    mass: 1
+    strength: 1
+    speed: 1
+    maxSpeed: 1
+    jumpForce: 1000
+    damageReduction: 1
+    maxHealth: 100
+  anims:
+    idles: []
+    hurt: []
+    death: []
+    attackMeleeLight: []
+    attackMeleeheavy: []
+    attackRangeLight: []
+    attackRangeHeavy: []
+    conversations: []
+    taunts: []
+    surrenders: []
+  animIdle: 1
+  instantDeathPrefab: {fileID: 0}
+  sounds:
+    steps: []
+    idleChatter: []
+    hurt: []
+    death: []
+    attackLight: []
+    attackHeavy: []
+    taunts: []
+    surrenders: []
+  Hitpoints: 100
+  waypoints: []
 --- !u!1001 &8800940158116017924
 PrefabInstance:
   m_ObjectHideFlags: 0
