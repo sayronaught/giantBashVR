@@ -62,12 +62,14 @@ public class EndlessSpawner : MonoBehaviour
     {
         while (!Application.isEditor || Application.isPlaying)
         {
-            toughnessModifier += Time.deltaTime * 0.0001f;
+            toughnessModifier += Time.deltaTime * 0.001f;
             randomSpawnPoint = Random.Range(0, 0);
             randomSpawnMob = Random.Range(0, 0);
             //var spawn = Instantiate(enemyNormalPrefab[Random.Range(0, enemyNormalPrefab.Length-1)], spawnPoints[randomSpawnPoint].position, Quaternion.identity);
             var spawn = Instantiate(enemyNormalPrefab[0], spawnPoints[0].position, Quaternion.identity);
             var ai = spawn.GetComponent<dynamicEnemy>();
+            ai.spawnSetDifficulty(toughnessModifier);
+            ai.setWaypoints(spawnPoints[0]);
             Debug.Log("enemy waiting: " + waitTimer(1000, 5000, 0.01f).ToString());
             await Task.Delay(waitTimer(1000, 5000, 0.001f));
         }

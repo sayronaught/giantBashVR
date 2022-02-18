@@ -63,6 +63,20 @@ public class dynamicEnemy : MonoBehaviour
     private AudioSource mySound;
     private Rigidbody myRB;
 
+    public void spawnSetDifficulty(float modifier)
+    {
+        stats.maxHealth *= modifier;
+        Hitpoints *= modifier;
+        stats.strength *= modifier;
+        stats.damageReduction *= modifier;
+        stats.maxSpeed = Random.Range(0.5f, 1f);
+    }
+
+    public void setWaypoints(Transform spawnpoint)
+    {
+        waypoints = spawnpoint.GetComponentsInChildren<Transform>();
+    }
+
     public void animEventBackToIdle()
     {
         animIdle = true;
@@ -90,10 +104,10 @@ public class dynamicEnemy : MonoBehaviour
     void Awake()
     {
         Hitpoints = stats.maxHealth;
-        myAnim = GetComponent<Animator>();
+        myAnim = GetComponentInChildren<Animator>();
         mySound = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
-        float size = Random.Range(1f, 3f);
+        float size = Random.Range(.8f, 1.2f);
         transform.localScale = new Vector3(size, size, size);
     }
 
@@ -107,10 +121,23 @@ public class dynamicEnemy : MonoBehaviour
             transform.LookAt(finalWaypoint);
         lastActionDelay -= Time.deltaTime;
         if (lastActionDelay > 0f) return; // still doing animation
-        stats.speed = stats.maxSpeed;
         Transform target = waypoints[currentWaypoint];
-        Vector3 pos = Vector3.MoveTowards(transform.position, target.position, stats.speed * Time.fixedDeltaTime);
-        myRB.MovePosition(pos);
+        float distance = Vector3.Distance(transform.position, target.position);
+        if ( distance > 1f)
+        { // far away
+            transform.LookAt(target);
+            transform.position = Vector3.MoveTowards(transform.position, target.position, stats.maxSpeed * Time.fixedDeltaTime);
+            stats.speed = stats.maxSpeed;
+        } else { // close
+            stats.speed = 0f;
+            if (currentWaypoint < waypoints.Length-1) currentWaypoint++;
+            else
+            { // last waypoint, near player
+
+            }
+        }
+        myAnim.SetFloat("CurrentSpeed", stats.speed);
+        //myRB.MovePosition(pos);
     }
 
     void playRandomAnim( string[] animlist )
