@@ -53,6 +53,8 @@ public class dynamicEnemy : MonoBehaviour
 
     public Transform[] waypoints;
 
+    public EndlessPlayerScript playerScript;
+
     private int currentWaypoint;
     private Transform finalWaypoint;
     private Transform temporaryTarget;

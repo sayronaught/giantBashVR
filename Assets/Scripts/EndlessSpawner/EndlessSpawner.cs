@@ -6,6 +6,8 @@ using UnityEngine;
 public class EndlessSpawner : MonoBehaviour
 {
 
+    public EndlessPlayerScript PlayerScript;
+
     public Transform[] spawnPoints;
     int randomSpawnPoint;
     int randomSpawnMob;
@@ -70,6 +72,7 @@ public class EndlessSpawner : MonoBehaviour
             var ai = spawn.GetComponent<dynamicEnemy>();
             ai.spawnSetDifficulty(toughnessModifier);
             ai.setWaypoints(spawnPoints[0]);
+            ai.playerScript = PlayerScript;
             Debug.Log("enemy waiting: " + waitTimer(1000, 5000, 0.01f).ToString());
             await Task.Delay(waitTimer(1000, 5000, 0.001f));
         }
