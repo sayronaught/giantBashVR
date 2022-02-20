@@ -14,6 +14,8 @@ public class dynamicEnemy : MonoBehaviour
         public float jumpForce = 1000f;
         public float damageReduction = 1f;
         public float maxHealth = 100f;
+        public float meleeAttackRange = 1.5f;
+        public float heavyAttackCooldown = 2f;
     }
     public statList stats;
 
@@ -125,9 +127,10 @@ public class dynamicEnemy : MonoBehaviour
         if (lastActionDelay > 0f) return; // still doing animation
         Transform target = waypoints[currentWaypoint];
         float distance = Vector3.Distance(transform.position, target.position);
-        if ( distance > 1f)
+        if ( distance > stats.meleeAttackRange)
         { // far away
-            transform.LookAt(target);
+            myRB.MoveRotation(Quaternion.LookRotation(target.position - transform.position));
+            //transform.LookAt(target);
             //transform.position = Vector3.MoveTowards(transform.position, target.position, stats.maxSpeed * Time.fixedDeltaTime);
             myRB.MovePosition(Vector3.MoveTowards(transform.position, target.position, stats.maxSpeed * Time.fixedDeltaTime));
             stats.speed = stats.maxSpeed;
@@ -136,7 +139,14 @@ public class dynamicEnemy : MonoBehaviour
             if (currentWaypoint < waypoints.Length-1) currentWaypoint++;
             else
             { // last waypoint, near player
-
+                if ( lastActionDelay < 0f )
+                {
+                    //transform.LookAt(playerScript.transform.position);
+                    myRB.MoveRotation(Quaternion.LookRotation(playerScript.transform.position-transform.position));
+                    lastActionDelay = stats.heavyAttackCooldown;
+                    playRandomAnim(anims.attackMeleeLight);
+                    playerScript.damagePlayer(stats.strength);
+                }
             }
         }
         myAnim.SetFloat("CurrentSpeed", stats.speed);

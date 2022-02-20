@@ -4,6 +4,7 @@ using Unity.Rendering.HybridV2;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class EndlessPlayerScript : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class EndlessPlayerScript : MonoBehaviour
     public float maxHit = 100f;
     public float hit = 100f;
 
+
+    public void damagePlayer(float dam)
+    {
+        hit -= dam;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +38,8 @@ public class EndlessPlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        hit += Time.deltaTime;
+        if (hit > maxHit) hit = maxHit;
+        if (hit < 0f ) SceneManager.LoadScene(0);
     }
 }
