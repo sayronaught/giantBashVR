@@ -61,6 +61,7 @@ public class dynamicEnemy : MonoBehaviour
     private int currentWaypoint;
     private Transform finalWaypoint;
     private Transform temporaryTarget;
+    private Vector3 targetPostCalc;
 
     private float lastActionDelay = 0f;
 
@@ -131,9 +132,7 @@ public class dynamicEnemy : MonoBehaviour
         float distance = Vector3.Distance(transform.position, target.position);
         if ( distance > stats.meleeAttackRange)
         { // far away
-            myRB.MoveRotation(Quaternion.LookRotation(target.position - transform.position));
-            //transform.LookAt(target);
-            //transform.position = Vector3.MoveTowards(transform.position, target.position, stats.maxSpeed * Time.fixedDeltaTime);
+            lookAt(target.position);
             myRB.MovePosition(Vector3.MoveTowards(transform.position, target.position, stats.maxSpeed * Time.fixedDeltaTime));
             stats.speed = stats.maxSpeed;
         } else { // close
@@ -144,7 +143,7 @@ public class dynamicEnemy : MonoBehaviour
                 if ( lastActionDelay < 0f )
                 {
                     //transform.LookAt(playerScript.transform.position);
-                    myRB.MoveRotation(Quaternion.LookRotation(playerScript.transform.position-transform.position));
+                    lookAt(playerScript.transform.position);
                     lastActionDelay = stats.heavyAttackCooldown;
                     playRandomAnim(anims.attackMeleeLight);
                     playerScript.damagePlayer(stats.strength);
@@ -153,6 +152,13 @@ public class dynamicEnemy : MonoBehaviour
         }
         myAnim.SetFloat("CurrentSpeed", stats.speed);
         //myRB.MovePosition(pos);
+    }
+
+    void lookAt( Vector3 position)
+    {
+        targetPostCalc = position;
+        targetPostCalc.y = transform.position.y;
+        myRB.MoveRotation(Quaternion.LookRotation(targetPostCalc - transform.position));
     }
 
     void playRandomAnim( string[] animlist )
