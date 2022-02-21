@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
+    pointValue: 1
     mass: 1
     strength: 1
     speed: 1
@@ -52,6 +53,8 @@ MonoBehaviour:
     jumpForce: 1000
     damageReduction: 1
     maxHealth: 100
+    meleeAttackRange: 1.5
+    heavyAttackCooldown: 2
   anims:
     idles: []
     hurt: []
@@ -76,6 +79,7 @@ MonoBehaviour:
     surrenders: []
   Hitpoints: 100
   waypoints: []
+  playerScript: {fileID: 0}
 --- !u!95 &1232811759129974601
 Animator:
   serializedVersion: 3
@@ -194,6 +198,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cda7b4eadc3efe14f9479663e5f04054, type: 2}
+    - target: {fileID: 4469598168559132031, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6541071151075673452, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
