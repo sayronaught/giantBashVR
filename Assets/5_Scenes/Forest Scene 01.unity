@@ -447,9 +447,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawner: {fileID: 1000620992}
+  uiPoints: {fileID: 1588929335}
   PlayerBloodEffect: {fileID: 0}
   maxHit: 100
   hit: 100
+  points: 0
 --- !u!1 &392419062
 GameObject:
   m_ObjectHideFlags: 0

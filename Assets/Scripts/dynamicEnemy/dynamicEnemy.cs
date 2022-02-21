@@ -7,6 +7,7 @@ public class dynamicEnemy : MonoBehaviour
     [System.Serializable]
     public class statList
     {
+        public int pointValue = 1;
         public float mass = 1f;
         public float strength = 1f;
         public float speed = 1f;
@@ -101,6 +102,7 @@ public class dynamicEnemy : MonoBehaviour
             } else { // play death anim
                 playRandomAnim(anims.death);
                 Destroy(gameObject, 10);
+                playerScript.addPoints(stats.pointValue);
             }
         }   
     }

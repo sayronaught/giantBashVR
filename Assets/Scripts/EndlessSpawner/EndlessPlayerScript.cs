@@ -5,32 +5,39 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EndlessPlayerScript : MonoBehaviour
 {
     public EndlessSpawner Spawner;
-    public GameObject PlayerBloodEffect;
+    public TMPro.TextMeshPro uiPoints;
+    //public GameObject PlayerBloodEffect;
     
-
-
     public float maxHit = 100f;
     public float hit = 100f;
-
+    public int points = 0;
 
     public void damagePlayer(float dam)
     {
         hit -= dam;
     }
+    public void addPoints(int newPoints)
+    {
+        points += newPoints;
+        uiPoints.text = points.ToString();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        var volume = PlayerBloodEffect.GetComponent<Volume>();
+
+       /* var volume = PlayerBloodEffect.GetComponent<Volume>();
 
         if (volume.profile.TryGet<Vignette>(out var vignette))
         {
             vignette.intensity.overrideState = true;
             vignette.intensity.value = 0.5f;
-        }
+        }*/
         //hitpointVignette.
         // var h3 = hitpointVignette;
     }
