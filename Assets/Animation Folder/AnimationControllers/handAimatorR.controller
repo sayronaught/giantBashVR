@@ -11,13 +11,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -3616718769146623136}
-    m_Position: {x: 196.91101, y: 228.78741, z: 0}
+    m_Position: {x: 140, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3314687679522788860}
-    m_Position: {x: 520, y: 210, z: 0}
+    m_Position: {x: 470, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 920773109049687239}
-    m_Position: {x: 340, y: 330, z: 0}
+    m_Position: {x: 270, y: 340, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -72,7 +72,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.15649724
   m_TransitionOffset: 0
   m_ExitTime: 0.9305556
   m_HasExitTime: 0
@@ -150,7 +150,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: hand_l_armature|Hand_Catch_Hammer
-  m_Speed: 3
+  m_Speed: 5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7911458178537104906}
@@ -186,7 +186,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.16640654
   m_TransitionOffset: 0
   m_ExitTime: 0
   m_HasExitTime: 1
@@ -236,7 +236,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.35784826
   m_TransitionOffset: 0
   m_ExitTime: 0.25
   m_HasExitTime: 1
