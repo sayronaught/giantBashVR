@@ -6,16 +6,20 @@ using UnityEngine;
 public class EndlessSpawner : MonoBehaviour
 {
 
+    public EndlessPlayerScript PlayerScript;
+
     public Transform[] spawnPoints;
     int randomSpawnPoint;
+    int randomSpawnMob;
 
-    public GameObject[] enemy;
-    public GameObject enemyBoss;
-    public GameObject enemyBoss2;
+    public GameObject[] enemyNormalPrefab;
+    public GameObject[] enemyBossPrefab;
+    public GameObject[] enemyShamanPrefab;
 
     int numEnemies = 10;
 
     float time;
+    float toughnessModifier = 1f;
 
 
     //Lave 10 spawnPoints
@@ -29,7 +33,7 @@ public class EndlessSpawner : MonoBehaviour
     void Start()
     {
         EnemySpawner();
-        EnemyBossSpawner();
+        //EnemyBossSpawner();
     }
 
     // Update is called once per frame
@@ -47,8 +51,9 @@ public class EndlessSpawner : MonoBehaviour
     {
         while (!Application.isEditor || Application.isPlaying)
         {
-            randomSpawnPoint = Random.Range(0, 2);
-            var spawn = Instantiate(enemyBoss, spawnPoints[randomSpawnPoint].position, Quaternion.identity);
+            randomSpawnPoint = Random.Range(0, 0);
+            randomSpawnMob = Random.Range(0, 0);
+            var spawn = Instantiate(enemyBossPrefab[Random.Range(0, enemyBossPrefab.Length)], spawnPoints[randomSpawnPoint].position, Quaternion.identity);
             spawn.GetComponent<EnemyJotunBoss>().health = time * 5f;
             Debug.Log("boss waiting: " + waitTimer(2000, 30000, 0.001f).ToString());
             await Task.Delay(waitTimer(2000, 10000, 0.0001f));
@@ -59,9 +64,15 @@ public class EndlessSpawner : MonoBehaviour
     {
         while (!Application.isEditor || Application.isPlaying)
         {
-            randomSpawnPoint = Random.Range(0, 2);
-            var spawn = Instantiate(enemy[Random.Range(0,1)], spawnPoints[randomSpawnPoint].position, Quaternion.identity);
-            spawn.GetComponent<EnemyJotunBoss>().health = time * 0.5f;
+            toughnessModifier += Time.deltaTime * 0.001f;
+            randomSpawnPoint = Random.Range(0, 0);
+            randomSpawnMob = Random.Range(0, 0);
+            //var spawn = Instantiate(enemyNormalPrefab[Random.Range(0, enemyNormalPrefab.Length-1)], spawnPoints[randomSpawnPoint].position, Quaternion.identity);
+            var spawn = Instantiate(enemyNormalPrefab[0], spawnPoints[0].position, Quaternion.identity);
+            var ai = spawn.GetComponent<dynamicEnemy>();
+            ai.spawnSetDifficulty(toughnessModifier);
+            ai.setWaypoints(spawnPoints[0]);
+            ai.playerScript = PlayerScript;
             Debug.Log("enemy waiting: " + waitTimer(1000, 5000, 0.01f).ToString());
             await Task.Delay(waitTimer(1000, 5000, 0.001f));
         }

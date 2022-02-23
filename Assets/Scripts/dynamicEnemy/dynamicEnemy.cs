@@ -7,6 +7,7 @@ public class dynamicEnemy : MonoBehaviour
     [System.Serializable]
     public class statList
     {
+        public int pointValue = 1;
         public float mass = 1f;
         public float strength = 1f;
         public float speed = 1f;
@@ -14,6 +15,8 @@ public class dynamicEnemy : MonoBehaviour
         public float jumpForce = 1000f;
         public float damageReduction = 1f;
         public float maxHealth = 100f;
+        public float meleeAttackRange = 1.5f;
+        public float heavyAttackCooldown = 2f;
     }
     public statList stats;
 
@@ -53,15 +56,32 @@ public class dynamicEnemy : MonoBehaviour
 
     public Transform[] waypoints;
 
+    public EndlessPlayerScript playerScript;
+
     private int currentWaypoint;
     private Transform finalWaypoint;
     private Transform temporaryTarget;
+    private Vector3 targetPostCalc;
 
     private float lastActionDelay = 0f;
 
     private Animator myAnim;
     private AudioSource mySound;
     private Rigidbody myRB;
+
+    public void spawnSetDifficulty(float modifier)
+    {
+        stats.maxHealth *= modifier;
+        Hitpoints *= modifier;
+        stats.strength *= modifier;
+        stats.damageReduction *= modifier;
+        stats.maxSpeed *= Random.Range(0.75f, 1.25f);
+    }
+
+    public void setWaypoints(Transform spawnpoint)
+    {
+        waypoints = spawnpoint.GetComponentsInChildren<Transform>();
+    }
 
     public void animEventBackToIdle()
     {
@@ -83,6 +103,7 @@ public class dynamicEnemy : MonoBehaviour
             } else { // play death anim
                 playRandomAnim(anims.death);
                 Destroy(gameObject, 10);
+                playerScript.addPoints(stats.pointValue);
             }
         }   
     }
@@ -90,10 +111,10 @@ public class dynamicEnemy : MonoBehaviour
     void Awake()
     {
         Hitpoints = stats.maxHealth;
-        myAnim = GetComponent<Animator>();
+        myAnim = GetComponentInChildren<Animator>();
         mySound = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
-        float size = Random.Range(1f, 3f);
+        float size = Random.Range(.8f, 1.2f);
         transform.localScale = new Vector3(size, size, size);
     }
 
@@ -107,10 +128,37 @@ public class dynamicEnemy : MonoBehaviour
             transform.LookAt(finalWaypoint);
         lastActionDelay -= Time.deltaTime;
         if (lastActionDelay > 0f) return; // still doing animation
-        stats.speed = stats.maxSpeed;
         Transform target = waypoints[currentWaypoint];
-        Vector3 pos = Vector3.MoveTowards(transform.position, target.position, stats.speed * Time.fixedDeltaTime);
-        myRB.MovePosition(pos);
+        float distance = Vector3.Distance(transform.position, target.position);
+        if ( distance > stats.meleeAttackRange)
+        { // far away
+            lookAt(target.position);
+            myRB.MovePosition(Vector3.MoveTowards(transform.position, target.position, stats.maxSpeed * Time.fixedDeltaTime));
+            stats.speed = stats.maxSpeed;
+        } else { // close
+            stats.speed = 0f;
+            if (currentWaypoint < waypoints.Length-1) currentWaypoint++;
+            else
+            { // last waypoint, near player
+                if ( lastActionDelay < 0f )
+                {
+                    //transform.LookAt(playerScript.transform.position);
+                    lookAt(playerScript.transform.position);
+                    lastActionDelay = stats.heavyAttackCooldown;
+                    playRandomAnim(anims.attackMeleeLight);
+                    playerScript.damagePlayer(stats.strength);
+                }
+            }
+        }
+        myAnim.SetFloat("CurrentSpeed", stats.speed);
+        //myRB.MovePosition(pos);
+    }
+
+    void lookAt( Vector3 position)
+    {
+        targetPostCalc = position;
+        targetPostCalc.y = transform.position.y;
+        myRB.MoveRotation(Quaternion.LookRotation(targetPostCalc - transform.position));
     }
 
     void playRandomAnim( string[] animlist )
