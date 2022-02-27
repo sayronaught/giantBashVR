@@ -17,6 +17,7 @@ public class dynamicEnemy : MonoBehaviour
         public float maxHealth = 100f;
         public float meleeAttackRange = 1.5f;
         public float heavyAttackCooldown = 2f;
+        public float hitbarMaxWidth = 0.1f;
     }
     public statList stats;
 
@@ -37,6 +38,7 @@ public class dynamicEnemy : MonoBehaviour
     public animList anims;
     public bool animIdle = true;
     public GameObject instantDeathPrefab;
+    public Transform hitbar;
 
     [System.Serializable]
     public class soundList
@@ -90,9 +92,12 @@ public class dynamicEnemy : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag != "Hammer") return;
-        var dam = (collision.gameObject.GetComponent<hammerController>().chargeLightning * 3f + 5f) - stats.damageReduction;
+        var dam = (collision.gameObject.GetComponent<hammerControllerEndlessMode>().chargeLightning * 3f + 5f) - stats.damageReduction;
         Hitpoints -= (dam + (collision.rigidbody.velocity.magnitude * 0.2f));
-
+        if ( hitbar )
+        {
+            hitbar.localScale = new Vector3( stats.hitbarMaxWidth*(Hitpoints/stats.maxHealth), hitbar.localScale.y,hitbar.localScale.z);
+        }
         if (Hitpoints < 0f)
         {
             if ( instantDeathPrefab )
@@ -105,6 +110,7 @@ public class dynamicEnemy : MonoBehaviour
                 Destroy(gameObject, 10);
                 playerScript.addPoints(stats.pointValue);
             }
+            playerScript.addPoints(stats.pointValue);
         }   
     }
 
