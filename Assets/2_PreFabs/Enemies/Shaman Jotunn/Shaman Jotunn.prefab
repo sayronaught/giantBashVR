@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1232811757879020692}
   - component: {fileID: -980701313926051929}
+  - component: {fileID: 4237464136488879728}
+  - component: {fileID: 886943252308201692}
   m_Layer: 0
   m_Name: Shaman Jotunn
   m_TagString: Untagged
@@ -49,21 +51,22 @@ MonoBehaviour:
     pointValue: 1
     mass: 1
     strength: 1
-    speed: 1
+    speed: 0
     maxSpeed: 1
     jumpForce: 1000
-    damageReduction: 1
-    maxHealth: 100
+    damageReduction: 2
+    maxHealth: 50
     meleeAttackRange: 1.5
     heavyAttackCooldown: 2
-    hitbarMaxWidth: 0.1
+    hitbarMaxWidth: 1
   anims:
     idles: []
     hurt: []
     death: []
     attackMeleeLight: []
     attackMeleeheavy: []
-    attackRangeLight: []
+    attackRangeLight:
+    - Attack 01
     attackRangeHeavy: []
     conversations: []
     taunts: []
@@ -83,6 +86,35 @@ MonoBehaviour:
   Hitpoints: 100
   waypoints: []
   playerScript: {fileID: 0}
+--- !u!65 &4237464136488879728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232811757879020695}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0.25}
+--- !u!54 &886943252308201692
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232811757879020695}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!95 &1232811759129974601
 Animator:
   serializedVersion: 3

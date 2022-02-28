@@ -124,6 +124,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8800940158332830849}
   - component: {fileID: 6162154403864821231}
+  - component: {fileID: 2688044843305200077}
+  - component: {fileID: 4116152598844934426}
   m_Layer: 0
   m_Name: Bulky Jotunn
   m_TagString: Untagged
@@ -164,19 +166,24 @@ MonoBehaviour:
     mass: 1
     strength: 5
     speed: 0
-    maxSpeed: 0.5
+    maxSpeed: 0.25
     jumpForce: 1000
     damageReduction: 3
-    maxHealth: 100
+    maxHealth: 200
     meleeAttackRange: 1.5
     heavyAttackCooldown: 2
-    hitbarMaxWidth: 0.1
+    hitbarMaxWidth: 3
   anims:
     idles: []
     hurt: []
-    death: []
-    attackMeleeLight: []
-    attackMeleeheavy: []
+    death:
+    - Death_01
+    - Death_02
+    attackMeleeLight:
+    - Attack_01
+    - Attack_02
+    attackMeleeheavy:
+    - Attack_03
     attackRangeLight: []
     attackRangeHeavy: []
     conversations: []
@@ -197,6 +204,35 @@ MonoBehaviour:
   Hitpoints: 100
   waypoints: []
   playerScript: {fileID: 0}
+--- !u!54 &2688044843305200077
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800940158332830910}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!65 &4116152598844934426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800940158332830910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2.5, z: 0.75}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1001 &8800940158116017924
 PrefabInstance:
   m_ObjectHideFlags: 0
