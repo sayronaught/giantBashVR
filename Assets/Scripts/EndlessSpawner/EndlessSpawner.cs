@@ -8,6 +8,7 @@ public class EndlessSpawner : MonoBehaviour
 
     public EndlessPlayerScript PlayerScript;
 
+    public Transform[] beginSpawnPoints;
     public Transform[] spawnPoints;
     int randomSpawnPoint;
     int randomSpawnMob;
@@ -32,6 +33,7 @@ public class EndlessSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawnBeginningEnemies();
         EnemySpawner();
         EnemyShamanSpawner();
         EnemyBossSpawner();
@@ -48,6 +50,23 @@ public class EndlessSpawner : MonoBehaviour
         return Mathf.Max(min,startTimer-(int)(time*reduxModifier));
     }
 
+    private void spawnSingleEnemy( GameObject prefab , Transform spawnpoint )
+    {
+        var spawn = Instantiate(prefab, spawnpoint.position, Quaternion.identity);
+        var ai = spawn.GetComponent<dynamicEnemy>();
+        ai.spawnSetDifficulty(toughnessModifier);
+        ai.setWaypoints(spawnpoint);
+        ai.playerScript = PlayerScript;
+    }
+
+    private void spawnBeginningEnemies()
+    {
+        foreach(Transform spawn in beginSpawnPoints)
+        {
+            spawnSingleEnemy(enemyNormalPrefab[0], spawn);
+        }
+    }
+
     private async void EnemyBossSpawner()
     {
         while (!Application.isEditor || Application.isPlaying)
@@ -57,11 +76,7 @@ public class EndlessSpawner : MonoBehaviour
             toughnessModifier += 0.005f;
             randomSpawnPoint = Random.Range(0, spawnPoints.Length);
             randomSpawnMob = Random.Range(0, enemyBossPrefab.Length);
-            var spawn = Instantiate(enemyBossPrefab[randomSpawnMob], spawnPoints[randomSpawnPoint].position, Quaternion.identity);
-            var ai = spawn.GetComponent<dynamicEnemy>();
-            ai.spawnSetDifficulty(toughnessModifier);
-            ai.setWaypoints(spawnPoints[0]);
-            ai.playerScript = PlayerScript;
+            spawnSingleEnemy(enemyBossPrefab[randomSpawnMob], spawnPoints[randomSpawnPoint]);
         }
     }
 
@@ -73,12 +88,7 @@ public class EndlessSpawner : MonoBehaviour
             toughnessModifier += 0.0025f;
             randomSpawnPoint = Random.Range(0, spawnPoints.Length);
             randomSpawnMob = Random.Range(0, enemyShamanPrefab.Length);
-            var spawn = Instantiate(enemyShamanPrefab[randomSpawnMob], spawnPoints[randomSpawnPoint].position, Quaternion.identity);
-            var ai = spawn.GetComponent<dynamicEnemy>();
-            ai.spawnSetDifficulty(toughnessModifier);
-            ai.setWaypoints(spawnPoints[0]);
-            ai.playerScript = PlayerScript;
-            //Debug.Log("enemy waiting: " + waitTimer(1000, 5000, 0.01f).ToString());
+            spawnSingleEnemy(enemyShamanPrefab[randomSpawnMob], spawnPoints[randomSpawnPoint]);
         }
     }
 
@@ -89,12 +99,7 @@ public class EndlessSpawner : MonoBehaviour
             toughnessModifier += 0.001f;
             randomSpawnPoint = Random.Range(0, spawnPoints.Length);
             randomSpawnMob = Random.Range(0, enemyNormalPrefab.Length);
-            var spawn = Instantiate(enemyNormalPrefab[randomSpawnMob], spawnPoints[randomSpawnPoint].position, Quaternion.identity);
-            var ai = spawn.GetComponent<dynamicEnemy>();
-            ai.spawnSetDifficulty(toughnessModifier);
-            ai.setWaypoints(spawnPoints[0]);
-            ai.playerScript = PlayerScript;
-            Debug.Log("enemy waiting: " + waitTimer(1000, 5000, 0.01f).ToString());
+            spawnSingleEnemy(enemyNormalPrefab[randomSpawnMob], spawnPoints[randomSpawnPoint]);
             await Task.Delay(waitTimer(1000, 5000, 0.001f));
         }
     }
