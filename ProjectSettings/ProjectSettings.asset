@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Specialisterne
-  productName: Jotun Bash_0_1_1_Alpha
+  productName: Jotun Bash_0_2_4_Alpha
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -135,8 +135,10 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1.1 Alpha
+  bundleVersion: 0.2.4 Alpha
   preloadedAssets:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -229,7 +231,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.Specialisterne.JotunBash_0_1_1_Alpha
+    Android: com.Specialisterne.JotunBash_0_2_4_Alpha
   buildNumber:
     Standalone: 0
     iPhone: 0
