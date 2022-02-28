@@ -49,15 +49,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     pointValue: 1
-    mass: 2
-    strength: 1
+    mass: 1.5
+    strength: 2
     speed: 0
     maxSpeed: 1
     jumpForce: 1000
     damageReduction: 2
     maxHealth: 50
     meleeAttackRange: 1.5
-    heavyAttackCooldown: 2
+    rangedAttackRange: 5
+    attackCooldown: 2
     hitbarMaxWidth: 1
   anims:
     idles: []

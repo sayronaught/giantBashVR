@@ -448,6 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawner: {fileID: 1000620992}
   uiPoints: {fileID: 1588929335}
+  PlayerBloodEffect: {fileID: 1650829118}
   maxHit: 100
   hit: 100
   points: 0
@@ -3936,6 +3937,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d3789722c394ab4cac45f6dd843dce8, type: 3}
+--- !u!1 &1650829118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1469944666142105808, guid: 614949b4049a3c445ab27517a7a9882a, type: 3}
+  m_PrefabInstance: {fileID: 216290579049871729}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1665387499
 PrefabInstance:
   m_ObjectHideFlags: 0

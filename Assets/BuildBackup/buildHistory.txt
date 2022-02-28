@@ -2,7 +2,7 @@ Last Stable:
 0.1.0
 
 Latest Test:
-0.1.1
+0.2.4
 
 History:
 0.1.0 : (Stable) Messe & Menu

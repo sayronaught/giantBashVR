@@ -15,8 +15,9 @@ public class dynamicEnemy : MonoBehaviour
         public float jumpForce = 1000f;
         public float damageReduction = 1f;
         public float maxHealth = 100f;
-        public float meleeAttackRange = 1.5f;
-        public float heavyAttackCooldown = 2f;
+        public float meleeAttackRange = 5f;
+        public float rangedAttackRange = 5f;
+        public float attackCooldown = 2f;
         public float hitbarMaxWidth = 0.1f;
     }
     public statList stats;
@@ -168,7 +169,7 @@ public class dynamicEnemy : MonoBehaviour
                 {
                     //transform.LookAt(playerScript.transform.position);
                     lookAt(playerScript.transform.position);
-                    lastActionDelay = stats.heavyAttackCooldown;
+                    lastActionDelay = stats.attackCooldown;
                     playRandomAnim(anims.attackMeleeLight);
                     playerScript.damagePlayer(stats.strength);
                 }

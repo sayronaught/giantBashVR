@@ -11,11 +11,13 @@ public class EndlessPlayerScript : MonoBehaviour
 {
     public EndlessSpawner Spawner;
     public TMPro.TextMeshPro uiPoints;
-    //public GameObject PlayerBloodEffect;
+    public GameObject PlayerBloodEffect;
     
     public float maxHit = 100f;
     public float hit = 100f;
     public int points = 0;
+
+    private Vignette bloodVignette;
 
     public void damagePlayer(float dam)
     {
@@ -31,9 +33,10 @@ public class EndlessPlayerScript : MonoBehaviour
     void Start()
     {
 
-       /* var volume = PlayerBloodEffect.GetComponent<Volume>();
-
-        if (volume.profile.TryGet<Vignette>(out var vignette))
+        var volume = PlayerBloodEffect.GetComponent<Volume>();
+        volume.profile.TryGet<Vignette>(out bloodVignette);
+        //bloodVignette = volume.profile.TryGetSubclassOf<Vignette>();//.GetType<Vignette>();//.TryGet<Vignette>();
+       /* if (volume.profile.TryGet<Vignette>(out var vignette))
         {
             vignette.intensity.overrideState = true;
             vignette.intensity.value = 0.5f;
