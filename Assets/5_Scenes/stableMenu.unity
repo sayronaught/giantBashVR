@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 106832971}
   - component: {fileID: 106832970}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Dwarf Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9651,6 +9651,7 @@ MonoBehaviour:
   - The purpose of a vikings\nlife is to go BERSERK!
   - Vikings have a name for men\nwithout beards. WOMEN!
   - If a viking tell you he is bored\nyour life is in danger...
+  - If you had anything worth taking\nVikings would have taken it already.
 --- !u!1001 &1575403035
 PrefabInstance:
   m_ObjectHideFlags: 0

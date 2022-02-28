@@ -100,7 +100,19 @@ public class dynamicEnemy : MonoBehaviour
         }
         if (Hitpoints < 0f)
         {
-            if ( instantDeathPrefab )
+            if ( instantDeathPrefab && anims.death.Length > 0 )
+            { // both model and deathsplat present. 50% chance for each
+                if ( Random.Range(0,1) < 0.5f)
+                {
+                    var blood = Instantiate(instantDeathPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+                    blood.transform.position = transform.position;
+                    Destroy(gameObject);
+                } else {
+                    playRandomAnim(anims.death);
+                    Destroy(gameObject, 10);
+                    playerScript.addPoints(stats.pointValue);
+                }
+            } else if ( instantDeathPrefab )
             { // remove model and add bloodsplat or other prefab
                 var blood = Instantiate(instantDeathPrefab, Vector3.zero, Quaternion.identity) as GameObject;
                 blood.transform.position = transform.position;
