@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     pointValue: 1
-    mass: 1
+    mass: 2
     strength: 1
     speed: 0
     maxSpeed: 1
@@ -83,6 +83,9 @@ MonoBehaviour:
     attackHeavy: []
     taunts: []
     surrenders: []
+  meleeWeapons: []
+  rangeWeapons: []
+  missileWeaponPrefabs: []
   Hitpoints: 100
   waypoints: []
   playerScript: {fileID: 0}

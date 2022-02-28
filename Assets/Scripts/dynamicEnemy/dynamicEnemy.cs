@@ -54,6 +54,10 @@ public class dynamicEnemy : MonoBehaviour
     }
     public soundList sounds;
 
+    public GameObject[] meleeWeapons;
+    public GameObject[] rangeWeapons;
+    public GameObject[] missileWeaponPrefabs;
+
     public float Hitpoints = 100f;
 
     public Transform[] waypoints;
@@ -132,8 +136,10 @@ public class dynamicEnemy : MonoBehaviour
         myAnim = GetComponentInChildren<Animator>();
         mySound = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
-        float size = Random.Range(.8f, 1.2f);
+        float size = Random.Range(.8f*stats.mass, 1.2f*stats.mass);
         transform.localScale = new Vector3(size, size, size);
+        if (meleeWeapons.Length > 0)
+            meleeWeapons[Random.Range(0, meleeWeapons.Length)].SetActive(true);
     }
 
     // Update is called once per frame
