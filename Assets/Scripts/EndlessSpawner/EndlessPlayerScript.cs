@@ -32,23 +32,17 @@ public class EndlessPlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         var volume = PlayerBloodEffect.GetComponent<Volume>();
         volume.profile.TryGet<Vignette>(out bloodVignette);
-        //bloodVignette = volume.profile.TryGetSubclassOf<Vignette>();//.GetType<Vignette>();//.TryGet<Vignette>();
-       /* if (volume.profile.TryGet<Vignette>(out var vignette))
-        {
-            vignette.intensity.overrideState = true;
-            vignette.intensity.value = 0.5f;
-        }*/
-        //hitpointVignette.
-        // var h3 = hitpointVignette;
     }
 
     // Update is called once per frame
     void Update()
     {
-        hit += Time.deltaTime;
+        hit += Time.deltaTime*0.2f;
+        float blood = 1f- (hit / maxHit);
+        if (blood < 0f) blood = 0f;
+        bloodVignette.intensity.value = blood;
         if (hit > maxHit) hit = maxHit;
         if (hit < 0f ) SceneManager.LoadScene(0);
     }

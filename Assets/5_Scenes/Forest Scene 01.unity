@@ -3576,7 +3576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1000620992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3593,9 +3593,26 @@ MonoBehaviour:
   beginSpawnPoints:
   - {fileID: 1239659517}
   - {fileID: 408742332}
+  - {fileID: 1570248836}
   spawnPoints:
   - {fileID: 1409969444}
+  - {fileID: 290771100}
+  - {fileID: 1409969444}
+  - {fileID: 290771100}
+  - {fileID: 1409969444}
+  - {fileID: 290771100}
+  - {fileID: 1409969444}
+  - {fileID: 290771100}
   - {fileID: 722004600}
+  - {fileID: 696406675}
+  - {fileID: 722004600}
+  - {fileID: 696406675}
+  - {fileID: 111153844}
+  - {fileID: 2088700106}
+  - {fileID: 1836573771}
+  - {fileID: 292965175}
+  - {fileID: 1836573771}
+  - {fileID: 292965175}
   enemyNormalPrefab:
   - {fileID: 7406365440989737887, guid: 9dcaf8a7644e3f1429080713f600425e, type: 3}
   enemyBossPrefab:

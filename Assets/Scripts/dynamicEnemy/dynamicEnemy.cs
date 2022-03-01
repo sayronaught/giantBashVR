@@ -84,6 +84,7 @@ public class dynamicEnemy : MonoBehaviour
         stats.strength *= modifier;
         stats.damageReduction *= modifier;
         stats.maxSpeed *= Random.Range(0.75f, 1.25f);
+        myRB.mass = stats.mass * 0.5f;
     }
 
     public void setWaypoints(Transform spawnpoint)
@@ -105,11 +106,10 @@ public class dynamicEnemy : MonoBehaviour
         {
             if ( damageTextPrefab )
             {
-                /*var spawn = Instantiate(damageTextPrefab, hitbar.position, Quaternion.identity);
+                var spawn = Instantiate(damageTextPrefab, hitbar.position, Quaternion.identity);
                 spawn.transform.rotation = hitbar.rotation;
                 int damage = (int)dam;
                 spawn.GetComponent<damageText>().setText( damage.ToString() );
-                */
             }
             float width = stats.hitbarMaxWidth * (Hitpoints / stats.maxHealth);
             if (width < 0f) width = 0f;
@@ -119,7 +119,7 @@ public class dynamicEnemy : MonoBehaviour
         {
             if ( instantDeathPrefab && anims.death.Length > 0 )
             { // both model and deathsplat present. 50% chance for each
-                if ( Random.Range(0,1) < 0.5f)
+                if ( Random.Range(0f,1f) < 0.5f)
                 {
                     var blood = Instantiate(instantDeathPrefab, Vector3.zero, Quaternion.identity) as GameObject;
                     blood.transform.position = transform.position;

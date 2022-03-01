@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class damageText : MonoBehaviour
 {
-    private TextMeshPro myText;
-    private float visibility = 255f;
+    public TextMesh myText;
+    public float visibility = 255f;
 
     public void setText(string text)
     {
-        myText = GetComponent<TextMeshPro>();
+        myText = GetComponent<TextMesh>();
         myText.text = text;
     }
 

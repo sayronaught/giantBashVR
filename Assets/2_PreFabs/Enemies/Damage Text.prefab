@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9171916892454308314}
+  - component: {fileID: 2993445950861751749}
   - component: {fileID: 9171916892454308315}
   - component: {fileID: 9171916892454308312}
   - component: {fileID: 3625615951267263661}
@@ -19,20 +19,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9171916892454308314
-Transform:
+--- !u!224 &2993445950861751749
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9171916892454308313}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 180.46, y: 23.67, z: 63.670002}
+  m_LocalPosition: {x: 0, y: 0, z: 63.670002}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 180.46, y: 23.67}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &9171916892454308315
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -108,3 +113,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d57f1b752820e104091f525c33c46e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myText: {fileID: 0}
+  visibility: 255
