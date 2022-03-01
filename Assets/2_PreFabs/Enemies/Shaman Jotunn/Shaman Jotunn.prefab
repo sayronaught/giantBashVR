@@ -73,7 +73,7 @@ MonoBehaviour:
     taunts: []
     surrenders: []
   animIdle: 1
-  instantDeathPrefab: {fileID: 0}
+  instantDeathPrefab: {fileID: 9219578356075885194, guid: 9ede50a5a6538ad409210e80df6a6e5e, type: 3}
   damageTextPrefab: {fileID: 9171916892454308313, guid: f43c628d1a222c54e830337717629b02, type: 3}
   hitbar: {fileID: 5970324312235530725}
   sounds:
@@ -89,6 +89,7 @@ MonoBehaviour:
   rangeWeapons: []
   missileWeaponPrefabs: []
   Hitpoints: 100
+  isAlive: 1
   waypoints: []
   playerScript: {fileID: 0}
 --- !u!65 &4237464136488879728

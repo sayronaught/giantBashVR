@@ -61,6 +61,7 @@ public class dynamicEnemy : MonoBehaviour
     public GameObject[] missileWeaponPrefabs;
 
     public float Hitpoints = 100f;
+    public bool isAlive = true;
 
     public Transform[] waypoints;
 
@@ -99,6 +100,7 @@ public class dynamicEnemy : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag != "Hammer") return;
+        if (!isAlive) return;
         var dam = (collision.gameObject.GetComponent<hammerControllerEndlessMode>().chargeLightning * 3f + 5f) - stats.damageReduction;
         dam += (collision.rigidbody.velocity.magnitude * 0.2f);
         Hitpoints -= dam;
@@ -128,6 +130,7 @@ public class dynamicEnemy : MonoBehaviour
                     playRandomAnim(anims.death);
                     Destroy(gameObject, 10);
                     playerScript.addPoints(stats.pointValue);
+                    isAlive = false;
                 }
             } else if ( instantDeathPrefab )
             { // remove model and add bloodsplat or other prefab
@@ -138,6 +141,7 @@ public class dynamicEnemy : MonoBehaviour
                 playRandomAnim(anims.death);
                 Destroy(gameObject, 10);
                 playerScript.addPoints(stats.pointValue);
+                isAlive = false;
             }
             playerScript.addPoints(stats.pointValue);
         }   
@@ -158,6 +162,7 @@ public class dynamicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isAlive) return;
         // look at target
         if (temporaryTarget)
             transform.LookAt(temporaryTarget);

@@ -170,7 +170,7 @@ MonoBehaviour:
     jumpForce: 1000
     damageReduction: 3
     maxHealth: 200
-    meleeAttackRange: 1.5
+    meleeAttackRange: 3
     rangedAttackRange: 5
     attackCooldown: 2
     hitbarMaxWidth: 3
@@ -207,6 +207,7 @@ MonoBehaviour:
   rangeWeapons: []
   missileWeaponPrefabs: []
   Hitpoints: 100
+  isAlive: 1
   waypoints: []
   playerScript: {fileID: 0}
 --- !u!54 &2688044843305200077
