@@ -3,7 +3,22 @@ guid: a8691bc42f0d92246a88dc16bbe7190b
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fern Leaves 02
+    second: {fileID: 2100000, guid: 8c875682b39cfa545ba8238f5845f3db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pine Tree 2 Billboard
+    second: {fileID: 2100000, guid: 5f373c947a37eda40a294fdfe9766bd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood Bark
+    second: {fileID: 2100000, guid: 2c219e03c321ff040a8a10a30eb2385f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -36,6 +51,7 @@ ModelImporter:
     lODScreenPercentages:
     - 0.25
     - 0.125
+    - 0.0625
     - 0.01
     globalScale: 1
     meshCompression: 0
