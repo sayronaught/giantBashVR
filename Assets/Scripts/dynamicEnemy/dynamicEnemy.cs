@@ -39,6 +39,7 @@ public class dynamicEnemy : MonoBehaviour
     public animList anims;
     public bool animIdle = true;
     public GameObject instantDeathPrefab;
+    public GameObject damageTextPrefab;
     public Transform hitbar;
 
     [System.Serializable]
@@ -98,10 +99,21 @@ public class dynamicEnemy : MonoBehaviour
     {
         if (collision.transform.tag != "Hammer") return;
         var dam = (collision.gameObject.GetComponent<hammerControllerEndlessMode>().chargeLightning * 3f + 5f) - stats.damageReduction;
-        Hitpoints -= (dam + (collision.rigidbody.velocity.magnitude * 0.2f));
+        dam += (collision.rigidbody.velocity.magnitude * 0.2f);
+        Hitpoints -= dam;
         if ( hitbar )
         {
-            hitbar.localScale = new Vector3( stats.hitbarMaxWidth*(Hitpoints/stats.maxHealth), hitbar.localScale.y,hitbar.localScale.z);
+            if ( damageTextPrefab )
+            {
+                /*var spawn = Instantiate(damageTextPrefab, hitbar.position, Quaternion.identity);
+                spawn.transform.rotation = hitbar.rotation;
+                int damage = (int)dam;
+                spawn.GetComponent<damageText>().setText( damage.ToString() );
+                */
+            }
+            float width = stats.hitbarMaxWidth * (Hitpoints / stats.maxHealth);
+            if (width < 0f) width = 0f;
+            hitbar.localScale = new Vector3( width, hitbar.localScale.y,hitbar.localScale.z);
         }
         if (Hitpoints < 0f)
         {

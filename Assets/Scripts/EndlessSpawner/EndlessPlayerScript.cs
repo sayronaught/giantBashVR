@@ -26,7 +26,7 @@ public class EndlessPlayerScript : MonoBehaviour
     public void addPoints(int newPoints)
     {
         points += newPoints;
-        uiPoints.text = "Pnt: "+points.ToString();
+        uiPoints.text = "Points: "+points.ToString();
     }
 
     // Start is called before the first frame update

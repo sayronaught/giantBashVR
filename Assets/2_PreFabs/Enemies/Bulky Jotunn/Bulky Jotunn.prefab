@@ -171,7 +171,8 @@ MonoBehaviour:
     damageReduction: 3
     maxHealth: 200
     meleeAttackRange: 1.5
-    heavyAttackCooldown: 2
+    rangedAttackRange: 5
+    attackCooldown: 2
     hitbarMaxWidth: 3
   anims:
     idles: []
@@ -191,6 +192,7 @@ MonoBehaviour:
     surrenders: []
   animIdle: 1
   instantDeathPrefab: {fileID: 0}
+  damageTextPrefab: {fileID: 9171916892454308313, guid: f43c628d1a222c54e830337717629b02, type: 3}
   hitbar: {fileID: 4251460729925431686}
   sounds:
     steps: []
