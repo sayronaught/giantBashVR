@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class bigBossGnot : MonoBehaviour
 {
@@ -115,7 +116,8 @@ public class bigBossGnot : MonoBehaviour
         }
         if ( Hitpoints <= 0f )
         {
-            mainGC.uiVinder.SetActive(true);
+            SceneManager.LoadScene(0);
+            //mainGC.uiVinder.SetActive(true);
         }
         myAnim.SetFloat(Hitpoints1, Hitpoints);
     }

@@ -129,6 +129,8 @@ public class dynamicEnemy : MonoBehaviour
                 } else {
                     playRandomAnim(anims.death);
                     Destroy(gameObject, 10);
+                    Destroy(myRB);
+                    Destroy(GetComponent<BoxCollider>());
                     playerScript.addPoints(stats.pointValue);
                     isAlive = false;
                 }
@@ -140,6 +142,8 @@ public class dynamicEnemy : MonoBehaviour
             } else { // play death anim
                 playRandomAnim(anims.death);
                 Destroy(gameObject, 10);
+                Destroy(myRB);
+                Destroy(GetComponent<BoxCollider>());
                 playerScript.addPoints(stats.pointValue);
                 isAlive = false;
             }

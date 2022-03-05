@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gameController : MonoBehaviour
 {
@@ -81,13 +82,6 @@ public class gameController : MonoBehaviour
         debugAddPoints = false;
         var pointPopup = Instantiate(uiPointPopupPrefab,uiEffScript.transform);
     }
-    private void spawnGate()
-    {
-        var newGate = Instantiate(prefabGate, Vector3.zero, Quaternion.identity) as GameObject;
-        newGate.GetComponent<tutorialGate>().mainGC = this;
-        newGate.transform.localPosition = new Vector3(-6.76f, 1.45f, 2.32f);
-        currentGate = newGate;
-    }
     private void destroyTargets()
     {
         foreach (targetScript target in targetList)
@@ -95,24 +89,6 @@ public class gameController : MonoBehaviour
             target.isHit = true;
             target.disappearTimer = 0f;
         }
-    }
-    private void bigReset()
-    { // the big reset button/function that can be called from any controller/ui at any time
-        gameStage = 0;
-        titlescreen.color = new Color(1f, 1f, 1f, 1f);
-        thePlayer.transform.position = posTutorial.position;
-        hammerGameObject.transform.position = posTutorial.position;
-        gamePoints = 0;
-        uiPoints.text = "-";
-        uiPointsSilver.SetActive(true);
-        uiPointsGold.SetActive(false);
-        uiBossBar.SetActive(false);
-        bigBossScript.throwTarget1GO.SetActive(true);
-        bigBossScript.throwTarget2GO.SetActive(true);
-        bigBossScript.Reset();
-        if (!currentGate) spawnGate();
-        musicTutorial.Play();
-        hammerGameObject.SetActive(true);
     }
     // Start is called before the first frame update
     void Start()
@@ -127,6 +103,7 @@ public class gameController : MonoBehaviour
         var targetPref = UnityEngine.Random.Range(0, prefabTargets.Length);
         var newTarget = Instantiate(prefabTargets[targetPref], Vector3.zero, Quaternion.identity) as GameObject;
         newTarget.transform.SetParent(randomLocation);
+        newTarget.transform.localRotation= Quaternion.identity;
         newTarget.GetComponent<targetScript>().mainGC = this;
         newTarget.transform.localPosition = Vector3.zero;
         targetList.Add(newTarget.GetComponent<targetScript>());
@@ -136,12 +113,7 @@ public class gameController : MonoBehaviour
     private void Update()
     {
         if (debugAddPoints) addPoints(1);
-        //debugText.text = "Debug: music/state timer " + gamestageCountDown.ToString();
         gamestageCountDown -= Time.deltaTime;
-        if ( gamestageCountDown < 0f )
-        {
-            
-        }
         switch ( gameStage )
         {
             case 1: // approach
@@ -155,11 +127,8 @@ public class gameController : MonoBehaviour
                     for (var i = 0; i < 5; i++) spawnTarget();
                 }
                 break;
-            case 2: // game on
+            case 2: // game on - shoot targets
                 titlescreen.color = new Color(1f, 1f, 1f, titlescreen.color.a - (Time.deltaTime * 0.1f));
-                //ts = TimeSpan.FromSeconds((double)gamestageCountDown);
-                //uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
-                //uiTime.text = TimeSpan.FromSeconds((double)gamestageCountDown).ToString("mm:ss");
                 var timeInSecondsInt = (int)gamestageCountDown;  //We don't care about fractions of a second, so easy to drop them by just converting to an int
                 var minutes = timeInSecondsInt / 60;  //Get total minutes
                 var seconds = timeInSecondsInt - (minutes * 60);  //Get seconds for display alongside minutes
@@ -168,7 +137,7 @@ public class gameController : MonoBehaviour
                 if ( targetSpawnTimer < 0f)
                 {
                     spawnTarget();
-                    targetSpawnTimer = 2f;
+                    targetSpawnTimer = 1f;
                 }
                 if (gamestageCountDown < 0f)
                 {
@@ -185,9 +154,6 @@ public class gameController : MonoBehaviour
                 break;
             case 3: // boss level 
                 debugText.text = "Debug: boss hitpoints " + bigBossScript.Hitpoints.ToString()+"\n HS "+maxSpeed.ToString();
-                //ts = TimeSpan.FromSeconds((double)gamestageCountDown);
-                //uiTime.text = string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
-                //uiTime.text = TimeSpan.FromSeconds((double)gamestageCountDown).ToString("mm:ss");
                 var timeInSecondsInt2 = (int)gamestageCountDown;  //We don't care about fractions of a second, so easy to drop them by just converting to an int
                 var minutes2 = timeInSecondsInt2 / 60;  //Get total minutes
                 var seconds2 = timeInSecondsInt2 - (minutes2 * 60);  //Get seconds for display alongside minutes
@@ -211,7 +177,8 @@ public class gameController : MonoBehaviour
             case 4: // post score
                 if (gamestageCountDown < 0f)
                 {
-                    uiTaber.SetActive(true);
+                    SceneManager.LoadScene(0);
+                    //uiTaber.SetActive(true);
                 }
                 break;
             default: // tutorial
