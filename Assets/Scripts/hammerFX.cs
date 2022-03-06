@@ -64,6 +64,26 @@ public class hammerFX : MonoBehaviour
                     target.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (25f + (25f * charge)));
                 }
             }
+            if (myHcEm)
+            {
+                var Colliders = Physics.OverlapSphere(transform.position, (charge*5f + 1f));
+                for (int i = 0; i <= Colliders.Length - 1; i++)
+                {
+                    //print(Colliders[i].gameObject.transform.name);
+                    dynamicEnemy enemy;
+                    Colliders[i].gameObject.TryGetComponent<dynamicEnemy>(out enemy);
+                    if ( enemy )
+                    {
+                        int newdam = (int)((charge*5f + 1f) - Vector3.Distance(transform.position, enemy.transform.position));
+                        if ( newdam > 0 )
+                        {
+                            enemy.takeDamage(newdam);
+                            var force = (enemy.transform.position - transform.position) * 100f;
+                            enemy.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (25f + (25f * charge)));
+                        }
+                    }
+                }
+            }
         }
         if ( myHC )
         {

@@ -162,9 +162,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27494819}
-  m_Text: 'Start
+  m_Text: 'Start Normal
 
-    Normal'
+    (Easy/Stable)'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -6851,9 +6851,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079909743}
-  m_Text: 'Start
+  m_Text: 'Start Endless
 
-    Endless'
+    (Hard/Alpha)'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -9652,6 +9652,9 @@ MonoBehaviour:
   - Vikings have a name for men\nwithout beards. WOMEN!
   - If a viking tell you he is bored\nyour life is in danger...
   - If you had anything worth taking\nVikings would have taken it already.
+  - A Vikings toothbrush\nis made of stone
+  - The antidote to vikings is science\nLogic makes them bleed from their brains
+  - You have never met a real Viking\nBecause you are still here
 --- !u!1001 &1575403035
 PrefabInstance:
   m_ObjectHideFlags: 0

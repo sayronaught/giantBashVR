@@ -97,36 +97,34 @@ public class dynamicEnemy : MonoBehaviour
     {
         animIdle = true;
     }
-    private void OnCollisionEnter(Collision collision)
+    public void takeDamage(float dam)
     {
-        if (collision.transform.tag != "Hammer") return;
-        if (!isAlive) return;
-        var dam = (collision.gameObject.GetComponent<hammerControllerEndlessMode>().chargeLightning * 3f + 5f) - stats.damageReduction;
-        dam += (collision.rigidbody.velocity.magnitude * 0.2f);
         Hitpoints -= dam;
-        if ( hitbar )
+        if (hitbar)
         {
-            if ( damageTextPrefab )
+            if (damageTextPrefab)
             {
                 var spawn = Instantiate(damageTextPrefab, hitbar.position, Quaternion.identity);
                 spawn.transform.rotation = hitbar.rotation;
                 int damage = (int)dam;
-                spawn.GetComponent<damageText>().setText( damage.ToString() );
+                spawn.GetComponent<damageText>().setText(damage.ToString());
             }
             float width = stats.hitbarMaxWidth * (Hitpoints / stats.maxHealth);
             if (width < 0f) width = 0f;
-            hitbar.localScale = new Vector3( width, hitbar.localScale.y,hitbar.localScale.z);
+            hitbar.localScale = new Vector3(width, hitbar.localScale.y, hitbar.localScale.z);
         }
         if (Hitpoints < 0f)
         {
-            if ( instantDeathPrefab && anims.death.Length > 0 )
+            if (instantDeathPrefab && anims.death.Length > 0)
             { // both model and deathsplat present. 50% chance for each
-                if ( Random.Range(0f,1f) < 0.5f)
+                if (Random.Range(0f, 1f) < 0.5f)
                 {
                     var blood = Instantiate(instantDeathPrefab, Vector3.zero, Quaternion.identity) as GameObject;
                     blood.transform.position = transform.position;
                     Destroy(gameObject);
-                } else {
+                }
+                else
+                {
                     playRandomAnim(anims.death);
                     Destroy(gameObject, 10);
                     Destroy(myRB);
@@ -134,12 +132,15 @@ public class dynamicEnemy : MonoBehaviour
                     playerScript.addPoints(stats.pointValue);
                     isAlive = false;
                 }
-            } else if ( instantDeathPrefab )
+            }
+            else if (instantDeathPrefab)
             { // remove model and add bloodsplat or other prefab
                 var blood = Instantiate(instantDeathPrefab, Vector3.zero, Quaternion.identity) as GameObject;
                 blood.transform.position = transform.position;
                 Destroy(gameObject);
-            } else { // play death anim
+            }
+            else
+            { // play death anim
                 playRandomAnim(anims.death);
                 Destroy(gameObject, 10);
                 Destroy(myRB);
@@ -148,7 +149,15 @@ public class dynamicEnemy : MonoBehaviour
                 isAlive = false;
             }
             playerScript.addPoints(stats.pointValue);
-        }   
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag != "Hammer") return;
+        if (!isAlive) return;
+        var dam = (collision.gameObject.GetComponent<hammerControllerEndlessMode>().chargeLightning * 3f + 5f) - stats.damageReduction;
+        dam += (collision.rigidbody.velocity.magnitude * 0.2f);
+        takeDamage(dam);
     }
 
     void Awake()

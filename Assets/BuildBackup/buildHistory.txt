@@ -2,11 +2,12 @@ Last Stable:
 0.1.0
 
 Latest Test:
-0.2.4
+0.2.5.5
 
 History:
 0.1.0 : (Stable) Messe & Menu
 0.1.1 : Endless Mode & Small Jotun
 0.2.4 : Endless Mode 3 Jotuns
+0.2.5 : Spawnpaths & AOE
 
 
