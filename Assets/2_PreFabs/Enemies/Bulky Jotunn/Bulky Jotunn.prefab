@@ -163,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     pointValue: 5
-    mass: 4
+    mass: 5
     strength: 5
     speed: 0
     maxSpeed: 0.25
@@ -203,7 +203,9 @@ MonoBehaviour:
     attackHeavy: []
     taunts: []
     surrenders: []
-  meleeWeapons: []
+  meleeWeapons:
+  - {fileID: 6632304427407411239}
+  - {fileID: 7336235416639312322}
   rangeWeapons: []
   missileWeaponPrefabs: []
   Hitpoints: 100
@@ -290,9 +292,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6473478279651705053, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3872884181125951676, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2017350813752056931, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
       propertyPath: m_Name
       value: Bulky Jotunn (Game)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300410664928454342, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
@@ -304,5 +322,15 @@ GameObject:
 --- !u!4 &9054910417486532847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
+  m_PrefabInstance: {fileID: 8800940158116017924}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6632304427407411239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6473478279651705053, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
+  m_PrefabInstance: {fileID: 8800940158116017924}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7336235416639312322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2300410664928454342, guid: 6ae7dfc8698745049a4ea0f455ee4e10, type: 3}
   m_PrefabInstance: {fileID: 8800940158116017924}
   m_PrefabAsset: {fileID: 0}

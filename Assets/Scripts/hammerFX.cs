@@ -79,7 +79,7 @@ public class hammerFX : MonoBehaviour
                         {
                             enemy.takeDamage(newdam);
                             var force = (enemy.transform.position - transform.position) * 100f;
-                            enemy.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (25f + (25f * charge)));
+                            enemy.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (2500f + (25f * charge)));
                         }
                     }
                 }

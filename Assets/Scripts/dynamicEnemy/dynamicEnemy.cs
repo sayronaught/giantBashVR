@@ -85,7 +85,7 @@ public class dynamicEnemy : MonoBehaviour
         stats.strength *= modifier;
         stats.damageReduction *= modifier;
         stats.maxSpeed *= Random.Range(0.75f, 1.25f);
-        myRB.mass = stats.mass * 0.5f;
+        myRB.mass = stats.mass * 2f;
     }
 
     public void setWaypoints(Transform spawnpoint)
@@ -166,7 +166,7 @@ public class dynamicEnemy : MonoBehaviour
         myAnim = GetComponentInChildren<Animator>();
         mySound = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
-        float size = Random.Range(.8f*stats.mass, 1.2f*stats.mass);
+        float size = Random.Range(.5f*stats.mass, 0.7f*stats.mass);
         transform.localScale = new Vector3(size, size, size);
         if (meleeWeapons.Length > 0)
             meleeWeapons[Random.Range(0, meleeWeapons.Length)].SetActive(true);

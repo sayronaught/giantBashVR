@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     pointValue: 1
-    mass: 1
+    mass: 2
     strength: 1
     speed: 0
     maxSpeed: 3
@@ -183,10 +183,13 @@ MonoBehaviour:
     attackHeavy: []
     taunts: []
     surrenders: []
-  meleeWeapons: []
+  meleeWeapons:
+  - {fileID: 5773167492429903055}
+  - {fileID: 70880020627600275}
   rangeWeapons: []
   missileWeaponPrefabs: []
   Hitpoints: 20
+  isAlive: 1
   waypoints: []
   playerScript: {fileID: 0}
 --- !u!65 &4423596014192864406
@@ -269,6 +272,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5271785383457415271, guid: 9914c35cc36cd444fbbffb812c69b288, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -1387016323994016475, guid: 9914c35cc36cd444fbbffb812c69b288, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -281,10 +288,24 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 1b18a601c79f0154697135e4389598e9, type: 2}
+    - target: {fileID: 7364338804953405637, guid: 9914c35cc36cd444fbbffb812c69b288, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9914c35cc36cd444fbbffb812c69b288, type: 3}
 --- !u!4 &7008176467008556221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9914c35cc36cd444fbbffb812c69b288, type: 3}
+  m_PrefabInstance: {fileID: 7406365441375955798}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5773167492429903055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5271785383457415271, guid: 9914c35cc36cd444fbbffb812c69b288, type: 3}
+  m_PrefabInstance: {fileID: 7406365441375955798}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &70880020627600275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7364338804953405637, guid: 9914c35cc36cd444fbbffb812c69b288, type: 3}
   m_PrefabInstance: {fileID: 7406365441375955798}
   m_PrefabAsset: {fileID: 0}
