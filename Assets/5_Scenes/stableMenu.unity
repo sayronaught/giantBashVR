@@ -5427,7 +5427,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -6376920861012043308, guid: 475660a74f7878049aa8274bb6d33096, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9655,6 +9655,7 @@ MonoBehaviour:
   - A Vikings toothbrush\nis made of stone
   - The antidote to vikings is science\nLogic makes them bleed from their brains
   - You have never met a real Viking\nBecause you are still here
+  - Horned helmets belong only\non armored cows!
 --- !u!1001 &1575403035
 PrefabInstance:
   m_ObjectHideFlags: 0

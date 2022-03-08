@@ -3104,7 +3104,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -6376920861012043308, guid: 475660a74f7878049aa8274bb6d33096, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3615,6 +3615,8 @@ MonoBehaviour:
   - {fileID: 1836573771}
   - {fileID: 292965175}
   enemyNormalPrefab:
+  - {fileID: 7406365440989737887, guid: 9dcaf8a7644e3f1429080713f600425e, type: 3}
+  - {fileID: 7406365440989737887, guid: f6c2641e6db14324cab64772535ada18, type: 3}
   - {fileID: 7406365440989737887, guid: 9dcaf8a7644e3f1429080713f600425e, type: 3}
   enemyBossPrefab:
   - {fileID: 8800940158332830910, guid: a6e202e681bc34c498afc69025389f5f, type: 3}

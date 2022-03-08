@@ -61,6 +61,9 @@ public class dynamicEnemy : MonoBehaviour
     public GameObject[] meleeWeapons;
     public GameObject[] rangeWeapons;
     public GameObject[] missileWeaponPrefabs;
+    public bool isRanged = false;
+    public Transform hand;
+    public GameObject heldMissile;
 
     public float Hitpoints = 100f;
     public bool isAlive = true;
@@ -81,6 +84,12 @@ public class dynamicEnemy : MonoBehaviour
     private AudioSource mySound;
     private Rigidbody myRB;
 
+    private Vector3 targetRandomizer(Vector3 thisTarget, float variation)
+    {
+        thisTarget += new Vector3(Random.Range(-variation, variation), Random.Range(-variation, variation), Random.Range(-variation, variation));
+        return thisTarget;
+    }
+
     public void spawnSetDifficulty(float modifier)
     {
         stats.maxHealth *= modifier;
@@ -88,6 +97,7 @@ public class dynamicEnemy : MonoBehaviour
         stats.strength *= modifier * 1.5f;
         stats.damageReduction *= modifier*2f;
         stats.maxSpeed *= Random.Range(0.75f, 1.25f)*modifier;
+        if ( !myRB ) myRB = GetComponent<Rigidbody>();
         myRB.mass = stats.mass * 2f;
         float size = Random.Range(.5f * stats.mass, 0.7f * stats.mass);
         transform.localScale = new Vector3(size, size, size);
@@ -99,7 +109,18 @@ public class dynamicEnemy : MonoBehaviour
     {
         waypoints = spawnpoint.GetComponentsInChildren<Transform>();
     }
-
+    public void animEventReleaseProjectile()
+    {
+        heldMissile.transform.SetParent(null);
+        var rb = heldMissile.GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        rb.AddForce(((targetRandomizer(playerScript.transform.position, 1f) + (Vector3.up * 5f)) - heldMissile.transform.position) * 50f);
+        rb.maxAngularVelocity = Mathf.Infinity;
+        rb.AddRelativeTorque(Vector3.up * 4f);
+        heldMissile.GetComponent<enemyThrowingAxe>().isThrown = true;
+        heldMissile.GetComponent<AudioSource>().Play();
+        heldMissile = null;
+    }
     public void animEventBackToIdle()
     {
         animIdle = true;
@@ -187,10 +208,27 @@ public class dynamicEnemy : MonoBehaviour
         else
             transform.LookAt(finalWaypoint);
         lastActionDelay -= Time.deltaTime;
-        if (lastActionDelay > 0f) return; // still doing animation
+        if (lastActionDelay > 0f || waypoints.Length < 1) return; // still doing animation
         Transform target = waypoints[currentWaypoint];
         float distance = Vector3.Distance(transform.position, target.position);
-        if ( distance > stats.meleeAttackRange)
+        if (isRanged && Vector3.Distance(transform.position,playerScript.transform.position) < stats.rangedAttackRange)
+        { // is inside ranged attackrange
+            stats.speed = 0f;
+            myAnim.SetFloat("CurrentSpeed", stats.speed);
+            if (lastActionDelay < 0f)
+            {
+                lookAt(playerScript.transform.position);
+                lastActionDelay = stats.attackCooldown;
+                playRandomAnim(anims.attackRangeLight);
+                playerScript.damagePlayer(stats.strength);
+                var missile = Instantiate(missileWeaponPrefabs[Random.Range(0,missileWeaponPrefabs.Length)]);
+                missile.transform.position = hand.position;
+                missile.transform.SetParent(hand);
+                heldMissile = missile;
+            }
+            return; // no melee attacks or navigation after ranged attacks
+        }
+        if ( distance > stats.meleeAttackRange) // melee attacks and melee stats for navigation through waypoints
         { // far away
             lookAt(target.position);
             myRB.MovePosition(Vector3.MoveTowards(transform.position, target.position, stats.maxSpeed * Time.fixedDeltaTime));
@@ -202,7 +240,6 @@ public class dynamicEnemy : MonoBehaviour
             { // last waypoint, near player
                 if ( lastActionDelay < 0f )
                 {
-                    //transform.LookAt(playerScript.transform.position);
                     lookAt(playerScript.transform.position);
                     lastActionDelay = stats.attackCooldown;
                     playRandomAnim(anims.attackMeleeLight);
