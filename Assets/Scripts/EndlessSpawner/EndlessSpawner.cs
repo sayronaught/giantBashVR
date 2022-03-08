@@ -22,6 +22,7 @@ public class EndlessSpawner : MonoBehaviour
     float time;
     float toughnessModifier = 1f;
 
+    private EffectBank myEB;
 
     //Lave 10 spawnPoints
 
@@ -33,6 +34,7 @@ public class EndlessSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        myEB = GetComponent<EffectBank>();
         spawnBeginningEnemies();
         EnemySpawner();
         EnemyShamanSpawner();

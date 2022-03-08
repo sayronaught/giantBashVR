@@ -97,6 +97,20 @@ public class dynamicEnemy : MonoBehaviour
     {
         animIdle = true;
     }
+    private void deathSplat()
+    {
+        var blood = Instantiate(instantDeathPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+        blood.transform.position = transform.position;
+        Destroy(gameObject);
+    }
+    private void deathAnim()
+    {
+        playRandomAnim(anims.death);
+        Destroy(gameObject, 10);
+        Destroy(myRB);
+        Destroy(GetComponent<BoxCollider>());
+        isAlive = false;
+    }
     public void takeDamage(float dam)
     {
         Hitpoints -= dam;
@@ -110,45 +124,31 @@ public class dynamicEnemy : MonoBehaviour
                 spawn.GetComponent<damageText>().setText(damage.ToString());
             }
             float width = stats.hitbarMaxWidth * (Hitpoints / stats.maxHealth);
-            if (width < 0f) width = 0f;
+            if (width <= 0f) hitbar.gameObject.SetActive(false);
             hitbar.localScale = new Vector3(width, hitbar.localScale.y, hitbar.localScale.z);
         }
         if (Hitpoints < 0f)
         {
+            playerScript.addPoints(stats.pointValue);
             if (instantDeathPrefab && anims.death.Length > 0)
-            { // both model and deathsplat present. 50% chance for each
-                if (Random.Range(0f, 1f) < 0.5f)
+            { // both model and deathsplat present. 20% chance for splat
+                if (Random.Range(0f, 1f) < 0.2f)
                 {
-                    var blood = Instantiate(instantDeathPrefab, Vector3.zero, Quaternion.identity) as GameObject;
-                    blood.transform.position = transform.position;
-                    Destroy(gameObject);
+                    deathSplat();
                 }
                 else
                 {
-                    playRandomAnim(anims.death);
-                    Destroy(gameObject, 10);
-                    Destroy(myRB);
-                    Destroy(GetComponent<BoxCollider>());
-                    playerScript.addPoints(stats.pointValue);
-                    isAlive = false;
+                    deathAnim();
                 }
             }
             else if (instantDeathPrefab)
             { // remove model and add bloodsplat or other prefab
-                var blood = Instantiate(instantDeathPrefab, Vector3.zero, Quaternion.identity) as GameObject;
-                blood.transform.position = transform.position;
-                Destroy(gameObject);
+                deathSplat();
             }
             else
             { // play death anim
-                playRandomAnim(anims.death);
-                Destroy(gameObject, 10);
-                Destroy(myRB);
-                Destroy(GetComponent<BoxCollider>());
-                playerScript.addPoints(stats.pointValue);
-                isAlive = false;
+                deathAnim();
             }
-            playerScript.addPoints(stats.pointValue);
         }
     }
     private void OnCollisionEnter(Collision collision)
