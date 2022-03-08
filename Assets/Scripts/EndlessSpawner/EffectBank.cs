@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class EffectBank : MonoBehaviour
 {
+    [System.Serializable]
+    public class soundList
+    {
+        public AudioClip[] hammerHitMeat;
+    }
+    public soundList sounds; 
+
     // Start is called before the first frame update
     void Start()
     {

@@ -56,6 +56,8 @@ public class dynamicEnemy : MonoBehaviour
     }
     public soundList sounds;
 
+    public AudioSource beingHitAS;
+
     public GameObject[] meleeWeapons;
     public GameObject[] rangeWeapons;
     public GameObject[] missileWeaponPrefabs;
@@ -66,6 +68,7 @@ public class dynamicEnemy : MonoBehaviour
     public Transform[] waypoints;
 
     public EndlessPlayerScript playerScript;
+    public EffectBank myEB;
 
     private int currentWaypoint;
     private Transform finalWaypoint;
@@ -81,11 +84,15 @@ public class dynamicEnemy : MonoBehaviour
     public void spawnSetDifficulty(float modifier)
     {
         stats.maxHealth *= modifier;
-        Hitpoints *= modifier;
-        stats.strength *= modifier;
-        stats.damageReduction *= modifier;
-        stats.maxSpeed *= Random.Range(0.75f, 1.25f)+(modifier*0.01f);
+        Hitpoints = stats.maxHealth * Random.Range(0.8f, 1f);
+        stats.strength *= modifier * 1.5f;
+        stats.damageReduction *= modifier*2f;
+        stats.maxSpeed *= Random.Range(0.75f, 1.25f)*modifier;
         myRB.mass = stats.mass * 2f;
+        float size = Random.Range(.5f * stats.mass, 0.7f * stats.mass);
+        transform.localScale = new Vector3(size, size, size);
+        if (meleeWeapons.Length > 0)
+            meleeWeapons[Random.Range(0, meleeWeapons.Length)].SetActive(true);
     }
 
     public void setWaypoints(Transform spawnpoint)
@@ -119,7 +126,9 @@ public class dynamicEnemy : MonoBehaviour
             if (damageTextPrefab)
             {
                 var spawn = Instantiate(damageTextPrefab, hitbar.position, Quaternion.identity);
-                spawn.transform.rotation = hitbar.rotation;
+                //spawn.transform.rotation = hitbar.rotation;
+                spawn.transform.LookAt(playerScript.transform.position+Vector3.up);
+                spawn.transform.RotateAround(spawn.transform.position, Vector3.up, 180);
                 int damage = (int)dam;
                 spawn.GetComponent<damageText>().setText(damage.ToString());
             }
@@ -158,18 +167,14 @@ public class dynamicEnemy : MonoBehaviour
         var dam = (collision.gameObject.GetComponent<hammerControllerEndlessMode>().chargeLightning * 3f + 5f) - stats.damageReduction;
         dam += (collision.rigidbody.velocity.magnitude * 0.2f);
         takeDamage(dam);
+        playRandomBeingHitSound(myEB.sounds.hammerHitMeat);
     }
 
     void Awake()
     {
-        Hitpoints = stats.maxHealth;
         myAnim = GetComponentInChildren<Animator>();
         mySound = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
-        float size = Random.Range(.5f*stats.mass, 0.7f*stats.mass);
-        transform.localScale = new Vector3(size, size, size);
-        if (meleeWeapons.Length > 0)
-            meleeWeapons[Random.Range(0, meleeWeapons.Length)].SetActive(true);
     }
 
     // Update is called once per frame
@@ -227,5 +232,12 @@ public class dynamicEnemy : MonoBehaviour
         if ( acList.Length < 1 ) return;
         mySound.clip = acList[Random.Range(0, acList.Length)];
         mySound.Play();
+    }
+
+    void playRandomBeingHitSound(AudioClip[] acList)
+    {
+        if (acList.Length < 1) return;
+        beingHitAS.clip = acList[Random.Range(0, acList.Length)];
+        beingHitAS.Play();
     }
 }

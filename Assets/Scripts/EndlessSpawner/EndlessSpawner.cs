@@ -59,6 +59,7 @@ public class EndlessSpawner : MonoBehaviour
         ai.spawnSetDifficulty(toughnessModifier);
         ai.setWaypoints(spawnpoint);
         ai.playerScript = PlayerScript;
+        ai.myEB = myEB;
     }
 
     private void spawnBeginningEnemies()
@@ -74,7 +75,7 @@ public class EndlessSpawner : MonoBehaviour
         while (!Application.isEditor || Application.isPlaying)
         {
             //Debug.Log("enemy waiting: " + waitTimer(1000, 5000, 0.01f).ToString());
-            await Task.Delay(waitTimer(5000, 750000, 0.003f));
+            await Task.Delay(waitTimer(5000, 90000, 0.003f));
             toughnessModifier += 0.05f;
             randomSpawnPoint = Random.Range(0, spawnPoints.Length);
             randomSpawnMob = Random.Range(0, enemyBossPrefab.Length);
@@ -86,7 +87,7 @@ public class EndlessSpawner : MonoBehaviour
     {
         while (!Application.isEditor || Application.isPlaying)
         {
-            await Task.Delay(waitTimer(2000, 50000, 0.002f));
+            await Task.Delay(waitTimer(2000, 30000, 0.002f));
             toughnessModifier += 0.025f;
             randomSpawnPoint = Random.Range(0, spawnPoints.Length);
             randomSpawnMob = Random.Range(0, enemyShamanPrefab.Length);
@@ -98,7 +99,7 @@ public class EndlessSpawner : MonoBehaviour
     {
         while (!Application.isEditor || Application.isPlaying)
         {
-            await Task.Delay(waitTimer(1000, 10000, 0.001f));
+            await Task.Delay(waitTimer(1000, 8000, 0.001f));
             toughnessModifier += 0.01f;
             randomSpawnPoint = Random.Range(0, spawnPoints.Length);
             randomSpawnMob = Random.Range(0, enemyNormalPrefab.Length);
