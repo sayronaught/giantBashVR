@@ -84,7 +84,7 @@ public class dynamicEnemy : MonoBehaviour
         Hitpoints *= modifier;
         stats.strength *= modifier;
         stats.damageReduction *= modifier;
-        stats.maxSpeed *= Random.Range(0.75f, 1.25f);
+        stats.maxSpeed *= Random.Range(0.75f, 1.25f)+(modifier*0.01f);
         myRB.mass = stats.mass * 2f;
     }
 
