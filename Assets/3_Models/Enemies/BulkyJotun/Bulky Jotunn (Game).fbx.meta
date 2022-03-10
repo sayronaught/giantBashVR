@@ -70,12 +70,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: BulJot_Leather
-    second: {fileID: 2100000, guid: 2c219e03c321ff040a8a10a30eb2385f, type: 2}
+    second: {fileID: 2100000, guid: 8ad991a64482c9a438aa9d24a17ce3cb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: BulJot_Metal
-    second: {fileID: 2100000, guid: 0aa9072f72244ff44b081da9d9e5d025, type: 2}
+    second: {fileID: 2100000, guid: 3f9c268098301a64ab3204ef48956091, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

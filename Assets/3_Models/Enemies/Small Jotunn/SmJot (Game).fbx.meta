@@ -83,8 +83,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: SmJot Eyes Mat
+    second: {fileID: 2100000, guid: 44552d2176a09324bac5740269747fb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: SmJot Mat
     second: {fileID: 2100000, guid: 9426adfb81f8aaa41a4d7349240ed812, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SmoJot Leather
+    second: {fileID: 2100000, guid: d37124c944230ab4da182be013485969, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
