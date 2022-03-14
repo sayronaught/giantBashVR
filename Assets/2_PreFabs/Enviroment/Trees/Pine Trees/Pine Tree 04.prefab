@@ -175,7 +175,6 @@ GameObject:
   - component: {fileID: 4516793698360758243}
   - component: {fileID: 9093297468406474483}
   - component: {fileID: 3380431318689861093}
-  - component: {fileID: 2924385096336838876}
   m_Layer: 0
   m_Name: pine_tree_04_m_LOD3
   m_TagString: Untagged
@@ -246,18 +245,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2924385096336838876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4954034896455668583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e142a1af7173232458019d059c7b71fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6765934510102419393
 GameObject:
   m_ObjectHideFlags: 0
