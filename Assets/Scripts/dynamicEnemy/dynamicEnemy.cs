@@ -112,13 +112,14 @@ public class dynamicEnemy : MonoBehaviour
     public void animEventReleaseProjectile()
     {
         heldMissile.transform.SetParent(null);
+        heldMissile.GetComponent<enemyThrowingAxe>().isThrown = true;
+        heldMissile.GetComponent<AudioSource>().Play();
+        heldMissile.GetComponent<BoxCollider>().enabled = true;
         var rb = heldMissile.GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.AddForce(((targetRandomizer(playerScript.transform.position, 1f) + (Vector3.up * 5f)) - heldMissile.transform.position) * 50f);
         rb.maxAngularVelocity = Mathf.Infinity;
         rb.AddRelativeTorque(Vector3.up * 4f);
-        heldMissile.GetComponent<enemyThrowingAxe>().isThrown = true;
-        heldMissile.GetComponent<AudioSource>().Play();
         heldMissile = null;
     }
     public void animEventBackToIdle()
@@ -223,6 +224,7 @@ public class dynamicEnemy : MonoBehaviour
                 playerScript.damagePlayer(stats.strength);
                 var missile = Instantiate(missileWeaponPrefabs[Random.Range(0,missileWeaponPrefabs.Length)]);
                 missile.transform.position = hand.position;
+                missile.transform.rotation = hand.rotation;
                 missile.transform.SetParent(hand);
                 heldMissile = missile;
             }
