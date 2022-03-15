@@ -178,6 +178,7 @@ public class dynamicEnemy : MonoBehaviour
                 spawn.GetComponent<damageText>().setText(damage.ToString());
             }
             float width = stats.hitbarMaxWidth * (Hitpoints / stats.maxHealth);
+            myAnim.SetFloat("Wounded", 1f- (Hitpoints / stats.maxHealth));
             if (width <= 0f) hitbar.gameObject.SetActive(false);
             hitbar.localScale = new Vector3(width, hitbar.localScale.y, hitbar.localScale.z);
         }
