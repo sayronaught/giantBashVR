@@ -24,7 +24,7 @@ public class dynamicEnemy : MonoBehaviour
     private float speedUp = 1.1f;
     private float speedDown = 0.9f;
     private float speedAnim = 0f;
-    public float travelSpeed = 0f;
+    private float travelSpeed = 0f;
 
     [System.Serializable]
     public class animList
@@ -108,6 +108,7 @@ public class dynamicEnemy : MonoBehaviour
         myRB.mass = stats.mass * 6f;
         float size = Random.Range(.5f * stats.mass, 0.7f * stats.mass);
         transform.localScale = new Vector3(size, size, size);
+        myAnim.SetFloat("variation", Random.Range(-1f,1f));
         if (meleeWeapons.Length > 0)
             meleeWeapons[Random.Range(0, meleeWeapons.Length)].SetActive(true);
     }
@@ -273,7 +274,6 @@ public class dynamicEnemy : MonoBehaviour
                 }
             }
         }
-        myAnim.SetFloat("CurrentSpeed", stats.speed);
     }
 
     void lookAt( Vector3 position)
