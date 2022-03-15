@@ -10,7 +10,7 @@ public class dynamicEnemy : MonoBehaviour
         public int pointValue = 1;
         public float mass = 1f;
         public float strength = 1f;
-        public float speed = 1f;
+        public float speed = 0f;
         public float maxSpeed = 1f;
         public float jumpForce = 1000f;
         public float damageReduction = 1f;
@@ -21,6 +21,10 @@ public class dynamicEnemy : MonoBehaviour
         public float hitbarMaxWidth = 0.1f;
     }
     public statList stats;
+    private float speedUp = 1.1f;
+    private float speedDown = 0.9f;
+    private float speedAnim = 0f;
+    private float travelSpeed = 0f;
 
     [System.Serializable]
     public class animList
@@ -97,6 +101,9 @@ public class dynamicEnemy : MonoBehaviour
         stats.strength *= modifier * 1.5f;
         stats.damageReduction *= modifier*2f;
         stats.maxSpeed *= Random.Range(0.75f, 1.25f)*modifier;
+        speedUp = Random.Range(1.05f, 1.25f);
+        speedDown = Random.Range(0.8f, 0.95f);
+        travelSpeed = Random.Range(0.25f, 1f);
         if ( !myRB ) myRB = GetComponent<Rigidbody>();
         myRB.mass = stats.mass * 2f;
         float size = Random.Range(.5f * stats.mass, 0.7f * stats.mass);
@@ -139,6 +146,23 @@ public class dynamicEnemy : MonoBehaviour
         Destroy(myRB);
         Destroy(GetComponent<BoxCollider>());
         isAlive = false;
+    }
+    private void changeSpeed(float desiredSpeed)
+    {
+        if ( desiredSpeed > speedAnim )
+        { // speedUp
+            speedAnim *= speedUp;
+            if (speedAnim > desiredSpeed) speedAnim = desiredSpeed;
+            myAnim.SetFloat("CurrentSpeed", speedAnim);
+            stats.speed = stats.maxSpeed * speedAnim;
+        }
+        if (desiredSpeed < speedAnim)
+        { // slowDown
+            speedAnim *= speedDown;
+            if (speedAnim < desiredSpeed) speedAnim = desiredSpeed;
+            myAnim.SetFloat("CurrentSpeed", speedAnim);
+            stats.speed = stats.maxSpeed * speedAnim;
+        }
     }
     public void takeDamage(float dam)
     {
@@ -214,9 +238,8 @@ public class dynamicEnemy : MonoBehaviour
         float distance = Vector3.Distance(transform.position, target.position);
         if (isRanged && Vector3.Distance(transform.position,playerScript.transform.position) < stats.rangedAttackRange)
         { // is inside ranged attackrange
-            stats.speed = 0f;
-            myAnim.SetFloat("CurrentSpeed", stats.speed);
-            if (lastActionDelay < 0f)
+            changeSpeed(0f);
+            if (lastActionDelay < 0f && travelSpeed == 0f)
             {
                 lookAt(playerScript.transform.position);
                 lastActionDelay = stats.attackCooldown;
@@ -232,15 +255,18 @@ public class dynamicEnemy : MonoBehaviour
         }
         if ( distance > stats.meleeAttackRange) // melee attacks and melee stats for navigation through waypoints
         { // far away
+            if ( travelSpeed == 0f ) travelSpeed = Random.Range(0.25f, 1f);
             lookAt(target.position);
             myRB.MovePosition(Vector3.MoveTowards(transform.position, target.position, stats.maxSpeed * Time.fixedDeltaTime));
-            stats.speed = stats.maxSpeed;
+            changeSpeed(travelSpeed);
         } else { // close
-            stats.speed = 0f;
-            if (currentWaypoint < waypoints.Length-1) currentWaypoint++;
-            else
-            { // last waypoint, near player
-                if ( lastActionDelay < 0f )
+            if (currentWaypoint < waypoints.Length - 1)
+            { // More waypoints to go
+                currentWaypoint++;
+                travelSpeed = Random.Range(0.25f, 1f);
+            } else { // last waypoint, near player
+                changeSpeed(0f);
+                if (lastActionDelay < 0f && travelSpeed < 0.25f)
                 {
                     lookAt(playerScript.transform.position);
                     lastActionDelay = stats.attackCooldown;
