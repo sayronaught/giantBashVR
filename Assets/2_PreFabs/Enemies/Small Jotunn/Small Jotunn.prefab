@@ -417,7 +417,7 @@ MonoBehaviour:
     death:
     - Death_01
     attackMeleeLight:
-    - Attack_01
+    - Stab_01
     attackMeleeheavy: []
     attackRangeLight:
     - Ranged Attack 01
