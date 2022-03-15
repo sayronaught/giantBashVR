@@ -15,14 +15,14 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.11463154, g: 0.12783585, b: 0.1509434, a: 1}
+  m_FogColor: {r: 0.11372549, g: 0.12572958, b: 0.14901961, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.025
   m_LinearFogStart: 0
   m_LinearFogEnd: 83.12
-  m_AmbientSkyColor: {r: 0.43466145, g: 0.5381523, b: 0.7037376, a: 1}
-  m_AmbientEquatorColor: {r: 0.9510379, g: 0.90348595, b: 1.1412455, a: 1}
-  m_AmbientGroundColor: {r: 0.5803922, g: 0.4862745, b: 0.8, a: 1}
+  m_AmbientSkyColor: {r: 0.5735392, g: 0.7100962, b: 0.9285873, a: 1}
+  m_AmbientEquatorColor: {r: 0.36037597, g: 0.34235716, b: 0.4301988, a: 1}
+  m_AmbientGroundColor: {r: 0.191458, g: 0.16041076, b: 0.26390156, a: 1}
   m_AmbientIntensity: 2.59
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -9231,7 +9231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7413472365669356402, guid: 8c35bbdc0400008478158b22eea7091d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7413472366107470846, guid: 8c35bbdc0400008478158b22eea7091d, type: 3}
       propertyPath: m_IsActive
@@ -9239,7 +9239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7413472366354226264, guid: 8c35bbdc0400008478158b22eea7091d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7413472366354226270, guid: 8c35bbdc0400008478158b22eea7091d, type: 3}
       propertyPath: m_Lightmapping
@@ -9325,6 +9325,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8151625788970691959, guid: 8c35bbdc0400008478158b22eea7091d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 808cebd36b4221445b7665858f37268d, type: 2}
+    - target: {fileID: 8151625788970691959, guid: 8c35bbdc0400008478158b22eea7091d, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: c10bf2aa6b4f7c74691f9a99a8a1d0c7, type: 2}
     - target: {fileID: 8192014453069037135, guid: 8c35bbdc0400008478158b22eea7091d, type: 3}
       propertyPath: m_IsActive
       value: 1

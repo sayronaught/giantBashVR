@@ -618,13 +618,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2505809031638605376, guid: a11c0b0fc5e8c354eabeb2b0fe2ddfc0, type: 3}
+      propertyPath: m_Data.m_Offset.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505809031638605376, guid: a11c0b0fc5e8c354eabeb2b0fe2ddfc0, type: 3}
       propertyPath: m_Data.m_ConstrainedObject
       value: 
       objectReference: {fileID: 6394398766503625530}
     - target: {fileID: 2505809031767532656, guid: a11c0b0fc5e8c354eabeb2b0fe2ddfc0, type: 3}
+      propertyPath: m_Data.m_Offset.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505809031767532656, guid: a11c0b0fc5e8c354eabeb2b0fe2ddfc0, type: 3}
       propertyPath: m_Data.m_ConstrainedObject
       value: 
       objectReference: {fileID: 2595102670710305777}
+    - target: {fileID: 2505809031980369243, guid: a11c0b0fc5e8c354eabeb2b0fe2ddfc0, type: 3}
+      propertyPath: m_Data.m_Offset.x
+      value: -15
+      objectReference: {fileID: 0}
     - target: {fileID: 2505809031980369243, guid: a11c0b0fc5e8c354eabeb2b0fe2ddfc0, type: 3}
       propertyPath: m_Data.m_ConstrainedObject
       value: 
