@@ -24,7 +24,7 @@ public class dynamicEnemy : MonoBehaviour
     private float speedUp = 1.1f;
     private float speedDown = 0.9f;
     private float speedAnim = 0f;
-    private float travelSpeed = 0f;
+    public float travelSpeed = 0f;
 
     [System.Serializable]
     public class animList
@@ -101,11 +101,11 @@ public class dynamicEnemy : MonoBehaviour
         stats.strength *= modifier * 1.5f;
         stats.damageReduction *= modifier*2f;
         stats.maxSpeed *= Random.Range(0.75f, 1.25f)*modifier;
-        speedUp = Random.Range(1.05f, 1.25f);
-        speedDown = Random.Range(0.8f, 0.95f);
+        speedUp = Random.Range(1.01f, 1.05f);
+        speedDown = Random.Range(0.95f, 0.99f);
         travelSpeed = Random.Range(0.25f, 1f);
         if ( !myRB ) myRB = GetComponent<Rigidbody>();
-        myRB.mass = stats.mass * 2f;
+        myRB.mass = stats.mass * 6f;
         float size = Random.Range(.5f * stats.mass, 0.7f * stats.mass);
         transform.localScale = new Vector3(size, size, size);
         if (meleeWeapons.Length > 0)
@@ -151,18 +151,16 @@ public class dynamicEnemy : MonoBehaviour
     {
         if ( desiredSpeed > speedAnim )
         { // speedUp
-            speedAnim *= speedUp;
+            speedAnim = speedAnim * speedUp + 0.00001f;
             if (speedAnim > desiredSpeed) speedAnim = desiredSpeed;
-            myAnim.SetFloat("CurrentSpeed", speedAnim);
-            stats.speed = stats.maxSpeed * speedAnim;
         }
         if (desiredSpeed < speedAnim)
         { // slowDown
-            speedAnim *= speedDown;
-            if (speedAnim < desiredSpeed) speedAnim = desiredSpeed;
-            myAnim.SetFloat("CurrentSpeed", speedAnim);
-            stats.speed = stats.maxSpeed * speedAnim;
+            speedAnim = speedAnim * speedDown- 0.00001f;
+            if (speedAnim < desiredSpeed) speedAnim = desiredSpeed; 
         }
+        myAnim.SetFloat("CurrentSpeed", speedAnim);
+        stats.speed = stats.maxSpeed * speedAnim;
     }
     public void takeDamage(float dam)
     {
@@ -239,7 +237,7 @@ public class dynamicEnemy : MonoBehaviour
         if (isRanged && Vector3.Distance(transform.position,playerScript.transform.position) < stats.rangedAttackRange)
         { // is inside ranged attackrange
             changeSpeed(0f);
-            if (lastActionDelay < 0f && travelSpeed == 0f)
+            if (lastActionDelay < 0f && stats.speed < 0.025f)
             {
                 lookAt(playerScript.transform.position);
                 lastActionDelay = stats.attackCooldown;
@@ -257,7 +255,7 @@ public class dynamicEnemy : MonoBehaviour
         { // far away
             if ( travelSpeed == 0f ) travelSpeed = Random.Range(0.25f, 1f);
             lookAt(target.position);
-            myRB.MovePosition(Vector3.MoveTowards(transform.position, target.position, stats.maxSpeed * Time.fixedDeltaTime));
+            myRB.MovePosition(Vector3.MoveTowards(transform.position, target.position, stats.speed * Time.fixedDeltaTime));
             changeSpeed(travelSpeed);
         } else { // close
             if (currentWaypoint < waypoints.Length - 1)
@@ -266,7 +264,7 @@ public class dynamicEnemy : MonoBehaviour
                 travelSpeed = Random.Range(0.25f, 1f);
             } else { // last waypoint, near player
                 changeSpeed(0f);
-                if (lastActionDelay < 0f && travelSpeed < 0.25f)
+                if (lastActionDelay < 0f && stats.speed < 0.025f)
                 {
                     lookAt(playerScript.transform.position);
                     lastActionDelay = stats.attackCooldown;
@@ -276,7 +274,6 @@ public class dynamicEnemy : MonoBehaviour
             }
         }
         myAnim.SetFloat("CurrentSpeed", stats.speed);
-        //myRB.MovePosition(pos);
     }
 
     void lookAt( Vector3 position)
