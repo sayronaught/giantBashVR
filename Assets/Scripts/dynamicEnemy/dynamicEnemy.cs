@@ -287,7 +287,9 @@ public class dynamicEnemy : MonoBehaviour
     void playRandomAnim( string[] animlist )
     {
         if ( animlist.Length < 1 ) return;
-        myAnim.Play(animlist[Random.Range(0, animlist.Length)]);
+        myAnim.CrossFade(animlist[Random.Range(0, animlist.Length)], 0.3f);
+        //Changed to CrossFade instead of Play to add blending between animations
+        //myAnim.Play(animlist[Random.Range(0, animlist.Length)]);
     }
 
     void playRandomSound( AudioClip[] acList )
