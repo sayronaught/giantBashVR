@@ -7,6 +7,16 @@ public class _Settings : MonoBehaviour
 {
 
     public int storedPoints = 0;
+    public int highestScore = 0;
+    public int damageDone = 0;
+    public int damageTaken = 0;
+    public int damageHighest = 0;
+    public int jotunsBashed = 0;
+    public int jotunsBashesGnot = 0;
+    public int JotunsBashedSmurfs = 0;
+    public int JotunsBashesSmall = 0;
+    public int JotunsBashedShaman = 0;
+    public int JotunsBashedBulky = 0;
 
     public AudioMixer masterMixer;
 
