@@ -47,6 +47,7 @@ public class gameController : MonoBehaviour
     public int gameStage = 0; // 0 tutorial, 1 approach, 2 game on, 3 boss level, 4 post score
     private int gamePoints = 0;
     private GameObject currentGate;
+    private _Settings mySettings;
 
     public int maxSpeed = 0;
 
@@ -81,6 +82,7 @@ public class gameController : MonoBehaviour
         uiEffScript.scaleTo = true;
         debugAddPoints = false;
         var pointPopup = Instantiate(uiPointPopupPrefab,uiEffScript.transform);
+        if (mySettings) mySettings.storedPoints += points;
     }
     private void destroyTargets()
     {
@@ -95,6 +97,7 @@ public class gameController : MonoBehaviour
     {
         targetList = new List<targetScript>();
         thePlayer.transform.position = posTutorial.position;
+        mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
     }
     private void spawnTarget()
     {
