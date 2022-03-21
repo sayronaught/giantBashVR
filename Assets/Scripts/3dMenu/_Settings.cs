@@ -17,6 +17,8 @@ public class _Settings : MonoBehaviour
     public int JotunsBashesSmall = 0;
     public int JotunsBashedShaman = 0;
     public int JotunsBashedBulky = 0;
+    public int gamesStarted = 0;
+    public int secondsPlayed = 0;
 
     public AudioMixer masterMixer;
 
