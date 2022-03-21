@@ -6,6 +6,8 @@ using UnityEngine.Audio;
 public class _Settings : MonoBehaviour
 {
 
+    public int storedPoints = 0;
+
     public AudioMixer masterMixer;
 
     // Start is called before the first frame update

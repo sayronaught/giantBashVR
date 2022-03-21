@@ -18,6 +18,7 @@ public class EndlessPlayerScript : MonoBehaviour
     public int points = 0;
 
     private Vignette bloodVignette;
+    private _Settings mySettings;
 
     public void damagePlayer(float dam)
     {
@@ -27,6 +28,7 @@ public class EndlessPlayerScript : MonoBehaviour
     {
         points += newPoints;
         uiPoints.text = "Points: "+points.ToString();
+        if (mySettings) mySettings.storedPoints += newPoints;
     }
 
     // Start is called before the first frame update
@@ -34,6 +36,7 @@ public class EndlessPlayerScript : MonoBehaviour
     {
         var volume = PlayerBloodEffect.GetComponent<Volume>();
         volume.profile.TryGet<Vignette>(out bloodVignette);
+        mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
     }
 
     // Update is called once per frame
