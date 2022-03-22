@@ -18,7 +18,42 @@ ModelImporter:
   - first:
       74: -5606949966218590395
     second: Dwarf Rig|F_Fist
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Anvil
+    second: {fileID: 2100000, guid: 3632bb99a345f4e48a4c3c8324c31e8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dwarf Smith Armor
+    second: {fileID: 2100000, guid: c2b6ddb4464ff824393da2e940524bc1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye
+    second: {fileID: 2100000, guid: c624143044d3efb4b8356f8a741ea65b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair
+    second: {fileID: 2100000, guid: c624143044d3efb4b8356f8a741ea65b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 8ad991a64482c9a438aa9d24a17ce3cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 3f9c268098301a64ab3204ef48956091, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: c624143044d3efb4b8356f8a741ea65b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
