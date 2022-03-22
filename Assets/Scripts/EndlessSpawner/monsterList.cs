@@ -5,9 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class monsterList 
 {
-    public int bigBossGnot = 0;
-    public int smurf = 0;
-    public int jotunnSmall = 0;
-    public int jotunnShaman = 0;
-    public int jotunnBulky = 0;
+    public bool bigBossGnot = false;
+    public bool smurf = false;
+    public bool jotunnSmall = false;
+    public bool jotunnShaman = false;
+    public bool jotunnBulky = false;
 }
