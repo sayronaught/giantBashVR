@@ -19,6 +19,7 @@ public class hammerFX : MonoBehaviour
 
     public AudioSource myAS;
     private Rigidbody myRB;
+    private _Settings mySettings;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -103,6 +104,15 @@ public class hammerFX : MonoBehaviour
     {
         myAS = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
+        mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
+        if ( mySettings )
+        { // spawn hammerskin
+            var hammerSkin = Instantiate(mySettings.currentHammerSkin, Vector3.zero, Quaternion.identity);
+            hammerSkin.transform.parent = GameObject.Find("HammerSkinSlot").transform;
+            hammerSkin.transform.localPosition = mySettings.currentHammerSkin.transform.localPosition;
+            hammerSkin.transform.localRotation = mySettings.currentHammerSkin.transform.localRotation;
+            hammerSkin.transform.localScale = mySettings.currentHammerSkin.transform.localScale;
+        }
     }
 
     // Update is called once per frame
