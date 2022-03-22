@@ -12,11 +12,7 @@ public class _Settings : MonoBehaviour
     public int damageTaken = 0;
     public int damageHighest = 0;
     public int jotunsBashed = 0;
-    public int jotunsBashesGnot = 0;
-    public int JotunsBashedSmurfs = 0;
-    public int JotunsBashesSmall = 0;
-    public int JotunsBashedShaman = 0;
-    public int JotunsBashedBulky = 0;
+    public monsterList kills;
     public int gamesStarted = 0;
     public int secondsPlayed = 0;
 
