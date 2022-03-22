@@ -2,7 +2,7 @@ Last Stable:
 0.3.0 Beta
 
 Latest Test:
-0.3.0 Beta
+0.3.1.2 Alpha
 
 History:
 0.1.0 : (Stable) Messe & Menu
@@ -11,5 +11,5 @@ History:
 0.2.5 : Spawnpaths & AOE
 0.2.6 : Movement Speed & Ranged attacks
 0.3.0 : Blended Animations
-0.3.1 : Valhalla Menu
+0.3.1 : Valhalla Menu & Hammer Skins
 
