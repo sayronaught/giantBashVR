@@ -14069,8 +14069,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a40b3033bfc064a9f844d0eae510c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storedPoints: 0
   masterMixer: {fileID: 24100000, guid: 475660a74f7878049aa8274bb6d33096, type: 2}
+  currentHammerSkin: {fileID: 4077583434881299190, guid: 89ab36e18f93e5148892a2b020d4b76b, type: 3}
+  storedPoints: 0
+  highestScore: 0
+  damageDone: 0
+  damageTaken: 0
+  damageHighest: 0
+  jotunsBashed: 0
+  gamesStarted: 0
+  secondsPlayed: 0
 --- !u!4 &2079409226
 Transform:
   m_ObjectHideFlags: 0

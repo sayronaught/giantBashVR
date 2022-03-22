@@ -5,6 +5,8 @@ using UnityEngine.Audio;
 
 public class _Settings : MonoBehaviour
 {
+    public AudioMixer masterMixer;
+    public GameObject currentHammerSkin;
 
     public int storedPoints = 0;
     public int highestScore = 0;
@@ -16,7 +18,7 @@ public class _Settings : MonoBehaviour
     public int gamesStarted = 0;
     public int secondsPlayed = 0;
 
-    public AudioMixer masterMixer;
+    
 
     // Start is called before the first frame update
     void Awake()
