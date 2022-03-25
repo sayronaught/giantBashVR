@@ -105,8 +105,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224789363664009178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000000014439, y: 0.0353, z: 3.6831e-10}
-  m_LocalScale: {x: 0.010236238, y: 0.010236238, z: 0.010236238}
+  m_LocalPosition: {x: 0.0000034944, y: 0.038534, z: 4.1251e-10}
+  m_LocalScale: {x: 0.0114645865, y: 0.0114645865, z: 0.0114645865}
   m_Children:
   - {fileID: 3442198521973044741}
   - {fileID: 4612969372084113594}
@@ -406,3 +406,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMaxHit: 120
   playerRegeneration: 0.3
+  weaponThrowForce: 5
+  weaponThrowCharge: 1

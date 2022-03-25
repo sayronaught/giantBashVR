@@ -6,6 +6,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class hammerControllerEndlessMode : MonoBehaviour
 {
+    public float statsThrowForce = 3f;
+    public float statsThrowCharge = 2f;
+
     public GameObject leftHand;
     public GameObject rightHand;
     public Animator leftAnim;
@@ -144,7 +147,7 @@ public class hammerControllerEndlessMode : MonoBehaviour
                     //hammerFXScript.myTrail.emissionRate = heldRight;
                     //hammer.transform.Rotate(Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight), Random.Range(-heldRight, heldRight));
                 }
-                hammerGrabScript.throwVelocityScale = 3f + heldRight * 2f;
+                hammerGrabScript.throwVelocityScale = statsThrowForce + heldRight * statsThrowCharge;
             }
         }
         else if (leftPress && heldRight == 0f)
@@ -187,7 +190,7 @@ public class hammerControllerEndlessMode : MonoBehaviour
                     //hammerFXScript.myTrail.emissionRate = heldLeft;
                     //hammer.transform.Rotate(Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft), Random.Range(-heldLeft, heldLeft));
                 }
-                hammerGrabScript.throwVelocityScale = 3f + heldLeft * 2f;
+                hammerGrabScript.throwVelocityScale = statsThrowForce + heldLeft * statsThrowCharge;
             }
         }
         else

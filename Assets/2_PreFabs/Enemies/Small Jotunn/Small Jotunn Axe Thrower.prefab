@@ -270,6 +270,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19d66890a0f2324fa99377ecb412f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killType:
+    bigBossGnot: 0
+    smurf: 0
+    jotunnSmall: 0
+    jotunnShaman: 0
+    jotunnBulky: 0
   stats:
     pointValue: 1
     mass: 2
@@ -278,7 +284,7 @@ MonoBehaviour:
     maxSpeed: 3
     jumpForce: 1000
     damageReduction: 1
-    maxHealth: 25
+    maxHealth: 10
     meleeAttackRange: 2
     rangedAttackRange: 7
     attackCooldown: 2

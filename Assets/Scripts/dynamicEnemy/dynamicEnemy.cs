@@ -98,7 +98,7 @@ public class dynamicEnemy : MonoBehaviour
 
     public void spawnSetDifficulty(float modifier)
     {
-        stats.maxHealth *= modifier;
+        stats.maxHealth *= modifier*3;
         Hitpoints = stats.maxHealth * Random.Range(0.8f, 1f);
         stats.strength *= modifier * 1.5f;
         stats.damageReduction *= modifier*2f;

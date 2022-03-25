@@ -16,6 +16,7 @@ public class shopItem : MonoBehaviour
     public TextMesh myStats;
     public TextMesh myPrice;
     public GameObject productDisplay;
+    public pointBank myBank;
 
     private _Settings mySettings;
     private float localScale;
@@ -39,7 +40,34 @@ public class shopItem : MonoBehaviour
     }
     public void clickedThis()
     {
-        if (mySettings) mySettings.currentHammerSkin = hammerSkinPrefab;
+        if (!mySettings) return;
+        if ( bought && !activated )
+        { // select existing
+            myBank.playSound(myBank.sfxSelect);
+            mySettings.currentHammerSkin = hammerSkinPrefab;
+            myBank.activeSkin.activated = false;
+            myBank.activeSkin.HoverOff();
+            myBank.activeSkin = this;
+            activated = true;
+        }
+        if (!bought)
+        { // buy it
+            if (mySettings.storedPoints >= price)
+            { // rich
+                myBank.playSound(myBank.sfxBuy);
+                bought = true;
+                mySettings.boughtSkins.Add(hammerSkinPrefab);
+                mySettings.currentHammerSkin = hammerSkinPrefab;
+                mySettings.storedPoints -= price;
+                myPrice.gameObject.SetActive(false);
+                myBank.activeSkin.activated = false;
+                myBank.activeSkin.HoverOff();
+                myBank.activeSkin = this;
+                activated = true;
+            } else { // broke ass bitch
+                myBank.playSound(myBank.sfxDeny);
+            }
+        }
     }
 
     // Start is called before the first frame update
@@ -48,7 +76,11 @@ public class shopItem : MonoBehaviour
         mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
         if ( mySettings )
         {
-            if (mySettings.currentHammerSkin == hammerSkinPrefab) activated = true;
+            if (mySettings.currentHammerSkin == hammerSkinPrefab)
+            {
+                activated = true;
+                myBank.activeSkin = this;
+            }
             foreach ( GameObject skinBought in mySettings.boughtSkins)
             {
                 if (skinBought == hammerSkinPrefab)
