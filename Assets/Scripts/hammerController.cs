@@ -9,6 +9,8 @@ public class hammerController : MonoBehaviour
 {
     public float statsThrowForce = 3f;
     public float statsThrowCharge = 2f;
+    public float statsMaxCharge = 9f;
+    public float statsChargeSpeed = 3f;
 
     public GameObject leftHand;
     public GameObject rightHand;
@@ -137,9 +139,9 @@ public class hammerController : MonoBehaviour
                     rightHandRay.SendHapticImpulse(1f, 0.2f);
                     rightCatch.Play();
                 }                    
-                heldRight += Time.deltaTime*3f;
+                heldRight += Time.deltaTime*statsChargeSpeed;
                 changeLightning(heldRight);
-                if (heldRight > 9f) heldRight = 9f;
+                if (heldRight > statsMaxCharge) heldRight = statsMaxCharge;
                 if (heldRight > 0.5f)
                 {
                     hammerRB.mass = heldRight+2f;
@@ -180,9 +182,9 @@ public class hammerController : MonoBehaviour
                     leftHandRay.SendHapticImpulse(1f, 0.2f);
                     leftCatch.Play();
                 }                    
-                heldLeft += Time.deltaTime*3f;
+                heldLeft += Time.deltaTime*statsChargeSpeed;
                 changeLightning(heldLeft);
-                if (heldLeft > 9f) heldLeft = 9f;
+                if (heldLeft > statsMaxCharge) heldLeft = statsMaxCharge;
                 if (heldLeft > 0.5f)
                 {
                     hammerRB.mass = heldLeft + 2f;

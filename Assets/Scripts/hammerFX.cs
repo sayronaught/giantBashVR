@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class hammerFX : MonoBehaviour
 {
+    public float statsAoeDamage = 5f;
+    public float statsAoeKnockback = 25f;
+    public float statsAoeRange = 5f;
+
     public GameObject prefabLightningExp;
 
     public ParticleSystem myTrail;
@@ -67,7 +71,7 @@ public class hammerFX : MonoBehaviour
             }
             if (myHcEm)
             {
-                var Colliders = Physics.OverlapSphere(transform.position, (charge*5f + 1f));
+                var Colliders = Physics.OverlapSphere(transform.position, (charge*statsAoeRange + 1f));
                 for (int i = 0; i <= Colliders.Length - 1; i++)
                 {
                     //print(Colliders[i].gameObject.transform.name);
@@ -75,12 +79,12 @@ public class hammerFX : MonoBehaviour
                     Colliders[i].gameObject.TryGetComponent<dynamicEnemy>(out enemy);
                     if ( enemy )
                     {
-                        int newdam = (int)((charge*5f + 1f) - Vector3.Distance(transform.position, enemy.transform.position));
+                        int newdam = (int)((charge* statsAoeDamage + 1f) - Vector3.Distance(transform.position, enemy.transform.position));
                         if ( newdam > 0 )
                         {
                             enemy.takeDamage(newdam);
                             var force = (enemy.transform.position - transform.position) * 100f;
-                            enemy.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (2500f + (25f * charge)));
+                            enemy.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (2500f + (statsAoeKnockback * charge)));
                         }
                     }
                 }

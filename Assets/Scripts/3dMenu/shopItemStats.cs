@@ -9,11 +9,21 @@ public class shopItemStats : MonoBehaviour
 
     public float weaponThrowForce = 3f;
     public float weaponThrowCharge = 2f;
+    public float weaponChargeMax = 9f;
+    public float weaponChargeSpeed = 3f;
+
+    public float weaponMass = 1f;
+
+    public float aoeDamage = 5f;
+    public float aoeKnockback = 25f;
+    public float aoeRange = 5f;
 
     private _Settings mySettings;
     private EndlessPlayerScript myPlayerScript;
     private hammerControllerEndlessMode myHammerEndless;
     private hammerController myHammerController;
+    private hammerFX myHammerFx;
+    private Rigidbody myHammerRb;
 
     private void setPlayerStats()
     {
@@ -24,23 +34,44 @@ public class shopItemStats : MonoBehaviour
     {
         myHammerController.statsThrowForce = weaponThrowForce;
         myHammerController.statsThrowCharge = weaponThrowCharge;
+        myHammerController.statsMaxCharge = weaponChargeMax;
+        myHammerController.statsChargeSpeed = weaponChargeSpeed;
     }
     private void setHammerEndless()
     {
         myHammerEndless.statsThrowForce = weaponThrowForce;
         myHammerEndless.statsThrowCharge = weaponThrowCharge;
+        myHammerEndless.statsMaxCharge = weaponChargeMax;
+        myHammerEndless.statsChargeSpeed = weaponChargeSpeed;
+    }
+    private void setHammerFx()
+    {
+        myHammerFx.statsAoeDamage = aoeDamage;
+        myHammerFx.statsAoeKnockback = aoeKnockback;
+        myHammerFx.statsAoeRange = aoeRange;
+    }
+    private void setHammerRb()
+    {
+        myHammerRb.mass = weaponMass;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
-        myPlayerScript = GameObject.Find("XR Origin").GetComponent<EndlessPlayerScript>();
+        var playerGo = GameObject.Find("XR Origin");
+        if ( playerGo ) myPlayerScript = playerGo.GetComponent<EndlessPlayerScript>();
         if (myPlayerScript) setPlayerStats();
-        myHammerController = GameObject.Find("Hammer").GetComponent<hammerController>();
+        var hammerGo = GameObject.Find("Hammer");
+        if (!hammerGo) return;
+        myHammerController = hammerGo.GetComponent<hammerController>();
         if (myHammerController) setHammerController();
-        myHammerEndless = GameObject.Find("Hammer").GetComponent<hammerControllerEndlessMode>();
+        myHammerEndless = hammerGo.GetComponent<hammerControllerEndlessMode>();
         if (myHammerEndless) setHammerEndless();
+        myHammerFx = hammerGo.GetComponent<hammerFX>();
+        if (myHammerFx) setHammerFx();
+        myHammerRb = hammerGo.GetComponent<Rigidbody>();
+        if (myHammerRb) setHammerRb();
     }
 
     // Update is called once per frame
