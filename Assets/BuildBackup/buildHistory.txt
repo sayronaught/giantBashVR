@@ -2,7 +2,7 @@ Last Stable:
 0.3.0 Beta
 
 Latest Test:
-0.3.1.2 Alpha
+0.3.3 Alpha
 
 History:
 0.1.0 : (Stable) Messe & Menu
@@ -13,3 +13,4 @@ History:
 0.3.0 : Blended Animations
 0.3.1 : Valhalla Menu & Hammer Skins
 0.3.2 : Valhalla Upgrade & Hammer Skin Selection
+0.3.3 : Hammer skin stats
