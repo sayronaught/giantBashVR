@@ -7,6 +7,7 @@ public class _Settings : MonoBehaviour
 {
     public AudioMixer masterMixer;
     public GameObject currentHammerSkin;
+    public List<GameObject> boughtSkins;
 
     public int storedPoints = 0;
     public int highestScore = 0;

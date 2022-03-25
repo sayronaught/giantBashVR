@@ -259,7 +259,7 @@ public class dynamicEnemy : MonoBehaviour
         { // far away
             if ( travelSpeed == 0f ) travelSpeed = Random.Range(0.25f, 1f);
             lookAt(target.position);
-            myRB.MovePosition(Vector3.MoveTowards(transform.position, target.position, stats.speed * Time.fixedDeltaTime));
+            myRB.MovePosition(Vector3.MoveTowards(transform.position, target.position, stats.speed * Time.fixedDeltaTime*2f));
             changeSpeed(travelSpeed);
         } else { // close
             if (currentWaypoint < waypoints.Length - 1)

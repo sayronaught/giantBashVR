@@ -15,20 +15,27 @@ public class EndlessPlayerScript : MonoBehaviour
     
     public float maxHit = 100f;
     public float hit = 100f;
+    public float regeneration = 0.2f;
     public int points = 0;
 
     private Vignette bloodVignette;
     private _Settings mySettings;
+    private float updateStats = 0f;
 
     public void damagePlayer(float dam)
     {
         hit -= dam;
+        updatePoints();
     }
     public void addPoints(int newPoints)
     {
         points += newPoints;
-        uiPoints.text = "Points: "+points.ToString();
         if (mySettings) mySettings.storedPoints += newPoints;
+        updatePoints();
+    }
+    private void updatePoints()
+    {
+        uiPoints.text = "Points: " + points.ToString() + "\nHP: " + ((int)hit).ToString() + "/" + ((int)maxHit).ToString();
     }
 
     // Start is called before the first frame update
@@ -42,11 +49,17 @@ public class EndlessPlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hit += Time.deltaTime*0.2f;
+        hit += Time.deltaTime* regeneration;
         float blood = 1f- (hit / maxHit);
         if (blood < 0f) blood = 0f;
         bloodVignette.intensity.value = blood;
         if (hit > maxHit) hit = maxHit;
         if (hit < 0f ) SceneManager.LoadScene(0);
+        updateStats -= Time.deltaTime;
+        if ( updateStats<0f)
+        {
+            updateStats = 1f;
+            updatePoints();
+        }
     }
 }
