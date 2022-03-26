@@ -97,9 +97,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0, z: 0}
-  arcUp: 0.45
-  speedForward: 5
+  arcUp: 0.1
+  speedForward: 10
+  flyStraigt: 1
   Spin: {x: 0, y: 0, z: 0}
+  landSound: {fileID: 8300000, guid: 93ded51c9f9b78e43b3b9ec8e76035a6, type: 3}
+  flying: 0
 --- !u!82 &-2746089257680044421
 AudioSource:
   m_ObjectHideFlags: 0
@@ -110,11 +113,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 0ac8e3469089b7247a9b265c507988cf, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

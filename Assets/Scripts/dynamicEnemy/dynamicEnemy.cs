@@ -122,14 +122,21 @@ public class dynamicEnemy : MonoBehaviour
     public void animEventReleaseProjectile()
     {
         heldMissile.transform.SetParent(null);
-        heldMissile.GetComponent<enemyThrowingAxe>().isThrown = true;
+        var missileScript = heldMissile.GetComponent<genericMissile>();
+        var spellScript = heldMissile.GetComponent<genericSpell>();
+        if ( missileScript )
+        {
+            missileScript.target = playerScript.transform.position + new Vector3(Random.Range(-.5f, .5f),0f, Random.Range(-.5f, .5f));
+            missileScript.flying = true;
+        }
+        //heldMissile.GetComponent<enemyThrowingAxe>().isThrown = true;
         heldMissile.GetComponent<AudioSource>().Play();
-        heldMissile.GetComponent<BoxCollider>().enabled = true;
-        var rb = heldMissile.GetComponent<Rigidbody>();
+        //heldMissile.GetComponent<BoxCollider>().enabled = true;
+        /*var rb = heldMissile.GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.AddForce(((targetRandomizer(playerScript.transform.position, 1f) + (Vector3.up * 5f)) - heldMissile.transform.position) * 50f);
         rb.maxAngularVelocity = Mathf.Infinity;
-        rb.AddRelativeTorque(Vector3.up * 4f);
+        rb.AddRelativeTorque(Vector3.up * 4f);*/
         heldMissile = null;
     }
     public void animEventBackToIdle()

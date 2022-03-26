@@ -3616,8 +3616,9 @@ MonoBehaviour:
   - {fileID: 1836573771}
   - {fileID: 292965175}
   enemyNormalPrefab:
-  - {fileID: 7406365440989737887, guid: 9dcaf8a7644e3f1429080713f600425e, type: 3}
+  - {fileID: 7406365440989737887, guid: c737ce940b481f749b036af22d34f7a5, type: 3}
   - {fileID: 7406365440989737887, guid: a7d88bb11cb66a84086fcdf4beb730f9, type: 3}
+  - {fileID: 7406365440989737887, guid: 9dcaf8a7644e3f1429080713f600425e, type: 3}
   enemyBossPrefab:
   - {fileID: 8800940158332830910, guid: a6e202e681bc34c498afc69025389f5f, type: 3}
   enemyShamanPrefab:
