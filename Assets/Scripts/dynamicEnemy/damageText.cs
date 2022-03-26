@@ -22,8 +22,8 @@ public class damageText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y + (Time.deltaTime * 0.5f), transform.position.z);
-        visibility -= Time.deltaTime * 50f;
+        transform.position = new Vector3(transform.position.x, transform.position.y + (Time.deltaTime * 0.75f), transform.position.z);
+        visibility -= Time.deltaTime * 75f;
         if (visibility <= 0f) Destroy(gameObject);
     }
 }

@@ -85,6 +85,8 @@ public class dynamicEnemy : MonoBehaviour
     private Vector3 targetPostCalc;
 
     private float lastActionDelay = 0f;
+    private float showDamageDelay = 0f;
+    private float showDamageTaken = 0f;
 
     private Animator myAnim;
     private AudioSource mySound;
@@ -165,6 +167,25 @@ public class dynamicEnemy : MonoBehaviour
         myAnim.SetFloat("CurrentSpeed", speedAnim);
         stats.speed = stats.maxSpeed * speedAnim;
     }
+    private void showDamage()
+    {
+        if ( showDamageTaken < 1f )
+        {
+            showDamageTaken = 0f;
+            return;
+        }
+        if (damageTextPrefab && showDamageDelay <= 0f)
+        {
+            var spawn = Instantiate(damageTextPrefab, hitbar.position, Quaternion.identity);
+            //spawn.transform.rotation = hitbar.rotation;
+            spawn.transform.LookAt(playerScript.transform.position + Vector3.up);
+            spawn.transform.RotateAround(spawn.transform.position, Vector3.up, 180);
+            int damage = (int)showDamageTaken;
+            spawn.GetComponent<damageText>().setText(damage.ToString());
+            showDamageTaken = 0f;
+            showDamageDelay = 0.5f;
+        }
+    }
     public void takeDamage(float dam)
     {
         if (dam <= 0f) return;
@@ -172,15 +193,8 @@ public class dynamicEnemy : MonoBehaviour
         Hitpoints -= dam;
         if (hitbar)
         {
-            if (damageTextPrefab)
-            {
-                var spawn = Instantiate(damageTextPrefab, hitbar.position, Quaternion.identity);
-                //spawn.transform.rotation = hitbar.rotation;
-                spawn.transform.LookAt(playerScript.transform.position+Vector3.up);
-                spawn.transform.RotateAround(spawn.transform.position, Vector3.up, 180);
-                int damage = (int)dam;
-                spawn.GetComponent<damageText>().setText(damage.ToString());
-            }
+            showDamageTaken += dam;
+            showDamage();
             float width = stats.hitbarMaxWidth * (Hitpoints / stats.maxHealth);
             myAnim.SetFloat("Wounded", 1f- (Hitpoints / stats.maxHealth));
             if (width <= 0f) hitbar.gameObject.SetActive(false);
@@ -237,6 +251,8 @@ public class dynamicEnemy : MonoBehaviour
         else
             transform.LookAt(finalWaypoint);
         lastActionDelay -= Time.deltaTime;
+        showDamageDelay -= Time.deltaTime;
+        if (showDamageTaken > 0f && showDamageDelay <= 0f) showDamage();
         if (lastActionDelay > 0f || waypoints.Length < 1) return; // still doing animation
         Transform target = waypoints[currentWaypoint];
         float distance = Vector3.Distance(transform.position, target.position);
