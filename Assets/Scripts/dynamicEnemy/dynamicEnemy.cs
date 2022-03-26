@@ -167,6 +167,8 @@ public class dynamicEnemy : MonoBehaviour
     }
     public void takeDamage(float dam)
     {
+        if (dam <= 0f) return;
+        if (dam / stats.maxHealth > Random.value) playRandomSound(sounds.hurt, true);
         Hitpoints -= dam;
         if (hitbar)
         {
@@ -294,9 +296,10 @@ public class dynamicEnemy : MonoBehaviour
         //myAnim.Play(animlist[Random.Range(0, animlist.Length)]);
     }
 
-    void playRandomSound( AudioClip[] acList )
+    void playRandomSound( AudioClip[] acList , bool doOverride = false)
     {
         if ( acList.Length < 1 ) return;
+        if (!doOverride && mySound.isPlaying) return;
         mySound.clip = acList[Random.Range(0, acList.Length)];
         mySound.Play();
     }
