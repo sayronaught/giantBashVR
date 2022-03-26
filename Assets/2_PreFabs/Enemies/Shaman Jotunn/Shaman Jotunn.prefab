@@ -48,6 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19d66890a0f2324fa99377ecb412f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killType:
+    bigBossGnot: 0
+    smurf: 0
+    jotunnSmall: 0
+    jotunnShaman: 0
+    jotunnBulky: 0
   stats:
     pointValue: 1
     mass: 3
@@ -363,7 +369,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.8
       inSlope: 0
       outSlope: 0
       tangentMode: 0
