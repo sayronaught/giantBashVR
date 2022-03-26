@@ -58,9 +58,13 @@ public class benchmarkFPS : MonoBehaviour
             fpsHud.text = currentFps.ToString() + "/72 FPS";
         bool debug = false;
         rightController.IsPressed(InputHelpers.Button.SecondaryButton, out debug);
+        bool debug2 = false;
+        leftController.IsPressed(InputHelpers.Button.SecondaryButton, out debug2);
         bool reset = false;
         rightController.IsPressed(InputHelpers.Button.PrimaryButton, out reset);
-        if ( debug )
+        bool reset2 = false;
+        leftController.IsPressed(InputHelpers.Button.PrimaryButton, out reset2);
+        if ( debug && debug2 )
         {// wants debug on or off
             if ( fpsHud.gameObject.activeSelf )
             {
@@ -70,7 +74,7 @@ public class benchmarkFPS : MonoBehaviour
             }
             
         }
-        if ( reset )
+        if ( reset && reset2 )
         {
             //Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(0);
