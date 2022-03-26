@@ -34,10 +34,8 @@ public class dynamicEnemy : MonoBehaviour
         public string[] idles;
         public string[] hurt;
         public string[] death;
-        public string[] attackMeleeLight;
-        public string[] attackMeleeheavy;
-        public string[] attackRangeLight;
-        public string[] attackRangeHeavy;
+        public string[] attackMelee;
+        public string[] attackRange;
         public string[] conversations;
         public string[] taunts;
         public string[] surrenders;
@@ -55,8 +53,8 @@ public class dynamicEnemy : MonoBehaviour
         public AudioClip[] idleChatter;
         public AudioClip[] hurt;
         public AudioClip[] death;
-        public AudioClip[] attackLight;
-        public AudioClip[] attackHeavy;
+        public AudioClip[] attackMelee;
+        public AudioClip[] attackRanged;
         public AudioClip[] taunts;
         public AudioClip[] surrenders;
     }
@@ -263,7 +261,7 @@ public class dynamicEnemy : MonoBehaviour
             {
                 lookAt(playerScript.transform.position);
                 lastActionDelay = stats.attackCooldown;
-                playRandomAnim(anims.attackRangeLight);
+                playRandomAnim(anims.attackRange);
                 playerScript.damagePlayer(stats.strength);
                 var missile = Instantiate(missileWeaponPrefabs[Random.Range(0,missileWeaponPrefabs.Length)]);
                 missile.transform.position = hand.position;
@@ -290,7 +288,8 @@ public class dynamicEnemy : MonoBehaviour
                 {
                     lookAt(playerScript.transform.position);
                     lastActionDelay = stats.attackCooldown;
-                    playRandomAnim(anims.attackMeleeLight);
+                    playRandomAnim(anims.attackMelee);
+                    if ( Random.value < 0.2f ) playRandomSound(sounds.attackMelee);
                     playerScript.damagePlayer(stats.strength);
                 }
             }

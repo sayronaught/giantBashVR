@@ -983,6 +983,7 @@ MonoBehaviour:
   PlayerBloodEffect: {fileID: 1650829118}
   maxHit: 100
   hit: 100
+  regeneration: 0.2
   points: 0
 --- !u!1 &392419062
 GameObject:
@@ -3616,8 +3617,7 @@ MonoBehaviour:
   - {fileID: 292965175}
   enemyNormalPrefab:
   - {fileID: 7406365440989737887, guid: 9dcaf8a7644e3f1429080713f600425e, type: 3}
-  - {fileID: 7406365440989737887, guid: f6c2641e6db14324cab64772535ada18, type: 3}
-  - {fileID: 7406365440989737887, guid: 9dcaf8a7644e3f1429080713f600425e, type: 3}
+  - {fileID: 7406365440989737887, guid: a7d88bb11cb66a84086fcdf4beb730f9, type: 3}
   enemyBossPrefab:
   - {fileID: 8800940158332830910, guid: a6e202e681bc34c498afc69025389f5f, type: 3}
   enemyShamanPrefab:
@@ -4550,6 +4550,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba9bb35723f6f74a93bcdac9ec18b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statsThrowForce: 3
+  statsThrowCharge: 2
+  statsMaxCharge: 9
+  statsChargeSpeed: 3
   leftHand: {fileID: 2108099811}
   rightHand: {fileID: 526855044}
   leftAnim: {fileID: 1876614842}
