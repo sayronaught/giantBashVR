@@ -457,6 +457,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 86f7fd95b013a7c4a9a66f65fdc83a4b, type: 3}
     - {fileID: 8300000, guid: 408cfe932de394f458a46972ea4e5e0f, type: 3}
     - {fileID: 8300000, guid: dc8c4ac9a1dfb714f953aec157d75605, type: 3}
+    - {fileID: 8300000, guid: 94c581ff50a201044b6153b4048cafb6, type: 3}
     death: []
     attackLight: []
     attackHeavy: []
