@@ -334,7 +334,12 @@ TextMesh:
   m_GameObject: {fileID: 62531233}
   m_Text: 'Lord of the AOE
 
-    smackdown'
+    smackdown. forged
+
+    by humanun stolen
+
+    by
+    assun gods'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -1491,9 +1496,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375257070}
-  m_Text: 'BoneGrind
-
-'
+  m_Text: Grindir
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -2155,7 +2158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400753657}
   m_LocalRotation: {x: 0, y: 0.08280819, z: 0, w: 0.9965655}
-  m_LocalPosition: {x: 5.61, y: 22, z: 12.49}
+  m_LocalPosition: {x: 5.61, y: 22.83, z: 12.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1663254124}
@@ -2324,7 +2327,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400753657}
-  m_Text: Jotunnheim
+  m_Text: 'Travel to
+
+    Jotunnheim'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -3659,7 +3664,7 @@ GameObject:
   - component: {fileID: 697633059}
   - component: {fileID: 697633058}
   m_Layer: 0
-  m_Name: Bonegrind
+  m_Name: Grindir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4335,7 +4340,12 @@ TextMesh:
   m_GameObject: {fileID: 742657577}
   m_Text: 'Sharp as a youtube
 
-    commenter'
+    commenter. made by
+
+    assun to kill jotunn
+
+    stolen
+    by humanun'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -5652,7 +5662,7 @@ GameObject:
   - component: {fileID: 954150252}
   - component: {fileID: 954150253}
   m_Layer: 0
-  m_Name: Default
+  m_Name: Defaultir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6262,7 +6272,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076452681}
-  m_Text: Sharp Axe
+  m_Text: Splitir
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -6822,7 +6832,7 @@ GameObject:
   - component: {fileID: 1155977325}
   - component: {fileID: 1155977324}
   m_Layer: 0
-  m_Name: Blunt Axe
+  m_Name: Bashir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7197,7 +7207,7 @@ GameObject:
   - component: {fileID: 1216612651}
   - component: {fileID: 1216612650}
   m_Layer: 0
-  m_Name: Sharp Axe
+  m_Name: Splitir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8400,7 +8410,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374888349}
-  m_Text: Default
+  m_Text: Defaultir
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -8835,7 +8845,9 @@ TextMesh:
   m_GameObject: {fileID: 1477695986}
   m_Text: 'Real men dont chop
 
-    wood, they crush it'
+    wood, they crush it.
+
+    and cry sometimes...'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -8993,7 +9005,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515798349}
   m_LocalRotation: {x: 0, y: 0.08106876, z: 0, w: 0.9967085}
-  m_LocalPosition: {x: -3.43, y: 22, z: 14.23}
+  m_LocalPosition: {x: -3.43, y: 22.83, z: 14.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1663254124}
@@ -9162,7 +9174,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515798349}
-  m_Text: Training
+  m_Text: 'Travel to
+
+    Trainingheim'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -9257,7 +9271,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563583373}
-  m_Text: Blunt Axe
+  m_Text: Bashir
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -10359,7 +10373,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816842774}
-  m_Text: Quit
+  m_Text: 'Quit
+
+    like a niding'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
