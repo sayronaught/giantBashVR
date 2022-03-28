@@ -436,7 +436,14 @@ MonoBehaviour:
   hitbar: {fileID: 124730566543122133}
   sounds:
     steps: []
-    idleChatter: []
+    idleChatter:
+    - {fileID: 8300000, guid: 84a1cc5e7d1e7ee43b63167aca4faee1, type: 3}
+    - {fileID: 8300000, guid: 87bef43cf63c42b4589bd3ca8f01544e, type: 3}
+    - {fileID: 8300000, guid: 1bf36d1c30c53d14890b16575700aa9b, type: 3}
+    - {fileID: 8300000, guid: 66b0b866136bc324eb8a4bfe200fb5e8, type: 3}
+    - {fileID: 8300000, guid: 9297d7d2fcec80c49998c25bc156bf0a, type: 3}
+    - {fileID: 8300000, guid: c004b22df64c33e42ac16d96dbe19d8a, type: 3}
+    chatterPercentageChance: 0.01
     hurt:
     - {fileID: 8300000, guid: 06a5556d7b30f7e488d7898f2a2e2f18, type: 3}
     - {fileID: 8300000, guid: 1d7a4df7c20608f4b85c1fb555ef9f75, type: 3}
@@ -457,7 +464,9 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 94c581ff50a201044b6153b4048cafb6, type: 3}
     death: []
     attackMelee: []
+    attackMeleePercentageChance: 20
     attackRanged: []
+    attackRangedPercentageChance: 20
     taunts: []
     surrenders: []
   beingHitAS: {fileID: 1472709981957772604}

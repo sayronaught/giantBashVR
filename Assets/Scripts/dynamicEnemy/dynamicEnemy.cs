@@ -51,10 +51,13 @@ public class dynamicEnemy : MonoBehaviour
     {
         public AudioClip[] steps;
         public AudioClip[] idleChatter;
+        public float chatterPercentageChance = 0.01f;
         public AudioClip[] hurt;
         public AudioClip[] death;
         public AudioClip[] attackMelee;
+        public float attackMeleePercentageChance = 20f;
         public AudioClip[] attackRanged;
+        public float attackRangedPercentageChance = 20f;
         public AudioClip[] taunts;
         public AudioClip[] surrenders;
     }
@@ -275,6 +278,7 @@ public class dynamicEnemy : MonoBehaviour
                 missile.transform.rotation = hand.rotation;
                 missile.transform.SetParent(hand);
                 heldMissile = missile;
+                if (Random.value * 100f < sounds.attackRangedPercentageChance) playRandomSound(sounds.attackRanged);
             }
             return; // no melee attacks or navigation after ranged attacks
         }
@@ -284,6 +288,7 @@ public class dynamicEnemy : MonoBehaviour
             lookAt(target.position);
             myRB.MovePosition(Vector3.MoveTowards(transform.position, target.position, stats.speed * Time.fixedDeltaTime*2f));
             changeSpeed(travelSpeed);
+            if (Random.value * 100f < sounds.chatterPercentageChance) playRandomSound(sounds.idleChatter);
         } else { // close
             if (currentWaypoint < waypoints.Length - 1)
             { // More waypoints to go
@@ -296,7 +301,7 @@ public class dynamicEnemy : MonoBehaviour
                     lookAt(playerScript.transform.position);
                     lastActionDelay = stats.attackCooldown;
                     playRandomAnim(anims.attackMelee);
-                    if ( Random.value < 0.2f ) playRandomSound(sounds.attackMelee);
+                    if ( Random.value*100f < sounds.attackMeleePercentageChance) playRandomSound(sounds.attackMelee);
                     playerScript.damagePlayer(stats.strength);
                 }
             }
