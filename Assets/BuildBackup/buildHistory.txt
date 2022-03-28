@@ -2,9 +2,10 @@ Last Stable:
 0.4.0 Beta
 
 Latest Test:
-0.4.0 Beta
+0.4.1 Alpha
 
 History:
+0.4.1 : Chatter & More skins
 0.4.0 : Jotun Voices
 0.3.3 : Hammer skin stats
 0.3.2 : Valhalla Upgrade & Hammer Skin Selection
