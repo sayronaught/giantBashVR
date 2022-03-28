@@ -444,7 +444,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 66b0b866136bc324eb8a4bfe200fb5e8, type: 3}
     - {fileID: 8300000, guid: 9297d7d2fcec80c49998c25bc156bf0a, type: 3}
     - {fileID: 8300000, guid: c004b22df64c33e42ac16d96dbe19d8a, type: 3}
-    chatterPercentageChance: 0.01
+    chatterPercentageChance: 0.02
     hurt:
     - {fileID: 8300000, guid: 06a5556d7b30f7e488d7898f2a2e2f18, type: 3}
     - {fileID: 8300000, guid: 1d7a4df7c20608f4b85c1fb555ef9f75, type: 3}

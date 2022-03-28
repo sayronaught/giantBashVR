@@ -83,15 +83,30 @@ MonoBehaviour:
   hitbar: {fileID: 5970324312235530725}
   sounds:
     steps: []
-    idleChatter: []
+    idleChatter:
+    - {fileID: 8300000, guid: 55359e7e08c52424494b49603d6c1bed, type: 3}
+    - {fileID: 8300000, guid: 5d6aad40c6c06924eaca14057188412d, type: 3}
+    - {fileID: 8300000, guid: 85c15203d9c22b54d8573461ee0d601e, type: 3}
+    - {fileID: 8300000, guid: 258ab9e742237b0448fe5b205da12fa7, type: 3}
+    - {fileID: 8300000, guid: bb9e8387fde0e5445a1d4ebc1154e8e6, type: 3}
+    - {fileID: 8300000, guid: c58fe5829a844ca43b03d0fa0bf43988, type: 3}
+    - {fileID: 8300000, guid: f802653b8f2f28949bc1924b746ea20b, type: 3}
+    chatterPercentageChance: 0.02
     hurt:
     - {fileID: 8300000, guid: 841265a05c2f0e64aaebf5d7c43dee99, type: 3}
     - {fileID: 8300000, guid: 7b8d7dfea3508724e91f22014006d47b, type: 3}
     - {fileID: 8300000, guid: 3a8d5b92ae8af93488a8d9ee576dc418, type: 3}
     - {fileID: 8300000, guid: f006a4402a0a0dc4da51a987342e6edb, type: 3}
+    - {fileID: 8300000, guid: aca653cc1d43a2c45b6920e59955a0b7, type: 3}
+    - {fileID: 8300000, guid: d2c1ed826ea373147b3338f8e432f49b, type: 3}
+    - {fileID: 8300000, guid: a1152893fd64d2d4cbb0832632eb1215, type: 3}
+    - {fileID: 8300000, guid: 0a7d886391d51a642b1d330dd28b7e0f, type: 3}
+    - {fileID: 8300000, guid: d77cd342a375b104e9fdbbaf98307e06, type: 3}
     death: []
     attackMelee: []
+    attackMeleePercentageChance: 20
     attackRanged: []
+    attackRangedPercentageChance: 20
     taunts: []
     surrenders: []
   beingHitAS: {fileID: 2465099460041001228}
