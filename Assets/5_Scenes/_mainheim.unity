@@ -13552,7 +13552,7 @@ MonoBehaviour:
 
       hygeine'
     videoclip: {fileID: 32900000, guid: 1ec40dd473192d24082730b1ca60c9ad, type: 3}
-  storedPoints: 0
+  storedPoints: 300
   highestScore: 0
   damageDone: 0
   damageTaken: 0
