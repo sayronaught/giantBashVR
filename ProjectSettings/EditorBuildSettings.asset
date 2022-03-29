@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/5_Scenes/MenuValhalla.unity
+    path: Assets/5_Scenes/_mainheim.unity
     guid: ad640a76503b52c4cb024e3fab987935
   - enabled: 1
-    path: "Assets/5_Scenes/stableJ\xE6tteBasker(Messe).unity"
+    path: Assets/5_Scenes/_trainingheim.unity
     guid: a0e7898ba40de954faec0b72baf0eada
   - enabled: 1
-    path: Assets/5_Scenes/Forest Scene 01.unity
+    path: Assets/5_Scenes/_jotunnheim.unity
     guid: 40309eb0d6848244f98033be749d6a82
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e1a49ce44cd4072459317986bcbd0b36, type: 2}
