@@ -46,8 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopPrice: 0
   shopTitle: name of the skin
-  shopStory: funky story coming soon
-  shopStats: funky stats coming soon
+  shopStory: 'made from a star
+
+    this is probably the
+
+    heaviet thing in
+
+    the
+    universe'
+  shopStats: 'super heavy damage
+
+    do not throw far away'
   playerMaxHit: 200
   playerRegeneration: 0.2
   weaponThrowForce: 1

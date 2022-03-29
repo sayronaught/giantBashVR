@@ -77,10 +77,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopPrice: 25
   shopTitle: Jesphal
-  shopStory: funky story coming soon
-  shopStats: funky stats coming soon
-  playerMaxHit: 100
-  playerRegeneration: 0.2
+  shopStory: "mjolnir is the \nthunderhammer\nthis is the\nlightningtooth"
+  shopStats: 'High speed
+
+    almost no knockback'
+  playerMaxHit: 60
+  playerRegeneration: 0.1
   weaponThrowForce: 25
   weaponThrowCharge: 1
   weaponChargeMax: 3
@@ -88,10 +90,10 @@ MonoBehaviour:
   weaponMagnetMultiplier: 2
   weaponMagnetMinimum: 10
   weaponMass: 0.1
-  aoeDamage: 5
+  aoeDamage: 0
   aoeChargeKnockback: 0
   aoeBaseKnockback: 0
-  aoeRange: 5
+  aoeRange: 0
 --- !u!1001 &4213383962207668668
 PrefabInstance:
   m_ObjectHideFlags: 0
