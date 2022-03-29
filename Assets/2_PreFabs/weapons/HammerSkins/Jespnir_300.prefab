@@ -44,15 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5719afe9bc87914e914c81554b2db7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMaxHit: 100
+  shopPrice: 0
+  shopTitle: name of the skin
+  shopStory: funky story coming soon
+  shopStats: funky stats coming soon
+  playerMaxHit: 200
   playerRegeneration: 0.2
-  weaponThrowForce: 3
-  weaponThrowCharge: 2
-  weaponChargeMax: 9
-  weaponChargeSpeed: 3
-  weaponMass: 1
+  weaponThrowForce: 1
+  weaponThrowCharge: 3
+  weaponChargeMax: 12
+  weaponChargeSpeed: 4
+  weaponMass: 100
   aoeDamage: 5
-  aoeKnockback: 25
+  aoeKnockback: 100
   aoeRange: 5
 --- !u!1 &8240167627395229695
 GameObject:

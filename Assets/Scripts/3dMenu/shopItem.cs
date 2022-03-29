@@ -104,11 +104,11 @@ public class shopItem : MonoBehaviour
     {
         if (activated)
         {
-            productDisplay.transform.Rotate(Vector3.up, Time.deltaTime*20f);
+            productDisplay.transform.Rotate(Vector3.up, Time.deltaTime*30f);
             localScale = 1F + (Mathf.Sin(Time.realtimeSinceStartup*5f)*0.25f);
             productDisplay.transform.localScale = new Vector3(localScale, localScale, localScale);
         } else {
-            productDisplay.transform.rotation = Quaternion.identity;
+            productDisplay.transform.Rotate(Vector3.up, Time.deltaTime * 20f);
             productDisplay.transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }

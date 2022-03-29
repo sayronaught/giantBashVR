@@ -18,11 +18,14 @@ public class shopItemStats : MonoBehaviour
     public float weaponThrowCharge = 2f;
     public float weaponChargeMax = 9f;
     public float weaponChargeSpeed = 3f;
+    public float weaponMagnetMultiplier = 1.1f;
+    public float weaponMagnetMinimum = 2f;
 
     public float weaponMass = 1f;
 
     public float aoeDamage = 5f;
-    public float aoeKnockback = 25f;
+    public float aoeChargeKnockback = 25f;
+    public float aoeBaseKnockback = 2500f;
     public float aoeRange = 5f;
 
     private _Settings mySettings;
@@ -54,7 +57,8 @@ public class shopItemStats : MonoBehaviour
     private void setHammerFx()
     {
         myHammerFx.statsAoeDamage = aoeDamage;
-        myHammerFx.statsAoeKnockback = aoeKnockback;
+        myHammerFx.statsAoeChargeKnockback = aoeChargeKnockback;
+        myHammerFx.statsAoeBaseKnockback = aoeBaseKnockback;
         myHammerFx.statsAoeRange = aoeRange;
     }
     private void setHammerRb()

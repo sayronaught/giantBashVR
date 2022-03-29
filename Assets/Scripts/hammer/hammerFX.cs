@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class hammerFX : MonoBehaviour
 {
     public float statsAoeDamage = 5f;
-    public float statsAoeKnockback = 25f;
+    public float statsAoeChargeKnockback = 25f;
+    public float statsAoeBaseKnockback = 2500f;
     public float statsAoeRange = 5f;
 
     public GameObject prefabLightningExp;
@@ -84,7 +85,7 @@ public class hammerFX : MonoBehaviour
                         {
                             enemy.takeDamage(newdam);
                             var force = (enemy.transform.position - transform.position) * 100f;
-                            enemy.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (2500f + (statsAoeKnockback * charge)));
+                            enemy.gameObject.GetComponent<Rigidbody>().AddForce(force.normalized * (statsAoeBaseKnockback + (statsAoeChargeKnockback * charge)));
                         }
                     }
                 }

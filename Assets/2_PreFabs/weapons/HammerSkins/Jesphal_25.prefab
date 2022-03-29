@@ -81,13 +81,14 @@ MonoBehaviour:
   shopStats: funky stats coming soon
   playerMaxHit: 100
   playerRegeneration: 0.2
-  weaponThrowForce: 3
-  weaponThrowCharge: 2
-  weaponChargeMax: 9
-  weaponChargeSpeed: 3
-  weaponMass: 1
+  weaponThrowForce: 15
+  weaponThrowCharge: 1
+  weaponChargeMax: 3
+  weaponChargeSpeed: 6
+  weaponMass: 0.1
   aoeDamage: 5
-  aoeKnockback: 25
+  aoeChargeKnockback: 0
+  aoeBaseKnockback: 0
   aoeRange: 5
 --- !u!1001 &4213383962207668668
 PrefabInstance:

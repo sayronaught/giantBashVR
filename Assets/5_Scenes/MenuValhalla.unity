@@ -5890,7 +5890,7 @@ MonoBehaviour:
   - Vikings are totally\nAWESOME!!!
   - The purpose of a vikings\nlife is to go BERSERK!
   - Vikings have a name for men\nwithout beards. WOMEN!
-  - If a viking tell you he is bored\nyour life is in danger...
+  - If a viking tells you he is bored\nyour life is in danger...
   - If you had anything worth taking\nVikings would have taken it already.
   - A Vikings toothbrush\nis made of stone
   - The antidote to vikings is science\nLogic makes them bleed from their brains
@@ -12892,7 +12892,7 @@ MonoBehaviour:
   - {fileID: 4039667278467569284, guid: d850ea2608cab2f419043142973484a0, type: 3}
   - {fileID: 3750489498576625195, guid: d0dc7471821d10548924985000fce4b4, type: 3}
   - {fileID: 8027894555136910231, guid: 4c565fa8c19491d4090d6818ab692d9a, type: 3}
-  storedPoints: 0
+  storedPoints: 5000
   highestScore: 0
   damageDone: 0
   damageTaken: 0
