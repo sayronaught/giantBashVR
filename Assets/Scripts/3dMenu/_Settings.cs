@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Video;
 
 public class _Settings : MonoBehaviour
 {
@@ -10,6 +11,18 @@ public class _Settings : MonoBehaviour
     public List<GameObject> boughtSkins;
     public List<GameObject> allSkinsForStore;
 
+    [System.Serializable]
+    public class world
+    {
+        public int loadOrder = 1;
+        public string title = "nameHEIM";
+        [TextArea]
+        public string story = "Short tale";
+        public VideoClip videoclip;
+    }
+    public List<world> worlds;
+    private int currentWorld = 1;
+    
     public int storedPoints = 0;
     public int highestScore = 0;
     public int damageDone = 0;
