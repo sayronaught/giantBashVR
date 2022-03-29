@@ -35,6 +35,10 @@ public class shopItem : MonoBehaviour
     public void HoverOff()
     {
         transform.position = transform.position + transform.up * -0.2f;
+        resetItem();
+    }
+    public void resetItem()
+    {
         transform.localScale = new Vector3(1, 1f, 1f);
         if (bought) myTitle.color = Color.yellow;
         else myTitle.color = Color.white;
@@ -49,7 +53,7 @@ public class shopItem : MonoBehaviour
             myBank.playSound(myBank.sfxSelect);
             mySettings.currentHammerSkin = hammerSkinPrefab;
             myBank.activeSkin.activated = false;
-            myBank.activeSkin.HoverOff();
+            myBank.activeSkin.resetItem();
             myBank.activeSkin = this;
             activated = true;
         }
@@ -64,7 +68,7 @@ public class shopItem : MonoBehaviour
                 mySettings.storedPoints -= shopPrice;
                 myPrice.gameObject.SetActive(false);
                 myBank.activeSkin.activated = false;
-                myBank.activeSkin.HoverOff();
+                myBank.activeSkin.resetItem();
                 myBank.activeSkin = this;
                 activated = true;
             } else { // broke ass bitch
