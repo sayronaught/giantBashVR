@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 26017175949480020}
   - component: {fileID: -397185298408157949}
   m_Layer: 0
-  m_Name: splitir
+  m_Name: splitir_150
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,6 +269,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5719afe9bc87914e914c81554b2db7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopPrice: 150
+  shopTitle: name of the skin
+  shopStory: 'Sharp as a youtube
+
+    commenter. made by
+
+    assun to kill jotunn
+
+    stolen
+    by humanun'
+  shopStats: 'HP: *2
+
+    Force: +12
+
+    AOE Damage: +5'
   playerMaxHit: 200
   playerRegeneration: 0.2
   weaponThrowForce: 15

@@ -4126,7 +4126,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bought: 0
   activated: 0
-  price: 50
+  shopPrice: 50
+  shopTitle: name of the skin
+  shopStory: funky story coming soon
+  shopStats: funky stats coming soon
   hammerSkinPrefab: {fileID: 4039667278467569284, guid: d850ea2608cab2f419043142973484a0, type: 3}
   myTitle: {fileID: 375257072}
   myStory: {fileID: 62531235}
@@ -6242,7 +6245,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bought: 0
   activated: 0
-  price: 0
+  shopPrice: 0
+  shopTitle: name of the skin
+  shopStory: funky story coming soon
+  shopStats: funky stats coming soon
   hammerSkinPrefab: {fileID: 3239202929387199463, guid: 5e99f9b766ac8f345b30033eb1aa0408, type: 3}
   myTitle: {fileID: 1374888351}
   myStory: {fileID: 645668255}
@@ -7646,7 +7652,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bought: 0
   activated: 0
-  price: 15
+  shopPrice: 15
+  shopTitle: name of the skin
+  shopStory: funky story coming soon
+  shopStats: funky stats coming soon
   hammerSkinPrefab: {fileID: 8027894555136910231, guid: 295030dabe073e147b377febfb15756b, type: 3}
   myTitle: {fileID: 1563583375}
   myStory: {fileID: 1477695988}
@@ -8021,7 +8030,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bought: 0
   activated: 0
-  price: 100
+  shopPrice: 150
+  shopTitle: name of the skin
+  shopStory: funky story coming soon
+  shopStats: funky stats coming soon
   hammerSkinPrefab: {fileID: 3750489498576625195, guid: d0dc7471821d10548924985000fce4b4, type: 3}
   myTitle: {fileID: 1076452683}
   myStory: {fileID: 742657579}
@@ -10332,7 +10344,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bought: 0
   activated: 0
-  price: 300
+  shopPrice: 300
+  shopTitle: name of the skin
+  shopStory: funky story coming soon
+  shopStats: funky stats coming soon
   hammerSkinPrefab: {fileID: 8027894555136910231, guid: 4c565fa8c19491d4090d6818ab692d9a, type: 3}
   myTitle: {fileID: 813918805}
   myStory: {fileID: 1584230219}
@@ -11541,7 +11556,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bought: 0
   activated: 0
-  price: 25
+  shopPrice: 25
+  shopTitle: name of the skin
+  shopStory: funky story coming soon
+  shopStats: funky stats coming soon
   hammerSkinPrefab: {fileID: 8027894555136910231, guid: 418b5ff4c7168a5478ff935d2c44a979, type: 3}
   myTitle: {fileID: 842858280}
   myStory: {fileID: 404288366}
@@ -12867,6 +12885,13 @@ MonoBehaviour:
   currentHammerSkin: {fileID: 3239202929387199463, guid: 5e99f9b766ac8f345b30033eb1aa0408, type: 3}
   boughtSkins:
   - {fileID: 3239202929387199463, guid: 5e99f9b766ac8f345b30033eb1aa0408, type: 3}
+  allSkinsForStore:
+  - {fileID: 3239202929387199463, guid: 5e99f9b766ac8f345b30033eb1aa0408, type: 3}
+  - {fileID: 8027894555136910231, guid: 295030dabe073e147b377febfb15756b, type: 3}
+  - {fileID: 8027894555136910231, guid: 418b5ff4c7168a5478ff935d2c44a979, type: 3}
+  - {fileID: 4039667278467569284, guid: d850ea2608cab2f419043142973484a0, type: 3}
+  - {fileID: 3750489498576625195, guid: d0dc7471821d10548924985000fce4b4, type: 3}
+  - {fileID: 8027894555136910231, guid: 4c565fa8c19491d4090d6818ab692d9a, type: 3}
   storedPoints: 0
   highestScore: 0
   damageDone: 0

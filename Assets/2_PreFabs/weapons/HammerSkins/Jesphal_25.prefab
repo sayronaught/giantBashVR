@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4798764388458331034}
   - component: {fileID: -2268138791115085982}
   m_Layer: 0
-  m_Name: Jesphal
+  m_Name: Jesphal_25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,6 +75,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5719afe9bc87914e914c81554b2db7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopPrice: 25
+  shopTitle: Jesphal
+  shopStory: funky story coming soon
+  shopStats: funky stats coming soon
   playerMaxHit: 100
   playerRegeneration: 0.2
   weaponThrowForce: 3

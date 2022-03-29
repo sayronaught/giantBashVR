@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5154322719286653528}
   - component: {fileID: 8160540361603853119}
   m_Layer: 0
-  m_Name: grindir
+  m_Name: grindir_50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,12 +44,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5719afe9bc87914e914c81554b2db7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopPrice: 50
+  shopTitle: Grindir
+  shopStory: 'Lord of the AOE
+
+    smackdown. forged
+
+    by humanun stolen
+
+    by
+    assun gods'
+  shopStats: 'Charge: +15
+
+    ChargeSpeed: +3
+
+    AOE Knockback: +25
+
+    AOE Range:
+    -2'
   playerMaxHit: 100
   playerRegeneration: 0.2
   weaponThrowForce: 3
   weaponThrowCharge: 2
   weaponChargeMax: 24
   weaponChargeSpeed: 6
+  weaponMass: 1
   aoeDamage: 5
   aoeKnockback: 50
   aoeRange: 3

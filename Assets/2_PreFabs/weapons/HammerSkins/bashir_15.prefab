@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 4798764388458331034}
   - component: {fileID: -2268138791115085982}
   m_Layer: 0
-  m_Name: bashir
+  m_Name: bashir_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -404,7 +404,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5719afe9bc87914e914c81554b2db7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopPrice: 15
+  shopTitle: Bashir
+  shopStory: 'Real men dont chop
+
+    wood, they crush it.
+
+    and cry sometimes...'
+  shopStats: 'HP: +20        Reg: +0.1
+
+    Force: +2     Charge: -1'
   playerMaxHit: 120
   playerRegeneration: 0.3
   weaponThrowForce: 5
   weaponThrowCharge: 1
+  weaponChargeMax: 9
+  weaponChargeSpeed: 3
+  weaponMass: 1
+  aoeDamage: 5
+  aoeKnockback: 25
+  aoeRange: 5

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class shopItemStats : MonoBehaviour
 {
+    public int shopPrice = 0;
+    public string shopTitle = "name of the skin";
+    [TextArea]
+    public string shopStory = "funky story coming soon";
+    [TextArea]
+    public string shopStats = "funky stats coming soon";
+
     public float playerMaxHit = 100f;
     public float playerRegeneration = 0.2f;
 

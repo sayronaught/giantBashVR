@@ -7,7 +7,10 @@ public class shopItem : MonoBehaviour
 
     public bool bought = false;
     public bool activated = false;
-    public int price = 0;
+    public int shopPrice = 0;
+    public string shopTitle = "name of the skin";
+    public string shopStory = "funky story coming soon";
+    public string shopStats = "funky stats coming soon";
 
     public GameObject hammerSkinPrefab;
 
@@ -52,13 +55,13 @@ public class shopItem : MonoBehaviour
         }
         if (!bought)
         { // buy it
-            if (mySettings.storedPoints >= price)
+            if (mySettings.storedPoints >= shopPrice)
             { // rich
                 myBank.playSound(myBank.sfxBuy);
                 bought = true;
                 mySettings.boughtSkins.Add(hammerSkinPrefab);
                 mySettings.currentHammerSkin = hammerSkinPrefab;
-                mySettings.storedPoints -= price;
+                mySettings.storedPoints -= shopPrice;
                 myPrice.gameObject.SetActive(false);
                 myBank.activeSkin.activated = false;
                 myBank.activeSkin.HoverOff();

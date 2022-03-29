@@ -8,6 +8,7 @@ public class _Settings : MonoBehaviour
     public AudioMixer masterMixer;
     public GameObject currentHammerSkin;
     public List<GameObject> boughtSkins;
+    public List<GameObject> allSkinsForStore;
 
     public int storedPoints = 0;
     public int highestScore = 0;
@@ -18,8 +19,6 @@ public class _Settings : MonoBehaviour
     public killList kills;
     public int gamesStarted = 0;
     public int secondsPlayed = 0;
-
-    
 
     // Start is called before the first frame update
     void Awake()

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4798764388458331034}
   - component: {fileID: -2268138791115085982}
   m_Layer: 0
-  m_Name: Jespnir
+  m_Name: Jespnir_300
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
