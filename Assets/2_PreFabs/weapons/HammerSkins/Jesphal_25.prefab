@@ -81,10 +81,12 @@ MonoBehaviour:
   shopStats: funky stats coming soon
   playerMaxHit: 100
   playerRegeneration: 0.2
-  weaponThrowForce: 15
+  weaponThrowForce: 25
   weaponThrowCharge: 1
   weaponChargeMax: 3
   weaponChargeSpeed: 6
+  weaponMagnetMultiplier: 2
+  weaponMagnetMinimum: 10
   weaponMass: 0.1
   aoeDamage: 5
   aoeChargeKnockback: 0

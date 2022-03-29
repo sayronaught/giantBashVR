@@ -46,6 +46,8 @@ public class shopItemStats : MonoBehaviour
         myHammerController.statsThrowCharge = weaponThrowCharge;
         myHammerController.statsMaxCharge = weaponChargeMax;
         myHammerController.statsChargeSpeed = weaponChargeSpeed;
+        myHammerController.magnetmultiplier = weaponMagnetMultiplier;
+        myHammerController.magnetminimum = weaponMagnetMinimum;
     }
     private void setHammerEndless()
     {
@@ -53,6 +55,8 @@ public class shopItemStats : MonoBehaviour
         myHammerEndless.statsThrowCharge = weaponThrowCharge;
         myHammerEndless.statsMaxCharge = weaponChargeMax;
         myHammerEndless.statsChargeSpeed = weaponChargeSpeed;
+        myHammerEndless.magnetmultiplier = weaponMagnetMultiplier;
+        myHammerEndless.magnetminimum = weaponMagnetMinimum;
     }
     private void setHammerFx()
     {

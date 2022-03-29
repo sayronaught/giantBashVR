@@ -52,11 +52,14 @@ MonoBehaviour:
   playerRegeneration: 0.2
   weaponThrowForce: 1
   weaponThrowCharge: 3
-  weaponChargeMax: 12
+  weaponChargeMax: 20
   weaponChargeSpeed: 4
+  weaponMagnetMultiplier: 1.02
+  weaponMagnetMinimum: 1
   weaponMass: 100
   aoeDamage: 5
-  aoeKnockback: 100
+  aoeChargeKnockback: 100
+  aoeBaseKnockback: 5000
   aoeRange: 5
 --- !u!1 &8240167627395229695
 GameObject:

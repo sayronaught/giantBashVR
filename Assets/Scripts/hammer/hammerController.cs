@@ -31,8 +31,8 @@ public class hammerController : MonoBehaviour
     public Text debugText;
 
     private float magnetspeed;
-    private float magnetmultiplier = 1.1f;
-    private float magnetminimum = 2f;
+    public float magnetmultiplier = 1.1f;
+    public float magnetminimum = 2f;
     public bool supercharged = false;
 
     public List<Vector3> rightHoldPositions;

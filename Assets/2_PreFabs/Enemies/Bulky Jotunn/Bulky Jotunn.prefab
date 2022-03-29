@@ -741,7 +741,7 @@ MonoBehaviour:
     jumpForce: 1000
     damageReduction: 3
     maxHealth: 20
-    meleeAttackRange: 3
+    meleeAttackRange: 10
     rangedAttackRange: 5
     attackCooldown: 2
     hitbarMaxWidth: 3
@@ -751,13 +751,8 @@ MonoBehaviour:
     death:
     - Death_01
     - Death_02
-    attackMeleeLight:
-    - Attack_01
-    - Attack_02
-    attackMeleeheavy:
-    - Attack_03
-    attackRangeLight: []
-    attackRangeHeavy: []
+    attackMelee: []
+    attackRange: []
     conversations: []
     taunts: []
     surrenders: []
@@ -768,12 +763,15 @@ MonoBehaviour:
   sounds:
     steps: []
     idleChatter: []
+    chatterPercentageChance: 0.1
     hurt:
     - {fileID: 8300000, guid: 0bc7c7642f234b74b9c28e1e373646c1, type: 3}
     - {fileID: 8300000, guid: 38393b72ef4e7e145bc834574e455d19, type: 3}
     death: []
-    attackLight: []
-    attackHeavy: []
+    attackMelee: []
+    attackMeleePercentageChance: 20
+    attackRanged: []
+    attackRangedPercentageChance: 20
     taunts: []
     surrenders: []
   beingHitAS: {fileID: 5719080328502502097}
