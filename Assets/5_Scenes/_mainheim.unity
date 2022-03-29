@@ -2171,7 +2171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &400753658
 Transform:
   m_ObjectHideFlags: 0
@@ -3051,7 +3051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &488474810
 Transform:
   m_ObjectHideFlags: 0
@@ -6262,6 +6262,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 10e89a964e42abb40904ff8a637ffba4, type: 3}
       propertyPath: m_Name
       value: Stone UI Button Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 10e89a964e42abb40904ff8a637ffba4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10e89a964e42abb40904ff8a637ffba4, type: 3}
@@ -10183,7 +10187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1515798350
 Transform:
   m_ObjectHideFlags: 0
@@ -11770,7 +11774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1726314568
 Transform:
   m_ObjectHideFlags: 0
