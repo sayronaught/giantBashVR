@@ -11341,7 +11341,7 @@ PrefabInstance:
     - target: {fileID: -5370684604754236105, guid: 37f8c052c394d9b4dbf9bdd119eb5735, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8e01e4092b83461439dfc57713348fab, type: 2}
+      objectReference: {fileID: 2100000, guid: 532fcea1db7d4364ebcf5a6a2171ce28, type: 2}
     - target: {fileID: 919132149155446097, guid: 37f8c052c394d9b4dbf9bdd119eb5735, type: 3}
       propertyPath: m_Name
       value: Valhalla Gates v3
