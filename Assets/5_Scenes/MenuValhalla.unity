@@ -1018,6 +1018,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef747d7cab89b65419fbfc842c7c1cd6, type: 3}
+--- !u!1 &257828439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3925670342598476928, guid: 37f8c052c394d9b4dbf9bdd119eb5735, type: 3}
+  m_PrefabInstance: {fileID: 1716236940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &257828443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257828439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb4a1c5e32474a4896399d84c59ce17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialToFlicker: {fileID: 2100000, guid: bdfcd184813581647a91cb1740cb3c35, type: 2}
+  minColor: {r: 0.5943396, g: 0.08970064, b: 0.042052325, a: 0}
+  maxColor: {r: 1, g: 0.9496023, b: 0, a: 0}
+  minIntensity: 1
+  maxIntensity: 5
 --- !u!1 &258236903
 GameObject:
   m_ObjectHideFlags: 0
@@ -11416,6 +11438,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6745914792340562974, guid: 37f8c052c394d9b4dbf9bdd119eb5735, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0000000023841857
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745914792340562974, guid: 37f8c052c394d9b4dbf9bdd119eb5735, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.000000009536743
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745914792340562974, guid: 37f8c052c394d9b4dbf9bdd119eb5735, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00068805646
+      objectReference: {fileID: 0}
     - target: {fileID: 7337542908245844003, guid: 37f8c052c394d9b4dbf9bdd119eb5735, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.69885767
@@ -11439,6 +11473,10 @@ PrefabInstance:
     - target: {fileID: 7337542908245844003, guid: 37f8c052c394d9b4dbf9bdd119eb5735, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -17.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894285918055598999, guid: 37f8c052c394d9b4dbf9bdd119eb5735, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37f8c052c394d9b4dbf9bdd119eb5735, type: 3}
