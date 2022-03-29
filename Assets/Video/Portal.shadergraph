@@ -2479,8 +2479,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -879.0000610351563,
-            "y": -355.0,
+            "x": -820.0,
+            "y": -430.0000305175781,
             "width": 124.0,
             "height": 34.0
         }
@@ -2889,10 +2889,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -2057.0,
-            "y": -626.0,
-            "width": 208.0,
-            "height": 362.0
+            "x": -2189.0,
+            "y": -401.0,
+            "width": 159.0,
+            "height": 178.0
         }
     },
     "m_Slots": [
@@ -2911,7 +2911,7 @@
     ],
     "synonyms": [],
     "m_Precision": 0,
-    "m_PreviewExpanded": true,
+    "m_PreviewExpanded": false,
     "m_PreviewMode": 0,
     "m_CustomColors": {
         "m_SerializableColors": []
@@ -4773,7 +4773,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "966f022c08804c4da6f3ef7e6c14f053",
     "m_Id": 0,
-    "m_DisplayName": "Float",
+    "m_DisplayName": "Texture Scale",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
