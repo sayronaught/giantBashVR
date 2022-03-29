@@ -10,6 +10,8 @@ public class genericMissile : MonoBehaviour
     public bool flyStraigt = true;
     public Vector3 Spin = Vector3.zero;
     public AudioClip landSound;
+    public float landLifetime = 5f;
+    public bool aimCamera = false;
 
     public bool flying = false;
 
@@ -25,13 +27,14 @@ public class genericMissile : MonoBehaviour
     void Update()
     {
         if (!flying) return;
+        if ( aimCamera ) target = Camera.main.transform.position;
         distance = Vector3.Distance(transform.position, target);
         if ( distance < 0.1f )
         {
             myAS.clip = landSound;
             myAS.Play();
             myAS.loop = false;
-            Destroy(gameObject, 5f);
+            Destroy(gameObject, landLifetime);
             flying = false;
         } else {
             transform.position = Vector3.MoveTowards(transform.position, target + (Vector3.up * (distance * arcUp)), Time.deltaTime * speedForward);

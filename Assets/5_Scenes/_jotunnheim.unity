@@ -4568,6 +4568,8 @@ MonoBehaviour:
   interactorRight: {fileID: 526855049}
   rightPress: 0
   leftPress: 0
+  magnetmultiplier: 1.1
+  magnetminimum: 2
   supercharged: 0
   rightHoldPositions: []
   chargeLightning: 0

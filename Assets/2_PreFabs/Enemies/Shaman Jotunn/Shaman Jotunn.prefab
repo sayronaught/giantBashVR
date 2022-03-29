@@ -58,22 +58,23 @@ MonoBehaviour:
   stats:
     pointValue: 1
     mass: 3
-    strength: 2
+    strength: 10
     speed: 0
     maxSpeed: 1
     jumpForce: 1000
     damageReduction: 2
-    maxHealth: 50
+    maxHealth: 20
     meleeAttackRange: 3
-    rangedAttackRange: 5
-    attackCooldown: 2
+    rangedAttackRange: 15
+    attackCooldown: 5
     hitbarMaxWidth: 1
   anims:
     idles: []
     hurt: []
     death: []
     attackMelee: []
-    attackRange: []
+    attackRange:
+    - Attack 01
     conversations: []
     taunts: []
     surrenders: []
@@ -105,16 +106,22 @@ MonoBehaviour:
     death: []
     attackMelee: []
     attackMeleePercentageChance: 20
-    attackRanged: []
-    attackRangedPercentageChance: 20
+    attackRanged:
+    - {fileID: 8300000, guid: 584c4c10fb54ab044b04113aba7766aa, type: 3}
+    - {fileID: 8300000, guid: 464edc9a1df36da4b97d6162c8648fca, type: 3}
+    - {fileID: 8300000, guid: 51c924798d4ac66409da2413e2ca26af, type: 3}
+    - {fileID: 8300000, guid: ee22c8f8517fe704a8e2c8f6a17280ec, type: 3}
+    - {fileID: 8300000, guid: 481b0988a0e7a454a9a7499b81d02ae6, type: 3}
+    attackRangedPercentageChance: 80
     taunts: []
     surrenders: []
   beingHitAS: {fileID: 2465099460041001228}
   meleeWeapons: []
   rangeWeapons: []
-  missileWeaponPrefabs: []
-  isRanged: 0
-  hand: {fileID: 0}
+  missileWeaponPrefabs:
+  - {fileID: 5401349097880085470, guid: b5740a9756eeda347bcba21791d5f4a7, type: 3}
+  isRanged: 1
+  hand: {fileID: 8748555868018126361}
   heldMissile: {fileID: 0}
   Hitpoints: 100
   isAlive: 1
@@ -265,6 +272,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3075579378454570915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151236361202819831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0186663ad73df8743b31d9d42271b4cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &131010439
 Animator:
   serializedVersion: 3
@@ -522,6 +541,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &8090904732338748323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8748555868018126361}
+  m_Layer: 0
+  m_Name: spellOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8748555868018126361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8090904732338748323}
+  m_LocalRotation: {x: 0.000000093132236, y: -0.00000006705518, z: -0.00000012665986, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2484439447063049866}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8301457693888472127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,6 +1081,31 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: de15471988ceee74597eee2dc99e915d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
+--- !u!1 &2151236361202819831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
+  m_PrefabInstance: {fileID: 1232811758652546982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1626198305737652301 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
+  m_PrefabInstance: {fileID: 1232811758652546982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3422879366307921717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4712083089727889261, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
+  m_PrefabInstance: {fileID: 1232811758652546982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2484439447063049866 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5521040130325747412, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
+  m_PrefabInstance: {fileID: 1232811758652546982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1313507886756123412 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8997814141537416014, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
+  m_PrefabInstance: {fileID: 1232811758652546982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1182805608347514862 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 104137685610555464, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
@@ -1045,25 +1119,5 @@ Transform:
 --- !u!4 &1314145893080095962 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8996191522508831876, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
-  m_PrefabInstance: {fileID: 1232811758652546982}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3422879366307921717 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -4712083089727889261, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
-  m_PrefabInstance: {fileID: 1232811758652546982}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1626198305737652301 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
-  m_PrefabInstance: {fileID: 1232811758652546982}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2151236361202819831 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
-  m_PrefabInstance: {fileID: 1232811758652546982}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1313507886756123412 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8997814141537416014, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
   m_PrefabInstance: {fileID: 1232811758652546982}
   m_PrefabAsset: {fileID: 0}

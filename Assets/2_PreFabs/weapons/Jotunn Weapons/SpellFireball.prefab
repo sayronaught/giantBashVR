@@ -90,8 +90,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1252468481973524551}
-  - component: {fileID: 3558000122314002851}
   - component: {fileID: 388595732034978953}
+  - component: {fileID: -6569300175045212634}
   m_Layer: 0
   m_Name: SpellFireball
   m_TagString: Untagged
@@ -116,21 +116,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3558000122314002851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5401349097880085470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d20b23ca941d804698029416934aabd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {x: 0, y: 0, z: 0}
-  arcUp: 0.45
-  speedForward: 5
 --- !u!82 &388595732034978953
 AudioSource:
   m_ObjectHideFlags: 0
@@ -227,6 +212,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6569300175045212634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401349097880085470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2364e842b98174a9067b0cb4d33f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {x: 0, y: 0, z: 0}
+  arcUp: 0.6
+  speedForward: 5
+  flyStraigt: 1
+  Spin: {x: 0, y: 0, z: 0}
+  landSound: {fileID: 0}
+  landLifetime: 5
+  aimCamera: 1
+  flying: 0
 --- !u!1 &6668148180382140619
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8075861931012911844
 Transform:
   m_ObjectHideFlags: 0
