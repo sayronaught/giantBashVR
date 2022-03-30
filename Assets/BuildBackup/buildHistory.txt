@@ -1,10 +1,12 @@
 Last Stable:
-0.4.0 Beta
+1.0.0 RC
 
 Latest Test:
-0.4.1 Alpha
+1.0.0 RC
 
 History:
+1.0.0 : Release Candidate
+0.4.2 : Portal & Fireball
 0.4.1 : Chatter & More skins
 0.4.0 : Jotun Voices
 0.3.3 : Hammer skin stats
