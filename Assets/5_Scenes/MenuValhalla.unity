@@ -2740,9 +2740,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417849035}
-  m_Text: 'Points
+  m_Text: '0
 
-    Stored'
+    Points'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -13149,7 +13149,8 @@ MonoBehaviour:
   - {fileID: 4039667278467569284, guid: d850ea2608cab2f419043142973484a0, type: 3}
   - {fileID: 3750489498576625195, guid: d0dc7471821d10548924985000fce4b4, type: 3}
   - {fileID: 8027894555136910231, guid: 4c565fa8c19491d4090d6818ab692d9a, type: 3}
-  storedPoints: 0
+  worlds: []
+  storedPoints: 300
   highestScore: 0
   damageDone: 0
   damageTaken: 0

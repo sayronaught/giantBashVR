@@ -14,6 +14,7 @@ public class pointBank : MonoBehaviour
     private _Settings mySettings;
     private AudioSource mySound;
     private float timeToUpdate = 0f;
+    public int lastShown = 0;
 
     public void playSound( AudioClip ac )
     {
@@ -32,11 +33,15 @@ public class pointBank : MonoBehaviour
     void Update()
     {
         timeToUpdate -= Time.deltaTime;
-        if ( mySettings && uiPoints && timeToUpdate <0f)
+        if ( mySettings && uiPoints && timeToUpdate < 0f)
         {
+            if (lastShown == mySettings.storedPoints) return;
             if (mySettings.storedPoints > 0)
-                uiPoints.text = mySettings.storedPoints.ToString()+"\nPoints";
+                uiPoints.text = mySettings.storedPoints.ToString() + "\nPoints";
+            else
+                uiPoints.text = "0\nPoints";
             timeToUpdate = 1f;
+            lastShown = mySettings.storedPoints;
         }
     }
 }
