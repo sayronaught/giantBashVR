@@ -70,11 +70,15 @@ MonoBehaviour:
     hitbarMaxWidth: 1
   anims:
     idles: []
-    hurt: []
-    death: []
+    hurt:
+    - Hurt_01
+    - Hurt_02
+    death:
+    - Death_01
     attackMelee: []
     attackRange:
     - Attack 01
+    - Attack 02
     conversations: []
     taunts: []
     surrenders: []
