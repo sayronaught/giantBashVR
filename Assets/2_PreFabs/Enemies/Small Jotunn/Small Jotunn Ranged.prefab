@@ -416,7 +416,7 @@ MonoBehaviour:
     maxHealth: 5
     meleeAttackRange: 5
     rangedAttackRange: 5
-    attackCooldown: 2
+    attackCooldown: 5
     hitbarMaxWidth: 0.5
   anims:
     idles: []

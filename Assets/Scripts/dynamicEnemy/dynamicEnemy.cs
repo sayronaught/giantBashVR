@@ -265,6 +265,7 @@ public class dynamicEnemy : MonoBehaviour
                 lookAt(playerScript.transform.position);
                 lastActionDelay = stats.attackCooldown;
                 playRandomAnim(anims.attackRange);
+                if (heldMissile) return;
                 playerScript.damagePlayer(stats.strength);
                 var missile = Instantiate(missileWeaponPrefabs[Random.Range(0,missileWeaponPrefabs.Length)]);
                 missile.transform.position = hand.position;
