@@ -83,7 +83,7 @@ MonoBehaviour:
     taunts: []
     surrenders: []
   animIdle: 1
-  instantDeathPrefab: {fileID: 9219578356075885194, guid: 9ede50a5a6538ad409210e80df6a6e5e, type: 3}
+  instantDeathPrefab: {fileID: 0}
   damageTextPrefab: {fileID: 9171916892454308313, guid: f43c628d1a222c54e830337717629b02, type: 3}
   hitbar: {fileID: 5970324312235530725}
   sounds:
@@ -107,7 +107,9 @@ MonoBehaviour:
     - {fileID: 8300000, guid: a1152893fd64d2d4cbb0832632eb1215, type: 3}
     - {fileID: 8300000, guid: 0a7d886391d51a642b1d330dd28b7e0f, type: 3}
     - {fileID: 8300000, guid: d77cd342a375b104e9fdbbaf98307e06, type: 3}
-    death: []
+    death:
+    - {fileID: 8300000, guid: a79d23603b518e242b950f65a390791e, type: 3}
+    - {fileID: 8300000, guid: f42c1eb698930064fbcea0223a2f542b, type: 3}
     attackMelee: []
     attackMeleePercentageChance: 20
     attackRanged:

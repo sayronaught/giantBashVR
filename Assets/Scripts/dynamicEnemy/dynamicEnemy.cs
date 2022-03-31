@@ -151,6 +151,7 @@ public class dynamicEnemy : MonoBehaviour
         Destroy(gameObject, 10);
         Destroy(myRB);
         Destroy(GetComponent<BoxCollider>());
+        if (sounds.death.Length > 0) playRandomSound(sounds.death, true);
         isAlive = false;
     }
     private void changeSpeed(float desiredSpeed)
@@ -192,6 +193,12 @@ public class dynamicEnemy : MonoBehaviour
         if (dam <= 0f) return;
         if (dam / stats.maxHealth > Random.value) playRandomSound(sounds.hurt, true);
         Hitpoints -= dam;
+        if ( anims.hurt.Length > 0 )
+        {
+            myAnim.SetFloat("CurrentSpeed", 0);
+            stats.speed = 0;
+            playRandomAnim(anims.hurt);
+        }
         if (hitbar)
         {
             showDamageTaken += dam;
@@ -313,8 +320,6 @@ public class dynamicEnemy : MonoBehaviour
     {
         if ( animlist.Length < 1 ) return;
         myAnim.CrossFade(animlist[Random.Range(0, animlist.Length)], 0.3f);
-        //Changed to CrossFade instead of Play to add blending between animations
-        //myAnim.Play(animlist[Random.Range(0, animlist.Length)]);
     }
 
     void playRandomSound( AudioClip[] acList , bool doOverride = false)
