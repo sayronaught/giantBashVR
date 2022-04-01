@@ -9,8 +9,11 @@ public class enemyClothingRandomEquip : MonoBehaviour
     public GameObject[] requiredLegClothing;
     public GameObject[] randomClothing;
 
+    //Chance at a random clothing piece appearing in % (0-100)
+    int randomChance = 35;
 
-    void Awake()
+
+    void Start()
     {
         if (torsoClothing.Length > 0)
         {
@@ -36,8 +39,8 @@ public class enemyClothingRandomEquip : MonoBehaviour
         {
             foreach (GameObject randomC in randomClothing)
             {
-                int i = Random.Range(0,10);
-                if(i < 9)
+                int randomNumber = Random.Range(0,100);
+                if(randomChance > randomNumber)
                     randomC.SetActive(true);
             }
 

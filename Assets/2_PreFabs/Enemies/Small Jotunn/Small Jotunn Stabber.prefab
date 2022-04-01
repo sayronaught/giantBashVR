@@ -630,8 +630,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torsoClothing:
   - {fileID: 7215901744807518644}
+  - {fileID: 7215901744807518644}
   - {fileID: 4693173793200142539}
   - {fileID: 323541380647405431}
+  - {fileID: 323541380647405431}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   requiredLegClothing:
   - {fileID: 4259121325726148301}
@@ -641,13 +651,14 @@ MonoBehaviour:
   - {fileID: 3699583608960377039}
   - {fileID: 8529008110611210754}
   - {fileID: 3948106509065764599}
-  - {fileID: 6296609998478028803}
   - {fileID: 6320945455972097853}
   - {fileID: 956387723865773505}
   - {fileID: 270800227212619102}
   - {fileID: 5774683028429178164}
   - {fileID: 3534453882535931972}
   - {fileID: 1623935232016489592}
+  - {fileID: 6296609998478028803}
+  - {fileID: 5774683028429178164}
 --- !u!1001 &549302432749016145
 PrefabInstance:
   m_ObjectHideFlags: 0
