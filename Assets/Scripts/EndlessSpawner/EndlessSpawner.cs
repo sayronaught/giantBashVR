@@ -75,7 +75,8 @@ public class EndlessSpawner : MonoBehaviour
         while (!Application.isEditor || Application.isPlaying)
         {
             //Debug.Log("enemy waiting: " + waitTimer(1000, 5000, 0.01f).ToString());
-            await Task.Delay(waitTimer(5000, 90000, 0.003f));
+            //await Task.Delay(waitTimer(5000, 90000, 0.003f));
+            await Task.Delay(waitTimer(5000, 900, 0.03f));
             if (!Application.isPlaying) return;
             toughnessModifier += 0.05f;
             randomSpawnPoint = Random.Range(0, spawnPoints.Length);

@@ -41,7 +41,8 @@ public class enemyClothingRandomEquip : MonoBehaviour
             {
                 int randomNumber = Random.Range(0,100);
                 if(randomChance > randomNumber)
-                    randomC.SetActive(true);
+                    if (randomC != null)
+                        randomC.SetActive(true);
             }
 
         }
