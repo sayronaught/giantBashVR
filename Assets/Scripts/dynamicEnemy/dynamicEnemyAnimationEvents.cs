@@ -16,4 +16,8 @@ public class dynamicEnemyAnimationEvents : MonoBehaviour
     {
         myDE.animEventReleaseProjectile();
     }
+    public void animEventMeleeAttack()
+    {
+        myDE.animEventMeleeAttack();
+    }
 }

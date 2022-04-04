@@ -123,6 +123,10 @@ public class dynamicEnemy : MonoBehaviour
     {
         waypoints = spawnpoint.GetComponentsInChildren<Transform>();
     }
+    public void animEventMeleeAttack()
+    {
+        playerScript.damagePlayer(stats.strength);
+    }
     public void animEventReleaseProjectile()
     {
         heldMissile.transform.SetParent(null);
