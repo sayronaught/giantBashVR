@@ -21,6 +21,7 @@ public class dynamicEnemy : MonoBehaviour
         public float rangedAttackRange = 5f;
         public float attackCooldown = 2f;
         public float hitbarMaxWidth = 0.1f;
+        public float animSpeedMultiplier = 1f;
     }
     public statList stats;
     private float speedUp = 1.1f;
@@ -166,7 +167,7 @@ public class dynamicEnemy : MonoBehaviour
             speedAnim = speedAnim * speedDown- 0.00001f;
             if (speedAnim < desiredSpeed) speedAnim = desiredSpeed; 
         }
-        myAnim.SetFloat("CurrentSpeed", speedAnim);
+        myAnim.SetFloat("CurrentSpeed", speedAnim*stats.animSpeedMultiplier);
         stats.speed = stats.maxSpeed * speedAnim;
     }
     private void showDamage()
