@@ -737,7 +737,7 @@ MonoBehaviour:
     mass: 5
     strength: 5
     speed: 0
-    maxSpeed: 0.25
+    maxSpeed: 1
     jumpForce: 1000
     damageReduction: 3
     maxHealth: 20
@@ -745,6 +745,7 @@ MonoBehaviour:
     rangedAttackRange: 5
     attackCooldown: 5
     hitbarMaxWidth: 3
+    animSpeedMultiplier: 0.4
   anims:
     idles: []
     hurt: []

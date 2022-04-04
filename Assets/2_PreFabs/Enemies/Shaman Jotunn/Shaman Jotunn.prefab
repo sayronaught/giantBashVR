@@ -68,6 +68,7 @@ MonoBehaviour:
     rangedAttackRange: 15
     attackCooldown: 5
     hitbarMaxWidth: 1
+    animSpeedMultiplier: 0.7
   anims:
     idles: []
     hurt:

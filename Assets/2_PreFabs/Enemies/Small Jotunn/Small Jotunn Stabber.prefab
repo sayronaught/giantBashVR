@@ -416,9 +416,10 @@ MonoBehaviour:
     damageReduction: 1
     maxHealth: 10
     meleeAttackRange: 1.5
-    rangedAttackRange: 5
+    rangedAttackRange: 7
     attackCooldown: 2
     hitbarMaxWidth: 0.5
+    animSpeedMultiplier: 1.8
   anims:
     idles: []
     hurt: []
