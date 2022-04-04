@@ -21,7 +21,7 @@ public class _Settings : MonoBehaviour
         public VideoClip videoclip;
     }
     public List<world> worlds;
-    private int currentWorld = 1;
+    public int currentWorld = 1;
     
     public int storedPoints = 0;
     public int highestScore = 0;
