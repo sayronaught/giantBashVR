@@ -13,9 +13,14 @@ public class simpleInteractableOption : MonoBehaviour
     public int doLoadScene = -1;
     public Transform doTeleport;
     public bool doQuit = false;
+    public bool doNextPortal = false;
+    public portalHandler doNextPortalHandler;
 
     private XRSimpleInteractable mySimple;
     private TextMesh myTxt;
+    private _Settings mySettings;
+
+    private float clickdelay = 0f;
 
     public void HoverOn()
     {
@@ -31,6 +36,7 @@ public class simpleInteractableOption : MonoBehaviour
     }
     public void clickedThis()
     {
+        if (clickdelay > 0f) return;
         if (doLoadScene > -1)
         {
             SceneManager.LoadSceneAsync(doLoadScene, LoadSceneMode.Single);
@@ -50,6 +56,11 @@ public class simpleInteractableOption : MonoBehaviour
         {
             Application.Quit();
         }
+        if (doNextPortal)
+        {
+            doNextPortalHandler.nextPortal();
+            clickdelay = 1f;
+        }
     }
 
     // Start is called before the first frame update
@@ -57,11 +68,12 @@ public class simpleInteractableOption : MonoBehaviour
     {
         mySimple = GetComponent<XRSimpleInteractable>();
         myTxt = GetComponent<TextMesh>();
+        mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        clickdelay -= Time.deltaTime;
     }
 }

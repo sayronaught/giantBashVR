@@ -476,6 +476,8 @@ MonoBehaviour:
   doLoadScene: -1
   doTeleport: {fileID: 1399848381}
   doQuit: 0
+  doNextPortal: 0
+  doNextPortalHandler: {fileID: 0}
 --- !u!114 &140947768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2282,6 +2284,8 @@ MonoBehaviour:
   doLoadScene: 2
   doTeleport: {fileID: 0}
   doQuit: 0
+  doNextPortal: 0
+  doNextPortalHandler: {fileID: 0}
 --- !u!114 &400753660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8832,7 +8836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1154814332
 Transform:
   m_ObjectHideFlags: 0
@@ -10026,9 +10030,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMenu: {fileID: 800352137}
-  doLoadScene: 1
+  doLoadScene: -1
   doTeleport: {fileID: 0}
   doQuit: 0
+  doNextPortal: 1
+  doNextPortalHandler: {fileID: 2082256530}
 --- !u!114 &1230466139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11688,6 +11694,8 @@ MonoBehaviour:
   doLoadScene: 1
   doTeleport: {fileID: 0}
   doQuit: 0
+  doNextPortal: 0
+  doNextPortalHandler: {fileID: 0}
 --- !u!114 &1515798352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13085,6 +13093,8 @@ MonoBehaviour:
   doLoadScene: 1
   doTeleport: {fileID: 0}
   doQuit: 0
+  doNextPortal: 0
+  doNextPortalHandler: {fileID: 0}
 --- !u!114 &1726314570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13575,6 +13585,8 @@ MonoBehaviour:
   doLoadScene: 0
   doTeleport: {fileID: 0}
   doQuit: 1
+  doNextPortal: 0
+  doNextPortalHandler: {fileID: 0}
 --- !u!114 &1816842777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13925,6 +13937,8 @@ MonoBehaviour:
   doLoadScene: -1
   doTeleport: {fileID: 1384622288}
   doQuit: 0
+  doNextPortal: 0
+  doNextPortalHandler: {fileID: 0}
 --- !u!114 &1843147021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14871,7 +14885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2082256529
 Transform:
   m_ObjectHideFlags: 0
@@ -14896,7 +14910,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082256528}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e4aa465c19722d4abb05e6eae048580, type: 3}
   m_Name: 
@@ -14957,6 +14971,8 @@ MonoBehaviour:
   doLoadScene: -1
   doTeleport: {fileID: 1293802930}
   doQuit: 0
+  doNextPortal: 0
+  doNextPortalHandler: {fileID: 0}
 --- !u!114 &2097511497
 MonoBehaviour:
   m_ObjectHideFlags: 0

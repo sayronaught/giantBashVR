@@ -13,17 +13,25 @@ public class portalHandler : MonoBehaviour
 
     private _Settings mySettings;
 
+    public void updatePortal()
+    {
+        if (!mySettings) return;
+        travelTo.doLoadScene = mySettings.worlds[mySettings.currentWorld].loadOrder;
+        story.text = mySettings.worlds[mySettings.currentWorld].story;
+        travelToText.text = "Travel to\n" + mySettings.worlds[mySettings.currentWorld].title;
+        video.clip = mySettings.worlds[mySettings.currentWorld].videoclip;       
+    }
+    public void nextPortal()
+    {
+        mySettings.currentWorld++;
+        if (mySettings.currentWorld == 2) mySettings.currentWorld = 0;
+        updatePortal();
+    }
     // Start is called before the first frame update
     void Start()
     {
         mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
-        if ( mySettings )
-        {
-            travelTo.doLoadScene = mySettings.worlds[mySettings.currentWorld].loadOrder;
-            story.text = mySettings.worlds[mySettings.currentWorld].story;
-            travelToText.text = "Travel to\n" + mySettings.worlds[mySettings.currentWorld].title;
-            video.clip = mySettings.worlds[mySettings.currentWorld].videoclip;
-        }
+        
     }
 
     // Update is called once per frame
