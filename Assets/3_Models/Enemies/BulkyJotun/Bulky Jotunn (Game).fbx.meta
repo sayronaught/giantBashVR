@@ -69,6 +69,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BulJot Eyes
+    second: {fileID: 2100000, guid: 39cbbd28e9337944b9301ce2dc3d1f3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: BulJot_Leather
     second: {fileID: 2100000, guid: 8ad991a64482c9a438aa9d24a17ce3cb, type: 2}
   - first:
