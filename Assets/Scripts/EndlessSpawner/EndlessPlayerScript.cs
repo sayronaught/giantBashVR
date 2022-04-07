@@ -43,7 +43,8 @@ public class EndlessPlayerScript : MonoBehaviour
     {
         var volume = PlayerBloodEffect.GetComponent<Volume>();
         volume.profile.TryGet<Vignette>(out bloodVignette);
-        mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
+        var permObj = GameObject.Find("_SettingsPermanentObject");
+        if (permObj) mySettings = permObj.GetComponent<_Settings>();
     }
 
     // Update is called once per frame

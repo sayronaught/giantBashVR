@@ -109,7 +109,8 @@ public class hammerFX : MonoBehaviour
     {
         myAS = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
-        mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
+        var permObj = GameObject.Find("_SettingsPermanentObject");
+        if ( permObj ) mySettings = permObj.GetComponent<_Settings>();
         if ( mySettings )
         { // spawn hammerskin
             var hammerSkin = Instantiate(mySettings.currentHammerSkin, Vector3.zero, Quaternion.identity);
