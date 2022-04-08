@@ -22,6 +22,9 @@ public class dynamicEnemy : MonoBehaviour
         public float attackCooldown = 2f;
         public float hitbarMaxWidth = 0.1f;
         public float animSpeedMultiplier = 1f;
+        public float dropableClothesForce = 300f;
+        public float dropableClothesRotation = 150f;
+        public float dropableClothesPercentage = 10f;
     }
     public statList stats;
     private float speedUp = 1.1f;
@@ -81,6 +84,8 @@ public class dynamicEnemy : MonoBehaviour
     public EndlessPlayerScript playerScript;
     public EffectBank myEB;
 
+    public List<GameObject> dropableArmor;
+
     private int currentWaypoint;
     private Transform finalWaypoint;
     private Transform temporaryTarget;
@@ -100,6 +105,34 @@ public class dynamicEnemy : MonoBehaviour
         return thisTarget;
     }
 
+    private void dropArmorPiece()
+    {
+        if (dropableArmor.Count == 0) return;
+        for (var i = dropableArmor.Count - 1; i > -1; i--)
+        {
+            if (!dropableArmor[i])
+                dropableArmor.RemoveAt(i);
+        }
+        dropableArmor.RemoveAll(GameObject => GameObject == null);
+        if (dropableArmor.Count == 0) return;
+        int rnd = Random.Range(0, dropableArmor.Count - 1);
+        GameObject armor = dropableArmor[rnd];
+        dropableArmor.Remove(armor);
+        GameObject newArmor = Instantiate(armor, armor.transform.position, armor.transform.rotation);
+        var rb = newArmor.AddComponent<Rigidbody>();
+        var force = targetRandomizer(Vector3.zero, 1f) + (Vector3.up*5f);
+        rb.AddForce(force.normalized * (stats.dropableClothesForce*Random.Range(0.5f,1.5f)));
+        rb.AddTorque(targetRandomizer(Vector3.zero, stats.dropableClothesRotation));
+        newArmor.AddComponent<MeshCollider>();
+        var skin = newArmor.GetComponent<SkinnedMeshRenderer>();
+        var newmeshrender = newArmor.AddComponent<MeshRenderer>();
+        var newmeshfilter = newArmor.AddComponent<MeshFilter>();
+        newmeshfilter.mesh = skin.sharedMesh;
+        newmeshrender.materials = skin.materials;
+        Destroy(skin);
+        Destroy(newArmor, 5f);
+        Destroy(armor);
+    }
     public void spawnSetDifficulty(float modifier)
     {
         stats.maxHealth *= modifier*3;
@@ -245,6 +278,7 @@ public class dynamicEnemy : MonoBehaviour
         dam += (collision.rigidbody.velocity.magnitude * 0.2f);
         takeDamage(dam);
         playRandomBeingHitSound(myEB.sounds.hammerHitMeat);
+        if ( dam > stats.maxHealth * (stats.dropableClothesPercentage*0.01f)) dropArmorPiece();
     }
 
     void Awake()

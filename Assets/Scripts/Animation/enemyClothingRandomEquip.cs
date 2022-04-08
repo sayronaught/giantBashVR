@@ -20,16 +20,18 @@ public class enemyClothingRandomEquip : MonoBehaviour
     //Chance at a random clothing piece appearing in % (0-100)
     int randomChance = 35;
 
+    private dynamicEnemy myDE;
 
     void Start()
     {
+        myDE = GetComponent<dynamicEnemy>();
         if (torsoClothing.Length > 0)
         {
             GameObject torsoC = torsoClothing[Random.Range(0, torsoClothing.Length)];
             if (torsoC != null)
             {
                 torsoC.SetActive(true);
-
+                if(myDE) myDE.dropableArmor.Add(torsoC);
             }
             foreach (GameObject torso in torsoClothing)
             {
@@ -51,7 +53,11 @@ public class enemyClothingRandomEquip : MonoBehaviour
             }
             GameObject legC = requiredLegClothing[Random.Range(0, requiredLegClothing.Length)];
             if (legC != null)
+            {
                 legC.SetActive(true);
+                if (myDE) myDE.dropableArmor.Add(legC);
+            }
+                
 
             foreach (GameObject legs in requiredLegClothing)
             {
@@ -73,8 +79,10 @@ public class enemyClothingRandomEquip : MonoBehaviour
                 if(randomChance > randomNumber)
                 {
                     if (randomC != null)
+                    {
                         randomC.SetActive(true);
-
+                        if (myDE) myDE.dropableArmor.Add(randomC);
+                    }
                 }
                 else
                 {
@@ -90,8 +98,11 @@ public class enemyClothingRandomEquip : MonoBehaviour
         {
             GameObject selectOne01C = selectOne01[Random.Range(0, selectOne01.Length)];
             if (selectOne01C != null)
+            {
                 selectOne01C.SetActive(true);
-
+                if (myDE) myDE.dropableArmor.Add(selectOne01C);
+            }
+                
             foreach (GameObject s1 in selectOne01)
             {
                 if (s1 == null)
@@ -107,7 +118,10 @@ public class enemyClothingRandomEquip : MonoBehaviour
         {
             GameObject selectOne02C = selectOne02[Random.Range(0, selectOne02.Length)];
             if (selectOne02C != null)
+            {
                 selectOne02C.SetActive(true);
+                if(myDE) myDE.dropableArmor.Add(selectOne02C);
+            }
 
             foreach (GameObject s2 in selectOne02)
             {
@@ -124,7 +138,10 @@ public class enemyClothingRandomEquip : MonoBehaviour
         {
             GameObject selectOne03C = selectOne03[Random.Range(0, selectOne03.Length)];
             if (selectOne03C != null)
+            {
                 selectOne03C.SetActive(true);
+                if (myDE) myDE.dropableArmor.Add(selectOne03C);
+            }
 
             foreach (GameObject s3 in selectOne03)
             {
@@ -141,7 +158,11 @@ public class enemyClothingRandomEquip : MonoBehaviour
         {
             GameObject selectOne04C = selectOne04[Random.Range(0, selectOne04.Length)];
             if (selectOne04C != null)
+            {
                 selectOne04C.SetActive(true);
+                if (myDE) myDE.dropableArmor.Add(selectOne04C);
+
+            }
 
             foreach (GameObject s4 in selectOne04)
             {
@@ -168,6 +189,5 @@ public class enemyClothingRandomEquip : MonoBehaviour
             }
 
         }
-
     }
 }
