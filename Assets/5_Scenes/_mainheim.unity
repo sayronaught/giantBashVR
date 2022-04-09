@@ -8299,7 +8299,26 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119909220}
-  m_Text: Highscore
+  m_Text: 'Highscore ---
+
+    in testingheim
+
+    damage done
+
+    ------------
+
+    highest
+    damage
+
+    ------------
+
+    damage taken
+
+    -----------
+
+    jotuns bashed
+
+    -----------'
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -12541,7 +12560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645813608}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.8676586, y: -3.0489292, z: 3.9101217}
+  m_LocalPosition: {x: 1.8676586, y: -2.5, z: 3.9101217}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 479486539}
@@ -13660,7 +13679,7 @@ Transform:
   m_GameObject: {fileID: 1816842774}
   m_LocalRotation: {x: 0, y: 0.74080455, z: 0, w: 0.6717207}
   m_LocalPosition: {x: 11, y: 24, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 1663254124}
   m_RootOrder: 2
@@ -13820,7 +13839,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 3, z: 1}
+  m_Size: {x: 4.5, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!102 &1816842779
 TextMesh:

@@ -98,6 +98,7 @@ public class dynamicEnemy : MonoBehaviour
     private Animator myAnim;
     private AudioSource mySound;
     private Rigidbody myRB;
+    private _Settings mySettings;
 
     private Vector3 targetRandomizer(Vector3 thisTarget, float variation)
     {
@@ -246,8 +247,14 @@ public class dynamicEnemy : MonoBehaviour
             if (width <= 0f) hitbar.gameObject.SetActive(false);
             hitbar.localScale = new Vector3(width, hitbar.localScale.y, hitbar.localScale.z);
         }
+        if (mySettings)
+        {
+            mySettings.damageDone += (int)dam;
+            if ((int)dam > mySettings.damageHighest) mySettings.damageHighest = (int)dam;
+        }
         if (Hitpoints < 0f)
         {
+            if (mySettings) mySettings.jotunsBashed++;
             playerScript.addPoints(stats.pointValue);
             if (instantDeathPrefab && anims.death.Length > 0)
             { // both model and deathsplat present. 20% chance for splat
@@ -286,6 +293,8 @@ public class dynamicEnemy : MonoBehaviour
         myAnim = GetComponentInChildren<Animator>();
         mySound = GetComponent<AudioSource>();
         myRB = GetComponent<Rigidbody>();
+        var permObj = GameObject.Find("_SettingsPermanentObject");
+        if (permObj) mySettings = permObj.GetComponent<_Settings>();
     }
 
     // Update is called once per frame

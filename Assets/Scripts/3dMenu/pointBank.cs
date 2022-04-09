@@ -26,7 +26,8 @@ public class pointBank : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
+        var permObj = GameObject.Find("_SettingsPermanentObject");
+        if (permObj) mySettings = permObj.GetComponent<_Settings>();
         mySound = GetComponent<AudioSource>();
     }
 
@@ -41,10 +42,16 @@ public class pointBank : MonoBehaviour
                 uiPoints.text = mySettings.storedPoints.ToString() + "\nPoints";
             else
                 uiPoints.text = "0\nPoints";
-            if ( mySettings.highestScore > 0)
+            uiHighScore.text = "Highscore ";
+            if (mySettings.highestScore > 0)
             {
-                uiHighScore.text = "Highscore\n"+mySettings.highestScore.ToString()+"\nin "+mySettings.highestScoreworld;
+                uiHighScore.text += mySettings.highestScore.ToString() + "\nin " + mySettings.highestScoreworld;
             }
+            else uiHighScore.text += "None";
+            uiHighScore.text += "\nDamage Done\n"+mySettings.damageDone.ToString();
+            uiHighScore.text += "\nHighest Damage\n" + mySettings.damageHighest.ToString();
+            uiHighScore.text += "\nDamage Taken\n" + mySettings.damageTaken.ToString();
+            uiHighScore.text += "\nJotuns Bashed\n" + mySettings.jotunsBashed.ToString();
             timeToUpdate = 1f;
             lastShown = mySettings.storedPoints;
         }

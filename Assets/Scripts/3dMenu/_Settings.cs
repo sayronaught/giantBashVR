@@ -44,12 +44,20 @@ public class _Settings : MonoBehaviour
             highestScore = PlayerPrefs.GetInt("HighestScore");
             highestScoreworld = PlayerPrefs.GetString("HighestScoreWorld");
         }
+        if (PlayerPrefs.GetInt("DamageDone") > 0) damageDone = PlayerPrefs.GetInt("DamageDone");
+        if (PlayerPrefs.GetInt("DamageTaken") > 0) damageTaken = PlayerPrefs.GetInt("DamageTaken");
+        if (PlayerPrefs.GetInt("DamageHighest") > 0) damageHighest = PlayerPrefs.GetInt("DamageHighest");
+        if (PlayerPrefs.GetInt("JotunsBashed") > 0) jotunsBashed = PlayerPrefs.GetInt("JotunsBashed");
     }
     private void savePlayerPrefs()
     {
         PlayerPrefs.SetInt("StoredPoints", storedPoints);
         PlayerPrefs.SetInt("HighestScore", highestScore);
         PlayerPrefs.SetString("HighestScoreWorld", highestScoreworld);
+        PlayerPrefs.SetInt("DamageDone", damageDone);
+        PlayerPrefs.SetInt("DamageTaken", damageTaken);
+        PlayerPrefs.SetInt("DamageHighest", damageHighest);
+        PlayerPrefs.SetInt("JotunsBashed", jotunsBashed);
         PlayerPrefs.Save();
     }
     // Start is called before the first frame update

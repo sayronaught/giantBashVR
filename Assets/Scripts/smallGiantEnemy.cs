@@ -14,6 +14,7 @@ public class smallGiantEnemy : MonoBehaviour
     public gameController mainGC;
 
     private Animator myAnim;
+    private _Settings mySettings;
 
     public void eventDeath()
     {
@@ -29,14 +30,16 @@ public class smallGiantEnemy : MonoBehaviour
         if (other.transform.tag != "Hammer") return;
         var blood = Instantiate(bloodPrefab, Vector3.zero, Quaternion.identity) as GameObject;
         blood.transform.position = transform.position;
+        if (mySettings) mySettings.jotunsBashed++;
         Destroy(gameObject);
-
     }
     void Awake()
     {
         myAnim = GetComponent<Animator>();
         float size = Random.Range(1f, 4f);
         transform.localScale = new Vector3(size, size, size);
+        var permObj = GameObject.Find("_SettingsPermanentObject");
+        if (permObj) mySettings = permObj.GetComponent<_Settings>();
     }
 
     void Update()

@@ -43,6 +43,8 @@ public class bigBossGnot : MonoBehaviour
     private static readonly int Dance = Animator.StringToHash("dance");
     private static readonly int Hitpoints1 = Animator.StringToHash("hitpoints");
 
+    private _Settings mySettings;
+
     public void playRoar()
     {
         myAS.clip = clipRoar;
@@ -114,8 +116,14 @@ public class bigBossGnot : MonoBehaviour
         {
             mainGC.addPoints((int)(damage * 0.1f));
         }
+        if ( mySettings )
+        {
+            mySettings.damageDone += (int)damage;
+            if ((int)damage > mySettings.damageHighest) mySettings.damageHighest = (int)damage;
+        }
         if ( Hitpoints <= 0f )
         {
+            if (mySettings) mySettings.jotunsBashed++;
             SceneManager.LoadScene(0);
             //mainGC.uiVinder.SetActive(true);
         }
@@ -127,6 +135,8 @@ public class bigBossGnot : MonoBehaviour
     {
         myAS = GetComponent<AudioSource>();
         myAnim = GetComponent<Animator>();
+        var permObj = GameObject.Find("_SettingsPermanentObject");
+        if (permObj) mySettings = permObj.GetComponent<_Settings>();
     }
 
     // Update is called once per frame

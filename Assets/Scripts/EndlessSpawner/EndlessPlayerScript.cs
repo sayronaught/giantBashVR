@@ -24,8 +24,13 @@ public class EndlessPlayerScript : MonoBehaviour
 
     public void damagePlayer(float dam)
     {
+        if (dam < 0f) return;
         hit -= dam;
         updatePoints();
+        if (mySettings)
+        {
+            mySettings.damageTaken += (int)Mathf.Ceil( dam );
+        }
     }
     public void addPoints(int newPoints)
     {
