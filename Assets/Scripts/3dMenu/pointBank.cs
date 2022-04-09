@@ -5,6 +5,7 @@ using UnityEngine;
 public class pointBank : MonoBehaviour
 {
     public TextMesh uiPoints;
+    public TextMesh uiHighScore;
     public AudioClip sfxBuy;
     public AudioClip sfxDeny;
     public AudioClip sfxSelect;
@@ -40,6 +41,10 @@ public class pointBank : MonoBehaviour
                 uiPoints.text = mySettings.storedPoints.ToString() + "\nPoints";
             else
                 uiPoints.text = "0\nPoints";
+            if ( mySettings.highestScore > 0)
+            {
+                uiHighScore.text = "Highscore\n"+mySettings.highestScore.ToString()+"\nin "+mySettings.highestScoreworld;
+            }
             timeToUpdate = 1f;
             lastShown = mySettings.storedPoints;
         }

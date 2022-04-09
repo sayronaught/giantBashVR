@@ -30,7 +30,15 @@ public class EndlessPlayerScript : MonoBehaviour
     public void addPoints(int newPoints)
     {
         points += newPoints;
-        if (mySettings) mySettings.storedPoints += newPoints;
+        if (mySettings)
+        {
+            mySettings.storedPoints += newPoints;
+            if (mySettings.highestScore < points)
+            {
+                mySettings.highestScore = points;
+                mySettings.highestScoreworld = "Jotunnheim";
+            }
+        }
         updatePoints();
     }
     private void updatePoints()

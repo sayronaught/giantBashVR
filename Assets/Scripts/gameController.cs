@@ -82,7 +82,15 @@ public class gameController : MonoBehaviour
         uiEffScript.scaleTo = true;
         debugAddPoints = false;
         var pointPopup = Instantiate(uiPointPopupPrefab,uiEffScript.transform);
-        if (mySettings) mySettings.storedPoints += points;
+        if (mySettings)
+        {
+            mySettings.storedPoints += points;
+            if (mySettings.highestScore < gamePoints)
+            {
+                mySettings.highestScore = gamePoints;
+                mySettings.highestScoreworld = "Trainingheim";
+            }
+        }
     }
     private void destroyTargets()
     {

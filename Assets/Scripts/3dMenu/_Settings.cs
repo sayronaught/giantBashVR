@@ -25,6 +25,7 @@ public class _Settings : MonoBehaviour
     
     public int storedPoints = 0;
     public int highestScore = 0;
+    public string highestScoreworld = "None";
     public int damageDone = 0;
     public int damageTaken = 0;
     public int damageHighest = 0;
@@ -33,14 +34,39 @@ public class _Settings : MonoBehaviour
     public int gamesStarted = 0;
     public int secondsPlayed = 0;
 
+    private float saveTimer = 10f;
+
+    private void loadPlayerPrefs()
+    {
+        if (PlayerPrefs.GetInt("StoredPoints") > 0) storedPoints = PlayerPrefs.GetInt("StoredPoints");
+        if (PlayerPrefs.GetInt("HighestScore") > 0 )
+        {
+            highestScore = PlayerPrefs.GetInt("HighestScore");
+            highestScoreworld = PlayerPrefs.GetString("HighestScoreWorld");
+        }
+    }
+    private void savePlayerPrefs()
+    {
+        PlayerPrefs.SetInt("StoredPoints", storedPoints);
+        PlayerPrefs.SetInt("HighestScore", highestScore);
+        PlayerPrefs.SetString("HighestScoreWorld", highestScoreworld);
+        PlayerPrefs.Save();
+    }
     // Start is called before the first frame update
     void Awake()
     {
         DontDestroyOnLoad( gameObject );
+        loadPlayerPrefs();
     }
 
     private void Update()
     {
+        saveTimer -= Time.deltaTime;
+        if ( saveTimer < 0f)
+        {
+            savePlayerPrefs();
+            saveTimer = 10f;
+        }
         //masterMixer.SetFloat("VolAmb", -80f);
         //masterMixer.SetFloat("VolDia", -80f);
         //masterMixer.SetFloat("VolMus", -80f);
