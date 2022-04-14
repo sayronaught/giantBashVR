@@ -420,6 +420,9 @@ MonoBehaviour:
     attackCooldown: 2
     hitbarMaxWidth: 0.5
     animSpeedMultiplier: 1.8
+    dropableClothesForce: 300
+    dropableClothesRotation: 150
+    dropableClothesPercentage: 10
   anims:
     idles: []
     hurt: []
@@ -436,6 +439,7 @@ MonoBehaviour:
   animIdle: 1
   instantDeathPrefab: {fileID: 9219578356075885194, guid: 9ede50a5a6538ad409210e80df6a6e5e, type: 3}
   damageTextPrefab: {fileID: 9171916892454308313, guid: f43c628d1a222c54e830337717629b02, type: 3}
+  deathLootPrefab: {fileID: 8238114570042706660, guid: e099422eba9cfee4192adb45950aac82, type: 3}
   hitbar: {fileID: 124730566543122133}
   sounds:
     steps: []
@@ -492,6 +496,7 @@ MonoBehaviour:
   waypoints: []
   playerScript: {fileID: 0}
   myEB: {fileID: 0}
+  dropableArmor: []
 --- !u!65 &4423596014192864406
 BoxCollider:
   m_ObjectHideFlags: 0

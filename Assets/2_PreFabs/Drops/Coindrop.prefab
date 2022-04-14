@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4622927739129042995}
   - component: {fileID: 7252591061593905156}
   - component: {fileID: -360918322134643526}
+  - component: {fileID: 3831687657119744834}
   m_Layer: 0
   m_Name: Coindrop
   m_TagString: Untagged
@@ -62,6 +63,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &3831687657119744834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238114570042706660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c2221750284054ab509be34bc7e8ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinChild: 1
+  bounceChild: 1
 --- !u!1001 &7822572691506028654
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -48,6 +48,7 @@ public class dynamicEnemy : MonoBehaviour
     public bool animIdle = true;
     public GameObject instantDeathPrefab;
     public GameObject damageTextPrefab;
+    public GameObject deathLootPrefab;
     public Transform hitbar;
 
     [System.Serializable]
@@ -133,6 +134,15 @@ public class dynamicEnemy : MonoBehaviour
         Destroy(skin);
         Destroy(newArmor, 5f);
         Destroy(armor);
+    }
+    private void dropGold()
+    {
+
+        GameObject gold = Instantiate(deathLootPrefab, transform.position, Quaternion.identity);
+        var rb = gold.GetComponent<Rigidbody>();
+        var force = targetRandomizer(Vector3.zero, 1f) + (Vector3.up * 5f);
+        rb.AddForce(force.normalized * (stats.dropableClothesForce * Random.Range(0.5f, 1.5f)));
+        Destroy(gold, 5f);
     }
     public void spawnSetDifficulty(float modifier)
     {
@@ -256,6 +266,7 @@ public class dynamicEnemy : MonoBehaviour
         {
             if (mySettings) mySettings.jotunsBashed++;
             playerScript.addPoints(stats.pointValue);
+            dropGold();
             if (instantDeathPrefab && anims.death.Length > 0)
             { // both model and deathsplat present. 20% chance for splat
                 if (Random.Range(0f, 1f) < 0.2f)
