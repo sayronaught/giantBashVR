@@ -78,7 +78,7 @@ MonoBehaviour:
     - Hurt_01
     - Hurt_02
     death:
-    - Death__Mocap_01
+    - Death_01
     attackMelee: []
     attackRange:
     - Attack 01

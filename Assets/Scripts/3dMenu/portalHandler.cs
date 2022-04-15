@@ -31,7 +31,7 @@ public class portalHandler : MonoBehaviour
     void Start()
     {
         mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
-        
+        updatePortal();
     }
 
     // Update is called once per frame

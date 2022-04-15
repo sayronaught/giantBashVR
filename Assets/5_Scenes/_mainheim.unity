@@ -7245,7 +7245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &877178111
 Transform:
   m_ObjectHideFlags: 0
@@ -7281,7 +7281,7 @@ MonoBehaviour:
   - {x: -1.5, y: 3, z: 1}
   - {x: 1.5, y: 3, z: 1}
   myBank: {fileID: 417849039}
-  currentID: 0
+  currentID: 4
 --- !u!1 &902524766
 GameObject:
   m_ObjectHideFlags: 0
@@ -12092,7 +12092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1566639746
 Transform:
   m_ObjectHideFlags: 0
