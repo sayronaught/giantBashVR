@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopPrice: 150
-  shopTitle: name of the skin
+  shopTitle: Splitir
   shopStory: 'Sharp as a youtube
 
     commenter. made by
@@ -290,7 +290,10 @@ MonoBehaviour:
   weaponThrowCharge: 2
   weaponChargeMax: 9
   weaponChargeSpeed: 3
+  weaponMagnetMultiplier: 1.1
+  weaponMagnetMinimum: 2
   weaponMass: 1
   aoeDamage: 10
-  aoeKnockback: 25
+  aoeChargeKnockback: 25
+  aoeBaseKnockback: 2500
   aoeRange: 5

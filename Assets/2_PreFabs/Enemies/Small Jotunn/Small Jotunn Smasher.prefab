@@ -407,7 +407,7 @@ MonoBehaviour:
     jotunnShaman: 0
     jotunnBulky: 0
   stats:
-    pointValue: 1
+    pointValue: 2
     mass: 2
     strength: 1
     speed: 0

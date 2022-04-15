@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5719afe9bc87914e914c81554b2db7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopPrice: 0
-  shopTitle: name of the skin
+  shopPrice: 300
+  shopTitle: Jespnir
   shopStory: 'made from a star
 
     this is probably the

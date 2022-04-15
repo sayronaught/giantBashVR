@@ -266,7 +266,10 @@ public class dynamicEnemy : MonoBehaviour
         {
             if (mySettings) mySettings.jotunsBashed++;
             playerScript.addPoints(stats.pointValue);
-            dropGold();
+            if ( stats.pointValue > 0)
+            {
+                for ( int i = 0; i < stats.pointValue; i++) dropGold();
+            }
             if (instantDeathPrefab && anims.death.Length > 0)
             { // both model and deathsplat present. 20% chance for splat
                 if (Random.Range(0f, 1f) < 0.2f)

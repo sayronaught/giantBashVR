@@ -445,7 +445,7 @@ MonoBehaviour:
     jumpForce: 1000
     damageReduction: 1
     maxHealth: 5
-    meleeAttackRange: 5
+    meleeAttackRange: 6
     rangedAttackRange: 7
     attackCooldown: 5
     hitbarMaxWidth: 0.5

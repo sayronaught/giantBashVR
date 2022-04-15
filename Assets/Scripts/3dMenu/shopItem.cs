@@ -8,9 +8,6 @@ public class shopItem : MonoBehaviour
     public bool bought = false;
     public bool activated = false;
     public int shopPrice = 0;
-    public string shopTitle = "name of the skin";
-    public string shopStory = "funky story coming soon";
-    public string shopStats = "funky stats coming soon";
 
     public GameObject hammerSkinPrefab;
 
@@ -102,14 +99,15 @@ public class shopItem : MonoBehaviour
     }
     private void Update()
     {
+        if (!productDisplay) return;
         if (activated)
         {
             productDisplay.transform.Rotate(Vector3.up, Time.deltaTime*50f);
-            localScale = 1F + (Mathf.Sin(Time.realtimeSinceStartup*5f)*0.25f);
+            localScale = 5F + (Mathf.Sin(Time.realtimeSinceStartup*5f)*0.25f);
             productDisplay.transform.localScale = new Vector3(localScale, localScale, localScale);
         } else {
             productDisplay.transform.Rotate(Vector3.up, Time.deltaTime * 40f);
-            productDisplay.transform.localScale = new Vector3(1f, 1f, 1f);
+            productDisplay.transform.localScale = new Vector3(5f, 5f, 5f);
         }
     }
 }

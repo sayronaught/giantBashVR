@@ -56,7 +56,7 @@ MonoBehaviour:
     jotunnShaman: 0
     jotunnBulky: 0
   stats:
-    pointValue: 1
+    pointValue: 3
     mass: 3
     strength: 10
     speed: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
     jumpForce: 1000
     damageReduction: 2
     maxHealth: 20
-    meleeAttackRange: 3
+    meleeAttackRange: 14
     rangedAttackRange: 15
     attackCooldown: 5
     hitbarMaxWidth: 1
@@ -78,7 +78,7 @@ MonoBehaviour:
     - Hurt_01
     - Hurt_02
     death:
-    - Death_01
+    - Death__Mocap_01
     attackMelee: []
     attackRange:
     - Attack 01
