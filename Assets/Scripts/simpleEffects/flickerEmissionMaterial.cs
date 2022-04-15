@@ -9,6 +9,7 @@ public class flickerEmissionMaterial : MonoBehaviour
     public Color maxColor;
     public float minIntensity;
     public float maxIntensity;
+    public float delay = 0.1f;
 
     private float minH;
     private float maxH;
@@ -17,6 +18,7 @@ public class flickerEmissionMaterial : MonoBehaviour
     private float minV;
     private float maxV;
 
+    private float currentDelay;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,9 @@ public class flickerEmissionMaterial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentDelay -= Time.deltaTime;
+        if (currentDelay > 0f) return;
         materialToFlicker.SetColor("_EmissionColor", Random.ColorHSV(minH,maxH,minS,maxS,minV,maxV)*Random.Range(minIntensity,maxIntensity));
+        currentDelay = delay;
     }
 }

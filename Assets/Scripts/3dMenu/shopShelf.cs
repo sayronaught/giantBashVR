@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class shopShelf : MonoBehaviour
@@ -8,9 +9,18 @@ public class shopShelf : MonoBehaviour
     public Vector3[] Positions;
     public pointBank myBank;
 
+    public Transform shelfPositionOpen;
+    public Transform shelfPositionClosed;
+    public GameObject openShopButton;
+
     public int currentID = 0;
     private _Settings mySettings;
     private List<GameObject> onShelvesNow;
+
+    private Transform targetPosition;
+    private float targetTimer = 0f;
+    private bool closing = false;
+    private bool opening = false;
 
     private void fillShelfOneItem(int itemNr,Vector3 pos)
     {
@@ -42,22 +52,38 @@ public class shopShelf : MonoBehaviour
             fillShelfOneItem(i+currentID,Positions[i]);
         }
     }
+    public void emptyShelves()
+    {
+        if (onShelvesNow.Count < 1) return;
+        foreach (GameObject item in onShelvesNow) Destroy(item);
+        onShelvesNow.Clear();
+    }
 
     public void Next()
     {
         currentID += 4;
         if (currentID >= mySettings.allSkinsForStore.Count) currentID = 0;
-        foreach(GameObject item in onShelvesNow) Destroy(item);
-        onShelvesNow.Clear();
+        emptyShelves();
         fillShelf();
     }
     public void Close()
     {
-
+        transform.position = shelfPositionOpen.position;
+        transform.rotation = shelfPositionOpen.rotation;
+        targetPosition = shelfPositionClosed;
+        targetTimer = 2f;
+        closing = true;
     }
     public void Open()
     {
-
+        transform.position = shelfPositionClosed.position;
+        transform.rotation = shelfPositionClosed.rotation;
+        transform.localScale = new Vector3(1f, 1f, 1f);
+        targetPosition = shelfPositionOpen;
+        emptyShelves();
+        fillShelf();
+        targetTimer = 2f;
+        opening = true;
     }
     // Start is called before the first frame update
     void Start()
@@ -65,12 +91,29 @@ public class shopShelf : MonoBehaviour
         onShelvesNow = new List<GameObject>();
         var permObj = GameObject.Find("_SettingsPermanentObject");
         if (permObj) mySettings = permObj.GetComponent<_Settings>();
-        if ( mySettings ) fillShelf();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!targetPosition) return;
+        transform.position = Vector3.Lerp(transform.position, targetPosition.position, Time.deltaTime*3f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetPosition.rotation, Time.deltaTime*3f);
+        targetTimer -= Time.deltaTime;
+        if (targetTimer > 0f) return;
+        transform.position = targetPosition.position;
+        transform.rotation = targetPosition.rotation;
+        targetPosition = null;
+        if ( opening )
+        {
+            openShopButton.SetActive(false);
+            opening = false;
+        }
+        if ( closing )
+        {
+            openShopButton.SetActive(true);
+            transform.localScale = new Vector3(0f, 0f, 0f);
+            closing = false;
+        }
     }
 }
