@@ -68,6 +68,25 @@ public class dynamicEnemy : MonoBehaviour
     }
     public soundList sounds;
 
+    [System.Serializable]
+    public enum spellTypes
+    {
+        Missile,
+        Healing
+    };
+
+    [System.Serializable]
+    public class spellList
+    {
+        public string name;
+        public spellTypes spellType = spellTypes.Missile;
+        public string[] anims;
+        public AudioClip[] chant;
+        public float chantPercentageChance = 20f;
+        public GameObject[] spellPrefabs;
+    }
+    public spellList[] spells;
+
     public AudioSource beingHitAS;
 
     public GameObject[] meleeWeapons;
