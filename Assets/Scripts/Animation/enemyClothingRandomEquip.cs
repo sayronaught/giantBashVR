@@ -5,6 +5,10 @@ using UnityEngine;
 public class enemyClothingRandomEquip : MonoBehaviour
 {
 
+    //Chance at a random clothing piece appearing in % (0-100)
+    public int randomChance = 35;
+
+
     public GameObject[] torsoClothing;
     public GameObject[] requiredLegClothing;
     public GameObject[] randomClothing;
@@ -14,11 +18,11 @@ public class enemyClothingRandomEquip : MonoBehaviour
     public GameObject[] selectOne03;
     public GameObject[] selectOne04;
 
+    public GameObject[] selectOneOrMultiple01;
+
 
     public GameObject[] deleteOnStartup;
 
-    //Chance at a random clothing piece appearing in % (0-100)
-    int randomChance = 35;
 
     private dynamicEnemy myDE;
 
@@ -49,6 +53,7 @@ public class enemyClothingRandomEquip : MonoBehaviour
         {
             foreach (GameObject pants in requiredLegClothing)
             {
+                if(pants != null)
                 pants.SetActive(false);
             }
             GameObject legC = requiredLegClothing[Random.Range(0, requiredLegClothing.Length)];
@@ -171,6 +176,49 @@ public class enemyClothingRandomEquip : MonoBehaviour
                 if (s4.activeSelf == false)
                 {
                     Destroy(s4);
+                }
+            }
+
+        }
+
+        if (selectOneOrMultiple01.Length > 0)
+        {
+            GameObject selectOneMult01C = selectOneOrMultiple01[Random.Range(0, selectOneOrMultiple01.Length)];
+            if (selectOneMult01C != null)
+            {
+                //Enables 1 object
+                selectOneMult01C.SetActive(true);
+
+                //Randomly enable the others based on "randomChance02" %
+                foreach (GameObject randomC in selectOneOrMultiple01)
+                {
+                    int randomNumber = Random.Range(0, 100);
+                    int randomChance02 = 5;
+
+                    if (randomChance02 > randomNumber)
+                    {
+                        if (randomC != null)
+                        {
+                            randomC.SetActive(true);
+
+                            //Add to dropable list, don't enable for this item
+                            //if (myDE) myDE.dropableArmor.Add(randomC);
+                        }
+                    }
+                }
+
+                //Add to dropable list, don't enable for this item
+                //if (myDE) myDE.dropableArmor.Add(selectOneMult01C);
+
+            }
+
+            foreach (GameObject sMult1 in selectOneOrMultiple01)
+            {
+                if (sMult1 == null)
+                    continue;
+                if (sMult1.activeSelf == false)
+                {
+                    Destroy(sMult1);
                 }
             }
 
