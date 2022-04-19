@@ -71,7 +71,7 @@ public class shopShelf : MonoBehaviour
         transform.position = shelfPositionOpen.position;
         transform.rotation = shelfPositionOpen.rotation;
         targetPosition = shelfPositionClosed;
-        targetTimer = 2f;
+        targetTimer = 1f;
         closing = true;
     }
     public void Open()
@@ -82,7 +82,8 @@ public class shopShelf : MonoBehaviour
         targetPosition = shelfPositionOpen;
         emptyShelves();
         fillShelf();
-        targetTimer = 2f;
+        openShopButton.SetActive(false);
+        targetTimer = 1f;
         opening = true;
     }
     // Start is called before the first frame update
@@ -97,8 +98,8 @@ public class shopShelf : MonoBehaviour
     void Update()
     {
         if (!targetPosition) return;
-        transform.position = Vector3.Lerp(transform.position, targetPosition.position, Time.deltaTime*3f);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetPosition.rotation, Time.deltaTime*3f);
+        transform.position = Vector3.Lerp(transform.position, targetPosition.position, Time.deltaTime*5f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetPosition.rotation, Time.deltaTime*5f);
         targetTimer -= Time.deltaTime;
         if (targetTimer > 0f) return;
         transform.position = targetPosition.position;
