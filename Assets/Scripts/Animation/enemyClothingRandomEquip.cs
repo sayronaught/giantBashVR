@@ -55,7 +55,7 @@ public class enemyClothingRandomEquip : MonoBehaviour
             if (legC != null)
             {
                 legC.SetActive(true);
-                if (myDE) myDE.dropableArmor.Add(legC);
+                //if (myDE) myDE.dropableArmor.Add(legC);
             }
                 
 
