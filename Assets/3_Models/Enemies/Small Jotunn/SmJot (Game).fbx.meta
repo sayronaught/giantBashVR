@@ -122,6 +122,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: SmoJot Leather
     second: {fileID: 2100000, guid: d37124c944230ab4da182be013485969, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SmoJot Wood
+    second: {fileID: 2100000, guid: 8ad991a64482c9a438aa9d24a17ce3cb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
