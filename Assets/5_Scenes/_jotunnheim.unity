@@ -492,120 +492,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5686646587541555985, guid: 725076e94aa93314bb54e69185d2b400, type: 3}
   m_PrefabInstance: {fileID: 115552190}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &117532787
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 104.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 91.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
---- !u!1001 &127463625
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 98.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 84.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn (8)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
 --- !u!1 &156813542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,63 +916,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296710838}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &348216390
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 108
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 91.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn (12)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
 --- !u!1 &390873392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,7 +964,7 @@ Transform:
   m_Children:
   - {fileID: 1156552831}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &390873395
 MonoBehaviour:
@@ -2487,76 +2316,6 @@ Transform:
   m_Father: {fileID: 292965175}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &761850100
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 761850114, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: selectOneOrMultiple01.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 761850114, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: selectOneOrMultiple01.Array.data[3]
-      value: 
-      objectReference: {fileID: 761850109}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 99.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 92.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
---- !u!1 &761850109 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7071779328502527574, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-  m_PrefabInstance: {fileID: 761850100}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &767079350
 GameObject:
   m_ObjectHideFlags: 0
@@ -3253,7 +3012,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 53a0ead1788b05943a863046a99264dd, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53a0ead1788b05943a863046a99264dd, type: 3}
       propertyPath: m_LocalScale.x
@@ -3802,63 +3561,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1001 &968427150
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 104.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 88.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
 --- !u!1 &998220223
 GameObject:
   m_ObjectHideFlags: 0
@@ -3963,7 +3665,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1000620994
 MonoBehaviour:
@@ -4420,7 +4122,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1197364003
 GameObject:
@@ -4452,63 +4154,6 @@ Transform:
   m_Father: {fileID: 1239659517}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1204950211
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 103.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 85.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn (7)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
 --- !u!1 &1239659516
 GameObject:
   m_ObjectHideFlags: 0
@@ -4591,7 +4236,7 @@ Transform:
   m_Children:
   - {fileID: 1514882405}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251535518
 GameObject:
@@ -4692,63 +4337,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d3789722c394ab4cac45f6dd843dce8, type: 3}
---- !u!1001 &1266771443
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 96.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 90.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
 --- !u!1 &1273310000
 GameObject:
   m_ObjectHideFlags: 0
@@ -4809,7 +4397,7 @@ Transform:
   - {fileID: 1445027863}
   - {fileID: 1160975555}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &1311795321
 LightingSettings:
@@ -5989,120 +5577,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f3eb9a5f39bf9f41bb292b01ba630ac, type: 3}
---- !u!1001 &1505112606
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 101.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 87.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
---- !u!1001 &1508229451
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 99.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 86.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn (10)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
 --- !u!1001 &1510937593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6321,7 +5795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1838309687074544132, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1838309687074544132, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
       propertyPath: m_LocalScale.x
@@ -7858,120 +7332,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f3eb9a5f39bf9f41bb292b01ba630ac, type: 3}
---- !u!1001 &1933094015
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 106.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 85.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn (6)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
---- !u!1001 &1938897796
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 100.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 89.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn (11)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
 --- !u!1 &1941614556
 GameObject:
   m_ObjectHideFlags: 0
@@ -8006,63 +7366,6 @@ Transform:
   m_Father: {fileID: 1160975555}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1945087018
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 97.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 88.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn (9)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
 --- !u!1 &1946380961
 GameObject:
   m_ObjectHideFlags: 0
@@ -9417,63 +8720,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5686646587541555985, guid: 725076e94aa93314bb54e69185d2b400, type: 3}
   m_PrefabInstance: {fileID: 2116254800}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2129326934
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 108.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.274622
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 88.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020692, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
-      propertyPath: m_Name
-      value: Shaman Jotunn (5)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
 --- !u!1001 &2136202879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9565,7 +8811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6186690363747883898, guid: 614949b4049a3c445ab27517a7a9882a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6186690363747883898, guid: 614949b4049a3c445ab27517a7a9882a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10082,7 +9328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7413472366698245947, guid: 8c35bbdc0400008478158b22eea7091d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7413472366698245947, guid: 8c35bbdc0400008478158b22eea7091d, type: 3}
       propertyPath: m_LocalPosition.x
