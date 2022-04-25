@@ -52,12 +52,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bone
-    second: {fileID: 2100000, guid: f52c8e703d0dc294e92851fdce8501ca, type: 2}
+    second: {fileID: 2100000, guid: 5c915adb1b0cb7c4185d1714b9e69770, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bone (Cloth)
+    second: {fileID: 2100000, guid: 5c915adb1b0cb7c4185d1714b9e69770, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Clothing
     second: {fileID: 2100000, guid: cda7b4eadc3efe14f9479663e5f04054, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clothing (Lighter)
+    second: {fileID: 2100000, guid: 320a2661939a58348acfdd02f1d2b79a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -68,6 +78,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Eyes 02
     second: {fileID: 2100000, guid: 0b7d232835135f34fab35347f724e3df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leather (White)
+    second: {fileID: 2100000, guid: 592be9679728f204198046f96785ec8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leather 02
+    second: {fileID: 2100000, guid: d2b0e98ff5bfd8c438d15d869b40461b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

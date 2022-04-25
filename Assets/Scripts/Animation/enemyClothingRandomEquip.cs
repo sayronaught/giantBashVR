@@ -7,6 +7,7 @@ public class enemyClothingRandomEquip : MonoBehaviour
 
     //Chance at a random clothing piece appearing in % (0-100)
     public int randomChance = 35;
+    public int SelectMultiRandomChance = 5;
 
 
     public GameObject[] torsoClothing;
@@ -193,9 +194,8 @@ public class enemyClothingRandomEquip : MonoBehaviour
                 foreach (GameObject randomC in selectOneOrMultiple01)
                 {
                     int randomNumber = Random.Range(0, 100);
-                    int randomChance02 = 5;
 
-                    if (randomChance02 > randomNumber)
+                    if (SelectMultiRandomChance > randomNumber)
                     {
                         if (randomC != null)
                         {
