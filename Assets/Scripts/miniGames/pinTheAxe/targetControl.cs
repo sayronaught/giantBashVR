@@ -37,7 +37,7 @@ public class targetControl : MonoBehaviour
     void on()
     {
         rotationValue += rotationDirection * rotationSpeed * Time.deltaTime;
-        rotation = new Vector3(rotationValue, 90f , 90f);
+        rotation = new Vector3(rotationValue, -90f , 90f);
         transform.rotation = Quaternion.Euler(rotation);
     }
     void stage1()
