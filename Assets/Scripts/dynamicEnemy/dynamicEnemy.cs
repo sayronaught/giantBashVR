@@ -84,8 +84,10 @@ public class dynamicEnemy : MonoBehaviour
         public string[] anims;
         public AudioClip[] speech;
         public float speechPercentageChance = 20f;
-        public GameObject[] usePrefabs;
+        [DrawIf("moveType", moveTypes.ThrowMissile)]  //Show if enum is equal to ShowValue2
+        public GameObject[] missilePrefabs;
     }
+    [Header("Combat Moves")]
     public combatMovesList[] combatMoves;
 
     public AudioSource beingHitAS;

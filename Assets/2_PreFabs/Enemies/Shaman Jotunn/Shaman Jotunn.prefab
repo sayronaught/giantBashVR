@@ -127,7 +127,13 @@ MonoBehaviour:
     attackRangedPercentageChance: 80
     taunts: []
     surrenders: []
-  combatMoves: []
+  combatMoves:
+  - name: 
+    moveType: 2
+    anims: []
+    speech: []
+    speechPercentageChance: 0
+    missilePrefabs: []
   beingHitAS: {fileID: 2465099460041001228}
   meleeWeapons: []
   rangeWeapons: []
