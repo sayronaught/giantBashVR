@@ -56,6 +56,9 @@ MonoBehaviour:
     jotunnSmall: 0
     jotunnShaman: 0
     jotunnBulky: 0
+  mobtype: 0
+  ranged: 1
+  missilePrefabs: {fileID: 0}
   stats:
     pointValue: 3
     mass: 3
@@ -129,11 +132,11 @@ MonoBehaviour:
     surrenders: []
   combatMoves:
   - name: 
-    moveType: 2
+    moveType: 1
     anims: []
     speech: []
     speechPercentageChance: 0
-    missilePrefabs: []
+    missilePrefab: {fileID: 0}
   beingHitAS: {fileID: 2465099460041001228}
   meleeWeapons: []
   rangeWeapons: []

@@ -5,6 +5,21 @@ using UnityEngine;
 public class dynamicEnemy : MonoBehaviour
 {
     public monsterList killType;
+        
+    [System.Serializable]
+    public enum mobTypes
+    {
+        Melee,
+        Ranged,
+        Caster
+    };
+    [Header("Basic Mob Type")]
+    public mobTypes mobtype;
+
+    public bool ranged = false;
+
+    [DrawIf("mobtype", mobTypes.Ranged)]
+    public GameObject missilePrefabs;
 
     [System.Serializable]
     public class statList
@@ -84,11 +99,13 @@ public class dynamicEnemy : MonoBehaviour
         public string[] anims;
         public AudioClip[] speech;
         public float speechPercentageChance = 20f;
-        [DrawIf("moveType", moveTypes.ThrowMissile)]  //Show if enum is equal to ShowValue2
-        public GameObject[] missilePrefabs;
+        [DrawIf("moveType", moveTypes.ThrowMissile)]
+        public GameObject missilePrefab;
     }
     [Header("Combat Moves")]
     public combatMovesList[] combatMoves;
+
+
 
     public AudioSource beingHitAS;
 
