@@ -22,7 +22,22 @@ public class _Settings : MonoBehaviour
     }
     public List<world> worlds;
     public int currentWorld = 1;
-    
+
+    [System.Serializable]
+    public class highScore
+    {
+        public int highestScore = 0;
+        public string highestScoreworld = "None";
+        public int damageDone = 0;
+        public int damageTaken = 0;
+        public int damageHighest = 0;
+        public int jotunsBashed = 0;
+        public int timePlayed;
+        public int timeStarted;
+    }
+    public List<highScore> highScores;
+
+
     public int storedPoints = 0;
     public int highestScore = 0;
     public string highestScoreworld = "None";

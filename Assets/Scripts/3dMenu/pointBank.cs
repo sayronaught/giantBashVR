@@ -6,6 +6,7 @@ public class pointBank : MonoBehaviour
 {
     public TextMesh uiPoints;
     public TextMesh uiHighScore;
+    public TextMesh uiLastGames;
     public AudioClip sfxBuy;
     public AudioClip sfxDeny;
     public AudioClip sfxSelect;
@@ -29,6 +30,20 @@ public class pointBank : MonoBehaviour
         var permObj = GameObject.Find("_SettingsPermanentObject");
         if (permObj) mySettings = permObj.GetComponent<_Settings>();
         mySound = GetComponent<AudioSource>();
+        // High score
+        uiHighScore.text = "Highscore ";
+        if (mySettings.highestScore > 0)
+        {
+            uiHighScore.text += mySettings.highestScore.ToString() + "\nin " + mySettings.highestScoreworld;
+        }
+        else uiHighScore.text += "None";
+        uiHighScore.text += "\nDamage Done\n" + mySettings.damageDone.ToString();
+        uiHighScore.text += "\nHighest Damage\n" + mySettings.damageHighest.ToString();
+        uiHighScore.text += "\nDamage Taken\n" + mySettings.damageTaken.ToString();
+        uiHighScore.text += "\nJotuns Bashed\n" + mySettings.jotunsBashed.ToString();
+        // Last Games
+        uiLastGames.text = "       Last 3 Games";
+        uiLastGames.text += "\n-----------------------------";
     }
 
     // Update is called once per frame
@@ -42,16 +57,6 @@ public class pointBank : MonoBehaviour
                 uiPoints.text = mySettings.storedPoints.ToString() + "\nPoints";
             else
                 uiPoints.text = "0\nPoints";
-            uiHighScore.text = "Highscore ";
-            if (mySettings.highestScore > 0)
-            {
-                uiHighScore.text += mySettings.highestScore.ToString() + "\nin " + mySettings.highestScoreworld;
-            }
-            else uiHighScore.text += "None";
-            uiHighScore.text += "\nDamage Done\n"+mySettings.damageDone.ToString();
-            uiHighScore.text += "\nHighest Damage\n" + mySettings.damageHighest.ToString();
-            uiHighScore.text += "\nDamage Taken\n" + mySettings.damageTaken.ToString();
-            uiHighScore.text += "\nJotuns Bashed\n" + mySettings.jotunsBashed.ToString();
             timeToUpdate = 1f;
             lastShown = mySettings.storedPoints;
         }
