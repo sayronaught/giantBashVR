@@ -3974,11 +3974,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4111490652276151861, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6836866300478297522, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f0a513546acc7042a73521ee9989a72, type: 3}
@@ -15875,6 +15875,9 @@ MonoBehaviour:
   - {fileID: 3239202929387199463, guid: 5e99f9b766ac8f345b30033eb1aa0408, type: 3}
   allSkinsForStore:
   - {fileID: 3239202929387199463, guid: 5e99f9b766ac8f345b30033eb1aa0408, type: 3}
+  - {fileID: 5662477219764736397, guid: f6a1fe8b6b33dd640a7d16b4f1c734f6, type: 3}
+  - {fileID: 2566488810249169100, guid: b49d2ddcdd1c5f84ea838dfd05c9c16a, type: 3}
+  - {fileID: 6916658683132103462, guid: 3651d36964820c64da1883efe423aa9b, type: 3}
   - {fileID: 8027894555136910231, guid: 295030dabe073e147b377febfb15756b, type: 3}
   - {fileID: 8027894555136910231, guid: 418b5ff4c7168a5478ff935d2c44a979, type: 3}
   - {fileID: 4039667278467569284, guid: d850ea2608cab2f419043142973484a0, type: 3}
