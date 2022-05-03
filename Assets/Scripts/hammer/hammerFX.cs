@@ -10,6 +10,18 @@ public class hammerFX : MonoBehaviour
     public float statsAoeBaseKnockback = 2500f;
     public float statsAoeRange = 5f;
 
+    public bool statsCameraPointSpecial = false;
+    [DrawIf("statsCameraPointSpecial", true)]
+    public Vector3 statsCameraPoint;
+    [DrawIf("statsCameraPointSpecial", true)]
+    public float statsCameraPointDistance = 0.1f;
+    [DrawIf("statsCameraPointSpecial", true)]
+    public float statsCameraPointRepeatTimer = 10f;
+    [DrawIf("statsCameraPointSpecial", true)]
+    public AudioClip statsCameraPointAudioClip;
+    [DrawIf("statsCameraPointSpecial", true)]
+    public float statsCameraPointHealing = 0f;
+
     public GameObject prefabLightningExp;
 
     public ParticleSystem myTrail;

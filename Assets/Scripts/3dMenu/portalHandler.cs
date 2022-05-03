@@ -40,7 +40,7 @@ public class portalHandler : MonoBehaviour
     public void nextPortal()
     {
         mySettings.currentWorld++;
-        if (mySettings.currentWorld == 2) mySettings.currentWorld = 0;
+        if (mySettings.currentWorld >= mySettings.worlds.Count) mySettings.currentWorld = 0;
         updatePortal();
     }
     // Start is called before the first frame update

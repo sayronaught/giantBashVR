@@ -27,7 +27,19 @@ public class shopItemStats : MonoBehaviour
     public float aoeChargeKnockback = 25f;
     public float aoeBaseKnockback = 2500f;
     public float aoeRange = 5f;
-
+    /*
+    public bool statsCameraPointSpecial = false;
+    [DrawIf("statsCameraPointSpecial", true)]
+    public Vector3 statsCameraPoint;
+    [DrawIf("statsCameraPointSpecial", true)]
+    public float statsCameraPointDistance = 0.1f;
+    [DrawIf("statsCameraPointSpecial", true)]
+    public float statsCameraPointRepeatTimer = 10f;
+    [DrawIf("statsCameraPointSpecial", true)]
+    public AudioClip statsCameraPointAudioClip;
+    [DrawIf("statsCameraPointSpecial", true)]
+    public float statsCameraPointHealing = 0f;
+    */
     private _Settings mySettings;
     private EndlessPlayerScript myPlayerScript;
     private hammerControllerEndlessMode myHammerEndless;
