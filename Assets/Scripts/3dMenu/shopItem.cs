@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR;
 using UnityEngine;
 
 public class shopItem : MonoBehaviour
@@ -20,6 +22,35 @@ public class shopItem : MonoBehaviour
 
     private _Settings mySettings;
     private float localScale;
+
+    private XRRayInteractor leftHandRay;
+    private XRRayInteractor rightHandRay;
+    private UnityEngine.XR.InputDevice lefty;
+    private UnityEngine.XR.InputDevice righty;
+    private float updateControllerTimer;
+    private bool rightPress;
+    private bool leftPress;
+
+    private void updateController()
+    {
+        if (Application.isEditor) return;
+        updateControllerTimer -= Time.deltaTime;
+        if (!(updateControllerTimer < 0f)) return;
+        updateControllerTimer = 2f;
+        var leftHandDevices = new List<UnityEngine.XR.InputDevice>();
+        var rightHandDevices = new List<UnityEngine.XR.InputDevice>();
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
+        lefty = leftHandDevices[0];
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
+        righty = rightHandDevices[0];
+    }
+    private void hapticFeedback()
+    {
+        lefty.IsPressed(InputHelpers.Button.Trigger, out leftPress);
+        righty.IsPressed(InputHelpers.Button.Trigger, out rightPress);
+        if (rightPress) rightHandRay.SendHapticImpulse(1f, 0.2f);
+        if (leftPress) leftHandRay.SendHapticImpulse(1f, 0.2f);
+    }
 
     public void HoverOn()
     {
@@ -53,6 +84,7 @@ public class shopItem : MonoBehaviour
             myBank.activeSkin.resetItem();
             myBank.activeSkin = this;
             activated = true;
+            hapticFeedback();
         }
         if (!bought)
         { // buy it
@@ -68,8 +100,10 @@ public class shopItem : MonoBehaviour
                 myBank.activeSkin.resetItem();
                 myBank.activeSkin = this;
                 activated = true;
+                hapticFeedback();
             } else { // broke ass bitch
                 myBank.playSound(myBank.sfxDeny);
+                hapticFeedback();
             }
         }
     }
@@ -96,9 +130,12 @@ public class shopItem : MonoBehaviour
             }
         }
         HoverOff();
+        leftHandRay = GameObject.Find("LeftHand Controller").GetComponent<XRRayInteractor>();
+        rightHandRay = GameObject.Find("RightHand Controller").GetComponent<XRRayInteractor>();
     }
     private void Update()
     {
+        updateController();
         if (!productDisplay) return;
         if (activated)
         {

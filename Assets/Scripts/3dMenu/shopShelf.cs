@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR;
 using UnityEngine;
 
 public class shopShelf : MonoBehaviour
@@ -21,6 +23,35 @@ public class shopShelf : MonoBehaviour
     private float targetTimer = 0f;
     private bool closing = false;
     private bool opening = false;
+
+    private XRRayInteractor leftHandRay;
+    private XRRayInteractor rightHandRay;
+    private UnityEngine.XR.InputDevice lefty;
+    private UnityEngine.XR.InputDevice righty;
+    private float updateControllerTimer;
+    private bool rightPress;
+    private bool leftPress;
+
+    private void updateController()
+    {
+        if (Application.isEditor) return;
+        updateControllerTimer -= Time.deltaTime;
+        if (!(updateControllerTimer < 0f)) return;
+        updateControllerTimer = 2f;
+        var leftHandDevices = new List<UnityEngine.XR.InputDevice>();
+        var rightHandDevices = new List<UnityEngine.XR.InputDevice>();
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
+        lefty = leftHandDevices[0];
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
+        righty = rightHandDevices[0];
+    }
+    private void hapticFeedback()
+    {
+        lefty.IsPressed(InputHelpers.Button.Trigger, out leftPress);
+        righty.IsPressed(InputHelpers.Button.Trigger, out rightPress);
+        if (rightPress) rightHandRay.SendHapticImpulse(1f, 0.2f);
+        if (leftPress) leftHandRay.SendHapticImpulse(1f, 0.2f);
+    }
 
     private void fillShelfOneItem(int itemNr,Vector3 pos)
     {
@@ -65,6 +96,7 @@ public class shopShelf : MonoBehaviour
         if (currentID >= mySettings.allSkinsForStore.Count) currentID = 0;
         emptyShelves();
         fillShelf();
+        hapticFeedback();
     }
     public void Close()
     {
@@ -73,6 +105,7 @@ public class shopShelf : MonoBehaviour
         targetPosition = shelfPositionClosed;
         targetTimer = 1f;
         closing = true;
+        hapticFeedback();
     }
     public void Open()
     {
@@ -85,6 +118,7 @@ public class shopShelf : MonoBehaviour
         openShopButton.SetActive(false);
         targetTimer = 1f;
         opening = true;
+        hapticFeedback();
     }
     // Start is called before the first frame update
     void Start()
@@ -92,11 +126,14 @@ public class shopShelf : MonoBehaviour
         onShelvesNow = new List<GameObject>();
         var permObj = GameObject.Find("_SettingsPermanentObject");
         if (permObj) mySettings = permObj.GetComponent<_Settings>();
+        leftHandRay = GameObject.Find("LeftHand Controller").GetComponent<XRRayInteractor>();
+        rightHandRay = GameObject.Find("RightHand Controller").GetComponent<XRRayInteractor>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        updateController();
         if (!targetPosition) return;
         transform.position = Vector3.Lerp(transform.position, targetPosition.position, Time.deltaTime*5f);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetPosition.rotation, Time.deltaTime*5f);
