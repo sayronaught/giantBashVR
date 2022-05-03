@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9140124924595687612}
   - component: {fileID: 3752415854887626954}
   m_Layer: 0
-  m_Name: pine_tree_02_m_LOD3
+  m_Name: pine_tree_02_Snowy_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5f373c947a37eda40a294fdfe9766bd0, type: 2}
+  - {fileID: 2100000, guid: 94758453f5e4bdd41ae6d1371c0bbc60, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

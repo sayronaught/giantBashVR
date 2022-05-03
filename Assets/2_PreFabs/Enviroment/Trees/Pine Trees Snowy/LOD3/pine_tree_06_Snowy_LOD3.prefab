@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1527001326865374986
+--- !u!1 &5804682489023959079
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6666076625591215925}
-  - component: {fileID: 7623337609314473861}
-  - component: {fileID: 1857234663896454510}
-  - component: {fileID: 5861151072321059613}
+  - component: {fileID: 1418223900927002931}
+  - component: {fileID: 5341625561832179687}
+  - component: {fileID: 6835257974812396391}
+  - component: {fileID: 7766276351352231545}
   m_Layer: 0
-  m_Name: pine_tree_05_m_LOD3
+  m_Name: pine_tree_06_Snowy_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6666076625591215925
+--- !u!4 &1418223900927002931
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527001326865374986}
+  m_GameObject: {fileID: 5804682489023959079}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7623337609314473861
+--- !u!33 &5341625561832179687
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527001326865374986}
-  m_Mesh: {fileID: 1103378421549802033, guid: e0f0416e17c392d48b79f7bb784d4e85, type: 3}
---- !u!23 &1857234663896454510
+  m_GameObject: {fileID: 5804682489023959079}
+  m_Mesh: {fileID: 5438906645783885781, guid: d6a91e3f9e3069a44b7bf25ced6d9d76, type: 3}
+--- !u!23 &6835257974812396391
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527001326865374986}
+  m_GameObject: {fileID: 5804682489023959079}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1698111a7ffed7a49a192955e1bb3fde, type: 2}
+  - {fileID: 2100000, guid: a71216df6036b354f88d4737d7868e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,22 +82,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!205 &5861151072321059613
+--- !u!205 &7766276351352231545
 LODGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527001326865374986}
+  m_GameObject: {fileID: 5804682489023959079}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 5.4529634, z: 0.19695044}
-  m_Size: 11.341727
+  m_LocalReferencePoint: {x: -0.16498566, y: 6.1864305, z: 0}
+  m_Size: 12.86728
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.012510846
+  - screenRelativeHeight: 0.007854045
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 1857234663896454510}
+    - renderer: {fileID: 6835257974812396391}
   m_Enabled: 1
