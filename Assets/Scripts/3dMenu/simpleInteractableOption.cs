@@ -22,6 +22,25 @@ public class simpleInteractableOption : MonoBehaviour
 
     private float clickdelay = 0f;
 
+    private XRRayInteractor leftHandRay;
+    private XRRayInteractor rightHandRay;
+    private UnityEngine.XR.InputDevice lefty;
+    private UnityEngine.XR.InputDevice righty;
+    private float updateControllerTimer;
+    private bool rightPress;
+    private bool leftPress;
+
+    private void updateController()
+    {
+        if (Application.isEditor) return;
+        var leftHandDevices = new List<UnityEngine.XR.InputDevice>();
+        var rightHandDevices = new List<UnityEngine.XR.InputDevice>();
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
+        lefty = leftHandDevices[0];
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
+        righty = rightHandDevices[0];
+    }
+
     public void HoverOn()
     {
         transform.position = transform.position + transform.up*0.2f;
@@ -37,6 +56,10 @@ public class simpleInteractableOption : MonoBehaviour
     public void clickedThis()
     {
         if (clickdelay > 0f) return;
+        lefty.IsPressed(InputHelpers.Button.Trigger, out leftPress);
+        righty.IsPressed(InputHelpers.Button.Trigger, out rightPress);
+        if ( rightPress ) rightHandRay.SendHapticImpulse(1f, 0.2f);
+        if (leftPress) leftHandRay.SendHapticImpulse(1f, 0.2f);
         if (doLoadScene > -1)
         {
             SceneManager.LoadSceneAsync(doLoadScene, LoadSceneMode.Single);
@@ -69,11 +92,17 @@ public class simpleInteractableOption : MonoBehaviour
         mySimple = GetComponent<XRSimpleInteractable>();
         myTxt = GetComponent<TextMesh>();
         mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
+        leftHandRay = GameObject.Find("LeftHand Controller").GetComponent<XRRayInteractor>();
+        rightHandRay = GameObject.Find("RightHand Controller").GetComponent<XRRayInteractor>();
     }
 
     // Update is called once per frame
     void Update()
     {
         clickdelay -= Time.deltaTime;
+        updateControllerTimer -= Time.deltaTime;
+        if (!(updateControllerTimer < 0f)) return;
+        updateController();
+        updateControllerTimer = 2f;
     }
 }
