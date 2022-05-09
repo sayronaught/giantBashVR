@@ -1836,7 +1836,7 @@ GameObject:
   - component: {fileID: 385196756}
   - component: {fileID: 385196755}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: OptionTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
