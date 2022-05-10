@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class targetColider : MonoBehaviour
 {
+    public targetControl mytc;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,9 @@ public class targetColider : MonoBehaviour
         {
             if (collision.gameObject.tag == "Hammer")
             {
-                GetComponentInParent<targetControl>().beenHit = true;
-                GetComponentInParent<targetControl>().stage += 1;
+                mytc.beenHit = true;
+                mytc.stage += 1;
+                Instantiate(mytc.bloodSplat, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }
