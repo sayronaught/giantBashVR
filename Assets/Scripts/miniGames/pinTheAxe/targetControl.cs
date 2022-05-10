@@ -12,7 +12,8 @@ public class targetControl : MonoBehaviour
     public float rangeTimer;
     public float rangeReset;
     public bool rangeChange;
-    public float difficulty; 
+    public float difficulty;
+    public bool beenHit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +37,6 @@ public class targetControl : MonoBehaviour
         if (difficulty == 2) transform.position = new Vector3(Mathf.Sin(Time.fixedTime) * 3f,transform.position.y , transform.position.z);
         if (difficulty == 3) transform.position = new Vector3(Mathf.Sin(Time.fixedTime) * 3f, 1f - Mathf.Cos(Time.fixedTime * 2f) * 0.25f, transform.position.z);
 
-
     }
     void on()
     {
@@ -46,24 +46,15 @@ public class targetControl : MonoBehaviour
     }
     void stage1()
     {
-        if(stage == 1)
-        {
-            rotationDirection = 1f;
-        }
+        if(stage == 1) rotationDirection = 1f;
     }
     void stage2()
     {
-        if(stage == 2)
-        {
-            rotationDirection = 1.5f;
-        }
+        if(stage == 2) rotationDirection = 1.5f;
     }
-    void stage3()
+    void stage3() 
     {
-        if(stage == 3)
-        {
-            rotationDirection = -1.5f;
-        }
+        if(stage == 3) rotationDirection = -1.5f;
     }
     void stage4()
     {
@@ -89,10 +80,7 @@ public class targetControl : MonoBehaviour
     }
     void stage6()
     {
-        if(stage == 6)
-        {
-            rotationDirection = 0;
-        }
+        if(stage == 6) rotationDirection = 0;
     }
     void rangeUpdate()
     {

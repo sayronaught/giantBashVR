@@ -17,11 +17,14 @@ public class targetColider : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Hammer")
+        if (GetComponentInParent<targetControl>().beenHit == false)
         {
-            GetComponentInParent<targetControl>().stage += 1;
-            Destroy(gameObject);
-            Debug.Log("hit");
+            if (collision.gameObject.tag == "Hammer")
+            {
+                GetComponentInParent<targetControl>().beenHit = true;
+                GetComponentInParent<targetControl>().stage += 1;
+                Destroy(gameObject);
+            }
         }
     }
 }
