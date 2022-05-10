@@ -609,6 +609,9 @@ MonoBehaviour:
   doQuit: 0
   doNextPortal: 0
   doNextPortalHandler: {fileID: 0}
+  holdToActivate: 0
+  holdTime: 5
+  holdMaterial: {fileID: 0}
 --- !u!114 &140947768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2519,6 +2522,9 @@ MonoBehaviour:
   doQuit: 0
   doNextPortal: 0
   doNextPortalHandler: {fileID: 0}
+  holdToActivate: 0
+  holdTime: 5
+  holdMaterial: {fileID: 0}
 --- !u!114 &400753660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3783,6 +3789,9 @@ MonoBehaviour:
   doQuit: 0
   doNextPortal: 1
   doNextPortalHandler: {fileID: 2082256530}
+  holdToActivate: 0
+  holdTime: 5
+  holdMaterial: {fileID: 0}
 --- !u!114 &576513563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10637,6 +10646,9 @@ MonoBehaviour:
   doQuit: 0
   doNextPortal: 1
   doNextPortalHandler: {fileID: 2082256530}
+  holdToActivate: 0
+  holdTime: 5
+  holdMaterial: {fileID: 0}
 --- !u!114 &1230466139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12182,6 +12194,9 @@ MonoBehaviour:
   doQuit: 0
   doNextPortal: 0
   doNextPortalHandler: {fileID: 0}
+  holdToActivate: 0
+  holdTime: 5
+  holdMaterial: {fileID: 0}
 --- !u!114 &1515798352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12884,6 +12899,9 @@ MonoBehaviour:
   doQuit: 0
   doNextPortal: 0
   doNextPortalHandler: {fileID: 0}
+  holdToActivate: 0
+  holdTime: 5
+  holdMaterial: {fileID: 0}
 --- !u!114 &1570377362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14004,6 +14022,9 @@ MonoBehaviour:
   doQuit: 0
   doNextPortal: 0
   doNextPortalHandler: {fileID: 0}
+  holdToActivate: 0
+  holdTime: 5
+  holdMaterial: {fileID: 0}
 --- !u!114 &1717741281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14352,6 +14373,9 @@ MonoBehaviour:
   doQuit: 0
   doNextPortal: 0
   doNextPortalHandler: {fileID: 0}
+  holdToActivate: 0
+  holdTime: 5
+  holdMaterial: {fileID: 0}
 --- !u!114 &1726314570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14848,6 +14872,9 @@ MonoBehaviour:
   doQuit: 1
   doNextPortal: 0
   doNextPortalHandler: {fileID: 0}
+  holdToActivate: 1
+  holdTime: 5
+  holdMaterial: {fileID: 2100000, guid: b054183a2b5014c4d8ffd29a111b2086, type: 2}
 --- !u!114 &1816842777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15200,6 +15227,9 @@ MonoBehaviour:
   doQuit: 0
   doNextPortal: 0
   doNextPortalHandler: {fileID: 0}
+  holdToActivate: 0
+  holdTime: 5
+  holdMaterial: {fileID: 0}
 --- !u!114 &1843147021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16150,6 +16180,9 @@ MonoBehaviour:
   doQuit: 0
   doNextPortal: 0
   doNextPortalHandler: {fileID: 0}
+  holdToActivate: 0
+  holdTime: 5
+  holdMaterial: {fileID: 0}
 --- !u!114 &2097511497
 MonoBehaviour:
   m_ObjectHideFlags: 0

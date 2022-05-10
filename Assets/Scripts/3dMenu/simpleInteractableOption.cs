@@ -14,7 +14,14 @@ public class simpleInteractableOption : MonoBehaviour
     public Transform doTeleport;
     public bool doQuit = false;
     public bool doNextPortal = false;
+    [DrawIf("doNextPortal", true)]
     public portalHandler doNextPortalHandler;
+    public bool holdToActivate = false;
+    [DrawIf("holdToActivate", true)]
+    public float holdTime = 5f;
+    private float currentHoldTime = 0f;
+    [DrawIf("holdToActivate", true)]
+    public Material holdMaterial;
 
     private XRSimpleInteractable mySimple;
     private TextMesh myTxt;
@@ -60,6 +67,10 @@ public class simpleInteractableOption : MonoBehaviour
         righty.IsPressed(InputHelpers.Button.Trigger, out rightPress);
         if ( rightPress ) rightHandRay.SendHapticImpulse(1f, 0.2f);
         if (leftPress) leftHandRay.SendHapticImpulse(1f, 0.2f);
+        if (holdToActivate)
+        {
+            currentHoldTime += Time.deltaTime * 2f;
+        }
         if (doLoadScene > -1)
         {
             SceneManager.LoadSceneAsync(doLoadScene, LoadSceneMode.Single);
@@ -99,6 +110,12 @@ public class simpleInteractableOption : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ( holdToActivate )
+        {
+            currentHoldTime += Time.deltaTime;
+            if (currentHoldTime < 0f) currentHoldTime = 0f;
+            holdMaterial.SetFloat("Vector1_4", 0f-(holdTime/currentHoldTime));
+        }
         clickdelay -= Time.deltaTime;
         updateControllerTimer -= Time.deltaTime;
         if (!(updateControllerTimer < 0f)) return;

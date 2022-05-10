@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fillCirclrMaterial
+  m_Name: optionQuit
   m_Shader: {fileID: -6465566751694194690, guid: c9bbdbe40dda4a543a7e62a050604c90, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 2
@@ -35,7 +35,7 @@ Material:
     - Vector1_1: 0.2
     - Vector1_2: 2.5
     - Vector1_3: 0.1
-    - Vector1_4: -0.421
+    - Vector1_4: -Infinity
     - Vector1_9b64445ba3754a57ba08ac4d4789489e: 0.2
     m_Colors: []
   m_BuildTextureStacks: []
