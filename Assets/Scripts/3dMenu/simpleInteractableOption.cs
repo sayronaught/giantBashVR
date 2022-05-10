@@ -70,6 +70,7 @@ public class simpleInteractableOption : MonoBehaviour
         if (holdToActivate)
         {
             currentHoldTime += Time.deltaTime * 2f;
+            if (currentHoldTime < holdTime) return;
         }
         if (doLoadScene > -1)
         {
@@ -112,9 +113,15 @@ public class simpleInteractableOption : MonoBehaviour
     {
         if ( holdToActivate )
         {
-            currentHoldTime += Time.deltaTime;
-            if (currentHoldTime < 0f) currentHoldTime = 0f;
-            holdMaterial.SetFloat("Vector1_4", 0f-(holdTime/currentHoldTime));
+            currentHoldTime = Time.deltaTime;
+            if (currentHoldTime < 0f)
+            {
+                currentHoldTime = 0f;
+                holdMaterial.SetFloat("Vector1_4",  -0.5f);
+            } else
+            {
+                holdMaterial.SetFloat("Vector1_4", ((currentHoldTime / holdTime) - 0.5f));
+            }  
         }
         clickdelay -= Time.deltaTime;
         updateControllerTimer -= Time.deltaTime;
