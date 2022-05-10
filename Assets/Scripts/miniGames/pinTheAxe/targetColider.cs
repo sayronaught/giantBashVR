@@ -8,7 +8,7 @@ public class targetColider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        mytc = GetComponentInParent<targetControl>();
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class targetColider : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (GetComponentInParent<targetControl>().beenHit == false)
+        if (mytc.beenHit == false)
         {
             if (collision.gameObject.tag == "Hammer")
             {

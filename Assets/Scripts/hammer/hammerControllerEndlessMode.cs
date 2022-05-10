@@ -54,6 +54,7 @@ public class hammerControllerEndlessMode : MonoBehaviour
 
     public void changeLightning(float value)
     {
+        if (!hammerFXScript) return;
         chargeLightning = value;
         hammerFXScript.myLightning.emissionRate = value;
         hammerFXScript.myLightningSFX.volume = value * 0.05f;
