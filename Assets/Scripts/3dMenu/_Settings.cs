@@ -6,10 +6,12 @@ using UnityEngine.Video;
 
 public class _Settings : MonoBehaviour
 {
+    public bool haveGfxCard = false;
     public AudioMixer masterMixer;
     public GameObject currentHammerSkin;
     public List<GameObject> boughtSkins;
     public List<GameObject> allSkinsForStore;
+    public List<GameObject> gfxSkinsForStore;
 
     [System.Serializable]
     public class world
@@ -80,6 +82,11 @@ public class _Settings : MonoBehaviour
     {
         DontDestroyOnLoad( gameObject );
         loadPlayerPrefs();
+        // We add physics based skins, if we run on a platform with a graphics card
+#if UNITY_STANDALONE_WIN
+        allSkinsForStore.AddRange(gfxSkinsForStore);
+        haveGfxCard = true;
+#endif
     }
 
     private void Update()
