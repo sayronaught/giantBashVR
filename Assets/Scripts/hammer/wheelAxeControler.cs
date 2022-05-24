@@ -16,7 +16,7 @@ public class wheelAxeControler : MonoBehaviour
     void Start()
     {
         myHC = GetComponent<hammerControllerEndlessMode>();
-        
+        myRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -28,9 +28,11 @@ public class wheelAxeControler : MonoBehaviour
     {
         if (collision.gameObject.tag == "WheelTarget" )
         {
-            var axeshadow = Instantiate(axeprefab, transform.position, transform.rotation, collision.transform);
+            var axeshadow = Instantiate(axeprefab, transform.position, transform.rotation);
             transform.position = axeposition.position;
             transform.rotation = axeposition.rotation;
+            axeshadow.transform.localScale = new Vector3(5f, 5f, 5f);
+            axeshadow.transform.SetParent(collision.transform);
             myRB.velocity = Vector3.zero;
             myRB.angularVelocity = Vector3.zero;
 
