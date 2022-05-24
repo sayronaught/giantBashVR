@@ -9,13 +9,15 @@ public class subTargetControl : MonoBehaviour
     public float xWidth;
     public float yWidth;
     public int stageMin;
-    public bool random;
+    public bool randomSpeed;
+    public bool randomMovement;
     public float randomReset = 2f;
     
 
     private MeshRenderer myMR;
     private MeshCollider myMC;
-    private float randomTimer;
+    private float randomTimeTimer;
+    private float randomMovementTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,7 @@ public class subTargetControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(myTC.stage >= stageMin)
+        if(myTC.stage >= stageMin - myTC.difficulty)
         {
             myMR.enabled = true;
             myMC.enabled = true;
@@ -36,14 +38,24 @@ public class subTargetControl : MonoBehaviour
 
         transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * xTimer + offsetTimer) * xWidth, 1 + Mathf.Cos(Time.fixedTime * yTimer + offsetTimer) * yWidth, transform.position.z), Time.deltaTime);
       
-        if(random == true)
+        if(randomSpeed == true)
         {
-            randomTimer -= Time.deltaTime;
-            if(randomTimer <= 0)
+            randomTimeTimer -= Time.deltaTime;
+            if(randomTimeTimer <= 0)
             {
                 xTimer = Random.Range(-15, 15);
                 yTimer = Random.Range(-15, 15);
-                randomTimer = randomReset;
+                randomTimeTimer = randomReset;
+            }
+        }
+        if(randomMovement == true)
+        {
+            randomMovementTimer -= Time.deltaTime;
+            if(randomMovementTimer <= 0)
+            {
+                xWidth = Random.Range(3, 7);
+                yWidth = Random.Range(3, 7);
+                randomMovementTimer = randomReset;
             }
         }
     }

@@ -1981,8 +1981,9 @@ MonoBehaviour:
   yTimer: 6
   xWidth: 5
   yWidth: 2
-  stageMin: 1
-  random: 1
+  stageMin: 5
+  randomSpeed: 1
+  randomMovement: 1
   randomReset: 2
 --- !u!64 &669101916
 MeshCollider:
@@ -2017,7 +2018,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a6380f48bb8bfe24ba43a274c931e9f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2239,8 +2240,9 @@ MonoBehaviour:
   yTimer: 1
   xWidth: 3
   yWidth: 2
-  stageMin: 2
-  random: 1
+  stageMin: 6
+  randomSpeed: 1
+  randomMovement: 1
   randomReset: 2
 --- !u!64 &706959407
 MeshCollider:
@@ -2275,7 +2277,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a6380f48bb8bfe24ba43a274c931e9f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2343,8 +2345,9 @@ MonoBehaviour:
   yTimer: 1
   xWidth: 3
   yWidth: 2
-  stageMin: 5
-  random: 1
+  stageMin: 9
+  randomSpeed: 1
+  randomMovement: 1
   randomReset: 2
 --- !u!64 &816090796
 MeshCollider:
@@ -2379,7 +2382,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a6380f48bb8bfe24ba43a274c931e9f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2919,8 +2922,9 @@ MonoBehaviour:
   yTimer: 1
   xWidth: 3
   yWidth: 2
-  stageMin: 3
-  random: 1
+  stageMin: 7
+  randomSpeed: 1
+  randomMovement: 1
   randomReset: 2
 --- !u!64 &1239230313
 MeshCollider:
@@ -2955,7 +2959,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a6380f48bb8bfe24ba43a274c931e9f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3609,8 +3613,9 @@ MonoBehaviour:
   yTimer: 1
   xWidth: 3
   yWidth: 2
-  stageMin: 4
-  random: 1
+  stageMin: 8
+  randomSpeed: 1
+  randomMovement: 1
   randomReset: 2
 --- !u!64 &1455461824
 MeshCollider:
@@ -3645,7 +3650,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a6380f48bb8bfe24ba43a274c931e9f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3992,7 +3997,7 @@ MonoBehaviour:
   rangeTimer: 0
   rangeReset: 2
   rangeChange: 0
-  difficulty: 0
+  difficulty: 4
   beenHit: 0
   bloodSplat: {fileID: 9219578356075885194, guid: 9ede50a5a6538ad409210e80df6a6e5e, type: 3}
 --- !u!64 &2088188789
@@ -4028,7 +4033,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a6380f48bb8bfe24ba43a274c931e9f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4150,9 +4155,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2349205849016641558, guid: 83df9ffb24591014da0a2ac20bb84779, type: 3}
+      propertyPath: m_TagString
+      value: Hammer
+      objectReference: {fileID: 0}
     - target: {fileID: 3638468841530398739, guid: 83df9ffb24591014da0a2ac20bb84779, type: 3}
       propertyPath: m_Name
       value: splitir_150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918415758474966472, guid: 83df9ffb24591014da0a2ac20bb84779, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83df9ffb24591014da0a2ac20bb84779, type: 3}
@@ -4165,7 +4178,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 42267602787884218}
-  - component: {fileID: 5101511303695133643}
   m_Layer: 0
   m_Name: Tree Stump
   m_TagString: Untagged
@@ -4353,8 +4365,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.03, z: 0.03}
-  m_Center: {x: 0, y: 0.01, z: 0}
+  m_Size: {x: 0.005, y: 0.02, z: 0.02}
+  m_Center: {x: 0, y: 0.09, z: 0.01}
 --- !u!82 &2164056134242084995
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4460,7 +4472,7 @@ SphereCollider:
   m_GameObject: {fileID: 1353661847656207837}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.36
   m_Center: {x: 8.872901e-10, y: 0, z: -0.019848343}
@@ -4488,33 +4500,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6016029823575576194}
   m_Mesh: {fileID: 2341440197387165883, guid: 2a164ef67c05c254181b5acaa5010195, type: 3}
---- !u!205 &5101511303695133643
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855114956412913152}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.023089588, y: 0.33103597, z: -0.070393026}
-  m_Size: 1.8439641
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.25
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 5799897272011586991}
-  - screenRelativeHeight: 0.125
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 0}
-  - screenRelativeHeight: 0.01
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 0}
-  m_Enabled: 1
 --- !u!4 &5380668611234928466
 Transform:
   m_ObjectHideFlags: 0
