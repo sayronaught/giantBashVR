@@ -12,7 +12,7 @@ public class targetControl : MonoBehaviour
     public float rangeTimer;
     public float rangeReset;
     public bool rangeChange;
-    public float difficulty;
+    public int difficulty;
     public bool beenHit = false;
     public GameObject bloodSplat;
 
@@ -41,7 +41,7 @@ public class targetControl : MonoBehaviour
         }
         if (difficulty == 4)
         {
-            rangeReset = 0.5f;
+            rangeReset = 0.4f;
             rotationSpeed = 350f;
             transform.position = new Vector3(transform.position.x, transform.position.y, 10);
         }
@@ -58,9 +58,9 @@ public class targetControl : MonoBehaviour
         if (stage == 5) stage5();
         if (stage == 6) stage6();
         if (stage == 4 || stage == 5) rangeUpdate();
-        if (difficulty == 2) transform.position = new Vector3(Mathf.Sin(Time.fixedTime ) * 3f,transform.position.y , transform.position.z);
-        if (difficulty == 3) transform.position = new Vector3(Mathf.Sin(Time.fixedTime * 1.5f) * 3f, 1f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, transform.position.z);
-        if (difficulty == 4) transform.position = new Vector3(Mathf.Sin(Time.fixedTime * 2f) * 3f, 1f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4);
+        if (difficulty == 2) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime ) * 3f,transform.position.y , transform.position.z),Time.deltaTime);
+        if (difficulty == 3) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 1.5f) * 3f, 1f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, transform.position.z), Time.deltaTime);
+        if (difficulty == 4) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 3f, 1f - Mathf.Cos(Time.fixedTime * 5) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 2), Time.deltaTime);
     }
     void on()
     {
@@ -106,7 +106,7 @@ public class targetControl : MonoBehaviour
         if (rangeTimer <= 0)
         {
             rangeTimer = rangeReset;
-            randomSpeed = Random.Range(-4f, 4f);
+            randomSpeed = Random.Range(-5f, 5f);
             rangeChange = true;
 
         }
