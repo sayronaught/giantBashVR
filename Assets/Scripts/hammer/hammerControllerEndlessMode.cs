@@ -73,12 +73,14 @@ public class hammerControllerEndlessMode : MonoBehaviour
     }
     private void updateController()
     {
-        if (Application.isEditor) return;
+        //if (Application.isEditor) return;
         var leftHandDevices = new List<UnityEngine.XR.InputDevice>();
         var rightHandDevices = new List<UnityEngine.XR.InputDevice>();
         UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
+        if ( leftHandDevices.Count > 0)
         lefty = leftHandDevices[0];
         UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
+        if ( rightHandDevices.Count > 0)
         righty = rightHandDevices[0];
     }
 
