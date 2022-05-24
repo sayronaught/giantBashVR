@@ -6,7 +6,11 @@ public class wheelAxeControler : MonoBehaviour
 {
     public targetControl mytc;
 
+    public GameObject axeprefab;
+    public Transform axeposition;
+
     private hammerControllerEndlessMode myHC;
+    private Rigidbody myRB;
 
     // Start is called before the first frame update
     void Start()
@@ -19,5 +23,17 @@ public class wheelAxeControler : MonoBehaviour
     void Update()
     {
         if (myHC.beingHeld()) mytc.beenHit = false;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "WheelTarget" )
+        {
+            var axeshadow = Instantiate(axeprefab, transform.position, transform.rotation, collision.transform);
+            transform.position = axeposition.position;
+            transform.rotation = axeposition.rotation;
+            myRB.velocity = Vector3.zero;
+            myRB.angularVelocity = Vector3.zero;
+
+        }
     }
 }
