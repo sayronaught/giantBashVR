@@ -28,14 +28,15 @@ public class simpleInteractableOption : MonoBehaviour
     private _Settings mySettings;
 
     private float clickdelay = 0f;
+    public bool selected = false;
 
     private XRRayInteractor leftHandRay;
     private XRRayInteractor rightHandRay;
     private UnityEngine.XR.InputDevice lefty;
     private UnityEngine.XR.InputDevice righty;
     private float updateControllerTimer;
-    private bool rightPress;
-    private bool leftPress;
+    public bool rightPress;
+    public bool leftPress;
 
     private void updateController()
     {
@@ -59,6 +60,7 @@ public class simpleInteractableOption : MonoBehaviour
         transform.position = transform.position + transform.up * -0.2f;
         transform.localScale = new Vector3(1, 1f, 1f);
         myTxt.color = Color.white;
+        selected = false;
     }
     public void clickedThis()
     {
@@ -69,7 +71,7 @@ public class simpleInteractableOption : MonoBehaviour
         if (leftPress) leftHandRay.SendHapticImpulse(1f, 0.2f);
         if (holdToActivate)
         {
-            currentHoldTime += Time.deltaTime * 2f;
+            selected = true;
             if (currentHoldTime < holdTime) return;
         }
         if (doLoadScene > -1)
@@ -113,7 +115,24 @@ public class simpleInteractableOption : MonoBehaviour
     {
         if ( holdToActivate )
         {
-            currentHoldTime = Time.deltaTime;
+            lefty.IsPressed(InputHelpers.Button.Trigger, out leftPress);
+            righty.IsPressed(InputHelpers.Button.Trigger, out rightPress);
+            if (rightPress) rightHandRay.SendHapticImpulse(1f, 0.2f);
+            if (leftPress) leftHandRay.SendHapticImpulse(1f, 0.2f);
+            //if (!leftPress && !rightPress) selected = false;
+            if (selected)
+            {
+                currentHoldTime += Time.deltaTime * 2f;
+                if (currentHoldTime > holdTime)
+                {
+                    currentHoldTime = holdTime;
+                    if (doQuit)
+                    {
+                        Application.Quit();
+                    }
+                }
+            }
+            currentHoldTime -= Time.deltaTime;
             if (currentHoldTime < 0f)
             {
                 currentHoldTime = 0f;
