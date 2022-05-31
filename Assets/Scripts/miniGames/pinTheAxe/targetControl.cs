@@ -59,13 +59,13 @@ public class targetControl : MonoBehaviour
         if (stage == 6) stage6();
         if (stage == 4 || stage == 5) rangeUpdate();
         if (difficulty == 2) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime ) * 3f,transform.position.y , transform.position.z),Time.deltaTime);
-        if (difficulty == 3) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 1.5f) * 3f, 1f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, transform.position.z), Time.deltaTime);
-        if (difficulty == 4) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 3f, 1f - Mathf.Cos(Time.fixedTime * 5) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 2), Time.deltaTime);
+        if (difficulty == 3) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 1.5f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, transform.position.z), Time.deltaTime);
+        if (difficulty == 4) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 5) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 2), Time.deltaTime);
     }
     void on()
     {
         rotationValue += rotationDirection * rotationSpeed * Time.deltaTime;
-        rotation = new Vector3(rotationValue, -90f , 90f);
+        rotation = new Vector3(0f, 180f , rotationValue);
         transform.rotation = Quaternion.Euler(rotation);
     }
     void stage1()
