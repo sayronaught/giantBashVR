@@ -1671,7 +1671,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6380f48bb8bfe24ba43a274c931e9f4, type: 2}
+  - {fileID: 2100000, guid: 43cf8b717a2a8524eaa2f8e6875c1d66, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1804,7 +1804,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6380f48bb8bfe24ba43a274c931e9f4, type: 2}
+  - {fileID: 2100000, guid: 43cf8b717a2a8524eaa2f8e6875c1d66, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1909,7 +1909,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6380f48bb8bfe24ba43a274c931e9f4, type: 2}
+  - {fileID: 2100000, guid: 43cf8b717a2a8524eaa2f8e6875c1d66, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2210,7 +2210,7 @@ MeshCollider:
   m_GameObject: {fileID: 1239230311}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -2222,7 +2222,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239230311}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2925,7 +2925,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6380f48bb8bfe24ba43a274c931e9f4, type: 2}
+  - {fileID: 2100000, guid: 43cf8b717a2a8524eaa2f8e6875c1d66, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3302,7 +3302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37392b99e5adb5d46a04d4b18617ec9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mytc: {fileID: 0}
+  mytc: {fileID: 5422103475566086465}
 --- !u!23 &141199864927864332
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3481,7 +3481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37392b99e5adb5d46a04d4b18617ec9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mytc: {fileID: 0}
+  mytc: {fileID: 5422103475566086465}
 --- !u!65 &922142761099595104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3595,7 +3595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf14b32cfd5fb864db29ec76d92d07a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mytc: {fileID: 0}
+  mytc: {fileID: 5422103475566086465}
   axeprefab: {fileID: 3638468841530398739, guid: 83df9ffb24591014da0a2ac20bb84779, type: 3}
   axeposition: {fileID: 1078113635}
 --- !u!33 &1775222745194545125
@@ -3834,8 +3834,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.005, y: 0.02, z: 0.02}
-  m_Center: {x: 0, y: 0.09, z: 0.01}
+  m_Size: {x: 0.005, y: 0.2, z: 0.02}
+  m_Center: {x: 0, y: 0, z: 0.01}
 --- !u!82 &2164056134242084995
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4128,7 +4128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37392b99e5adb5d46a04d4b18617ec9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mytc: {fileID: 0}
+  mytc: {fileID: 5422103475566086465}
 --- !u!65 &4000783145972794639
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4279,7 +4279,7 @@ Transform:
   m_GameObject: {fileID: 5422103475566086464}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 3, z: 7}
-  m_LocalScale: {x: 0.8497272, y: 0.95497566, z: 0.84972715}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2088188792}
   - {fileID: 2317630791544744530}
@@ -4578,7 +4578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37392b99e5adb5d46a04d4b18617ec9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mytc: {fileID: 0}
+  mytc: {fileID: 5422103475566086465}
 --- !u!65 &6560354613805045459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4671,7 +4671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37392b99e5adb5d46a04d4b18617ec9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mytc: {fileID: 0}
+  mytc: {fileID: 5422103475566086465}
 --- !u!65 &7118657467273535533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4832,7 +4832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37392b99e5adb5d46a04d4b18617ec9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mytc: {fileID: 0}
+  mytc: {fileID: 5422103475566086465}
 --- !u!33 &8636537787215535199
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -35,7 +35,7 @@ public class wheelAxeControler : MonoBehaviour
             axeshadow.transform.SetParent(collision.transform);
             myRB.velocity = Vector3.zero;
             myRB.angularVelocity = Vector3.zero;
-
+            Destroy(axeshadow, 30f);
         }
     }
 }
