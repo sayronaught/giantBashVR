@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2163436550943635908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4358009078688254586}
+  - component: {fileID: 2024214253521085877}
+  m_Layer: 0
+  m_Name: Snake_Sword
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4358009078688254586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2163436550943635908}
+  m_LocalRotation: {x: -0.43382943, y: 0.43382943, z: 0.5583834, w: 0.5583834}
+  m_LocalPosition: {x: -1.2360001, y: 12.0060005, z: -0.10399997}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children:
+  - {fileID: 8522569608758900046}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -75.69, y: 0, z: 90}
+--- !u!114 &2024214253521085877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2163436550943635908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5719afe9bc87914e914c81554b2db7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopPrice: 15
+  shopTitle: Placeholder
+  shopStory: Placeholder
+  shopStats: Placeholder Stats
+  playerMaxHit: 120
+  playerRegeneration: 0.3
+  weaponThrowForce: 5
+  weaponThrowCharge: 1
+  weaponChargeMax: 9
+  weaponChargeSpeed: 3
+  weaponMagnetMultiplier: 1.1
+  weaponMagnetMinimum: 2
+  weaponMass: 1
+  aoeDamage: 5
+  aoeChargeKnockback: 25
+  aoeBaseKnockback: 2500
+  aoeRange: 5
+--- !u!1001 &8200077021429125797
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4358009078688254586}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.11586175
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11586175
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11586175
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000011175872
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+      propertyPath: m_Name
+      value: Snake Sword
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+--- !u!4 &8522569608758900046 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
+  m_PrefabInstance: {fileID: 8200077021429125797}
+  m_PrefabAsset: {fileID: 0}
