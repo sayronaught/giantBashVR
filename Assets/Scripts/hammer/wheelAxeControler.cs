@@ -9,6 +9,9 @@ public class wheelAxeControler : MonoBehaviour
     public GameObject axeprefab;
     public Transform axeposition;
 
+    public TextMesh Axecounter;
+    public int Axes = 0;
+
     private hammerControllerEndlessMode myHC;
     private Rigidbody myRB;
 
@@ -36,6 +39,8 @@ public class wheelAxeControler : MonoBehaviour
             myRB.velocity = Vector3.zero;
             myRB.angularVelocity = Vector3.zero;
             Destroy(axeshadow, 30f);
+            Axes++;
+            Axecounter.text = Axes.ToString();
         }
     }
 }
