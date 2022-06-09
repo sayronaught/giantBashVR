@@ -612,6 +612,9 @@ MonoBehaviour:
   holdToActivate: 0
   holdTime: 5
   holdMaterial: {fileID: 0}
+  selected: 0
+  rightPress: 0
+  leftPress: 0
 --- !u!114 &140947768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2525,6 +2528,9 @@ MonoBehaviour:
   holdToActivate: 0
   holdTime: 5
   holdMaterial: {fileID: 0}
+  selected: 0
+  rightPress: 0
+  leftPress: 0
 --- !u!114 &400753660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3792,6 +3798,9 @@ MonoBehaviour:
   holdToActivate: 0
   holdTime: 5
   holdMaterial: {fileID: 0}
+  selected: 0
+  rightPress: 0
+  leftPress: 0
 --- !u!114 &576513563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10649,6 +10658,9 @@ MonoBehaviour:
   holdToActivate: 0
   holdTime: 5
   holdMaterial: {fileID: 0}
+  selected: 0
+  rightPress: 0
+  leftPress: 0
 --- !u!114 &1230466139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12197,6 +12209,9 @@ MonoBehaviour:
   holdToActivate: 0
   holdTime: 5
   holdMaterial: {fileID: 0}
+  selected: 0
+  rightPress: 0
+  leftPress: 0
 --- !u!114 &1515798352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12902,6 +12917,9 @@ MonoBehaviour:
   holdToActivate: 0
   holdTime: 5
   holdMaterial: {fileID: 0}
+  selected: 0
+  rightPress: 0
+  leftPress: 0
 --- !u!114 &1570377362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14025,6 +14043,9 @@ MonoBehaviour:
   holdToActivate: 0
   holdTime: 5
   holdMaterial: {fileID: 0}
+  selected: 0
+  rightPress: 0
+  leftPress: 0
 --- !u!114 &1717741281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14376,6 +14397,9 @@ MonoBehaviour:
   holdToActivate: 0
   holdTime: 5
   holdMaterial: {fileID: 0}
+  selected: 0
+  rightPress: 0
+  leftPress: 0
 --- !u!114 &1726314570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14875,6 +14899,9 @@ MonoBehaviour:
   holdToActivate: 1
   holdTime: 5
   holdMaterial: {fileID: 2100000, guid: b054183a2b5014c4d8ffd29a111b2086, type: 2}
+  selected: 0
+  rightPress: 0
+  leftPress: 0
 --- !u!114 &1816842777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15230,6 +15257,9 @@ MonoBehaviour:
   holdToActivate: 0
   holdTime: 5
   holdMaterial: {fileID: 0}
+  selected: 0
+  rightPress: 0
+  leftPress: 0
 --- !u!114 &1843147021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15996,21 +16026,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a40b3033bfc064a9f844d0eae510c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  haveGfxCard: 0
   masterMixer: {fileID: 24100000, guid: 475660a74f7878049aa8274bb6d33096, type: 2}
   currentHammerSkin: {fileID: 3239202929387199463, guid: 5e99f9b766ac8f345b30033eb1aa0408, type: 3}
   boughtSkins:
   - {fileID: 3239202929387199463, guid: 5e99f9b766ac8f345b30033eb1aa0408, type: 3}
   allSkinsForStore:
   - {fileID: 3239202929387199463, guid: 5e99f9b766ac8f345b30033eb1aa0408, type: 3}
-  - {fileID: 6434207374901134119, guid: 019404e5185fcf8459b97f0aeaf31575, type: 3}
-  - {fileID: 5662477219764736397, guid: f6a1fe8b6b33dd640a7d16b4f1c734f6, type: 3}
-  - {fileID: 2566488810249169100, guid: b49d2ddcdd1c5f84ea838dfd05c9c16a, type: 3}
-  - {fileID: 6916658683132103462, guid: 3651d36964820c64da1883efe423aa9b, type: 3}
   - {fileID: 8027894555136910231, guid: 295030dabe073e147b377febfb15756b, type: 3}
   - {fileID: 8027894555136910231, guid: 418b5ff4c7168a5478ff935d2c44a979, type: 3}
   - {fileID: 4039667278467569284, guid: d850ea2608cab2f419043142973484a0, type: 3}
   - {fileID: 3750489498576625195, guid: d0dc7471821d10548924985000fce4b4, type: 3}
   - {fileID: 8027894555136910231, guid: 4c565fa8c19491d4090d6818ab692d9a, type: 3}
+  - {fileID: 5662477219764736397, guid: f6a1fe8b6b33dd640a7d16b4f1c734f6, type: 3}
+  - {fileID: 2566488810249169100, guid: b49d2ddcdd1c5f84ea838dfd05c9c16a, type: 3}
+  - {fileID: 6916658683132103462, guid: 3651d36964820c64da1883efe423aa9b, type: 3}
+  - {fileID: 6434207374901134119, guid: 019404e5185fcf8459b97f0aeaf31575, type: 3}
+  - {fileID: 2163436550943635908, guid: da2c56aad6018f74683de7d0ab876a2f, type: 3}
+  gfxSkinsForStore: []
   worlds:
   - loadOrder: 1
     title: Trainingheim
@@ -16183,6 +16216,9 @@ MonoBehaviour:
   holdToActivate: 0
   holdTime: 5
   holdMaterial: {fileID: 0}
+  selected: 0
+  rightPress: 0
+  leftPress: 0
 --- !u!114 &2097511497
 MonoBehaviour:
   m_ObjectHideFlags: 0

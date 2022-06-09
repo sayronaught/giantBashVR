@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2163436550943635908}
-  m_LocalRotation: {x: -0.43382943, y: 0.43382943, z: 0.5583834, w: 0.5583834}
-  m_LocalPosition: {x: -1.2360001, y: 12.0060005, z: -0.10399997}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8522569608758900046}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -75.69, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2024214253521085877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopPrice: 15
-  shopTitle: Placeholder
+  shopTitle: Tonguecleaver
   shopStory: Placeholder
   shopStats: Placeholder Stats
   playerMaxHit: 120
@@ -74,15 +74,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.11586175
+      value: 0.14047079
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.11586175
+      value: 0.14047079
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.11586175
+      value: 0.14047079
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
       propertyPath: m_LocalPosition.x
@@ -90,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f584d3f2aede8f45a4623656a48e371, type: 3}
       propertyPath: m_LocalPosition.z
