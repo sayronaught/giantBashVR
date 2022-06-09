@@ -12,6 +12,7 @@ public class subTargetControl : MonoBehaviour
     public bool randomSpeed;
     public bool randomMovement;
     public float randomReset = 2f;
+    public float distanceFromTarget = 1f;
     
 
     private MeshRenderer myMR;
@@ -36,7 +37,7 @@ public class subTargetControl : MonoBehaviour
         }
 
 
-        transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * xTimer + offsetTimer) * xWidth, 3 + Mathf.Cos(Time.fixedTime * yTimer + offsetTimer) * yWidth, transform.position.z), Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * xTimer + offsetTimer) * xWidth, 3 + Mathf.Cos(Time.fixedTime * yTimer + offsetTimer) * yWidth, myTC.transform.position.z-distanceFromTarget), Time.deltaTime);
       
         if(randomSpeed == true)
         {

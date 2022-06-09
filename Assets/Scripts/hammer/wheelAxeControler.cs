@@ -53,8 +53,11 @@ public class wheelAxeControler : MonoBehaviour
             var axeshadow = Instantiate(axeprefab, transform.position, transform.rotation);
             transform.position = axeposition.position;
             transform.rotation = axeposition.rotation;
+            if ( collision.transform.name == "targetCollider")
+                axeshadow.transform.SetParent(collision.transform.parent);
+            else
+                axeshadow.transform.SetParent(collision.transform);
             axeshadow.transform.localScale = new Vector3(5f, 5f, 5f);
-            axeshadow.transform.SetParent(collision.transform);
             myRB.velocity = Vector3.zero;
             myRB.angularVelocity = Vector3.zero;
             Destroy(axeshadow, 30f);

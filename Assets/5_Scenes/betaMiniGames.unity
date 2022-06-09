@@ -1634,10 +1634,11 @@ MonoBehaviour:
   yTimer: 6
   xWidth: 5
   yWidth: 2
-  stageMin: 9
+  stageMin: 5
   randomSpeed: 1
   randomMovement: 1
   randomReset: 2
+  distanceFromTarget: 1
 --- !u!64 &669101916
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1767,10 +1768,11 @@ MonoBehaviour:
   yTimer: 1
   xWidth: 3
   yWidth: 2
-  stageMin: 8
+  stageMin: 6
   randomSpeed: 1
   randomMovement: 1
   randomReset: 2
+  distanceFromTarget: 1.5
 --- !u!64 &706959407
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1946,10 +1948,11 @@ MonoBehaviour:
   yTimer: 1
   xWidth: 3
   yWidth: 2
-  stageMin: 5
+  stageMin: 9
   randomSpeed: 1
   randomMovement: 1
   randomReset: 2
+  distanceFromTarget: 3
 --- !u!64 &816090796
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2464,6 +2467,7 @@ MonoBehaviour:
   randomSpeed: 1
   randomMovement: 1
   randomReset: 2
+  distanceFromTarget: 2
 --- !u!64 &1239230313
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3058,10 +3062,11 @@ MonoBehaviour:
   yTimer: 1
   xWidth: 3
   yWidth: 2
-  stageMin: 6
+  stageMin: 8
   randomSpeed: 1
   randomMovement: 1
   randomReset: 2
+  distanceFromTarget: 2.5
 --- !u!64 &1455461824
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3459,7 +3464,7 @@ GameObject:
   - component: {fileID: 2088188791}
   - component: {fileID: 2088188789}
   m_Layer: 0
-  m_Name: target
+  m_Name: targetCollider
   m_TagString: WheelTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
