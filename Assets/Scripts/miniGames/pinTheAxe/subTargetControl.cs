@@ -36,15 +36,15 @@ public class subTargetControl : MonoBehaviour
         }
 
 
-        transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * xTimer + offsetTimer) * xWidth, 2 + Mathf.Cos(Time.fixedTime * yTimer + offsetTimer) * yWidth, transform.position.z), Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * xTimer + offsetTimer) * xWidth, 3 + Mathf.Cos(Time.fixedTime * yTimer + offsetTimer) * yWidth, transform.position.z), Time.deltaTime);
       
         if(randomSpeed == true)
         {
             randomTimeTimer -= Time.deltaTime;
             if(randomTimeTimer <= 0)
             {
-                xTimer = Random.Range(-15, 15);
-                yTimer = Random.Range(-15, 15);
+                xTimer = Random.Range( 6, 20);
+                yTimer = Random.Range(-6, 20);
                 randomTimeTimer = randomReset;
             }
         }
@@ -54,7 +54,7 @@ public class subTargetControl : MonoBehaviour
             if(randomMovementTimer <= 0)
             {
                 xWidth = Random.Range(3, 7);
-                yWidth = Random.Range(3, 7);
+                yWidth = Random.Range(1, 4);
                 randomMovementTimer = randomReset;
             }
         }
