@@ -17,37 +17,49 @@ public class wheelAxeControler : MonoBehaviour
 
     private hammerControllerEndlessMode myHC;
     private Rigidbody myRB;
+    private AudioSource myAS;
 
     // Start is called before the first frame update
     void Start()
     {
         myHC = GetComponent<hammerControllerEndlessMode>();
         myRB = GetComponent<Rigidbody>();
+        myAS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (myHC.beingHeld())
+        if (myHC.beingHeld() )
         { // holding the axe
             mytc.beenHit = false;
             holding = true;
             spinning = false;
+            myAS.volume = 0;
         } else { // not holding the axe
             if ( holding )
             {
                 holding = false;
                 spinning = true;
+                myAS.volume = 1f;
+                
             }
             if ( spinning )
             {
-                transform.Rotate(Vector3.left, -1500f * Time.deltaTime * myRB.velocity.magnitude);
+                myAS.pitch = 0.2f + (Mathf.Abs(myRB.velocity.magnitude) * 0.025f);
+                transform.Rotate(Vector3.left, -750f * Time.deltaTime * myRB.velocity.magnitude);  
+            }
+            if (myHC.beingSummoned())
+            {
+                spinning = false;
+                myAS.volume = 0f;
             }
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
         spinning = false;
+        myAS.volume = 0f;
         if (collision.gameObject.tag == "WheelTarget" )
         {
             var axeshadow = Instantiate(axeprefab, transform.position, transform.rotation);

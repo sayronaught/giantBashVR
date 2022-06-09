@@ -15,6 +15,8 @@ public class targetControl : MonoBehaviour
     public int difficulty;
     public bool beenHit = false;
     public GameObject bloodSplat;
+    public AudioSource resultCheer;
+    public bool donePlaying = false;
 
     private float randomSpeed = 0;
 
@@ -99,6 +101,11 @@ public class targetControl : MonoBehaviour
     void stage6()
     {
         rotationDirection = 0;
+        if ( !donePlaying )
+        {
+            donePlaying = true;
+            resultCheer.Play();
+        }
     }
     void rangeUpdate()
     {
