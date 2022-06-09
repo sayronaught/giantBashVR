@@ -16080,7 +16080,15 @@ MonoBehaviour:
       hygeine'
     videoclip: {fileID: 32900000, guid: 1ec40dd473192d24082730b1ca60c9ad, type: 3}
   currentWorld: 0
-  highScores: []
+  highScores:
+  - highestScore: 150
+    highestScoreworld: circusheim
+    damageDone: 700
+    damageTaken: 0
+    damageHighest: 0
+    jotunsBashed: 1200
+    timePlayed: 0
+    timeStarted: 0
   storedPoints: 300
   highestScore: 0
   highestScoreworld: None

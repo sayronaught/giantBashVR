@@ -12,6 +12,9 @@ public class wheelAxeControler : MonoBehaviour
     public TextMesh Axecounter;
     public int Axes = 0;
 
+    public bool spinning = false;
+    public bool holding = false;
+
     private hammerControllerEndlessMode myHC;
     private Rigidbody myRB;
 
@@ -25,10 +28,26 @@ public class wheelAxeControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (myHC.beingHeld()) mytc.beenHit = false;
+        if (myHC.beingHeld())
+        { // holding the axe
+            mytc.beenHit = false;
+            holding = true;
+            spinning = false;
+        } else { // not holding the axe
+            if ( holding )
+            {
+                holding = false;
+                spinning = true;
+            }
+            if ( spinning )
+            {
+                transform.Rotate(Vector3.left, -1500f * Time.deltaTime * myRB.velocity.magnitude);
+            }
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
+        spinning = false;
         if (collision.gameObject.tag == "WheelTarget" )
         {
             var axeshadow = Instantiate(axeprefab, transform.position, transform.rotation);

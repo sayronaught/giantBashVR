@@ -43,8 +43,8 @@ public class subTargetControl : MonoBehaviour
             randomTimeTimer -= Time.deltaTime;
             if(randomTimeTimer <= 0)
             {
-                xTimer = Random.Range( 6, 20);
-                yTimer = Random.Range(-6, 20);
+                xTimer = Random.Range( 4, 8);
+                yTimer = Random.Range( 4, 8);
                 randomTimeTimer = randomReset;
             }
         }
@@ -53,8 +53,8 @@ public class subTargetControl : MonoBehaviour
             randomMovementTimer -= Time.deltaTime;
             if(randomMovementTimer <= 0)
             {
-                xWidth = Random.Range(3, 7);
-                yWidth = Random.Range(1, 4);
+                xWidth = Random.Range(10, 20);
+                yWidth = Random.Range(4, 8);
                 randomMovementTimer = randomReset;
             }
         }
