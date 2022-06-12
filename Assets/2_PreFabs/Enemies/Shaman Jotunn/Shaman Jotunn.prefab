@@ -143,7 +143,7 @@ MonoBehaviour:
   missileWeaponPrefabs:
   - {fileID: 5401349097880085470, guid: b5740a9756eeda347bcba21791d5f4a7, type: 3}
   isRanged: 1
-  hand: {fileID: 0}
+  hand: {fileID: 3224036017523267108}
   heldMissile: {fileID: 0}
   Hitpoints: 100
   isAlive: 1
@@ -1496,6 +1496,11 @@ Transform:
 --- !u!4 &1313507886756123412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8997814141537416014, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
+  m_PrefabInstance: {fileID: 1232811758652546982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3224036017523267108 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4442168187674610050, guid: 25d27364fde2d5445a96b9e8d320d371, type: 3}
   m_PrefabInstance: {fileID: 1232811758652546982}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &3639170686413233047 stripped

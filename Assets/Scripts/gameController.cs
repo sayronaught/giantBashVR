@@ -105,7 +105,8 @@ public class gameController : MonoBehaviour
     {
         targetList = new List<targetScript>();
         thePlayer.transform.position = posTutorial.position;
-        mySettings = GameObject.Find("_SettingsPermanentObject").GetComponent<_Settings>();
+        var permObj = GameObject.Find("_SettingsPermanentObject");
+        if (permObj) mySettings = permObj.GetComponent<_Settings>();
     }
     private void spawnTarget()
     {
