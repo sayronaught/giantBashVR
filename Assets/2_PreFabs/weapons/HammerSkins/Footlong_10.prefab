@@ -47,7 +47,10 @@ MonoBehaviour:
   shopPrice: 10
   shopTitle: Footlong
   shopStory: funky story coming soon
-  shopStats: funky stats coming soon
+  shopStats: 'Default for now
+
+
+'
   playerMaxHit: 100
   playerRegeneration: 0.2
   weaponThrowForce: 3

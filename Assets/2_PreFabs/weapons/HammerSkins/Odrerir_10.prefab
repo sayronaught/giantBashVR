@@ -51,7 +51,9 @@ MonoBehaviour:
     made from
 
     kvasirs blood'
-  shopStats: gettin drunk
+  shopStats: 'Default for now
+
+'
   playerMaxHit: 100
   playerRegeneration: 0.2
   weaponThrowForce: 3

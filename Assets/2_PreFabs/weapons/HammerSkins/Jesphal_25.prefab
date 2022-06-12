@@ -76,13 +76,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopPrice: 25
-  shopTitle: Jesphal
-  shopStory: "mjolnir is the \nthunderhammer\nthis is the\nlightningtooth"
-  shopStats: 'High speed
+  shopTitle: Overconfidence
+  shopStory: 'Dagger of slow
+
+    and insidious
+
+    death'
+  shopStats: 'Ultra High speed
+
+    Low damage
 
     almost no knockback'
   playerMaxHit: 60
-  playerRegeneration: 0.1
+  playerRegeneration: 0.05
   weaponThrowForce: 25
   weaponThrowCharge: 1
   weaponChargeMax: 3

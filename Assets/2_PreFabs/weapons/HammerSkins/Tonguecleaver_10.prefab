@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4358009078688254586}
   - component: {fileID: 2024214253521085877}
   m_Layer: 0
-  m_Name: Snake_Sword
+  m_Name: Tonguecleaver_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,14 +44,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5719afe9bc87914e914c81554b2db7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopPrice: 15
+  shopPrice: 10
   shopTitle: Tonguecleaver
-  shopStory: Placeholder
-  shopStats: Placeholder Stats
-  playerMaxHit: 120
-  playerRegeneration: 0.3
-  weaponThrowForce: 5
-  weaponThrowCharge: 1
+  shopStory: 'Dont speak with a
+
+    cleaved tongue.
+
+    Cleave with a
+
+    tongue!'
+  shopStats: 'Default for now
+
+'
+  playerMaxHit: 100
+  playerRegeneration: 0.2
+  weaponThrowForce: 3
+  weaponThrowCharge: 2
   weaponChargeMax: 9
   weaponChargeSpeed: 3
   weaponMagnetMultiplier: 1.1

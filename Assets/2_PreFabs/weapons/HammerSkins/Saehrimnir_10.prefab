@@ -51,7 +51,9 @@ MonoBehaviour:
     that vikings eat each
 
     night in valhal'
-  shopStats: juicy
+  shopStats: 'Default for now
+
+'
   playerMaxHit: 100
   playerRegeneration: 0.2
   weaponThrowForce: 3
