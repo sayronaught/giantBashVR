@@ -4349,6 +4349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mytc: {fileID: 5422103475566086465}
+  child: {fileID: 3890443568409469389}
 --- !u!23 &141199864927864332
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4573,6 +4574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mytc: {fileID: 5422103475566086465}
+  child: {fileID: 0}
 --- !u!65 &922142761099595104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5311,6 +5313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mytc: {fileID: 5422103475566086465}
+  child: {fileID: 0}
 --- !u!65 &4000783145972794639
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5932,6 +5935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mytc: {fileID: 5422103475566086465}
+  child: {fileID: 0}
 --- !u!65 &6560354613805045459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6098,6 +6102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mytc: {fileID: 5422103475566086465}
+  child: {fileID: 0}
 --- !u!65 &7118657467273535533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6302,6 +6307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mytc: {fileID: 5422103475566086465}
+  child: {fileID: 0}
 --- !u!33 &8636537787215535199
 MeshFilter:
   m_ObjectHideFlags: 0
