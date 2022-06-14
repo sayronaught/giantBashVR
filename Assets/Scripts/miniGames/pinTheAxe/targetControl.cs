@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class targetControl : MonoBehaviour
 {
+    public int difficulty;
     public int stage;
     public float rotationDirection = 0f;
     public float rotationSpeed = 100f;
@@ -12,7 +13,6 @@ public class targetControl : MonoBehaviour
     public float rangeTimer;
     public float rangeReset;
     public bool rangeChange;
-    public int difficulty;
     public bool beenHit = false;
     public GameObject bloodSplat;
     public AudioSource resultCheer;
@@ -52,7 +52,7 @@ public class targetControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        on();
+        if (stage > 0) on();
         if (stage == 1) stage1();
         if (stage == 2) stage2();
         if (stage == 3) stage3();
@@ -60,15 +60,15 @@ public class targetControl : MonoBehaviour
         if (stage == 5) stage5();
         if (stage == 6) stage6();
         if (stage == 4 || stage == 5) rangeUpdate();
-        if (difficulty == 2) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime ) * 3f,transform.position.y , transform.position.z),Time.deltaTime);
-        if (difficulty == 3) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 1.5f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, transform.position.z), Time.deltaTime);
-        if (difficulty == 4) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 5) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 2), Time.deltaTime);
     }
     void on()
     {
         rotationValue += rotationDirection * rotationSpeed * Time.deltaTime;
         rotation = new Vector3(0f, 180f , rotationValue);
         transform.rotation = Quaternion.Euler(rotation);
+        if (difficulty == 2) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime) * 3f, transform.position.y, transform.position.z), Time.deltaTime);
+        if (difficulty == 3) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 1.5f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, transform.position.z), Time.deltaTime);
+        if (difficulty == 4) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 5) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 2), Time.deltaTime);
     }
     void stage1()
     {

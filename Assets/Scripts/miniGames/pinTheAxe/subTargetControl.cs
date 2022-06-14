@@ -35,6 +35,11 @@ public class subTargetControl : MonoBehaviour
             myMR.enabled = true;
             myMC.enabled = true;
         }
+        else
+        {
+            myMR.enabled = false;
+            myMC.enabled = false;
+        }
 
 
         transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * xTimer + offsetTimer) * xWidth, 3 + Mathf.Cos(Time.fixedTime * yTimer + offsetTimer) * yWidth, myTC.transform.position.z-distanceFromTarget), Time.deltaTime);
