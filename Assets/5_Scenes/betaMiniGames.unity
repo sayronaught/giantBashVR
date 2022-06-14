@@ -1181,6 +1181,7 @@ MonoBehaviour:
   difficultyBool: 1
   difficulty: 2
   myTC: {fileID: 5422103475566086465}
+  myHC: {fileID: 0}
 --- !u!65 &165320257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1543,7 +1544,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296926672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 982829098}
@@ -1566,6 +1567,7 @@ MonoBehaviour:
   difficultyBool: 0
   difficulty: 0
   myTC: {fileID: 5422103475566086465}
+  myHC: {fileID: 1353661847656207838}
 --- !u!65 &296926675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2901,6 +2903,7 @@ MonoBehaviour:
   difficultyBool: 1
   difficulty: 1
   myTC: {fileID: 5422103475566086465}
+  myHC: {fileID: 0}
 --- !u!65 &1309792249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3689,6 +3692,7 @@ MonoBehaviour:
   difficultyBool: 1
   difficulty: 3
   myTC: {fileID: 5422103475566086465}
+  myHC: {fileID: 0}
 --- !u!65 &1594098330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4066,6 +4070,7 @@ MonoBehaviour:
   difficultyBool: 1
   difficulty: 4
   myTC: {fileID: 5422103475566086465}
+  myHC: {fileID: 0}
 --- !u!65 &1892734171
 BoxCollider:
   m_ObjectHideFlags: 0
