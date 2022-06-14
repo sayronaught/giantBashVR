@@ -211,17 +211,7 @@ public class hammerControllerEndlessMode : MonoBehaviour
             rightAnim.SetBool("grab", false);
             if (rightHoldPositions.Count > 0)
             { // just released, have list of held positions
-                //debugText.text = "Debug: hammerpos held " + rightHoldPositions.Count.ToString();
-                int framesBack = 100;
-                if (framesBack < rightHoldPositions.Count) framesBack = rightHoldPositions.Count;
-                Vector3 force = rightHoldPositions[rightHoldPositions.Count - framesBack] - rightHoldPositions[rightHoldPositions.Count];
-                //force = Vector3.Normalize(force);
-                force = Vector3.forward;
-                hammerRB.velocity = Vector3.zero;
-                hammerRB.angularVelocity = Vector3.zero;
-                hammerRB.AddForce(force * 100f);
-                //debugText.text += "\n" + "Force " + hammerRB.velocity;
-                hammer.transform.position = Vector3.zero;
+
                 rightHoldPositions.Clear();
                 rightHoldPositions = new List<Vector3>();
                 magnetspeed = magnetminimum;

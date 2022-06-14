@@ -18,6 +18,7 @@ public class flickerEmissionMaterial : MonoBehaviour
     private float minV;
     private float maxV;
 
+
     private float currentDelay;
     // Start is called before the first frame update
     void Start()

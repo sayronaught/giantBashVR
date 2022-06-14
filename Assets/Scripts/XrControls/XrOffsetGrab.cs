@@ -23,7 +23,6 @@ public class XrOffsetGrab : XRGrabInteractable
                 attachTransform.position = mainHCendless.leftHand.transform.position + (mainHCendless.leftHand.transform.up * 0.15f);
             else
                 attachTransform.position = mainHCendless.rightHand.transform.position + (mainHCendless.rightHand.transform.up * 0.15f);
-
         }
     }
 }
