@@ -7,6 +7,7 @@ public class targetColider : MonoBehaviour
     public targetControl mytc;
     private MeshRenderer myMR;
     private BoxCollider myBC;
+    public GameObject child;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class targetColider : MonoBehaviour
         {
             myMR.enabled = true;
             myBC.enabled = true;
+            if (transform.childCount > 0) child.SetActive(true);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -35,6 +37,8 @@ public class targetColider : MonoBehaviour
                 Instantiate(mytc.bloodSplat, transform.position, Quaternion.identity);
                 myMR.enabled = false;
                 myBC.enabled = false;
+                if (transform.childCount > 0) child.SetActive(false);
+
             }
         }
     }
