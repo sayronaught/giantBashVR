@@ -172,7 +172,8 @@ public class hammerControllerEndlessMode : MonoBehaviour
             else
             {
                 leftAnim.SetBool("grab", true);
-                hammerFXScript.myLightning.Clear();
+
+                //hammerFXScript.myLightning.Clear();
                 hammer.transform.position = leftHand.transform.position + (leftHand.transform.up * 0.15f);
                 hammer.transform.rotation = leftHand.transform.rotation;
                 hammer.transform.Rotate(-75, 0, 90);
