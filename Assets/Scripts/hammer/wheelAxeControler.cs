@@ -7,6 +7,7 @@ public class wheelAxeControler : MonoBehaviour
     public targetControl mytc;
 
     public GameObject axeprefab;
+    public GameObject fireballPrefab;
     public Transform axeposition;
 
     public TextMesh Axecounter;
@@ -75,6 +76,15 @@ public class wheelAxeControler : MonoBehaviour
             Destroy(axeshadow, 30f);
             Axes++;
             Axecounter.text = Axes.ToString();
+            var fireball = Instantiate(fireballPrefab, collision.GetContact(0).point, Quaternion.identity);
+            fireball.transform.SetParent(collision.transform);
+            Destroy(fireball, 30f);
+            /* Debug with:
+            if (hitToTest.collider.bounds.Contains(telePosition))
+            {
+                print("point is inside collider");
+            }
+            */
         }
     }
 }

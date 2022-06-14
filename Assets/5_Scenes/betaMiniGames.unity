@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999946, b: 0.99999946, a: 1}
+  m_IndirectSpecularColor: {r: 0.6562714, g: 0.6458353, b: 0.7058287, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4489,7 +4489,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4918415758474966472, guid: 83df9ffb24591014da0a2ac20bb84779, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 83df9ffb24591014da0a2ac20bb84779, type: 3}
 --- !u!1 &749625146766177844
 GameObject:
@@ -4661,7 +4662,6 @@ GameObject:
   - component: {fileID: 1838309687879815015}
   - component: {fileID: 2164056134242085006}
   - component: {fileID: 2164056134242084993}
-  - component: {fileID: 2164056134242084998}
   - component: {fileID: 2164056134242084992}
   - component: {fileID: 1879086437}
   - component: {fileID: 1353661847656207838}
@@ -4687,6 +4687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mytc: {fileID: 5422103475566086465}
   axeprefab: {fileID: 3638468841530398739, guid: 83df9ffb24591014da0a2ac20bb84779, type: 3}
+  fireballPrefab: {fileID: 3997592075323833436, guid: 5d8c9f3fa165cd044a42ae9c8cd1d3e6, type: 3}
   axeposition: {fileID: 1078113635}
   Axecounter: {fileID: 823595496}
   Axes: 0
@@ -5063,19 +5064,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.005, y: 0.6, z: 0.02}
   m_Center: {x: 0, y: 0.15, z: 0.01}
---- !u!135 &2164056134242084998
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353661847656207837}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.36
-  m_Center: {x: 8.872901e-10, y: 0, z: -0.019848343}
 --- !u!54 &2164056134242085006
 Rigidbody:
   m_ObjectHideFlags: 0
