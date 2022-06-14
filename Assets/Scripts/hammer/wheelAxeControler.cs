@@ -47,7 +47,7 @@ public class wheelAxeControler : MonoBehaviour
             if ( spinning )
             {
                 myAS.pitch = 0.2f + (Mathf.Abs(myRB.velocity.magnitude) * 0.025f);
-                transform.Rotate(Vector3.left, -750f * Time.deltaTime * myRB.velocity.magnitude);  
+                transform.Rotate(Vector3.left, -150f * Time.deltaTime * (myRB.velocity.magnitude*3f));  
             }
             if (myHC.beingSummoned())
             {
