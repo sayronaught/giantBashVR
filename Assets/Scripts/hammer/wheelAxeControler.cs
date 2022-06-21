@@ -63,6 +63,9 @@ public class wheelAxeControler : MonoBehaviour
         myAS.volume = 0f;
         if (collision.gameObject.tag == "WheelTarget" )
         {
+
+            if (!collision.collider.bounds.Contains(collision.GetContact(0).point)) return;
+
             var axeshadow = Instantiate(axeprefab, transform.position, transform.rotation);
             transform.position = axeposition.position;
             transform.rotation = axeposition.rotation;
