@@ -66,10 +66,10 @@ MonoBehaviour:
   weaponMagnetMultiplier: 1.02
   weaponMagnetMinimum: 1
   weaponMass: 100
-  aoeDamage: 5
+  aoeDamage: 6
   aoeChargeKnockback: 100
   aoeBaseKnockback: 5000
-  aoeRange: 5
+  aoeRange: 2
 --- !u!1 &8240167627395229695
 GameObject:
   m_ObjectHideFlags: 0
