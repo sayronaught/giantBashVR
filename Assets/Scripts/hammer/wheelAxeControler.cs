@@ -19,6 +19,7 @@ public class wheelAxeControler : MonoBehaviour
     private hammerControllerEndlessMode myHC;
     private Rigidbody myRB;
     private AudioSource myAS;
+    private BoxCollider myBC;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class wheelAxeControler : MonoBehaviour
         myHC = GetComponent<hammerControllerEndlessMode>();
         myRB = GetComponent<Rigidbody>();
         myAS = GetComponent<AudioSource>();
+        myBC = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -62,9 +64,9 @@ public class wheelAxeControler : MonoBehaviour
         spinning = false;
         myAS.volume = 0f;
         if (collision.gameObject.tag == "WheelTarget" )
-        {
-
+        { 
             if (!collision.collider.bounds.Contains(collision.GetContact(0).point)) return;
+            if (!myBC.bounds.Contains(collision.GetContact(0).point)) return;
 
             var axeshadow = Instantiate(axeprefab, transform.position, transform.rotation);
             transform.position = axeposition.position;
