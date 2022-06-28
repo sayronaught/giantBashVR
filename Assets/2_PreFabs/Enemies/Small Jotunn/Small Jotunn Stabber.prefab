@@ -406,6 +406,9 @@ MonoBehaviour:
     jotunnSmall: 0
     jotunnShaman: 0
     jotunnBulky: 0
+  mobtype: 0
+  ranged: 0
+  missilePrefabs: {fileID: 0}
   stats:
     pointValue: 1
     mass: 2
@@ -482,7 +485,21 @@ MonoBehaviour:
     attackRangedPercentageChance: 20
     taunts: []
     surrenders: []
-  spells: []
+  combatMoves:
+  - name: Stab
+    moveType: 0
+    anims:
+    - Stab_01
+    - Stab_02
+    speech:
+    - {fileID: 8300000, guid: 9b2de8d368f184741816f6fc997ac870, type: 3}
+    - {fileID: 8300000, guid: 3d4fd4909f6abe6409fd3937f0a0a0b8, type: 3}
+    - {fileID: 8300000, guid: f64083b08619d0842a0bdf1b64ef181f, type: 3}
+    - {fileID: 8300000, guid: aed1946cef6be4548a462e812f9fa090, type: 3}
+    - {fileID: 8300000, guid: 1de57bb7b3fad9d4c94dc430a4999af6, type: 3}
+    - {fileID: 8300000, guid: 2eed1e671f9a2e64895c74c602219c40, type: 3}
+    speechPercentageChance: 20
+    missilePrefab: {fileID: 0}
   beingHitAS: {fileID: 1472709981957772604}
   meleeWeapons:
   - {fileID: 6996432592569793671}
@@ -636,6 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomChance: 20
+  SelectMultiRandomChance: 5
   torsoClothing:
   - {fileID: 7215901744807518644}
   - {fileID: 7215901744807518644}

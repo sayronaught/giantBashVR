@@ -955,7 +955,18 @@ MonoBehaviour:
     attackRangedPercentageChance: 20
     taunts: []
     surrenders: []
-  combatMoves: []
+  combatMoves:
+  - name: Bulky Jotun Melee Swat
+    moveType: 0
+    anims:
+    - Attack_01
+    - Attack_01
+    - Attack_02
+    - Attack_02
+    - Attack_03
+    speech: []
+    speechPercentageChance: 20
+    missilePrefab: {fileID: 0}
   beingHitAS: {fileID: 5719080328502502097}
   meleeWeapons:
   - {fileID: 4922677727787352680}

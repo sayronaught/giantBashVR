@@ -86,7 +86,7 @@ MonoBehaviour:
     attackMelee: []
     attackRange:
     - Attack 01
-    - Attack 02
+    - Spell 01
     conversations: []
     taunts: []
     surrenders: []
@@ -131,9 +131,22 @@ MonoBehaviour:
     taunts: []
     surrenders: []
   combatMoves:
-  - name: 
+  - name: Fireball
     moveType: 1
-    anims: []
+    anims:
+    - Attack 01
+    speech:
+    - {fileID: 8300000, guid: 584c4c10fb54ab044b04113aba7766aa, type: 3}
+    - {fileID: 8300000, guid: 464edc9a1df36da4b97d6162c8648fca, type: 3}
+    - {fileID: 8300000, guid: 51c924798d4ac66409da2413e2ca26af, type: 3}
+    - {fileID: 8300000, guid: ee22c8f8517fe704a8e2c8f6a17280ec, type: 3}
+    - {fileID: 8300000, guid: 481b0988a0e7a454a9a7499b81d02ae6, type: 3}
+    speechPercentageChance: 80
+    missilePrefab: {fileID: 0}
+  - name: Area Heal
+    moveType: 2
+    anims:
+    - Spell 01
     speech: []
     speechPercentageChance: 0
     missilePrefab: {fileID: 0}

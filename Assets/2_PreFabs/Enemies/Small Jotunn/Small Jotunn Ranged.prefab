@@ -156,7 +156,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6994989219986323833}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -95, y: 0, z: 0}
 --- !u!1 &4293041415188824625
 GameObject:
@@ -436,6 +436,9 @@ MonoBehaviour:
     jotunnSmall: 0
     jotunnShaman: 0
     jotunnBulky: 0
+  mobtype: 0
+  ranged: 0
+  missilePrefabs: {fileID: 0}
   stats:
     pointValue: 1
     mass: 2
@@ -505,7 +508,14 @@ MonoBehaviour:
     attackRangedPercentageChance: 20
     taunts: []
     surrenders: []
-  spells: []
+  combatMoves:
+  - name: Throw Spear
+    moveType: 1
+    anims:
+    - Ranged_Attack_01
+    speech: []
+    speechPercentageChance: 20
+    missilePrefab: {fileID: 0}
   beingHitAS: {fileID: 1472709981957772604}
   meleeWeapons: []
   rangeWeapons: []
@@ -658,6 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomChance: 30
+  SelectMultiRandomChance: 5
   torsoClothing:
   - {fileID: 4693173793200142539}
   - {fileID: 323541380647405431}
