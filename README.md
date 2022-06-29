@@ -1,6 +1,6 @@
 # giantBashVR
 VR multiplayer game demo - Defend Valhalla by bashing Giants
-<br>Unity Version: 2020.3.17f1
+<br>Unity Version: 2021.3.5f1
 <hr>Website: http://jotunbash.io/
 <br>Old Website: https://stuspecialisterne.dk/JotunBash/
 <br>Git: https://github.com/sayronaught/giantBashVR
