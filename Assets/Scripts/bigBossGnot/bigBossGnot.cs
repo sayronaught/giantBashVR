@@ -84,6 +84,10 @@ public class bigBossGnot : MonoBehaviour
         flyingProjectile = heldProjectile;
         heldProjectile = null;
     }
+    public void animEventReleaseProjectile()
+    {
+        eventReleaseProjectile();
+    }
     public void Reset()
     {
         isAwake = false;
