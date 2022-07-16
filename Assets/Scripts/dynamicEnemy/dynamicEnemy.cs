@@ -94,13 +94,22 @@ public class dynamicEnemy : MonoBehaviour
     [System.Serializable]
     public class combatMovesList
     {
+        [Header("Constant Stats")]
+        [Tooltip("What is the move called?")]
         public string name;
+        [Tooltip("The type determines everything")]
         public moveTypes moveType = moveTypes.MeleeAttack;
+        [Tooltip("List of Animations")]
         public string[] anims;
+        [Tooltip("List of Speech/Samples")]
         public AudioClip[] speech;
+        [Tooltip("Percantage change to play a sample")]
         public float speechPercentageChance = 20f;
+        [Space(20)]
+        [Header("Type Stats")]
         [DrawIf("moveType", moveTypes.ThrowMissile)]
         public GameObject missilePrefab;
+        
     }
     [Header("Combat Moves")]
     public combatMovesList[] combatMoves;
