@@ -73,7 +73,7 @@ public class bigBossGnot : MonoBehaviour
     {
         heldProjectile = Instantiate(prefabProjectile, Vector3.zero, Quaternion.identity) as GameObject;
         heldProjectile.transform.SetParent(posProjectileSpawn);
-        heldProjectile.transform.localScale=new Vector3(0.1f, 0.1f, 0.1f);
+        heldProjectile.transform.localScale=new Vector3(0.0015f, 0.0015f, 0.0015f);
         heldProjectile.transform.localPosition = Vector3.zero;
         heldProjectile.transform.localRotation = Quaternion.identity;
         myAnim.SetBool(Property, false);
@@ -106,7 +106,7 @@ public class bigBossGnot : MonoBehaviour
     {
         Hitpoints -= damage;
         hitPointBar.GetComponent<RectTransform>().sizeDelta = new Vector2(Hitpoints, 65);
-        if (damage > 40f)
+        if (damage > 30f)
         {
             myAnim.SetTrigger(Takedamage);
             reeling = true;
