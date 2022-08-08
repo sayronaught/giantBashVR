@@ -53,10 +53,17 @@ public class hammerController : MonoBehaviour
     public float chargeLightning = 0f;
     private Vector3 inverseTransformDummy;
 
+    // new trigger test
+    List<UnityEngine.XR.InputDevice> leftHandDevices = new List<UnityEngine.XR.InputDevice>();
+    List<UnityEngine.XR.InputDevice> rightHandDevices = new List<UnityEngine.XR.InputDevice>();
+    bool leftTrigger = false;
+    bool rightTrigger = false;
+
     public void changeLightning(float value)
     {
         chargeLightning = value;
         hammerFXScript.myLightning.emissionRate=value;
+        //hammerFXScript.myLightning.emission.rateOverTime = value;
         hammerFXScript.myLightningSFX.volume = value * 0.05f;
     }
     public bool beingSummoned()
@@ -107,10 +114,26 @@ public class hammerController : MonoBehaviour
         if (!hammer.activeSelf) return;
         lefty.IsPressed(InputHelpers.Button.Trigger, out leftPress);
         righty.IsPressed(InputHelpers.Button.Trigger, out rightPress);
-        //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller & InputDeviceCharacteristics.TrackedDevice, _inputDevices);
-        inverseTransformDummy = rightHand.transform.InverseTransformPoint(hammer.transform.position);
+
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
+        if (leftHandDevices.Count > 0)
+        {
+            leftHandDevices[0].TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out leftTrigger);
+            //leftHandDevices[0].TryGetFeatureValue(UnityEngine.XR.CommonUsages.primary2DAxis, out leftStick);
+        }
+        if (rightHandDevices.Count > 0)
+        {
+            rightHandDevices[0].TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out rightTrigger);
+            //rightHandDevices[0].TryGetFeatureValue(UnityEngine.XR.CommonUsages.primary2DAxis, out rightStick);
+        }
+        //if (leftTrigger) Debug.Log("left trigger");
+        //if (rightTrigger) Debug.Log("right trigger");
+
+            //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller & InputDeviceCharacteristics.TrackedDevice, _inputDevices);
+            inverseTransformDummy = rightHand.transform.InverseTransformPoint(hammer.transform.position);
         //debugText.text = "Debug:inverse transform right hand\n" + inverseTransformDummy.x.ToString() + " " + inverseTransformDummy.y.ToString() + " " + inverseTransformDummy.z.ToString();
-        if (rightPress && heldLeft == 0f)
+        if (rightTrigger && heldLeft == 0f)
         { // press
             rightAnim.SetBool("summoning", true);
             distance = Vector3.Distance(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.1f));
@@ -152,7 +175,7 @@ public class hammerController : MonoBehaviour
                 hammerGrabScript.throwVelocityScale = statsThrowForce + heldRight*statsThrowCharge;
             }
         }
-        else if (leftPress && heldRight == 0f)
+        else if (leftTrigger && heldRight == 0f)
         {
             leftAnim.SetBool("summoning", true);
             distance = Vector3.Distance(hammer.transform.position, leftHand.transform.position + (leftHand.transform.forward * 0.10f));
