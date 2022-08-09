@@ -111,7 +111,8 @@ public class dynamicEnemy : MonoBehaviour
         public GameObject missilePrefab;
         
     }
-    [Header("Combat Moves")]
+    //[Header("Combat Moves")]
+    [Space(20)]
     public combatMovesList[] combatMoves;
 
 
