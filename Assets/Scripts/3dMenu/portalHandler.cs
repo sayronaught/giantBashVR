@@ -35,7 +35,7 @@ public class portalHandler : MonoBehaviour
         story.transform.localScale = Vector3.zero;
         nextButton.transform.localScale = Vector3.zero;
         behindVideoMesh.SetActive(false);
-        portalSpin.transform.Rotate(Vector3.forward,180);
+        //portalSpin.transform.Rotate(Vector3.forward,180);
     }
     public void nextPortal()
     {
@@ -55,7 +55,7 @@ public class portalHandler : MonoBehaviour
     {
         if (!spinning) return;
         targetTimer -= Time.deltaTime;
-        portalSpin.transform.rotation = Quaternion.Lerp(portalSpin.transform.rotation, portalSpinPositionEnd.rotation, Time.deltaTime * 5f);
+        //portalSpin.transform.rotation = Quaternion.Lerp(portalSpin.transform.rotation, portalSpinPositionEnd.rotation, Time.deltaTime * 5f);
         travelToText.transform.localScale = Vector3.Lerp(travelToText.transform.localScale,targetScale , Time.deltaTime * 5f);
         story.transform.localScale = Vector3.Lerp(story.transform.localScale, targetScale, Time.deltaTime * 5f);
         nextButton.transform.localScale = Vector3.Lerp(nextButton.transform.localScale, targetScale, Time.deltaTime * 5f);
@@ -67,7 +67,7 @@ public class portalHandler : MonoBehaviour
             nextButton.transform.localScale = targetScale;
             story.transform.localScale = targetScale;
             behindVideoMesh.SetActive(true);
-            portalSpin.transform.rotation = portalSpinPositionEnd.rotation;
+            //portalSpin.transform.rotation = portalSpinPositionEnd.rotation;
         }
     }
 }
