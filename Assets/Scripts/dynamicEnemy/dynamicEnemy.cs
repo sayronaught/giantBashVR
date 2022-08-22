@@ -5,20 +5,9 @@ using UnityEngine;
 public class dynamicEnemy : MonoBehaviour
 {
     public monsterList killType;
-        
-    [System.Serializable]
-    public enum mobTypes
-    {
-        Melee,
-        Ranged,
-        Caster
-    };
-    [Header("Basic Mob Type")]
-    public mobTypes mobtype;
 
     public bool ranged = false;
 
-    [DrawIf("mobtype", mobTypes.Ranged)]
     public GameObject missilePrefabs;
 
     [System.Serializable]
