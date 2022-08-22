@@ -8,6 +8,7 @@ public class debugTargetChanger : MonoBehaviour
     public int reset;
     public bool difficultyBool;
     public int difficulty;
+    public bool hellMode;
     public targetControl myTC;
     public wheelAxeControler myHC;
     // Start is called before the first frame update
@@ -58,6 +59,16 @@ public class debugTargetChanger : MonoBehaviour
                 myTC.rotationSpeed = 350f;
                 myTC.transform.position = new Vector3(0, 3, 10);
             }
+            
+        }
+        if (hellMode)
+        {
+            myTC.stage = reset;
+            myHC.Axes = -1;
+            myTC.difficulty = 5;
+            myTC.rangeReset = 0.3f;
+            myTC.rotationSpeed = 350f;
+            myTC.transform.position = new Vector3(0, 3, 14);
         }
 
     }

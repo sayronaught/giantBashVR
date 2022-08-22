@@ -47,6 +47,12 @@ public class targetControl : MonoBehaviour
             rotationSpeed = 350f;
             transform.position = new Vector3(transform.position.x, transform.position.y, 10);
         }
+        if (difficulty == 5)
+        {
+            rangeReset = 0.3f;
+            rotationSpeed = 350f;
+            transform.position = new Vector3(transform.position.x, transform.position.y, 14);
+        }
     }
 
     // Update is called once per frame
@@ -69,6 +75,7 @@ public class targetControl : MonoBehaviour
         if (difficulty == 2) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime) * 3f, transform.position.y, transform.position.z), Time.deltaTime);
         if (difficulty == 3) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 1.5f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, transform.position.z), Time.deltaTime);
         if (difficulty == 4) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 5) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 2), Time.deltaTime);
+        if (difficulty == 5) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 5f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 8) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
     }
     void stage1()
     {
@@ -113,7 +120,14 @@ public class targetControl : MonoBehaviour
         if (rangeTimer <= 0)
         {
             rangeTimer = rangeReset;
-            randomSpeed = Random.Range(-5f, 5f);
+            if (difficulty == 4)
+            {
+                randomSpeed = Random.Range(-5f, 5f);
+            }
+            if (difficulty == 5)
+            {
+                randomSpeed = Random.Range(-10f, 10f);
+            }
             rangeChange = true;
 
         }
