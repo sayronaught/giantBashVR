@@ -8,10 +8,11 @@ public class targetColider : MonoBehaviour
     private MeshRenderer myMR;
     private BoxCollider myBC;
     public GameObject child;
+    public bool falseTarget;
     // Start is called before the first frame update
     void Start()
     {
-        mytc = GetComponentInParent<targetControl>();
+        mytc = GameObject.Find("Small Jotunn Target").GetComponent<targetControl>();
         myMR = GetComponent<MeshRenderer>();
         myBC = GetComponent<BoxCollider>();
     }
@@ -33,11 +34,12 @@ public class targetColider : MonoBehaviour
             if (collision.gameObject.tag == "Hammer")
             {
                 mytc.beenHit = true;
-                mytc.stage += 1;
                 Instantiate(mytc.bloodSplat, transform.position, Quaternion.identity);
                 myMR.enabled = false;
                 myBC.enabled = false;
                 if (transform.childCount > 0) child.SetActive(false);
+                if (!falseTarget) mytc.stage += 1;
+
 
             }
         }

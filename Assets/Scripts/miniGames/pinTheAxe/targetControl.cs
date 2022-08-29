@@ -72,10 +72,10 @@ public class targetControl : MonoBehaviour
         rotationValue += rotationDirection * rotationSpeed * Time.deltaTime;
         rotation = new Vector3(0f, 180f , rotationValue);
         transform.rotation = Quaternion.Euler(rotation);
-        if (difficulty == 2) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime) * 3f, transform.position.y, transform.position.z), Time.deltaTime);
+        if (difficulty == 2) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime) * 2f, transform.position.y, transform.position.z), Time.deltaTime);
         if (difficulty == 3) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 1.5f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, transform.position.z), Time.deltaTime);
-        if (difficulty == 4) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 5) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 2), Time.deltaTime);
-        if (difficulty == 5) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 5f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 8) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
+        if (difficulty == 4) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 2f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 2), Time.deltaTime);
+        if (difficulty == 5) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
     }
     void stage1()
     {
@@ -122,11 +122,11 @@ public class targetControl : MonoBehaviour
             rangeTimer = rangeReset;
             if (difficulty == 4)
             {
-                randomSpeed = Random.Range(-5f, 5f);
+                randomSpeed = Random.Range(-2f, 2f);
             }
             if (difficulty == 5)
             {
-                randomSpeed = Random.Range(-10f, 10f);
+                randomSpeed = Random.Range(-4f, 4f);
             }
             rangeChange = true;
 
