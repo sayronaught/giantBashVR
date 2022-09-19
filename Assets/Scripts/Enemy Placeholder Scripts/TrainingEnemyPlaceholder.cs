@@ -5,9 +5,12 @@ using UnityEngine;
 public class TrainingEnemyPlaceholder : MonoBehaviour
 {
     // Adjust the speed for the application.
-    public float speed = 0f;
+    float speed = 2f;
     public float distance = 10f;
     public float turnSpeed = 20f;
+
+    float speedVelocityReference;
+    public float targetSpeed = 0;
 
     // The target (cylinder) position.
     public Transform target;
@@ -64,13 +67,18 @@ public class TrainingEnemyPlaceholder : MonoBehaviour
             //float step = speed * Time.deltaTime; // calculate distance to move
             //transform.position = Vector3.MoveTowards(transform.position, target.position, step);
 
-            speed = 2f;
+            //speed = 2f;
 
-            Vector3 targetVelocity = transform.forward * speed;
+            if(targetSpeed < speed - 0.05)
+                targetSpeed = Mathf.SmoothDamp(targetSpeed, speed, ref speedVelocityReference, 3f);
+            else
+                targetSpeed = speed;
+
+            Vector3 targetVelocity = transform.forward * targetSpeed;
             targetVelocity.y = rb.velocity.y;
 
             rb.velocity = targetVelocity;
-            myAnim.SetFloat("CurrentSpeed", 1);
+            myAnim.SetFloat("CurrentSpeed", targetSpeed / 2);
             
 
         }
