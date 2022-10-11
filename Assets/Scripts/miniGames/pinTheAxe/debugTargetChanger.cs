@@ -8,7 +8,7 @@ public class debugTargetChanger : MonoBehaviour
     public int reset;
     public bool difficultyBool;
     public int difficulty;
-    public bool hellMode;
+    //public bool hellMode;
     public targetControl myTC;
     public wheelAxeControler myHC;
     public falseTargetController myFTC;
@@ -63,19 +63,28 @@ public class debugTargetChanger : MonoBehaviour
                 myTC.rotationSpeed = 350f;
                 myTC.transform.position = new Vector3(0, 3, 10);
             }
-            
+            if (difficulty == 5)
+            {
+                myTC.stage = reset;
+                myHC.Axes = -1;
+                myTC.difficulty = 5;
+                myTC.rangeReset = 0.3f;
+                myTC.rotationSpeed = 350f;
+                myTC.transform.position = new Vector3(0, 3, 14);
+                myFTC.reset = true;
+                myFTC2.reset = true;
+            }
+            if (difficulty == 6)
+            {
+                myTC.stage = reset;
+                myHC.Axes = -1;
+                myTC.difficulty = 6;
+                myTC.rangeReset = 0.3f;
+                myTC.rotationSpeed = 350f;
+                myTC.transform.position = new Vector3(0, 3, 14);
+                myFTC.reset = true;
+                myFTC2.reset = true;
+            }
         }
-        if (hellMode)
-        {
-            myTC.stage = reset;
-            myHC.Axes = -1;
-            myTC.difficulty = 5;
-            myTC.rangeReset = 0.3f;
-            myTC.rotationSpeed = 350f;
-            myTC.transform.position = new Vector3(0, 3, 14);
-            myFTC.reset = true;
-            myFTC2.reset = true;
-        }
-
     }
 }

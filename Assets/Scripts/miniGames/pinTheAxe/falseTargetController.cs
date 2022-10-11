@@ -94,7 +94,8 @@ public class falseTargetController : MonoBehaviour
     }
     void rangeUpdate()
     {
-        rangeTimer -= Time.deltaTime;
+        if (myTC.difficulty != 6) rangeTimer = rangeReset;
+        else rangeTimer = Random.Range(0.2f, 1f);
         if (rangeTimer <= 0)
         {
             rangeTimer = rangeReset;
