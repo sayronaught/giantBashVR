@@ -34,7 +34,7 @@ public class targetColider : MonoBehaviour
             if (collision.gameObject.tag == "Hammer")
             {
                 mytc.beenHit = true;
-                Instantiate(mytc.bloodSplat, transform.position, Quaternion.identity);
+                if(mytc.bloodSplat) Instantiate(mytc.bloodSplat, transform.position, Quaternion.identity);
                 myMR.enabled = false;
                 myBC.enabled = false;
                 if (transform.childCount > 0) child.SetActive(false);
