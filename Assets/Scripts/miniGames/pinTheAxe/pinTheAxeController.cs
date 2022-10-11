@@ -8,6 +8,10 @@ public class pinTheAxeController : MonoBehaviour
     public wheelAxeControler myHC;
     public GameObject myFTC1;
     public GameObject myFTC2;
+    public mapObj myMO;
+
+    public float chickRespawn = 0;
+    bool chicklive;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +31,9 @@ public class pinTheAxeController : MonoBehaviour
             myFTC1.SetActive(false);
             myFTC2.SetActive(false);
         }
+
+        if (chickRespawn >= 0) chickRespawn -= Time.deltaTime;
+        if (chickRespawn < 0 && !chicklive) myMO.myChicken.SetActive(true);
+            
     }
 }
