@@ -5532,6 +5532,7 @@ MonoBehaviour:
   myFTC1: {fileID: 768980776}
   myFTC2: {fileID: 319433709}
   myMO: {fileID: 1899918669}
+  chickRespawn: 0
 --- !u!4 &1244943220
 Transform:
   m_ObjectHideFlags: 0
@@ -13423,7 +13424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8230bea63c563864fb1929921e51e0b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodSplat: {fileID: 9219578356075885194, guid: 9ede50a5a6538ad409210e80df6a6e5e, type: 3}
+  bloodSplat: {fileID: 4766095639271237258, guid: 8dc667c2b13cb56439aa17b234657a64, type: 3}
   myGM: {fileID: 1244943219}
 --- !u!1 &7791985929050485374
 GameObject:

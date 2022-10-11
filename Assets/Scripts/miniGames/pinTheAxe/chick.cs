@@ -9,6 +9,7 @@ public class chick : MonoBehaviour
     public GameObject bloodSplat;
     public pinTheAxeController myGM;
 
+
     float deathTime = 3;
 
     // Start is called before the first frame update
@@ -28,7 +29,8 @@ public class chick : MonoBehaviour
     {
         if (collision.gameObject.tag == "Hammer")
         {
-            Instantiate(bloodSplat, transform.position, Quaternion.identity);
+            var feathers = Instantiate(bloodSplat, transform.position, Quaternion.identity);
+            Destroy(feathers,5);
             myGM.chickRespawn = deathTime;
             gameObject.SetActive(false);
         }
