@@ -41,7 +41,7 @@ public class bigBossGnot : MonoBehaviour
     private static readonly int Running = Animator.StringToHash("running");
     private static readonly int Property = Animator.StringToHash("throw");
     private static readonly int Dance = Animator.StringToHash("dance");
-    private static readonly int Hitpoints1 = Animator.StringToHash("hitpoints");
+    private static readonly int Dead = Animator.StringToHash("dead");
 
     private _Settings mySettings;
 
@@ -131,10 +131,14 @@ public class bigBossGnot : MonoBehaviour
             if (mySettings) mySettings.jotunsBashed++;
             mainGC.gameStage = 4;
             mainGC.gamestageCountDown = 30f;
+            mainGC.fxApplause.Play();
+            reeling = true;
+            mainGC.hammerGameObject.SetActive(false);
             //SceneManager.LoadScene(0);
             //mainGC.uiVinder.SetActive(true);
+            myAnim.SetBool(Dead, true);
         }
-        myAnim.SetFloat(Hitpoints1, Hitpoints);
+
     }
 
     // Start is called before the first frame update

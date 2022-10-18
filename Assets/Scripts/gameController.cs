@@ -180,7 +180,7 @@ public class gameController : MonoBehaviour
                     uiTimeGold.SetActive(false);
                     uiTimeSilver.SetActive(true);
                     //hammerGameObject.SetActive(false);
-                    fxApplause.Play();
+                    fxHorn.Play();
                     //SceneManager.LoadScene(0);
                     bigBossScript.gameObject.SetActive(false);
                     hammerGameObject.SetActive(false);
