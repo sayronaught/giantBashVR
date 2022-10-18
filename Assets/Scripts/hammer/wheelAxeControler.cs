@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class wheelAxeControler : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class wheelAxeControler : MonoBehaviour
     public GameObject fireballPrefab;
     public Transform axeposition;
 
-    public TextMesh Axecounter;
+    public TextMeshProUGUI Axecounter;
     public int Axes = 0;
 
     public bool spinning = false;

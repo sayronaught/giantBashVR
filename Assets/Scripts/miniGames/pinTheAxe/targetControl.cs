@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class targetControl : MonoBehaviour
 {
@@ -14,11 +15,14 @@ public class targetControl : MonoBehaviour
     public float rangeReset;
     public bool rangeChange;
     public bool beenHit = false;
+
+    bool donePlaying = false;
+    private float randomSpeed = 0;
+
+    public GameObject mySpin;
     public GameObject bloodSplat;
     public AudioSource resultCheer;
-    public bool donePlaying = false;
-
-    private float randomSpeed = 0;
+    public TextMeshProUGUI stageCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +62,7 @@ public class targetControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (stage > 0) on();
+        if (stage != 0 && stage != 6) on();
         if (stage == 1) stage1();
         if (stage == 2) stage2();
         if (stage == 3) stage3();
@@ -76,6 +80,11 @@ public class targetControl : MonoBehaviour
         if (difficulty == 3) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 1.5f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, transform.position.z), Time.deltaTime);
         if (difficulty == 4) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 2f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 2), Time.deltaTime);
         if (difficulty == 5) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
+        if (difficulty == 6)
+        {
+            transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
+
+        }
     }
     void stage1()
     {
@@ -99,6 +108,7 @@ public class targetControl : MonoBehaviour
     }
     void stage5()
     {
+        if (!donePlaying) donePlaying = true;
         if (rangeChange == true)
         {
             rotationDirection = Random.Range(-2f, 2f);
@@ -119,7 +129,8 @@ public class targetControl : MonoBehaviour
         rangeTimer -= Time.deltaTime;
         if (rangeTimer <= 0)
         {
-            rangeTimer = rangeReset;
+            if (difficulty != 6) rangeTimer = rangeReset;
+            else rangeTimer = Random.Range(0.2f, 1f);
             if (difficulty == 4)
             {
                 randomSpeed = Random.Range(-2f, 2f);

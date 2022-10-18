@@ -9,7 +9,6 @@ public class pinTheAxeController : MonoBehaviour
     public GameObject myFTC1;
     public GameObject myFTC2;
     public mapObj myMO;
-
     public float chickRespawn = 0;
     bool chicklive;
     // Start is called before the first frame update
@@ -21,12 +20,12 @@ public class pinTheAxeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (myTC.difficulty == 5)
+        if (myTC.difficulty == 5 || myTC.difficulty == 7)
         {
             myFTC1.SetActive(true);
             myFTC2.SetActive(true);
         }
-        if (myTC.difficulty != 5)
+        else
         {
             myFTC1.SetActive(false);
             myFTC2.SetActive(false);

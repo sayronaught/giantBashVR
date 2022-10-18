@@ -39,6 +39,7 @@ public class targetColider : MonoBehaviour
                 myBC.enabled = false;
                 if (transform.childCount > 0) child.SetActive(false);
                 if (!falseTarget) mytc.stage += 1;
+                if (mytc.stageCounter) mytc.stageCounter.text = ("stage" + mytc.stage.ToString());
 
 
             }
