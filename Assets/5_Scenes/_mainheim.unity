@@ -17684,122 +17684,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8944975004946842303, guid: 0854736b03b119a4f9c740b4568c8867, type: 3}
---- !u!1 &2079409224
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2079409226}
-  - component: {fileID: 2079409225}
-  m_Layer: 0
-  m_Name: _SettingsPermanentObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2079409225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079409224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a40b3033bfc064a9f844d0eae510c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  haveGfxCard: 0
-  masterMixer: {fileID: 24100000, guid: 475660a74f7878049aa8274bb6d33096, type: 2}
-  currentHammerSkin: {fileID: 3239202929387199463, guid: 5e99f9b766ac8f345b30033eb1aa0408, type: 3}
-  boughtSkins:
-  - {fileID: 3239202929387199463, guid: 5e99f9b766ac8f345b30033eb1aa0408, type: 3}
-  allSkinsForStore:
-  - {fileID: 3239202929387199463, guid: 5e99f9b766ac8f345b30033eb1aa0408, type: 3}
-  - {fileID: 8027894555136910231, guid: 295030dabe073e147b377febfb15756b, type: 3}
-  - {fileID: 8027894555136910231, guid: 418b5ff4c7168a5478ff935d2c44a979, type: 3}
-  - {fileID: 4039667278467569284, guid: d850ea2608cab2f419043142973484a0, type: 3}
-  - {fileID: 3750489498576625195, guid: d0dc7471821d10548924985000fce4b4, type: 3}
-  - {fileID: 8027894555136910231, guid: 4c565fa8c19491d4090d6818ab692d9a, type: 3}
-  - {fileID: 5662477219764736397, guid: f6a1fe8b6b33dd640a7d16b4f1c734f6, type: 3}
-  - {fileID: 2566488810249169100, guid: b49d2ddcdd1c5f84ea838dfd05c9c16a, type: 3}
-  - {fileID: 6916658683132103462, guid: 3651d36964820c64da1883efe423aa9b, type: 3}
-  - {fileID: 6434207374901134119, guid: 019404e5185fcf8459b97f0aeaf31575, type: 3}
-  - {fileID: 2163436550943635908, guid: da2c56aad6018f74683de7d0ab876a2f, type: 3}
-  gfxSkinsForStore: []
-  worlds:
-  - loadOrder: 1
-    title: Trainingheim
-    story: "Learn to \nthrow a \nhammer"
-    videoclip: {fileID: 32900000, guid: 01bf4202efa3d6a4b880d3c00e04ef62, type: 3}
-  - loadOrder: 2
-    title: Jotunnheim
-    story: 'fight
-
-      enemies
-
-      and bad
-
-      hygeine'
-    videoclip: {fileID: 32900000, guid: 1ec40dd473192d24082730b1ca60c9ad, type: 3}
-  - loadOrder: 3
-    title: Mountainheim
-    story: 'fight
-
-      enemies
-
-      and bad
-
-      hygeine'
-    videoclip: {fileID: 32900000, guid: 1ec40dd473192d24082730b1ca60c9ad, type: 3}
-  - loadOrder: 4
-    title: Circusheim
-    story: 'fight
-
-      enemies
-
-      and bad
-
-      hygeine'
-    videoclip: {fileID: 32900000, guid: 1ec40dd473192d24082730b1ca60c9ad, type: 3}
-  currentWorld: 0
-  highScores:
-  - highestScore: 150
-    highestScoreworld: circusheim
-    damageDone: 700
-    damageTaken: 0
-    damageHighest: 0
-    jotunsBashed: 1200
-    timePlayed: 0
-    timeStarted: 0
-  storedPoints: 300
-  highestScore: 0
-  highestScoreworld: None
-  damageDone: 0
-  damageTaken: 0
-  damageHighest: 0
-  jotunsBashed: 0
-  gamesStarted: 0
-  secondsPlayed: 0
---- !u!4 &2079409226
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079409224}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2082256528
 GameObject:
   m_ObjectHideFlags: 0
@@ -18434,6 +18318,63 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1820916081647736515
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173323, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_Name
+      value: _SettingsPermanentObject
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
 --- !u!33 &3469287837532357112
 MeshFilter:
   m_ObjectHideFlags: 0

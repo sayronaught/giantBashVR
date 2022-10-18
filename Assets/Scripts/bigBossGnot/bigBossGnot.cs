@@ -104,6 +104,7 @@ public class bigBossGnot : MonoBehaviour
     }
     public void takeDamage(float damage)
     {
+        if (Hitpoints <= 0f) return;
         Hitpoints -= damage;
         hitPointBar.GetComponent<RectTransform>().sizeDelta = new Vector2(Hitpoints, 65);
         if (damage > 30f)
@@ -128,7 +129,9 @@ public class bigBossGnot : MonoBehaviour
         if ( Hitpoints <= 0f )
         {
             if (mySettings) mySettings.jotunsBashed++;
-            SceneManager.LoadScene(0);
+            mainGC.gameStage = 4;
+            mainGC.gamestageCountDown = 30f;
+            //SceneManager.LoadScene(0);
             //mainGC.uiVinder.SetActive(true);
         }
         myAnim.SetFloat(Hitpoints1, Hitpoints);
@@ -146,6 +149,7 @@ public class bigBossGnot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Hitpoints <= 0f) return;
         if ( flyingProjectile )
         {
             switch (bossStage)

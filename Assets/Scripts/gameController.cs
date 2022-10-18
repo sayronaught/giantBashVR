@@ -30,8 +30,6 @@ public class gameController : MonoBehaviour
     public Text debugText;
     public bigBossGnot bigBossScript;
     public uiEffects uiEffScript;
-    public GameObject uiVinder;
-    public GameObject uiTaber;
 
     public GameObject prefabGate;
     public GameObject[] prefabTargets;
@@ -183,7 +181,11 @@ public class gameController : MonoBehaviour
                     uiTimeSilver.SetActive(true);
                     //hammerGameObject.SetActive(false);
                     fxApplause.Play();
-                    uiTaber.SetActive(true);
+                    //SceneManager.LoadScene(0);
+                    bigBossScript.gameObject.SetActive(false);
+                    hammerGameObject.SetActive(false);
+                    gamestageCountDown = 30f;
+                    gameStage = 4;
                 }
                 break;
             case 4: // post score
