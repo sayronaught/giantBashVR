@@ -18369,6 +18369,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173322, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: allSkinsForStore.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173322, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: allSkinsForStore.Array.data[11]
+      value: 
+      objectReference: {fileID: 1831553276902406517, guid: 4a5f801bdfe12c947a9ef981cfb9c02a, type: 3}
     - target: {fileID: 1820916081030173323, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
       propertyPath: m_Name
       value: _SettingsPermanentObject
