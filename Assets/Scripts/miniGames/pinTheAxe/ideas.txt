@@ -1,0 +1,5 @@
+change bloodslapt effect on dummy targets to magic
+add laughter sound effect to dummy targets 
+add swearing, screaming or clapping sound effect to target
+
+add diff where +1 stage = +1 diff

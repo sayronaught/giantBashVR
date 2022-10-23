@@ -10,7 +10,8 @@ public class targetControl : MonoBehaviour
     public float rotationDirection = 0f;
     public float rotationSpeed = 100f;
     public float rotationValue;
-    public Vector3 rotation;
+    private Vector3 rotation;
+    private Vector3 rotationPoint;
     public float rangeTimer;
     public float rangeReset;
     public bool rangeChange;
@@ -83,7 +84,8 @@ public class targetControl : MonoBehaviour
         if (difficulty == 6)
         {
             transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
-
+            rotationPoint = new Vector3(0f, rotationValue, 0);
+            mySpin.transform.rotation = Quaternion.Euler(rotationPoint);
         }
     }
     void stage1()
