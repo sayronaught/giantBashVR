@@ -42,7 +42,7 @@ public class subTargetControl : MonoBehaviour
         }
 
 
-        transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * xTimer + offsetTimer) * xWidth, 3 + Mathf.Cos(Time.fixedTime * yTimer + offsetTimer) * yWidth, myTC.transform.position.z-distanceFromTarget), Time.deltaTime);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * xTimer + offsetTimer) * xWidth, 3 + Mathf.Cos(Time.fixedTime * yTimer + offsetTimer) * yWidth, myTC.transform.localPosition.z-distanceFromTarget), Time.deltaTime);
       
         if(randomSpeed == true)
         {

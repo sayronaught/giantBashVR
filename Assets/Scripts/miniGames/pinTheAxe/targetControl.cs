@@ -58,6 +58,12 @@ public class targetControl : MonoBehaviour
             rotationSpeed = 350f;
             transform.position = new Vector3(transform.position.x, transform.position.y, 14);
         }
+        if (difficulty == 6)
+        {
+            rangeReset = 0.3f;
+            rotationSpeed = 350f;
+            transform.position = new Vector3(transform.position.x, transform.position.y, 14);
+        }
     }
 
     // Update is called once per frame
@@ -76,15 +82,15 @@ public class targetControl : MonoBehaviour
     {
         rotationValue += rotationDirection * rotationSpeed * Time.deltaTime;
         rotation = new Vector3(0f, 180f , rotationValue);
-        transform.rotation = Quaternion.Euler(rotation);
-        if (difficulty == 2) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime) * 2f, transform.position.y, transform.position.z), Time.deltaTime);
-        if (difficulty == 3) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 1.5f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, transform.position.z), Time.deltaTime);
-        if (difficulty == 4) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 2f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 2), Time.deltaTime);
-        if (difficulty == 5) transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
+        transform.localRotation = Quaternion.Euler(rotation);
+        if (difficulty == 2) transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime) * 2f, transform.position.y, transform.position.z), Time.deltaTime);
+        if (difficulty == 3) transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * 1.5f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, transform.position.z), Time.deltaTime);
+        if (difficulty == 4) transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * 2f) * 3f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.4f, 10 + Mathf.Sin(Time.fixedTime * randomSpeed) * 2), Time.deltaTime);
+        if (difficulty == 5) transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
         if (difficulty == 6)
         {
-            transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
-            rotationPoint = new Vector3(0f, rotationValue, 0);
+            transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
+            rotationPoint = new Vector3(0f, rotationValue * 0.1f, 0);
             mySpin.transform.rotation = Quaternion.Euler(rotationPoint);
         }
     }
