@@ -23,7 +23,7 @@ public class targetControl : MonoBehaviour
     public GameObject mySpin;
     public GameObject bloodSplat;
     public AudioSource resultCheer;
-    public TextMeshProUGUI stageCounter;
+    public TMP_Text stageCounter;
 
     // Start is called before the first frame update
     void Start()
