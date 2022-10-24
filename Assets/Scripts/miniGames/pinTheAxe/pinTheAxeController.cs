@@ -11,6 +11,8 @@ public class pinTheAxeController : MonoBehaviour
     public mapObj myMO;
     public float chickRespawn = 0;
     bool chicklive;
+    public GameObject debugSpinPoint;
+    public bool DegDebug90 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +36,15 @@ public class pinTheAxeController : MonoBehaviour
         if (chickRespawn >= 0) chickRespawn -= Time.deltaTime;
         if (chickRespawn < 0 && !chicklive) myMO.myChicken.SetActive(true);
             
+        if (myTC.difficulty == 6 && !DegDebug90)
+        {
+            debugSpinPoint.transform.Rotate(Vector3.forward * 90);
+            DegDebug90 = true;
+        }
+        if (myTC.difficulty != 6 && DegDebug90)
+        {
+            debugSpinPoint.transform.Rotate(Vector3.forward * -90);
+            DegDebug90 = false;
+        }
     }
 }

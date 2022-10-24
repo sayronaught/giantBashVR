@@ -22,6 +22,7 @@ public class targetControl : MonoBehaviour
 
     public GameObject mySpin;
     public GameObject bloodSplat;
+    public GameObject magicSplat;
     public AudioSource resultCheer;
     public TMP_Text stageCounter;
 
@@ -62,7 +63,7 @@ public class targetControl : MonoBehaviour
         {
             rangeReset = 0.3f;
             rotationSpeed = 350f;
-            transform.position = new Vector3(transform.position.x, transform.position.y, 14);
+            transform.position = new Vector3(transform.position.x, transform.position.y, 7);
         }
     }
 

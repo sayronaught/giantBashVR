@@ -5,7 +5,7 @@ using UnityEngine;
 public class falseTargetController : MonoBehaviour
 {
     public targetControl myTC;
-    //public GameObject bloodSplat;
+    
 
     public float rotationDirection = 0f;
     public float rotationSpeed = 100f;

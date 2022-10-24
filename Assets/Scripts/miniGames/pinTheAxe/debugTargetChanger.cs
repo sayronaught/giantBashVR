@@ -32,6 +32,62 @@ public class debugTargetChanger : MonoBehaviour
             myHC.Axes = -1;
             myFTC.reset = true;
             myFTC2.reset = true;
+            if (myTC.difficulty == 1)
+            {
+                myTC.difficulty = 1;
+                myTC.rangeReset = 1.7f;
+                myTC.rotationSpeed = 100f;
+                myTC.transform.position = new Vector3(0, 3, 3);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            if (myTC.difficulty == 2)
+            {
+                myTC.difficulty = 2;
+                myTC.rangeReset = 1.2f;
+                myTC.rotationSpeed = 175f;
+                myTC.transform.position = new Vector3(0, 3, 5);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            if (myTC.difficulty == 3)
+            {
+                myTC.difficulty = 3;
+                myTC.rangeReset = 0.7f;
+                myTC.rotationSpeed = 250f;
+                myTC.transform.position = new Vector3(0, 3, 7);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            if (myTC.difficulty == 4)
+            {
+                myTC.difficulty = 4;
+                myTC.rangeReset = 0.4f;
+                myTC.rotationSpeed = 350f;
+                myTC.transform.position = new Vector3(0, 3, 10);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            if (myTC.difficulty == 5)
+            {
+                myTC.stage = reset;
+                myHC.Axes = -1;
+                myTC.difficulty = 5;
+                myTC.rangeReset = 0.3f;
+                myTC.rotationSpeed = 350f;
+                myTC.transform.position = new Vector3(0, 3, 14);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+                myFTC.reset = true;
+                myFTC2.reset = true;
+            }
+            if (myTC.difficulty == 6)
+            {
+                myTC.stage = reset;
+                myHC.Axes = -1;
+                myTC.difficulty = 6;
+                myTC.rangeReset = 0.3f;
+                myTC.rotationSpeed = 350f;
+                myTC.transform.position = new Vector3(0, 3, 14);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+                myFTC.reset = true;
+                myFTC2.reset = true;
+            }
         }
         if (difficultyBool)
         {
@@ -41,6 +97,7 @@ public class debugTargetChanger : MonoBehaviour
                 myTC.rangeReset = 1.7f;
                 myTC.rotationSpeed = 100f;
                 myTC.transform.position = new Vector3(0,3 , 3);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
             if (difficulty == 2)
             {
@@ -48,6 +105,7 @@ public class debugTargetChanger : MonoBehaviour
                 myTC.rangeReset = 1.2f;
                 myTC.rotationSpeed = 175f;
                 myTC.transform.position = new Vector3(0,3, 5);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
             if (difficulty == 3)
             {
@@ -55,6 +113,7 @@ public class debugTargetChanger : MonoBehaviour
                 myTC.rangeReset = 0.7f;
                 myTC.rotationSpeed = 250f;
                 myTC.transform.position = new Vector3(0 , 3 , 7);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
             if (difficulty == 4)
             {
@@ -62,6 +121,7 @@ public class debugTargetChanger : MonoBehaviour
                 myTC.rangeReset = 0.4f;
                 myTC.rotationSpeed = 350f;
                 myTC.transform.position = new Vector3(0, 3, 10);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
             if (difficulty == 5)
             {
@@ -71,6 +131,7 @@ public class debugTargetChanger : MonoBehaviour
                 myTC.rangeReset = 0.3f;
                 myTC.rotationSpeed = 350f;
                 myTC.transform.position = new Vector3(0, 3, 14);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
                 myFTC.reset = true;
                 myFTC2.reset = true;
             }
@@ -82,6 +143,7 @@ public class debugTargetChanger : MonoBehaviour
                 myTC.rangeReset = 0.3f;
                 myTC.rotationSpeed = 350f;
                 myTC.transform.position = new Vector3(0, 3, 14);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
                 myFTC.reset = true;
                 myFTC2.reset = true;
             }

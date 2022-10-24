@@ -11,7 +11,7 @@ public class wheelAxeControler : MonoBehaviour
     public GameObject fireballPrefab;
     public Transform axeposition;
 
-    public TextMeshProUGUI Axecounter;
+    public TMP_Text Axecounter;
     public int Axes = 0;
 
     public bool spinning = false;
