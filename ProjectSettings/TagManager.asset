@@ -9,6 +9,7 @@ TagManager:
   - PowerUp
   - Enemy
   - WheelTarget
+  - falseTarget
   layers:
   - Default
   - TransparentFX
