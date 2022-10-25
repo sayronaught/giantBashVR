@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 52225718}
   m_Layer: 0
   m_Name: targetCollider
-  m_TagString: WheelTarget
+  m_TagString: falseTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1249,7 +1249,7 @@ GameObject:
   - component: {fileID: 165320256}
   m_Layer: 0
   m_Name: debug diff 2
-  m_TagString: WheelTarget
+  m_TagString: falseTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1366,7 +1366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8449449876836838075, guid: faf66beb99eac66489820a2c9c0f0b41, type: 3}
       propertyPath: m_TagString
-      value: WheelTarget
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 9081976257836724225, guid: faf66beb99eac66489820a2c9c0f0b41, type: 3}
       propertyPath: m_RootOrder
@@ -1948,7 +1948,7 @@ GameObject:
   - component: {fileID: 296926674}
   m_Layer: 0
   m_Name: debug reset
-  m_TagString: WheelTarget
+  m_TagString: falseTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2561,7 +2561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2622133468838067506, guid: 9e753ad15ea30454388fa6ebe06e1860, type: 3}
       propertyPath: m_TagString
-      value: WheelTarget
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 3398072381719259016, guid: 9e753ad15ea30454388fa6ebe06e1860, type: 3}
       propertyPath: m_RootOrder
@@ -3340,7 +3340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: da1c71fffdd1c6c4493ed986a9a33b90, type: 3}
       propertyPath: m_TagString
-      value: WheelTarget
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da1c71fffdd1c6c4493ed986a9a33b90, type: 3}
@@ -3420,7 +3420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1909344676591073113, guid: eec2d7c5624491b4aa74c58ea4cefcc9, type: 3}
       propertyPath: m_TagString
-      value: WheelTarget
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eec2d7c5624491b4aa74c58ea4cefcc9, type: 3}
@@ -3437,7 +3437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2622133468838067506, guid: 9e753ad15ea30454388fa6ebe06e1860, type: 3}
       propertyPath: m_TagString
-      value: WheelTarget
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 3398072381719259016, guid: 9e753ad15ea30454388fa6ebe06e1860, type: 3}
       propertyPath: m_RootOrder
@@ -3666,7 +3666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: da1c71fffdd1c6c4493ed986a9a33b90, type: 3}
       propertyPath: m_TagString
-      value: WheelTarget
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da1c71fffdd1c6c4493ed986a9a33b90, type: 3}
@@ -3898,7 +3898,7 @@ GameObject:
   - component: {fileID: 790317424}
   m_Layer: 0
   m_Name: axe killzone
-  m_TagString: WheelTarget
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4143,7 +4143,7 @@ GameObject:
   - component: {fileID: 807214684}
   m_Layer: 0
   m_Name: Mountains_1
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4227,7 +4227,7 @@ GameObject:
   - component: {fileID: 814542388}
   m_Layer: 0
   m_Name: Mountains_0
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5228,6 +5228,134 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &918021538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918021539}
+  - component: {fileID: 918021540}
+  m_Layer: 0
+  m_Name: miss sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &918021539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918021538}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1838309687879815015}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &918021540
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918021538}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 71d04b3ee5a86044b87f13eca06b8b0d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &945033667
 GameObject:
   m_ObjectHideFlags: 0
@@ -5476,7 +5604,7 @@ GameObject:
   - component: {fileID: 974675836}
   m_Layer: 0
   m_Name: targetCollider
-  m_TagString: WheelTarget
+  m_TagString: falseTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6274,7 +6402,7 @@ GameObject:
   - component: {fileID: 1309792248}
   m_Layer: 0
   m_Name: debug diff 1
-  m_TagString: WheelTarget
+  m_TagString: falseTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7020,7 +7148,7 @@ GameObject:
   - component: {fileID: 1546623685}
   m_Layer: 0
   m_Name: debug diff 6
-  m_TagString: WheelTarget
+  m_TagString: falseTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7297,7 +7425,7 @@ GameObject:
   - component: {fileID: 1594098329}
   m_Layer: 0
   m_Name: debug diff 3
-  m_TagString: WheelTarget
+  m_TagString: falseTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7516,7 +7644,7 @@ GameObject:
   - component: {fileID: 1670093269}
   m_Layer: 0
   m_Name: debug diff 5
-  m_TagString: WheelTarget
+  m_TagString: falseTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7946,7 +8074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8449449876836838075, guid: faf66beb99eac66489820a2c9c0f0b41, type: 3}
       propertyPath: m_TagString
-      value: WheelTarget
+      value: Terrain
       objectReference: {fileID: 0}
     - target: {fileID: 9081976257836724225, guid: faf66beb99eac66489820a2c9c0f0b41, type: 3}
       propertyPath: m_RootOrder
@@ -8134,7 +8262,7 @@ GameObject:
   - component: {fileID: 1786274539}
   m_Layer: 0
   m_Name: Terrain (1)
-  m_TagString: WheelTarget
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -8552,7 +8680,7 @@ GameObject:
   - component: {fileID: 1892734170}
   m_Layer: 0
   m_Name: debug diff 4
-  m_TagString: WheelTarget
+  m_TagString: falseTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9071,6 +9199,10 @@ PrefabInstance:
     - target: {fileID: 8953821837524671785, guid: fb84b2cd81b02974a99be30898d9fbf3, type: 3}
       propertyPath: m_Name
       value: shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953821837524671785, guid: fb84b2cd81b02974a99be30898d9fbf3, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb84b2cd81b02974a99be30898d9fbf3, type: 3}
@@ -9658,6 +9790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footlong_10
       objectReference: {fileID: 0}
+    - target: {fileID: 6434207374901134119, guid: 019404e5185fcf8459b97f0aeaf31575, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6434207374901134117, guid: 019404e5185fcf8459b97f0aeaf31575, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 019404e5185fcf8459b97f0aeaf31575, type: 3}
@@ -9850,6 +9986,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pine Tree 05
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e0f0416e17c392d48b79f7bb784d4e85, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f0416e17c392d48b79f7bb784d4e85, type: 3}
 --- !u!1001 &2145012685
@@ -9906,6 +10046,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d6a91e3f9e3069a44b7bf25ced6d9d76, type: 3}
       propertyPath: m_Name
       value: Pine Tree 06
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d6a91e3f9e3069a44b7bf25ced6d9d76, type: 3}
+      propertyPath: m_TagString
+      value: Terrain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6a91e3f9e3069a44b7bf25ced6d9d76, type: 3}
@@ -10199,7 +10343,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 445421001120290412, guid: 83df9ffb24591014da0a2ac20bb84779, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 445421001120290412, guid: 83df9ffb24591014da0a2ac20bb84779, type: 3}
       propertyPath: m_LocalScale.x
@@ -10782,7 +10926,11 @@ MonoBehaviour:
   Axes: 0
   spinning: 0
   holding: 0
+<<<<<<< Updated upstream
   myMiss: {fileID: 0}
+=======
+  myMiss: {fileID: 918021540}
+>>>>>>> Stashed changes
 --- !u!82 &1353661847656207839
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11030,6 +11178,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 918021539}
   - {fileID: 26017176343882145}
   m_Father: {fileID: 1244943220}
   m_RootOrder: 2
@@ -12835,7 +12984,6 @@ GameObject:
   - component: {fileID: 8636537787215535199}
   - component: {fileID: 5782571421757122709}
   - component: {fileID: 5422103475566086465}
-  - component: {fileID: 8636537787215535200}
   m_Layer: 0
   m_Name: Small Jotunn Target
   m_TagString: Untagged
@@ -13793,7 +13941,7 @@ GameObject:
   - component: {fileID: 7790456811756790678}
   m_Layer: 0
   m_Name: Chicken
-  m_TagString: WheelTarget
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14104,7 +14252,7 @@ GameObject:
   - component: {fileID: 8892415080161801551}
   m_Layer: 0
   m_Name: "J\xE6tteFarBoss"
-  m_TagString: WheelTarget
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14291,102 +14439,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5422103475566086464}
   m_Mesh: {fileID: -1197486658628290157, guid: a5a0339c0959e2941b714175ee4a5a47, type: 3}
---- !u!82 &8636537787215535200
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5422103475566086464}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 71d04b3ee5a86044b87f13eca06b8b0d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &8666274104450229828
 GameObject:
   m_ObjectHideFlags: 0
