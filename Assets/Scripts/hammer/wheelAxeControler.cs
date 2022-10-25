@@ -20,6 +20,7 @@ public class wheelAxeControler : MonoBehaviour
     private hammerControllerEndlessMode myHC;
     private Rigidbody myRB;
     private AudioSource myAS;
+    public AudioSource myMiss;
     private BoxCollider myBC;
 
     // Start is called before the first frame update
@@ -101,6 +102,39 @@ public class wheelAxeControler : MonoBehaviour
         spinning = false;
         myAS.volume = 0f;
         if (other.gameObject.tag == "WheelTarget")
+        {
+            var axeshadow = Instantiate(axeprefab, transform.position, transform.rotation);
+            transform.position = axeposition.position;
+            transform.rotation = axeposition.rotation;
+            if (other.transform.name == "targetCollider")
+                axeshadow.transform.SetParent(other.transform.parent);
+            else
+                axeshadow.transform.SetParent(other.transform);
+            axeshadow.transform.localScale = new Vector3(5f, 5f, 5f);
+            myRB.velocity = Vector3.zero;
+            myRB.angularVelocity = Vector3.zero;
+            Destroy(axeshadow, 30f);
+            Axes++;
+            Axecounter.text = Axes.ToString();
+            if (!mytc.beenHit) myMiss.Play();
+        }
+        if (other.gameObject.tag == "falseTarget")
+        {
+            var axeshadow = Instantiate(axeprefab, transform.position, transform.rotation);
+            transform.position = axeposition.position;
+            transform.rotation = axeposition.rotation;
+            if (other.transform.name == "targetCollider")
+                axeshadow.transform.SetParent(other.transform.parent);
+            else
+                axeshadow.transform.SetParent(other.transform);
+            axeshadow.transform.localScale = new Vector3(5f, 5f, 5f);
+            myRB.velocity = Vector3.zero;
+            myRB.angularVelocity = Vector3.zero;
+            Destroy(axeshadow, 30f);
+            Axes++;
+            Axecounter.text = Axes.ToString();
+        }
+        if (other.gameObject.tag == "Terrain")
         {
             var axeshadow = Instantiate(axeprefab, transform.position, transform.rotation);
             transform.position = axeposition.position;

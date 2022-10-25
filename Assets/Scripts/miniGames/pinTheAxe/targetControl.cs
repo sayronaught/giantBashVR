@@ -149,7 +149,6 @@ public class targetControl : MonoBehaviour
                 randomSpeed = Random.Range(-4f, 4f);
             }
             rangeChange = true;
-
         }
     }
 }

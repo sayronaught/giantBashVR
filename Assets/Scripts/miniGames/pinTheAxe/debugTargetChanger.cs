@@ -117,7 +117,8 @@ public class debugTargetChanger : MonoBehaviour
                 myTC.rangeReset = 0.7f;
                 myTC.rotationSpeed = 250f;
                 myTC.transform.position = new Vector3(0 , 3 , 7);
-                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0); myTC.transform.rotation = Quaternion.Euler(0, 180, 0);
+                myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0); 
+                myTC.transform.rotation = Quaternion.Euler(0, 180, 0);
                 myTC.rotationValue = 0;
             }
             if (difficulty == 4)

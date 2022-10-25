@@ -9,9 +9,12 @@ public class targetColider : MonoBehaviour
     private BoxCollider myBC;
     public GameObject child;
     public bool falseTarget;
+    private AudioSource myAS;
+
     // Start is called before the first frame update
     void Start()
     {
+        myAS = transform.parent.GetComponent<AudioSource>();
         mytc = GameObject.Find("Small Jotunn Target").GetComponent<targetControl>();
         myMR = GetComponent<MeshRenderer>();
         myBC = GetComponent<BoxCollider>();
@@ -40,6 +43,7 @@ public class targetColider : MonoBehaviour
                 myBC.enabled = false;
                 if (transform.childCount > 0) child.SetActive(false);
                 if (!falseTarget) mytc.stage += 1;
+                if (falseTarget && myAS) myAS.Play();
                 if (mytc.stageCounter) mytc.stageCounter.text = ("stage" + mytc.stage.ToString());
 
 
