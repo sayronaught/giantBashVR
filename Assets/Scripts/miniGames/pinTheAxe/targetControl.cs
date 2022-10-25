@@ -71,13 +71,41 @@ public class targetControl : MonoBehaviour
     void Update()
     {
         if (stage != 0 && stage != 6) on();
+        switch( stage )
+        {
+            case 1:
+                stage1();
+                break;
+            case 2:
+                stage2();
+                break;
+            case 3:
+                stage3();
+                break;
+            case 4:
+                stage4();
+                rangeUpdate();
+                break;
+            case 5:
+                stage5();
+                rangeUpdate();
+                break;
+            case 6:
+                stage6();
+                break;
+            default:
+                // if everything misses, typically an error message
+                break;
+        }
+        /*
         if (stage == 1) stage1();
         if (stage == 2) stage2();
         if (stage == 3) stage3();
         if (stage == 4) stage4();
         if (stage == 5) stage5();
         if (stage == 6) stage6();
-        if (stage == 4 || stage == 5) rangeUpdate();
+        */
+        //if (stage == 4 || stage == 5) rangeUpdate();
     }
     void on()
     {
