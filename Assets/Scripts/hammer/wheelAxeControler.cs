@@ -125,5 +125,20 @@ public class wheelAxeControler : MonoBehaviour
             Axes++;
             Axecounter.text = Axes.ToString();
         }
+        if (other.gameObject.tag == "debug")
+        {
+            var axeshadow = Instantiate(axeprefab, transform.position, transform.rotation);
+            transform.position = axeposition.position;
+            transform.rotation = axeposition.rotation;
+            if (other.transform.name == "targetCollider")
+                axeshadow.transform.SetParent(other.transform.parent);
+            else
+                axeshadow.transform.SetParent(other.transform);
+            axeshadow.transform.localScale = new Vector3(5f, 5f, 5f);
+            myRB.velocity = Vector3.zero;
+            myRB.angularVelocity = Vector3.zero;
+            Destroy(axeshadow, 30f);
+
+        }
     }
 }

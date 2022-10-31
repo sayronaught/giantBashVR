@@ -87,7 +87,8 @@ public class debugTargetChanger : MonoBehaviour
                 myFTC.reset = true;
                 myFTC2.reset = true;
             }
-            myHC.Axes = -1;
+            myHC.Axes = 0;
+            myHC.Axecounter.text = myHC.Axes.ToString();
         }
         if (difficultyBool)
         {
@@ -143,7 +144,8 @@ public class debugTargetChanger : MonoBehaviour
                 myTC.rotationValue = 0;
                 myFTC.reset = true;
                 myFTC2.reset = true;
-                myHC.Axes = -1;
+                myHC.Axes = 0;
+                myHC.Axecounter.text = myHC.Axes.ToString();
 
             }
             if (difficulty == 6)
@@ -158,7 +160,8 @@ public class debugTargetChanger : MonoBehaviour
                 myTC.rotationValue = 0;
                 myFTC.reset = true;
                 myFTC2.reset = true;
-                myHC.Axes = -1;
+                myHC.Axes = 0;
+                myHC.Axecounter.text = myHC.Axes.ToString();
             }
         }
     }

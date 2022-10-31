@@ -1249,7 +1249,7 @@ GameObject:
   - component: {fileID: 165320256}
   m_Layer: 0
   m_Name: debug diff 2
-  m_TagString: falseTarget
+  m_TagString: debug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1948,7 +1948,7 @@ GameObject:
   - component: {fileID: 296926674}
   m_Layer: 0
   m_Name: debug reset
-  m_TagString: falseTarget
+  m_TagString: debug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6229,7 +6229,7 @@ GameObject:
   - component: {fileID: 1309792248}
   m_Layer: 0
   m_Name: debug diff 1
-  m_TagString: falseTarget
+  m_TagString: debug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6975,7 +6975,7 @@ GameObject:
   - component: {fileID: 1546623685}
   m_Layer: 0
   m_Name: debug diff 6
-  m_TagString: falseTarget
+  m_TagString: debug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7252,7 +7252,7 @@ GameObject:
   - component: {fileID: 1594098329}
   m_Layer: 0
   m_Name: debug diff 3
-  m_TagString: falseTarget
+  m_TagString: debug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7471,7 +7471,7 @@ GameObject:
   - component: {fileID: 1670093269}
   m_Layer: 0
   m_Name: debug diff 5
-  m_TagString: falseTarget
+  m_TagString: debug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8507,7 +8507,7 @@ GameObject:
   - component: {fileID: 1892734170}
   m_Layer: 0
   m_Name: debug diff 4
-  m_TagString: falseTarget
+  m_TagString: debug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - WheelTarget
   - falseTarget
+  - debug
   layers:
   - Default
   - TransparentFX
