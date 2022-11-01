@@ -1,0 +1,233 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
+
+public class hammerControlerCircusMode : MonoBehaviour
+{
+    public float statsThrowForce = 3f;
+    public float statsThrowCharge = 2f;
+    public float statsMaxCharge = 9f;
+    public float statsChargeSpeed = 3f;
+
+    public GameObject leftHand;
+    public GameObject rightHand;
+    public Animator leftAnim;
+    public Animator rightAnim;
+    public AudioSource leftCatch;
+    public AudioSource rightCatch;
+    public GameObject hammer;
+    //public gameController mainGC;
+
+    public XRController controllerLeft;
+    public XRController controllerRight;
+    public XRRayInteractor interactorLeft;
+    public XRRayInteractor interactorRight;
+    public bool rightPress;
+    public bool leftPress;
+
+    //public Text debugText;
+
+    private float magnetspeed;
+    public float magnetmultiplier = 1.1f;
+    public float magnetminimum = 2f;
+    public bool supercharged = false;
+
+    public List<Vector3> rightHoldPositions;
+
+    public UnityEngine.XR.InputDevice lefty;
+    public UnityEngine.XR.InputDevice righty;
+
+    private Rigidbody hammerRB;
+    private hammerFX hammerFXScript;
+    //private XRGrabInteractable hammerGrabScript;
+    private XrOffsetGrab hammerGrabScript;
+    private XRRayInteractor leftHandRay;
+    private XRRayInteractor rightHandRay;
+    private float updateControllerTimer = 2f;
+    private float distance;
+    private float heldLeft = 0f;
+    private float heldRight = 0f;
+    public float chargeLightning = 0f;
+    private Vector3 inverseTransformDummy;
+
+    // new trigger test
+    List<UnityEngine.XR.InputDevice> leftHandDevices = new List<UnityEngine.XR.InputDevice>();
+    List<UnityEngine.XR.InputDevice> rightHandDevices = new List<UnityEngine.XR.InputDevice>();
+    bool leftTrigger = false;
+    bool rightTrigger = false;
+
+    public void changeLightning(float value)
+    {
+        return;
+    }
+    public bool beingSummoned()
+    {
+        return magnetspeed > magnetminimum;
+    }
+    public bool beingHeld()
+    {
+        return heldLeft > 0f || heldRight > 0f;
+    }
+    public float summonSpeed()
+    {
+        return magnetspeed - magnetminimum;
+    }
+    private void updateController()
+    {
+        //if (Application.isEditor) return;
+        var leftHandDevices = new List<UnityEngine.XR.InputDevice>();
+        var rightHandDevices = new List<UnityEngine.XR.InputDevice>();
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
+        if (leftHandDevices.Count > 0)
+            lefty = leftHandDevices[0];
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
+        if (rightHandDevices.Count > 0)
+            righty = rightHandDevices[0];
+    }
+
+
+    // Start is called before the first frame update
+    private void Start()
+    {
+        controllerLeft = leftHand.GetComponent<XRController>();
+        controllerRight = rightHand.GetComponent<XRController>();
+        interactorLeft = leftHand.GetComponent<XRRayInteractor>();
+        interactorRight = rightHand.GetComponent<XRRayInteractor>();
+        hammerRB = hammer.GetComponent<Rigidbody>();
+        //hammerGrabScript = hammer.GetComponent<XRGrabInteractable>();
+        hammerGrabScript = hammer.GetComponent<XrOffsetGrab>();
+        leftHandRay = leftHand.GetComponent<XRRayInteractor>();
+        rightHandRay = rightHand.GetComponent<XRRayInteractor>();
+        hammerFXScript = hammer.GetComponent<hammerFX>();
+        updateController();
+        rightHoldPositions = new List<Vector3>();
+    }
+    // Update is called once per frame
+    //void Update()
+    private void FixedUpdate()
+    {
+        if (!hammer) return;
+        if (!hammer.activeSelf) return;
+        lefty.IsPressed(InputHelpers.Button.Trigger, out leftPress);
+        righty.IsPressed(InputHelpers.Button.Trigger, out rightPress);
+
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.LeftHand, leftHandDevices);
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
+        if (leftHandDevices.Count > 0)
+        {
+            leftHandDevices[0].TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out leftTrigger);
+        }
+        if (rightHandDevices.Count > 0)
+        {
+            rightHandDevices[0].TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out rightTrigger);
+        }
+
+        inverseTransformDummy = rightHand.transform.InverseTransformPoint(hammer.transform.position);
+
+        if (rightTrigger && heldLeft == 0f)
+        { // press
+            rightAnim.SetBool("summoning", true);
+            distance = Vector3.Distance(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.1f));
+            inverseTransformDummy = rightHand.transform.InverseTransformPoint(hammer.transform.position);
+            if (distance > 0.15f || inverseTransformDummy.z < 0f)
+            {
+                //hammer.transform.position = rightHand.transform.position;
+                hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, rightHand.transform.position + (rightHand.transform.forward * 0.1f), Time.deltaTime * magnetspeed);
+                hammerRB.velocity = Vector3.zero;
+                hammerRB.angularVelocity = Vector3.zero;
+                hammerRB.mass = 1;
+                magnetspeed *= magnetmultiplier;
+            }
+            else
+            {
+                rightAnim.SetBool("grab", true);
+                hammer.transform.position = rightHand.transform.position + (rightHand.transform.up * 0.15f);
+                hammer.transform.rotation = rightHand.transform.rotation;
+                hammer.transform.Rotate(-75, 0, 90);
+                hammerRB.velocity = Vector3.zero;
+                hammerRB.angularVelocity = Vector3.zero;
+                rightHoldPositions.Add(rightHand.transform.position);
+                supercharged = false;
+                if (heldRight == 0f)
+                {
+                    rightHandRay.SendHapticImpulse(1f, 0.2f);
+                    rightCatch.Play();
+                }
+                heldRight += Time.deltaTime * statsChargeSpeed;
+                changeLightning(heldRight);
+                if (heldRight > statsMaxCharge) heldRight = statsMaxCharge;
+                if (heldRight > 0.5f)
+                {
+                    hammerRB.mass = heldRight + 2f;
+                    rightHandRay.SendHapticImpulse(heldRight * 0.2f, 0.1f);
+                }
+                hammerGrabScript.throwVelocityScale = statsThrowForce + heldRight * statsThrowCharge;
+            }
+        }
+        else if (leftTrigger && heldRight == 0f)
+        {
+            leftAnim.SetBool("summoning", true);
+            distance = Vector3.Distance(hammer.transform.position, leftHand.transform.position + (leftHand.transform.forward * 0.10f));
+            inverseTransformDummy = leftHand.transform.InverseTransformPoint(hammer.transform.position);
+            if (distance > 0.25f || inverseTransformDummy.z < 0f)
+            {
+                //hammer.transform.position = rightHand.transform.position;
+                hammer.transform.position = Vector3.MoveTowards(hammer.transform.position, leftHand.transform.position + (leftHand.transform.forward * 0.1f), Time.deltaTime * magnetspeed);
+                hammerRB.velocity = Vector3.zero;
+                hammerRB.angularVelocity = Vector3.zero;
+                hammerRB.mass = 1;
+                magnetspeed *= magnetmultiplier;
+            }
+            else
+            {
+                leftAnim.SetBool("grab", true);
+                hammer.transform.position = leftHand.transform.position + (leftHand.transform.up * 0.15f);
+                hammer.transform.rotation = leftHand.transform.rotation;
+                hammer.transform.Rotate(-75, 0, 90);
+                hammerRB.velocity = Vector3.zero;
+                hammerRB.angularVelocity = Vector3.zero;
+                rightHoldPositions.Add(leftHand.transform.position);
+                supercharged = false;
+                if (heldLeft == 0f)
+                {
+                    leftHandRay.SendHapticImpulse(1f, 0.2f);
+                    leftCatch.Play();
+                }
+                heldLeft += Time.deltaTime * statsChargeSpeed;
+                changeLightning(heldLeft);
+                if (heldLeft > statsMaxCharge) heldLeft = statsMaxCharge;
+                if (heldLeft > 0.5f)
+                {
+                    hammerRB.mass = heldLeft + 2f;
+                    leftHandRay.SendHapticImpulse(heldLeft * 0.2f, 0.1f);
+                }
+                hammerGrabScript.throwVelocityScale = statsThrowForce + heldLeft * statsThrowCharge;
+            }
+        }
+        else
+        //        if ( !rightPress && !leftPress )
+        { // not pressed
+            magnetspeed = magnetminimum;
+            heldLeft = 0f;
+            heldRight = 0f;
+            leftAnim.SetBool("summoning", false);
+            leftAnim.SetBool("grab", false);
+            rightAnim.SetBool("summoning", false);
+            rightAnim.SetBool("grab", false);
+            if (rightHoldPositions.Count > 0)
+            { // just released, have list of held positions
+
+                rightHoldPositions.Clear();
+                rightHoldPositions = new List<Vector3>();
+                magnetspeed = magnetminimum;
+                //hammerGrabScript.attachTransform = null;
+            }
+        }
+        updateControllerTimer -= Time.deltaTime;
+        if (!(updateControllerTimer < 0f)) return;
+        updateController();
+        updateControllerTimer = 2f;
+    }
+}

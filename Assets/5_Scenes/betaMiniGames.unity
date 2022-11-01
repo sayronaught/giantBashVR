@@ -5842,6 +5842,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8449449876836838075, guid: faf66beb99eac66489820a2c9c0f0b41, type: 3}
   m_PrefabInstance: {fileID: 177374912}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1106789925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3638468841530398739, guid: 83df9ffb24591014da0a2ac20bb84779, type: 3}
+  m_PrefabInstance: {fileID: 464462786509881293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1119176235 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8449449876836838075, guid: faf66beb99eac66489820a2c9c0f0b41, type: 3}
@@ -8424,40 +8429,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2418268958377612673, guid: f8b9134c4e12f0041b45e4d9ddecd49e, type: 3}
---- !u!114 &1879086437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353661847656207837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ba9bb35723f6f74a93bcdac9ec18b80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statsThrowForce: 3
-  statsThrowCharge: 2
-  statsMaxCharge: 3
-  statsChargeSpeed: 3
-  leftHand: {fileID: 1380329673}
-  rightHand: {fileID: 150777460}
-  leftAnim: {fileID: 423873559}
-  rightAnim: {fileID: 195791637}
-  leftCatch: {fileID: 1380329675}
-  rightCatch: {fileID: 150777462}
-  hammer: {fileID: 1353661847656207837}
-  controllerLeft: {fileID: 1380329679}
-  controllerRight: {fileID: 150777466}
-  interactorLeft: {fileID: 1380329678}
-  interactorRight: {fileID: 150777465}
-  rightPress: 0
-  leftPress: 0
-  magnetmultiplier: 1.1
-  magnetminimum: 2
-  supercharged: 0
-  rightHoldPositions: []
-  chargeLightning: 0
 --- !u!1 &1883661979
 GameObject:
   m_ObjectHideFlags: 0
@@ -9919,6 +9890,102 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 445421001120290412, guid: 83df9ffb24591014da0a2ac20bb84779, type: 3}
   m_PrefabInstance: {fileID: 464462786509881293}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &26017176343882146
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106789925}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 71d04b3ee5a86044b87f13eca06b8b0d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &33178697615812262
 GameObject:
   m_ObjectHideFlags: 0
@@ -10705,7 +10772,7 @@ GameObject:
   - component: {fileID: 1838309687879815015}
   - component: {fileID: 2164056134242085006}
   - component: {fileID: 2164056134242084992}
-  - component: {fileID: 1879086437}
+  - component: {fileID: 2164056134242085009}
   - component: {fileID: 1353661847656207838}
   - component: {fileID: 1353661847656207839}
   - component: {fileID: 2164056134242085007}
@@ -10737,7 +10804,7 @@ MonoBehaviour:
   Axes: 0
   spinning: 0
   holding: 0
-  myMiss: {fileID: 0}
+  myMiss: {fileID: 26017176343882146}
 --- !u!82 &1353661847656207839
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11290,6 +11357,7 @@ MonoBehaviour:
   m_AttachPointCompatibilityMode: 0
   mainHC: {fileID: 0}
   mainHCendless: {fileID: 0}
+  mainHCcircus: {fileID: 2164056134242085009}
 --- !u!54 &2164056134242085006
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11334,6 +11402,40 @@ CapsuleCollider:
   m_Height: 0.7
   m_Direction: 1
   m_Center: {x: 0, y: 0.1591522, z: -0.01}
+--- !u!114 &2164056134242085009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353661847656207837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b384815c6096a499b3ca265e81aef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsThrowForce: 3
+  statsThrowCharge: 2
+  statsMaxCharge: 3
+  statsChargeSpeed: 3
+  leftHand: {fileID: 1380329673}
+  rightHand: {fileID: 150777460}
+  leftAnim: {fileID: 423873559}
+  rightAnim: {fileID: 195791637}
+  leftCatch: {fileID: 1380329675}
+  rightCatch: {fileID: 150777462}
+  hammer: {fileID: 1353661847656207837}
+  controllerLeft: {fileID: 1380329679}
+  controllerRight: {fileID: 150777466}
+  interactorLeft: {fileID: 1380329678}
+  interactorRight: {fileID: 150777465}
+  rightPress: 0
+  leftPress: 0
+  magnetmultiplier: 1.1
+  magnetminimum: 2
+  supercharged: 0
+  rightHoldPositions: []
+  chargeLightning: 0
 --- !u!4 &2193427846805493476
 Transform:
   m_ObjectHideFlags: 0

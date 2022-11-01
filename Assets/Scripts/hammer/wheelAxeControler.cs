@@ -17,7 +17,7 @@ public class wheelAxeControler : MonoBehaviour
     public bool spinning = false;
     public bool holding = false;
 
-    private hammerControllerEndlessMode myHC;
+    private hammerControlerCircusMode myHC;
     private Rigidbody myRB;
     private AudioSource myAS;
     public AudioSource myMiss;
@@ -26,7 +26,7 @@ public class wheelAxeControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myHC = GetComponent<hammerControllerEndlessMode>();
+        myHC = GetComponent<hammerControlerCircusMode>();
         myRB = GetComponent<Rigidbody>();
         myAS = GetComponent<AudioSource>();
         myBC = GetComponent<BoxCollider>();
