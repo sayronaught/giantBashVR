@@ -71,6 +71,8 @@ public class wheelAxeControler : MonoBehaviour
             Axes++;
             Axecounter.text = Axes.ToString();
         }
+        myRB.velocity = Vector3.ClampMagnitude(myRB.velocity, 50);
+        
     }
     private void OnTriggerEnter(Collider other)
     {
