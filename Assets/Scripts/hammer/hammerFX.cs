@@ -136,6 +136,7 @@ public class hammerFX : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        myRB.velocity = Vector3.ClampMagnitude(myRB.velocity, 80);
         myAS.volume = myRB.velocity.magnitude * 0.05f;
         if (myHC)
         {

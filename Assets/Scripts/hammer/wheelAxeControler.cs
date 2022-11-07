@@ -35,6 +35,7 @@ public class wheelAxeControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        myRB.velocity = Vector3.ClampMagnitude(myRB.velocity, 50);
         if (myHC.beingHeld() )
         { // holding the axe
             mytc.beenHit = false;
@@ -71,8 +72,6 @@ public class wheelAxeControler : MonoBehaviour
             Axes++;
             Axecounter.text = Axes.ToString();
         }
-        myRB.velocity = Vector3.ClampMagnitude(myRB.velocity, 50);
-        
     }
     private void OnTriggerEnter(Collider other)
     {
