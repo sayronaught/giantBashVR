@@ -23,6 +23,10 @@ public class cart : MonoBehaviour
         [Tooltip("should it stop?")]
         public bool stopEvent = false;
 
+
+        [Tooltip("enemies or obstacles to clear before you move on")]
+        public GameObject[] obstacles;
+
         [DrawIf("stopEvent", true)]
         [Tooltip("should it be a timer?")]
         public bool timer = false;
@@ -57,12 +61,25 @@ public class cart : MonoBehaviour
         }
         if (!move)
         {
-            waitTime -= Time.deltaTime;
-            if (waitTime < 0) move = true;
+            if (waypoints[waypointInt-1].obstacles.Length > 0)
+            {
+                move = true;
+                foreach (GameObject go in waypoints[waypointInt-1].obstacles)
+                {
+                    if(go != null) move = false;
+                }
+
+            }
+            else
+            {
+                waitTime -= Time.deltaTime;
+                if (waitTime < 0) move = true;
+            }
         }
 
         if (Vector3.Distance(transform.position, waypoints[waypointInt].whereToGo.position) <= waypointHitbox && waypointInt < waypoints.Length - 1f)
         {
+            
             if (waypoints[waypointInt].stopEvent)
             {
                 move = false;
