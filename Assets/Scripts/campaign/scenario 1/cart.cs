@@ -19,10 +19,19 @@ public class cart : MonoBehaviour
     {
         [Tooltip("waypoint")]
         public Transform whereToGo;
+
         [Tooltip("should it stop?")]
         public bool stopEvent = false;
+
+        [DrawIf("stopEvent", true)]
+        [Tooltip("should it be a timer?")]
+        public bool timer = false;
+
+        [DrawIf("timer", true)]
         [Tooltip("how long should it stop?")]
         public float waitTime = 3f;
+
+
     }
     [Tooltip("list of waypoint (counts from 0)")]
     public waypoint[] waypoints;
@@ -57,7 +66,7 @@ public class cart : MonoBehaviour
             if (waypoints[waypointInt].stopEvent)
             {
                 move = false;
-                waitTime = waypoints[waypointInt].waitTime;
+                if(waypoints[waypointInt].timer) waitTime = waypoints[waypointInt].waitTime;
             }
             waypointInt++;
         }
