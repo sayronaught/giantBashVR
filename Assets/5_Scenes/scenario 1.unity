@@ -456,7 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1274913771}
   m_Layer: 0
-  m_Name: waypoint (1)
+  m_Name: waypoint (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -487,7 +487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1280314528}
   m_Layer: 0
-  m_Name: waypoint (2)
+  m_Name: waypoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -518,7 +518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1755292646}
   m_Layer: 0
-  m_Name: waypoint (4)
+  m_Name: waypoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -807,7 +807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2133874040}
   m_Layer: 0
-  m_Name: waypoint (3)
+  m_Name: waypoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -929,7 +929,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cartSpeed: 0.4
   waypointHitbox: 0.5
-  cartWaypoints: []
+  cartWaypoints:
+  - {fileID: 1274913771}
+  - {fileID: 1280314528}
+  - {fileID: 2133874040}
+  - {fileID: 1755292646}
   waypoint: 0
 --- !u!54 &2138337334
 Rigidbody:
