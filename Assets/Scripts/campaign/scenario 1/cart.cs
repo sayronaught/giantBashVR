@@ -28,6 +28,6 @@ public class cart : MonoBehaviour
         Quaternion toRotation = Quaternion.LookRotation(relativePos);
         transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, 1 * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, cartWaypoints[waypoint].position) <= waypointHitbox) waypoint++;
+        if (Vector3.Distance(transform.position, cartWaypoints[waypoint].position) <= waypointHitbox && waypoint < cartWaypoints.Length -1f) waypoint++;
     }
 }
