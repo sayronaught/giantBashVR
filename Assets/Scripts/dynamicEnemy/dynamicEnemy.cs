@@ -104,8 +104,6 @@ public class dynamicEnemy : MonoBehaviour
     [Space(20)]
     public combatMovesList[] combatMoves;
 
-
-
     public AudioSource beingHitAS;
 
     public GameObject[] meleeWeapons;
@@ -121,6 +119,7 @@ public class dynamicEnemy : MonoBehaviour
     public Transform[] waypoints;
 
     public EndlessPlayerScript playerScript;
+    public Transform playerTransform;
     public EffectBank myEB;
 
     public List<GameObject> dropableArmor;
@@ -207,6 +206,7 @@ public class dynamicEnemy : MonoBehaviour
     }
     public void animEventMeleeAttack()
     {
+        if (playerScript != null)
         playerScript.damagePlayer(stats.strength);
     }
     public void animEventReleaseProjectile()
@@ -219,7 +219,10 @@ public class dynamicEnemy : MonoBehaviour
         //var spellScript = heldMissile.GetComponent<genericSpell>();
         if ( missileScript )
         {
-            missileScript.target = playerScript.transform.position + new Vector3(Random.Range(-.5f, .5f),0f, Random.Range(-.5f, .5f));
+            if ( playerScript != null)
+                missileScript.target = playerScript.transform.position + new Vector3(Random.Range(-.5f, .5f),0f, Random.Range(-.5f, .5f));
+            else
+                missileScript.target = playerTransform.transform.position + new Vector3(Random.Range(-.5f, .5f), 0f, Random.Range(-.5f, .5f));
             missileScript.flying = true;
         }
         heldMissile.GetComponent<AudioSource>().Play();
@@ -270,7 +273,10 @@ public class dynamicEnemy : MonoBehaviour
         {
             var spawn = Instantiate(damageTextPrefab, hitbar.position, Quaternion.identity);
             //spawn.transform.rotation = hitbar.rotation;
-            spawn.transform.LookAt(playerScript.transform.position + Vector3.up);
+            if ( playerScript)
+                spawn.transform.LookAt(playerScript.transform.position + Vector3.up);
+            else
+                spawn.transform.LookAt(playerTransform.position + Vector3.up);
             spawn.transform.RotateAround(spawn.transform.position, Vector3.up, 180);
             int damage = (int)showDamageTaken;
             spawn.GetComponent<damageText>().setText(damage.ToString());
@@ -306,7 +312,8 @@ public class dynamicEnemy : MonoBehaviour
         if (Hitpoints < 0f)
         {
             if (mySettings) mySettings.jotunsBashed++;
-            playerScript.addPoints(stats.pointValue);
+            if ( playerScript != null)
+                playerScript.addPoints(stats.pointValue);
             if ( stats.pointValue > 0)
             {
                 for ( int i = 0; i < stats.pointValue; i++) dropGold();
@@ -367,16 +374,25 @@ public class dynamicEnemy : MonoBehaviour
         if (lastActionDelay > 0f || waypoints.Length < 1) return; // still doing animation
         Transform target = waypoints[currentWaypoint];
         float distance = Vector3.Distance(transform.position, target.position);
-        if (isRanged && Vector3.Distance(transform.position,playerScript.transform.position) < stats.rangedAttackRange)
+        float distanceToPlayer = 0f;
+        if (playerScript != null)
+            distanceToPlayer = Vector3.Distance(transform.position, playerScript.transform.position);
+        else
+            distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+        if (isRanged && distanceToPlayer < stats.rangedAttackRange)
         { // is inside ranged attackrange
             changeSpeed(0f);
             if (lastActionDelay < 0f && stats.speed < 0.025f)
             {
-                lookAt(playerScript.transform.position);
+                if ( playerScript != null)
+                    lookAt(playerScript.transform.position);
+                else
+                    lookAt(playerTransform.position);
                 lastActionDelay = stats.attackCooldown;
                 playRandomAnim(anims.attackRange);
                 if (heldMissile) return;
-                playerScript.damagePlayer(stats.strength);
+                if ( playerScript != null )
+                    playerScript.damagePlayer(stats.strength);
                 var missile = Instantiate(missileWeaponPrefabs[Random.Range(0,missileWeaponPrefabs.Length)]);
                 missile.transform.position = hand.position;
                 missile.transform.rotation = hand.rotation;
@@ -407,7 +423,8 @@ public class dynamicEnemy : MonoBehaviour
                     lastActionDelay = stats.attackCooldown;
                     playRandomAnim(anims.attackMelee);
                     if ( Random.value*100f < sounds.attackMeleePercentageChance) playRandomSound(sounds.attackMelee);
-                    playerScript.damagePlayer(stats.strength);
+                    if ( playerScript != null)
+                        playerScript.damagePlayer(stats.strength);
                 }
             }
         }
