@@ -7,6 +7,8 @@ public class EndlessSpawner : MonoBehaviour
 {
 
     public EndlessPlayerScript PlayerScript;
+    public Transform playerTransform;
+    public Transform directToPlayer;
 
     public Transform[] beginSpawnPoints;
     public Transform[] spawnPoints;
@@ -58,7 +60,11 @@ public class EndlessSpawner : MonoBehaviour
         var ai = spawn.GetComponent<dynamicEnemy>();
         ai.spawnSetDifficulty(toughnessModifier);
         ai.setWaypoints(spawnpoint);
+        if ( PlayerScript != null)
         ai.playerScript = PlayerScript;
+        else
+        ai.playerTransform = playerTransform;
+        if (directToPlayer != null) ai.directToPlayer = directToPlayer;
         ai.myEB = myEB;
     }
 

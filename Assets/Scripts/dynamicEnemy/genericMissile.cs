@@ -11,7 +11,7 @@ public class genericMissile : MonoBehaviour
     public Vector3 Spin = Vector3.zero;
     public AudioClip landSound;
     public float landLifetime = 5f;
-    public bool aimCamera = false;
+   // public bool aimCamera = false;
 
     public bool flying = false;
 
@@ -27,7 +27,7 @@ public class genericMissile : MonoBehaviour
     void Update()
     {
         if (!flying) return;
-        if ( aimCamera ) target = Camera.main.transform.position;
+        //if ( aimCamera ) target = Camera.main.transform.position;
         distance = Vector3.Distance(transform.position, target);
         if ( distance < 0.1f )
         {

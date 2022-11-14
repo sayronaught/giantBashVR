@@ -120,6 +120,7 @@ public class dynamicEnemy : MonoBehaviour
 
     public EndlessPlayerScript playerScript;
     public Transform playerTransform;
+    public Transform directToPlayer;
     public EffectBank myEB;
 
     public List<GameObject> dropableArmor;
@@ -202,6 +203,7 @@ public class dynamicEnemy : MonoBehaviour
 
     public void setWaypoints(Transform spawnpoint)
     {
+
         waypoints = spawnpoint.GetComponentsInChildren<Transform>();
     }
     public void animEventMeleeAttack()
@@ -222,7 +224,7 @@ public class dynamicEnemy : MonoBehaviour
             if ( playerScript != null)
                 missileScript.target = playerScript.transform.position + new Vector3(Random.Range(-.5f, .5f),0f, Random.Range(-.5f, .5f));
             else
-                missileScript.target = playerTransform.transform.position + new Vector3(Random.Range(-.5f, .5f), 0f, Random.Range(-.5f, .5f));
+                missileScript.target = playerTransform.position + new Vector3(Random.Range(-.5f, .5f), 0f, Random.Range(-.5f, .5f));
             missileScript.flying = true;
         }
         heldMissile.GetComponent<AudioSource>().Play();
@@ -273,7 +275,7 @@ public class dynamicEnemy : MonoBehaviour
         {
             var spawn = Instantiate(damageTextPrefab, hitbar.position, Quaternion.identity);
             //spawn.transform.rotation = hitbar.rotation;
-            if ( playerScript)
+            if ( playerScript != null)
                 spawn.transform.LookAt(playerScript.transform.position + Vector3.up);
             else
                 spawn.transform.LookAt(playerTransform.position + Vector3.up);
@@ -372,7 +374,11 @@ public class dynamicEnemy : MonoBehaviour
         showDamageDelay -= Time.deltaTime;
         if (showDamageTaken > 0f && showDamageDelay <= 0f) showDamage();
         if (lastActionDelay > 0f || waypoints.Length < 1) return; // still doing animation
-        Transform target = waypoints[currentWaypoint];
+        Transform target = null;
+        if (directToPlayer != null)
+            target = directToPlayer;
+        else
+        target = waypoints[currentWaypoint];
         float distance = Vector3.Distance(transform.position, target.position);
         float distanceToPlayer = 0f;
         if (playerScript != null)
@@ -419,7 +425,10 @@ public class dynamicEnemy : MonoBehaviour
                 changeSpeed(0f);
                 if (lastActionDelay < 0f && stats.speed < 0.025f)
                 {
+                    if (playerScript != null)
                     lookAt(playerScript.transform.position);
+                    else
+                    lookAt(playerTransform.position);
                     lastActionDelay = stats.attackCooldown;
                     playRandomAnim(anims.attackMelee);
                     if ( Random.value*100f < sounds.attackMeleePercentageChance) playRandomSound(sounds.attackMelee);
