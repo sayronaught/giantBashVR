@@ -42,6 +42,11 @@ public class cart : MonoBehaviour
     [Tooltip("current waypoint on the list")]
     public int waypointInt = 0;
 
+    public Transform wheelRig1;
+    public Transform wheelRig2;
+
+    private float rotationValue = 0;
+    private Vector3 rotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +63,9 @@ public class cart : MonoBehaviour
             Vector3 relativePos = waypoints[waypointInt].whereToGo.position - transform.position;
             Quaternion toRotation = Quaternion.LookRotation(relativePos);
             transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, 1 * Time.deltaTime);
+
+            wheelRig1.Rotate(Vector3.forward * Time.deltaTime * 100 * cartSpeed);
+            wheelRig2.Rotate(Vector3.forward * Time.deltaTime * 100 * cartSpeed);
         }
         if (!move)
         {
