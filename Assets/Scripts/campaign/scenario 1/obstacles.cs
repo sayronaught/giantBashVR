@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class obstacles : MonoBehaviour
 {
+    [Tooltip("+1")]
     public int health=0;
     // Start is called before the first frame update
     void Start()

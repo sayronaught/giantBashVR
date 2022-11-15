@@ -25,7 +25,7 @@ public class cart : MonoBehaviour
 
 
         [Tooltip("enemies or obstacles to clear before you move on")]
-        public GameObject[] obstacles;
+        public List<GameObject> obstacles;
 
         [DrawIf("stopEvent", true)]
         [Tooltip("should it be a timer?")]
@@ -47,6 +47,8 @@ public class cart : MonoBehaviour
 
     private float rotationValue = 0;
     private Vector3 rotation;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +71,7 @@ public class cart : MonoBehaviour
         }
         if (!move)
         {
-            if (waypoints[waypointInt-1].obstacles.Length > 0)
+            if (waypoints[waypointInt-1].obstacles.Count > 0)
             {
                 move = true;
                 foreach (GameObject go in waypoints[waypointInt-1].obstacles)
@@ -92,6 +94,11 @@ public class cart : MonoBehaviour
             {
                 move = false;
                 if(waypoints[waypointInt].timer) waitTime = waypoints[waypointInt].waitTime;
+                if (waypoints[waypointInt].obstacles.Count != 0)
+                    foreach (GameObject go in waypoints[waypointInt].obstacles)
+                        if (go.GetComponent<rigidDynamicSpawner>())
+                            go.GetComponent<rigidDynamicSpawner>().release();
+
             }
             waypointInt++;
         }

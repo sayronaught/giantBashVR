@@ -213,9 +213,9 @@ public class dynamicEnemy : MonoBehaviour
     }
     public void animEventReleaseProjectile()
     {
-        Debug.Log("release missle");
+        //Debug.Log("release missle");
         if (!heldMissile) return;
-        Debug.Log("found");
+        //Debug.Log("found");
         heldMissile.transform.SetParent(null);
         var missileScript = heldMissile.GetComponent<genericMissile>();
         //var spellScript = heldMissile.GetComponent<genericSpell>();
@@ -404,7 +404,7 @@ public class dynamicEnemy : MonoBehaviour
                 missile.transform.rotation = hand.rotation;
                 missile.transform.SetParent(hand);
                 heldMissile = missile;
-                Debug.Log("spawned missile");
+                //Debug.Log("spawned missile");
                 if (Random.value * 100f < sounds.attackRangedPercentageChance) playRandomSound(sounds.attackRanged);
             }
             return; // no melee attacks or navigation after ranged attacks

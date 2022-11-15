@@ -12912,7 +12912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2925955eb15ad4fa8b1e95d32e3f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 6
+  difficulty: 1
   stage: 0
   rotationDirection: 0
   rotationSpeed: 100
