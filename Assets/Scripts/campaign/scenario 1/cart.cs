@@ -96,11 +96,18 @@ public class cart : MonoBehaviour
                 if(waypoints[waypointInt].timer) waitTime = waypoints[waypointInt].waitTime;
                 if (waypoints[waypointInt].obstacles.Count != 0)
                     foreach (GameObject go in waypoints[waypointInt].obstacles)
+                    {
+                        Debug.Log("a");
                         if (go.GetComponent<rigidDynamicSpawner>())
+                        {
                             go.GetComponent<rigidDynamicSpawner>().release();
-
+                            Debug.Log("b");
+                        }
+                    }
+                Debug.Log("d");
             }
             waypointInt++;
+            Debug.Log("c");
         }
     }
 }

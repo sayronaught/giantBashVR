@@ -5,7 +5,6 @@ using UnityEngine;
 public class rigidDynamicSpawner : MonoBehaviour
 {
     public GameObject[] enemyPrefab;
-    private bool released = false;
     public cart myCart;
     public int waypoint;
     // Start is called before the first frame update
