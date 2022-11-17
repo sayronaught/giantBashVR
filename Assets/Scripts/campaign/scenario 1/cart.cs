@@ -48,6 +48,8 @@ public class cart : MonoBehaviour
     private float rotationValue = 0;
     private Vector3 rotation;
 
+    private List<GameObject> releaselist;
+
     
     // Start is called before the first frame update
     void Start()
@@ -95,19 +97,20 @@ public class cart : MonoBehaviour
                 move = false;
                 if(waypoints[waypointInt].timer) waitTime = waypoints[waypointInt].waitTime;
                 if (waypoints[waypointInt].obstacles.Count != 0)
+                {
                     foreach (GameObject go in waypoints[waypointInt].obstacles)
                     {
-                        Debug.Log("a");
                         if (go.GetComponent<rigidDynamicSpawner>())
                         {
-                            go.GetComponent<rigidDynamicSpawner>().release();
-                            Debug.Log("b");
+                            releaselist.Add(go);
                         }
                     }
-                Debug.Log("d");
+                    foreach (GameObject go in releaselist)
+                        go.GetComponent<rigidDynamicSpawner>().release();
+                    releaselist.Clear();
+                }
             }
             waypointInt++;
-            Debug.Log("c");
         }
     }
 }
