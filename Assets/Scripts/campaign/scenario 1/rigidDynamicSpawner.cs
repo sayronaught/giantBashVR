@@ -7,6 +7,14 @@ public class rigidDynamicSpawner : MonoBehaviour
     public GameObject[] enemyPrefab;
     public cart myCart;
     public int waypoint;
+    public EndlessSpawner myHandler;
+
+    private EndlessPlayerScript PlayerScript = null;
+    private Transform playerTransform = null;
+    private Transform directToPlayer = null;
+    private EffectBank myEB = null;
+
+    private Vector3 spawnZone;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +28,12 @@ public class rigidDynamicSpawner : MonoBehaviour
     }
     public void release()
     {
-        var spawn = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)], transform.position, Quaternion.identity);
+        PlayerScript = myHandler.PlayerScript;
+        playerTransform = myHandler.playerTransform;
+        directToPlayer = myHandler.directToPlayer;
+        myEB = myEB;
+        spawnZone = new Vector3 (transform.position.x + Random.Range(transform.lossyScale.x , -transform.lossyScale.x), transform.position.y + Random.Range(transform.lossyScale.y, -transform.lossyScale.y), transform.position.z + Random.Range(transform.lossyScale.z , -transform.lossyScale.z));
+        var spawn = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)],  spawnZone, Quaternion.identity);
         var ai = spawn.GetComponent<dynamicEnemy>();
         myCart.waypoints[waypoint].obstacles.Add(spawn);
         //ai.spawnSetDifficulty(toughnessModifier);

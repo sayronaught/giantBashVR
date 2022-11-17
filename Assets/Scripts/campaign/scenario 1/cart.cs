@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class cart : MonoBehaviour
 {
-   [Tooltip("constant move speed of the player")]
-   public float cartSpeed = 0.4f;
-   [Tooltip("size of the waypoints")]
-   public float waypointHitbox = 0.5f;
-
+    [Tooltip("constant move speed of the player")]
+    public float cartSpeed = 0.4f;
+    [Tooltip("size of the waypoints")]
+    public float waypointHitbox = 0.5f;
 
     private bool move = true;
     private float waitTime = 0;
@@ -23,7 +22,6 @@ public class cart : MonoBehaviour
         [Tooltip("should it stop?")]
         public bool stopEvent = false;
 
-
         [Tooltip("enemies or obstacles to clear before you move on")]
         public List<GameObject> obstacles;
 
@@ -34,8 +32,6 @@ public class cart : MonoBehaviour
         [DrawIf("timer", true)]
         [Tooltip("how long should it stop?")]
         public float waitTime = 3f;
-
-
     }
     [Tooltip("list of waypoint (counts from 0)")]
     public waypoint[] waypoints;
@@ -45,10 +41,8 @@ public class cart : MonoBehaviour
     public Transform wheelRig1;
     public Transform wheelRig2;
 
-    private float rotationValue = 0;
-    private Vector3 rotation;
-
-    private List<GameObject> releaselist;
+    
+    private List<GameObject> releaselist = new List<GameObject>();
 
     
     // Start is called before the first frame update
@@ -80,7 +74,6 @@ public class cart : MonoBehaviour
                 {
                     if(go != null) move = false;
                 }
-
             }
             else
             {
@@ -88,10 +81,8 @@ public class cart : MonoBehaviour
                 if (waitTime < 0) move = true;
             }
         }
-
         if (Vector3.Distance(transform.position, waypoints[waypointInt].whereToGo.position) <= waypointHitbox && waypointInt < waypoints.Length - 1f)
-        {
-            
+        {   
             if (waypoints[waypointInt].stopEvent)
             {
                 move = false;
