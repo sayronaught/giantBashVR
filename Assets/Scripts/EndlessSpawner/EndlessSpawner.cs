@@ -24,7 +24,7 @@ public class EndlessSpawner : MonoBehaviour
     float time;
     float toughnessModifier = 1f;
 
-    private EffectBank myEB;
+    public EffectBank myEB;
 
     //Lave 10 spawnPoints
 
