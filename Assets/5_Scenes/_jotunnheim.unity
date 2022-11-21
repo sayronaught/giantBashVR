@@ -1039,6 +1039,7 @@ GameObject:
   - component: {fileID: 390873394}
   - component: {fileID: 390873393}
   - component: {fileID: 390873395}
+  - component: {fileID: 390873396}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -1099,6 +1100,36 @@ MonoBehaviour:
   hit: 100
   regeneration: 0.2
   points: 0
+--- !u!114 &390873396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390873392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b06a7cbf33b9ee41ac85bf3b66dbc3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headset: {fileID: 961622104}
+  leftController: {fileID: 2108099818}
+  rightController: {fileID: 526855051}
+  playerHasHeadSet: 0
+  playerHasLeftController: 0
+  playerHasRightController: 0
+  playerLeftTrigger: 0
+  playerRightTrigger: 0
+  playerLeftStick: {x: 0, y: 0}
+  playerRightStick: {x: 0, y: 0}
+  playerLeftPrimary: 0
+  playerRightPrimary: 0
+  playerLeftSecondary: 0
+  playerRightSecondary: 0
+  playerLeftGrab: 0
+  playerRightGrab: 0
+  playerLeftStickClick: 0
+  playerRightStickClick: 0
 --- !u!1 &392419062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,6 +1602,7 @@ GameObject:
   - component: {fileID: 526855048}
   - component: {fileID: 526855047}
   - component: {fileID: 526855046}
+  - component: {fileID: 526855051}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -2037,6 +2069,24 @@ MonoBehaviour:
   m_MoveObjectIn: 14
   m_MoveObjectOut: 15
   m_PoseProvider: {fileID: 0}
+--- !u!114 &526855051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526855044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Device: 1
+  m_PoseSource: 5
+  m_PoseProviderComponent: {fileID: 0}
+  m_TrackingType: 0
+  m_UpdateType: 0
+  m_UseRelativeTransform: 0
 --- !u!1 &539984203
 GameObject:
   m_ObjectHideFlags: 0
@@ -3775,6 +3825,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerScript: {fileID: 390873395}
+  playerTransform: {fileID: 0}
+  directToPlayer: {fileID: 0}
   beginSpawnPoints:
   - {fileID: 1239659517}
   - {fileID: 408742332}
@@ -3806,6 +3858,7 @@ MonoBehaviour:
   - {fileID: 8800940158332830910, guid: a6e202e681bc34c498afc69025389f5f, type: 3}
   enemyShamanPrefab:
   - {fileID: 1232811757879020695, guid: 6da192df1da018a40bb1f15582c972da, type: 3}
+  myEB: {fileID: 0}
 --- !u!4 &1000620993
 Transform:
   m_ObjectHideFlags: 0
@@ -8411,6 +8464,7 @@ GameObject:
   - component: {fileID: 2108099815}
   - component: {fileID: 2108099814}
   - component: {fileID: 2108099813}
+  - component: {fileID: 2108099818}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -8878,6 +8932,24 @@ MonoBehaviour:
   m_MoveObjectIn: 14
   m_MoveObjectOut: 15
   m_PoseProvider: {fileID: 0}
+--- !u!114 &2108099818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108099811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Device: 1
+  m_PoseSource: 4
+  m_PoseProviderComponent: {fileID: 0}
+  m_TrackingType: 0
+  m_UpdateType: 0
+  m_UseRelativeTransform: 0
 --- !u!1001 &2116254800
 PrefabInstance:
   m_ObjectHideFlags: 0
