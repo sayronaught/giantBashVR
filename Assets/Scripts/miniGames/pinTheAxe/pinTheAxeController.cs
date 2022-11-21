@@ -55,31 +55,23 @@ public class pinTheAxeController : MonoBehaviour
         await Task.Delay(5000);
         if (!Application.isEditor || Application.isPlaying)
         {
-            Debug.Log("c");
             myTC.stage = 0;
             myFTS1.reset = true;
             myFTS2.reset = true;
             myTC.transform.rotation = Quaternion.Euler(0, 180, 0);
             myTC.rotationValue = 0;
-
             switch (myTC.difficulty++)
             {
-                case 1:
-                    Debug.Log("1");
-                    break;
                 case 2:
-                    Debug.Log("2");
                     myTC.rangeReset = 1.2f;
                     myTC.rotationSpeed = 175f;
-                    myTC.transform.position = new Vector3(0, 3, 5);
+                    myTC.transform.position = new Vector3(0, 2, 5);
                     myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
                     break;
-
                 case 3:
-                    Debug.Log("3");
                     myTC.rangeReset = 0.7f;
                     myTC.rotationSpeed = 250f;
-                    myTC.transform.position = new Vector3(0, 3, 7);
+                    myTC.transform.position = new Vector3(0, 2, 7);
                     myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
                     break;
 
@@ -109,15 +101,12 @@ public class pinTheAxeController : MonoBehaviour
                     myFTS1.reset = true;
                     myFTS2.reset = true;
                     break;
-
-                    default:
-                    Debug.Log("fuck");
+                default:
                     break;
             }
             myHC.Axes = 0;
             myHC.Axecounter.text = myHC.Axes.ToString();
             myTC.stageCounter.text = myTC.stage.ToString();
-            Debug.Log("d");
         }   
         await Task.Yield();
     }

@@ -167,11 +167,9 @@ public class targetControl : MonoBehaviour
         rotationDirection = 0;
         if ( !donePlaying )
         {
-            Debug.Log("a");
             donePlaying = true;
             resultCheer.Play();
             myGM.diffIncrease();
-            Debug.Log("b");
         }
     }
     void rangeUpdate()

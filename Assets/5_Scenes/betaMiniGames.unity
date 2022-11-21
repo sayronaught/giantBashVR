@@ -6015,8 +6015,8 @@ MonoBehaviour:
   myHC: {fileID: 1353661847656207838}
   myFTC1: {fileID: 768980776}
   myFTC2: {fileID: 319433709}
-  myFTS1: {fileID: 0}
-  myFTS2: {fileID: 0}
+  myFTS1: {fileID: 768980781}
+  myFTS2: {fileID: 319433710}
   myMO: {fileID: 1899918669}
   chickRespawn: 0
   debugSpinPoint: {fileID: 982829097}
@@ -12602,7 +12602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5422103475566086464}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 3, z: 11}
+  m_LocalPosition: {x: 0, y: 2, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
