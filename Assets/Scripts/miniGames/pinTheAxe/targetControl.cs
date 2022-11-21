@@ -25,6 +25,7 @@ public class targetControl : MonoBehaviour
     public GameObject magicSplat;
     public AudioSource resultCheer;
     public TMP_Text stageCounter;
+    public pinTheAxeController myGM;
 
     // Start is called before the first frame update
     void Start()
@@ -97,15 +98,7 @@ public class targetControl : MonoBehaviour
                 // if everything misses, typically an error message
                 break;
         }
-        /*
-        if (stage == 1) stage1();
-        if (stage == 2) stage2();
-        if (stage == 3) stage3();
-        if (stage == 4) stage4();
-        if (stage == 5) stage5();
-        if (stage == 6) stage6();
-        */
-        //if (stage == 4 || stage == 5) rangeUpdate();
+
     }
     void on()
     {
@@ -114,6 +107,7 @@ public class targetControl : MonoBehaviour
         transform.localRotation = Quaternion.Euler(rotation);
         switch (difficulty)
         {
+            
             case 1:
                 break;
             case 2:
@@ -127,7 +121,6 @@ public class targetControl : MonoBehaviour
                 break;
             case 5:
                 transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
-
                 break;
             case 6:
                 transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
@@ -162,7 +155,7 @@ public class targetControl : MonoBehaviour
     }
     void stage5()
     {
-        if (!donePlaying) donePlaying = true;
+        if (donePlaying) donePlaying = false;
         if (rangeChange == true)
         {
             rotationDirection = Random.Range(-2f, 2f);
@@ -174,8 +167,11 @@ public class targetControl : MonoBehaviour
         rotationDirection = 0;
         if ( !donePlaying )
         {
+            Debug.Log("a");
             donePlaying = true;
             resultCheer.Play();
+            myGM.diffIncrease();
+            Debug.Log("b");
         }
     }
     void rangeUpdate()

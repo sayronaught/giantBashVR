@@ -364,6 +364,7 @@ public class dynamicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y <= -100f) deathAnim();
         if (!isAlive) return;
         // look at target
         if (temporaryTarget)

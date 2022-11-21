@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class obstacles : MonoBehaviour
 {
-    [Tooltip("+1")]
+    public cart cart;
+    [Tooltip("can only take dmg if waypoints match")]
+    public int waypoint = 0;
+    [Tooltip("dies on 0")]
     public int health=0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +25,11 @@ public class obstacles : MonoBehaviour
     {
         if(collision.transform.tag =="Hammer")
         {
-            if (health == 0) Destroy(gameObject);
-            else health--;
+            if (cart.waypointInt == waypoint)
+            {
+                if (health <= 1) Destroy(gameObject);
+                else health--;
+            }
         }
     }
 }

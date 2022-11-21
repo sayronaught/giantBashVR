@@ -1282,8 +1282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ec472eb90370244bf0214a2f3e5dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetBool: 0
-  reset: 0
+  resetBool: 1
   difficultyBool: 1
   difficulty: 2
   myTC: {fileID: 5422103475566086465}
@@ -1982,7 +1981,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetBool: 1
-  reset: 0
   difficultyBool: 0
   difficulty: 0
   myTC: {fileID: 5422103475566086465}
@@ -6017,6 +6015,8 @@ MonoBehaviour:
   myHC: {fileID: 1353661847656207838}
   myFTC1: {fileID: 768980776}
   myFTC2: {fileID: 319433709}
+  myFTS1: {fileID: 0}
+  myFTS2: {fileID: 0}
   myMO: {fileID: 1899918669}
   chickRespawn: 0
   debugSpinPoint: {fileID: 982829097}
@@ -6267,8 +6267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ec472eb90370244bf0214a2f3e5dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetBool: 0
-  reset: 0
+  resetBool: 1
   difficultyBool: 1
   difficulty: 1
   myTC: {fileID: 5422103475566086465}
@@ -7013,8 +7012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ec472eb90370244bf0214a2f3e5dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetBool: 0
-  reset: 0
+  resetBool: 1
   difficultyBool: 1
   difficulty: 6
   myTC: {fileID: 5422103475566086465}
@@ -7290,8 +7288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ec472eb90370244bf0214a2f3e5dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetBool: 0
-  reset: 0
+  resetBool: 1
   difficultyBool: 1
   difficulty: 3
   myTC: {fileID: 5422103475566086465}
@@ -7509,8 +7506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ec472eb90370244bf0214a2f3e5dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetBool: 0
-  reset: 0
+  resetBool: 1
   difficultyBool: 1
   difficulty: 5
   myTC: {fileID: 5422103475566086465}
@@ -8511,8 +8507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ec472eb90370244bf0214a2f3e5dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetBool: 0
-  reset: 0
+  resetBool: 1
   difficultyBool: 1
   difficulty: 4
   myTC: {fileID: 5422103475566086465}
@@ -12926,6 +12921,7 @@ MonoBehaviour:
   magicSplat: {fileID: 7082967694056419611, guid: 5173b31e34ece184ebe2f45b7c4b7b46, type: 3}
   resultCheer: {fileID: 1714282366}
   stageCounter: {fileID: 438473989}
+  myGM: {fileID: 1244943219}
 --- !u!4 &5451059936992665698
 Transform:
   m_ObjectHideFlags: 0

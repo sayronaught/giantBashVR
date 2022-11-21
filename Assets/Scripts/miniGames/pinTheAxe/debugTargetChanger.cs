@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class debugTargetChanger : MonoBehaviour
 {
-    public bool resetBool;
-    public int reset;
+    public bool resetBool = true;
     public bool difficultyBool;
     public int difficulty;
     //public bool hellMode;
@@ -28,7 +27,7 @@ public class debugTargetChanger : MonoBehaviour
     {
         if (resetBool)
         {
-            myTC.stage = reset;
+            myTC.stage = 0;
             myFTC.reset = true;
             myFTC2.reset = true;
             myTC.transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -67,7 +66,7 @@ public class debugTargetChanger : MonoBehaviour
             }
             if (myTC.difficulty == 5)
             {
-                myTC.stage = reset;
+                myTC.stage = 0;
                 myTC.difficulty = 5;
                 myTC.rangeReset = 0.3f;
                 myTC.rotationSpeed = 350f;
@@ -78,7 +77,7 @@ public class debugTargetChanger : MonoBehaviour
             }
             if (myTC.difficulty == 6)
             {
-                myTC.stage = reset;
+                myTC.stage = 0;
                 myTC.difficulty = 6;
                 myTC.rangeReset = 0.3f;
                 myTC.rotationSpeed = 350f;
@@ -134,7 +133,7 @@ public class debugTargetChanger : MonoBehaviour
             }
             if (difficulty == 5)
             {
-                myTC.stage = reset;
+                myTC.stage = 0;
                 myTC.difficulty = 5;
                 myTC.rangeReset = 0.3f;
                 myTC.rotationSpeed = 350f;
@@ -150,7 +149,7 @@ public class debugTargetChanger : MonoBehaviour
             }
             if (difficulty == 6)
             {
-                myTC.stage = reset;
+                myTC.stage = 0;
                 myTC.difficulty = 6;
                 myTC.rangeReset = 0.3f;
                 myTC.rotationSpeed = 350f;

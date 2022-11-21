@@ -8,7 +8,7 @@ public class rigidDynamicSpawner : MonoBehaviour
     public cart myCart;
     public int waypoint;
     public int spawnAmount = 1;
-    public EndlessSpawner myHandler;
+    public campaignSpawner myHandler;
 
     private EndlessPlayerScript PlayerScript = null;
     private Transform playerTransform = null;
