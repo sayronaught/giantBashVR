@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 
 public class pinTheAxeController : MonoBehaviour
@@ -16,6 +17,13 @@ public class pinTheAxeController : MonoBehaviour
     bool chicklive;
     public GameObject debugSpinPoint;
     public bool DegDebug90 = false;
+
+    public circusMan myMan;
+    public TMP_Text watch;
+    public Material watchGUI;
+    public float timeLimit = 300;
+    public float debug = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +57,13 @@ public class pinTheAxeController : MonoBehaviour
             debugSpinPoint.transform.Rotate(Vector3.forward * 90);
             DegDebug90 = true;
         }
+
+        var timeInSecondsInt = (int)myMan.time * -1 + (int)timeLimit;  //We don't care about fractions of a second, so easy to drop them by just converting to an int
+        var minutes = timeInSecondsInt / 60;  //Get total minutes
+        var seconds = timeInSecondsInt - (minutes * 60);  //Get seconds for display alongside minutes
+        watch.text = minutes.ToString("D2") + ":" + seconds.ToString("D2");
+        watchGUI.SetFloat("Vector1_4",( (myMan.time / timeLimit )-0.5f) * -1);
+       
     }
     public async Task diffIncrease()
     {
@@ -60,56 +75,57 @@ public class pinTheAxeController : MonoBehaviour
             myFTS2.reset = true;
             myTC.transform.rotation = Quaternion.Euler(0, 180, 0);
             myTC.rotationValue = 0;
+            myMan.time = 0;
             switch (myTC.difficulty++)
             {
                 case 2:
                     myTC.rangeReset = 1.2f;
                     myTC.rotationSpeed = 175f;
-                    myTC.transform.position = new Vector3(0, 2, 5);
-                    myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    myTC.transform.localPosition = new Vector3(0, 2, 5);
+                    myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
                     break;
                 case 3:
                     myTC.rangeReset = 0.7f;
                     myTC.rotationSpeed = 250f;
-                    myTC.transform.position = new Vector3(0, 2, 7);
-                    myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    myTC.transform.localPosition = new Vector3(0, 2, 7);
+                    myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
                     break;
 
                 case 4:
                     myTC.rangeReset = 0.4f;
                     myTC.rotationSpeed = 350f;
-                    myTC.transform.position = new Vector3(0, 3, 10);
-                    myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    myTC.transform.localPosition = new Vector3(0, 3, 10);
+                    myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
                     break;
 
                 case 5:
                     myTC.stage = 0;
                     myTC.rangeReset = 0.3f;
                     myTC.rotationSpeed = 350f;
-                    myTC.transform.position = new Vector3(0, 3, 14);
-                    myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    myTC.transform.localPosition = new Vector3(0, 3, 14);
+                    myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
                     break;
 
                 case 6:
                     myTC.stage = 0;
                     myTC.rangeReset = 0.3f;
                     myTC.rotationSpeed = 350f;
-                    myTC.transform.position = new Vector3(0, 3, 14);
-                    myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    myTC.transform.localPosition = new Vector3(0, 3, 14);
+                    myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
                     break;
                 case 7:
                     myTC.stage = 0;
                     myTC.rangeReset = 0.3f;
                     myTC.rotationSpeed = 400f;
-                    myTC.transform.position = new Vector3(0, 3, 14);
-                    myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    myTC.transform.localPosition = new Vector3(0, 3, 14);
+                    myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
                     break;
                 default:
                     break;
             }
             myHC.Axes = 0;
             myHC.Axecounter.text = myHC.Axes.ToString();
-            myTC.stageCounter.text = myTC.stage.ToString();
+            myTC.stageCounter.text = ("stage" + myTC.stage.ToString());
         }   
         await Task.Yield();
     }

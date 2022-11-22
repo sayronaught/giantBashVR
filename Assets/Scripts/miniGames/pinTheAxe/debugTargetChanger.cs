@@ -7,26 +7,16 @@ public class debugTargetChanger : MonoBehaviour
     public bool resetBool = true;
     public bool difficultyBool;
     public int difficulty;
-    //public bool hellMode;
     public targetControl myTC;
     public wheelAxeControler myHC;
     public falseTargetController myFTC;
     public falseTargetController myFTC2;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //myTC = GetComponent<targetControl>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter(Collision collision)
     {
         if (resetBool)
         {
+            myTC.myGM.myMan.time = 0;
             myTC.stage = 0;
             myFTC.reset = true;
             myFTC2.reset = true;

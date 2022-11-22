@@ -32,22 +32,20 @@ public class targetColider : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (mytc.beenHit == false)
+        if (collision.gameObject.tag == "Hammer" && mytc.beenHit == false)
         {
-            if (collision.gameObject.tag == "Hammer")
-            {
-                mytc.beenHit = true;
-                if(mytc.bloodSplat && !falseTarget) Instantiate(mytc.bloodSplat, transform.position, Quaternion.identity);
-                else if (mytc.magicSplat) Instantiate(mytc.magicSplat, transform.position, Quaternion.identity);
-                myMR.enabled = false;
-                myBC.enabled = false;
-                if (transform.childCount > 0) child.SetActive(false);
-                if (!falseTarget) mytc.stage += 1;
-                if (falseTarget && myAS) myAS.Play();
-                if (mytc.stageCounter) mytc.stageCounter.text = ("stage" + mytc.stage.ToString());
-
-
-            }
+            mytc.beenHit = true;
+            if (mytc.bloodSplat && !falseTarget) Instantiate(mytc.bloodSplat, transform.position, Quaternion.identity);
+            else if (mytc.magicSplat) Instantiate(mytc.magicSplat, transform.position, Quaternion.identity);
+            myMR.enabled = false;
+            myBC.enabled = false;
+            if (transform.childCount > 0) child.SetActive(false);
+            if (!falseTarget) mytc.stage += 1;
+            if (falseTarget && myAS) myAS.Play();
+            if (mytc.stageCounter) mytc.stageCounter.text = ("stage" + mytc.stage.ToString());
+            if (!falseTarget)
+                mytc.myGM.myMan.time -= 30;
+            else mytc.myGM.myMan.time += 10;
         }
     }
 }
