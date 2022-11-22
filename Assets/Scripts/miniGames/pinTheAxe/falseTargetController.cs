@@ -5,7 +5,7 @@ using UnityEngine;
 public class falseTargetController : MonoBehaviour
 {
     public targetControl myTC;
-    
+    public GameObject myTGO;
 
     public float rotationDirection = 0f;
     public float rotationSpeed = 100f;
@@ -22,19 +22,15 @@ public class falseTargetController : MonoBehaviour
     public bool reset = false;
     public float startPos;
 
-    private float randomSpeed = 0;
-    
-    // Start is called before the first frame update
-    void Start()
+    private float randomSpeed = 1;
+    void OnEnable()
     {
 
         rangeReset = 0.3f;
         rotationSpeed = 350f;
-        transform.position = new Vector3(transform.position.x, transform.position.y, 14);
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, myTGO.transform.position.z +4);
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (myTC.stage > 0) on();
@@ -48,15 +44,15 @@ public class falseTargetController : MonoBehaviour
         if (reset)
         {
             reset = false;
-            transform.position = new Vector3(startPos, 3, 14);
+            transform.position = new Vector3(startPos, 2, myTGO.transform.position.z);
         }
     }
     void on()
     {
-        rotationValue += rotationDirection * rotationSpeed * Time.deltaTime;
+        rotationValue += rotationDirection * rotationSpeed * Time.deltaTime * randomSpeed;
         rotation = new Vector3(0f, 180f, rotationValue);
-        transform.rotation = Quaternion.Euler(rotation);
-        transform.position = Vector3.Slerp(transform.position, new Vector3(Mathf.Sin(Time.fixedTime * 2f * offset) * 6f, 2f - Mathf.Cos(Time.fixedTime * 2f * offset) * 1.5f, myTC.transform.position.z + distanceFromTarget), Time.deltaTime);
+        transform.localRotation = Quaternion.Euler(rotation);
+        transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * 2f * offset) * 6f, 2f - Mathf.Cos(Time.fixedTime * 2f * offset) * 1.5f, myTC.transform.localPosition.z + distanceFromTarget), Time.deltaTime);
     }
     void stage1()
     {

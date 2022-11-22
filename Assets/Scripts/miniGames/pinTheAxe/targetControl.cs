@@ -30,41 +30,45 @@ public class targetControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (difficulty == 1)
+        switch (difficulty)
         {
-            rangeReset = 1.7f;
-            rotationSpeed = 100f;
-            transform.position = new Vector3(transform.position.x, transform.position.y , 3 );
-        }
-        if (difficulty == 2)
-        {
-            rangeReset = 1.2f;
-            rotationSpeed = 175f;
-            transform.position = new Vector3(transform.position.x, transform.position.y, 5 );
-        }
-        if (difficulty == 3)
-        {
-            rangeReset = 0.7f;
-            rotationSpeed = 250f;
-            transform.position = new Vector3(transform.position.x, transform.position.y, 7);
-        }
-        if (difficulty == 4)
-        {
-            rangeReset = 0.4f;
-            rotationSpeed = 350f;
-            transform.position = new Vector3(transform.position.x, transform.position.y, 10);
-        }
-        if (difficulty == 5)
-        {
-            rangeReset = 0.3f;
-            rotationSpeed = 350f;
-            transform.position = new Vector3(transform.position.x, transform.position.y, 14);
-        }
-        if (difficulty == 6)
-        {
-            rangeReset = 0.3f;
-            rotationSpeed = 350f;
-            transform.position = new Vector3(transform.position.x, transform.position.y, 7);
+            case 1:
+                rangeReset = 1.7f;
+                rotationSpeed = 100f;
+                transform.position = new Vector3(transform.position.x, transform.position.y, 3);
+                break;
+            case 2:
+                rangeReset = 1.2f;
+                rotationSpeed = 175f;
+                transform.position = new Vector3(transform.position.x, transform.position.y, 5);
+                break;
+            case 3:
+                rangeReset = 0.7f;
+                rotationSpeed = 250f;
+                transform.position = new Vector3(transform.position.x, transform.position.y, 7);
+                break;
+            case 4:
+                rangeReset = 0.4f;
+                rotationSpeed = 350f;
+                transform.position = new Vector3(transform.position.x, transform.position.y, 10);
+                break;
+            case 5:
+                rangeReset = 0.3f;
+                rotationSpeed = 350f;
+                transform.position = new Vector3(transform.position.x, transform.position.y, 14);
+                break;
+            case 6:
+                rangeReset = 0.3f;
+                rotationSpeed = 350f;
+                transform.position = new Vector3(transform.position.x, transform.position.y, 14);
+                break;
+            case 7:
+                rangeReset = 0.3f;
+                rotationSpeed = 400f;
+                transform.position = new Vector3(transform.position.x, transform.position.y, 14);
+                break;
+            default:
+                break;
         }
     }
 
@@ -127,6 +131,11 @@ public class targetControl : MonoBehaviour
                 rotationPoint = new Vector3(0f, rotationValue * 0.1f, 0);
                 mySpin.transform.rotation = Quaternion.Euler(rotationPoint);
                 break;
+            case 7:
+                transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
+                rotationPoint = new Vector3(0f, rotationValue * 0.1f, 0);
+                mySpin.transform.rotation = Quaternion.Euler(rotationPoint);
+                break;
             default:
                 // if everything misses, typically an error message
                 break;
@@ -177,7 +186,7 @@ public class targetControl : MonoBehaviour
         rangeTimer -= Time.deltaTime;
         if (rangeTimer <= 0)
         {
-            if (difficulty != 6) rangeTimer = rangeReset;
+            if (difficulty != 6 && difficulty != 7) rangeTimer = rangeReset;
             else rangeTimer = Random.Range(0.2f, 1f);
             if (difficulty == 4)
             {

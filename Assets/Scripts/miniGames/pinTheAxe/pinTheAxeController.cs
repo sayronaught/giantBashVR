@@ -39,15 +39,15 @@ public class pinTheAxeController : MonoBehaviour
         if (chickRespawn >= 0) chickRespawn -= Time.deltaTime;
         if (chickRespawn < 0 && !chicklive) myMO.myChicken.SetActive(true);
 
-        if (myTC.difficulty == 6 && !DegDebug90)
-        {
-            debugSpinPoint.transform.Rotate(Vector3.forward * 90);
-            DegDebug90 = true;
-        }
-        if (myTC.difficulty != 6 && DegDebug90)
+        if (myTC.difficulty != 6 && myTC.difficulty != 7 && DegDebug90)
         {
             debugSpinPoint.transform.Rotate(Vector3.forward * -90);
             DegDebug90 = false;
+        }
+        else if (!DegDebug90)
+        {
+            debugSpinPoint.transform.Rotate(Vector3.forward * 90);
+            DegDebug90 = true;
         }
     }
     public async Task diffIncrease()
@@ -88,8 +88,6 @@ public class pinTheAxeController : MonoBehaviour
                     myTC.rotationSpeed = 350f;
                     myTC.transform.position = new Vector3(0, 3, 14);
                     myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
-                    myFTS1.reset = true;
-                    myFTS2.reset = true;
                     break;
 
                 case 6:
@@ -98,8 +96,13 @@ public class pinTheAxeController : MonoBehaviour
                     myTC.rotationSpeed = 350f;
                     myTC.transform.position = new Vector3(0, 3, 14);
                     myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
-                    myFTS1.reset = true;
-                    myFTS2.reset = true;
+                    break;
+                case 7:
+                    myTC.stage = 0;
+                    myTC.rangeReset = 0.3f;
+                    myTC.rotationSpeed = 400f;
+                    myTC.transform.position = new Vector3(0, 3, 14);
+                    myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
                     break;
                 default:
                     break;
