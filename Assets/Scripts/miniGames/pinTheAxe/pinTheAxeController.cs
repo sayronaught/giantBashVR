@@ -21,7 +21,7 @@ public class pinTheAxeController : MonoBehaviour
     public circusMan myMan;
     public TMP_Text watch;
     public Material watchGUI;
-    public float timeLimit = 300;
+    public float timeLimit = 180;
     public float debug = 0;
 
     // Start is called before the first frame update
@@ -63,6 +63,11 @@ public class pinTheAxeController : MonoBehaviour
         var seconds = timeInSecondsInt - (minutes * 60);  //Get seconds for display alongside minutes
         watch.text = minutes.ToString("D2") + ":" + seconds.ToString("D2");
         watchGUI.SetFloat("Vector1_4",( (myMan.time / timeLimit )-0.5f) * -1);
+
+        if(myMan.time > timeLimit)
+        {
+            myTC.gameObject.SetActive(false);
+        }
        
     }
     public async Task diffIncrease()
@@ -73,7 +78,7 @@ public class pinTheAxeController : MonoBehaviour
             myTC.stage = 0;
             myFTS1.reset = true;
             myFTS2.reset = true;
-            myTC.transform.rotation = Quaternion.Euler(0, 180, 0);
+            myTC.transform.localRotation = Quaternion.Euler(0, 180, 0);
             myTC.rotationValue = 0;
             myMan.time = 0;
             switch (myTC.difficulty++)

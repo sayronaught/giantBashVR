@@ -44,8 +44,8 @@ public class targetColider : MonoBehaviour
             if (falseTarget && myAS) myAS.Play();
             if (mytc.stageCounter) mytc.stageCounter.text = ("stage" + mytc.stage.ToString());
             if (!falseTarget)
-                mytc.myGM.myMan.time -= 30;
-            else mytc.myGM.myMan.time += 10;
+                mytc.myGM.myMan.time -= 10;
+            else mytc.myGM.myMan.time += 20;
         }
     }
 }

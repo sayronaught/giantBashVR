@@ -6347,7 +6347,7 @@ MonoBehaviour:
   myMan: {fileID: 575618755}
   watch: {fileID: 284733528}
   watchGUI: {fileID: 2100000, guid: b054183a2b5014c4d8ffd29a111b2086, type: 2}
-  timeLimit: 300
+  timeLimit: 180
   debug: 0
 --- !u!4 &1244943220
 Transform:

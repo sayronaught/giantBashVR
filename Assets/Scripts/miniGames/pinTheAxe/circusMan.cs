@@ -22,10 +22,15 @@ public class circusMan : MonoBehaviour
         if (time < controller.timeLimit)
         {
             time += Time.deltaTime;
-            tikvol = Mathf.Clamp(-controller.timeLimit + time + 200, 0, 100);
+            tikvol = Mathf.Clamp(-controller.timeLimit + time + 100, 0, 100);
             tikTok.volume = tikvol / 100;
-            tikpich = Mathf.Clamp(-controller.timeLimit + time + 150, 100, 125);
+            tikpich = Mathf.Clamp(-controller.timeLimit + time + 125, 100, 125);
             tikTok.pitch = tikpich / 100;
+        }
+        else
+        {
+            tikTok.volume = 0;
+            tikTok.pitch = 0;
         }
     }
 }
