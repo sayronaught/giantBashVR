@@ -10,8 +10,7 @@ Material:
   m_Name: Pine Tree 02 Billboard 1
   m_Shader: {fileID: -6465566751694194690, guid: a9d8785a070050d48922e1465437af0e, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _ALPHATEST_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
@@ -103,6 +102,7 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0
