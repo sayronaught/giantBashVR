@@ -136,6 +136,11 @@ public class targetControl : MonoBehaviour
                 rotationPoint = new Vector3(0f, rotationValue * 0.1f, 0);
                 mySpin.transform.rotation = Quaternion.Euler(rotationPoint);
                 break;
+            case 8:
+                transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
+                rotationPoint = new Vector3(-11 + Mathf.Sin(Time.fixedTime) * 11, rotationValue * 0.1f, 0);
+                mySpin.transform.rotation = Quaternion.Euler(rotationPoint);
+                break;
             default:
                 // if everything misses, typically an error message
                 break;
