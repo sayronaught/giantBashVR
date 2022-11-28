@@ -23,6 +23,7 @@ public class pinTheAxeController : MonoBehaviour
     public Material watchGUI;
     public float timeLimit = 180;
     public float debug = 0;
+    private bool failed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -64,9 +65,11 @@ public class pinTheAxeController : MonoBehaviour
         watch.text = minutes.ToString("D2") + ":" + seconds.ToString("D2");
         watchGUI.SetFloat("Vector1_4",( (myMan.time / timeLimit )-0.5f) * -1);
 
-        if(myMan.time > timeLimit)
+        if(myMan.time > timeLimit && !failed)
         {
             myTC.gameObject.SetActive(false);
+            failed = true;
+            myMan.buzzer.Play();
         }
        
     }
@@ -83,6 +86,12 @@ public class pinTheAxeController : MonoBehaviour
             myMan.time = 0;
             switch (myTC.difficulty++)
             {
+                case 1:
+                    myTC.rangeReset = 1.7f;
+                    myTC.rotationSpeed = 100f;
+                    myTC.transform.position = new Vector3(0, 2, 3);
+                    myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    break;
                 case 2:
                     myTC.rangeReset = 1.2f;
                     myTC.rotationSpeed = 175f;
@@ -125,7 +134,19 @@ public class pinTheAxeController : MonoBehaviour
                     myTC.transform.localPosition = new Vector3(0, 3, 14);
                     myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
                     break;
+                case 8:
+                    myTC.stage = 0;
+                    myTC.rangeReset = 0.3f;
+                    myTC.rotationSpeed = 400f;
+                    myTC.transform.localPosition = new Vector3(0, 3, 14);
+                    myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                    break;
                 default:
+                    myTC.difficulty = 1;
+                    myTC.rangeReset = 1.7f;
+                    myTC.rotationSpeed = 100f;
+                    myTC.transform.position = new Vector3(0, 2, 3);
+                    myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
                     break;
             }
             myHC.Axes = 0;

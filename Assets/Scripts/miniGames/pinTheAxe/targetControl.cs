@@ -67,6 +67,11 @@ public class targetControl : MonoBehaviour
                 rotationSpeed = 400f;
                 transform.position = new Vector3(transform.position.x, transform.position.y, 14);
                 break;
+            case 8:
+                rangeReset = 0.3f;
+                rotationSpeed = 400f;
+                transform.position = new Vector3(transform.position.x, transform.position.y, 14);
+                break;
             default:
                 break;
         }
@@ -138,8 +143,8 @@ public class targetControl : MonoBehaviour
                 break;
             case 8:
                 transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
-                rotationPoint = new Vector3(-11 + Mathf.Sin(Time.fixedTime) * 11, rotationValue * 0.1f, 0);
-                mySpin.transform.rotation = Quaternion.Euler(rotationPoint);
+                rotationPoint = new Vector3(-11 + Mathf.Sin(Time.fixedTime * rotationDirection) * 11, rotationValue * 0.1f, 0);
+                mySpin.transform.rotation = Quaternion.Slerp(mySpin.transform.rotation, Quaternion.Euler(rotationPoint) ,Time.deltaTime);
                 break;
             default:
                 // if everything misses, typically an error message
@@ -161,25 +166,35 @@ public class targetControl : MonoBehaviour
     }
     void stage4()
     {
-        if (rangeChange == true)
+        if (rangeChange && difficulty != 7)
         {
             rotationDirection = Random.Range(0.15f, 1.5f);
+            rangeChange = false;
+        }
+        else if (rangeChange && difficulty == 7)
+        {
+            rotationDirection = Random.Range(0.3f, 2.5f);
             rangeChange = false;
         }
     }
     void stage5()
     {
         if (donePlaying) donePlaying = false;
-        if (rangeChange == true)
+        if (rangeChange && difficulty != 7)
         {
             rotationDirection = Random.Range(-2f, 2f);
+            rangeChange = false;
+        }
+        else if (rangeChange && difficulty == 7)
+        {
+            rotationDirection = Random.Range(-3f, 3f);
             rangeChange = false;
         }
     }
     void stage6()
     {
         rotationDirection = 0;
-        if ( !donePlaying )
+        if (!donePlaying)
         {
             donePlaying = true;
             resultCheer.Play();
@@ -191,7 +206,7 @@ public class targetControl : MonoBehaviour
         rangeTimer -= Time.deltaTime;
         if (rangeTimer <= 0)
         {
-            if (difficulty != 6 && difficulty != 7) rangeTimer = rangeReset;
+            if (difficulty != 6 && difficulty != 7 && difficulty != 8) rangeTimer = rangeReset;
             else rangeTimer = Random.Range(0.2f, 1f);
             if (difficulty == 4)
             {
