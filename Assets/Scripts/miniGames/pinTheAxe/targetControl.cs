@@ -109,6 +109,13 @@ public class targetControl : MonoBehaviour
         }
 
     }
+
+    void dif9()
+    {
+        transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
+        rotationPoint = new Vector3(-11 + Mathf.Sin(Time.fixedTime * rotationDirection) * 11, rotationValue * 0.1f, 0);
+        mySpin.transform.rotation = Quaternion.Slerp(mySpin.transform.rotation, Quaternion.Euler(rotationPoint), Time.deltaTime);
+    }
     void on()
     {
         rotationValue += rotationDirection * rotationSpeed * Time.deltaTime;
@@ -145,6 +152,9 @@ public class targetControl : MonoBehaviour
                 transform.localPosition = Vector3.Slerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * 3f) * 4f, 2f - Mathf.Cos(Time.fixedTime * 3) * 0.7f, 14 + Mathf.Sin(Time.fixedTime * randomSpeed) * 4), Time.deltaTime);
                 rotationPoint = new Vector3(-11 + Mathf.Sin(Time.fixedTime * rotationDirection) * 11, rotationValue * 0.1f, 0);
                 mySpin.transform.rotation = Quaternion.Slerp(mySpin.transform.rotation, Quaternion.Euler(rotationPoint) ,Time.deltaTime);
+                break;
+            case 9:
+                dif9();
                 break;
             default:
                 // if everything misses, typically an error message
