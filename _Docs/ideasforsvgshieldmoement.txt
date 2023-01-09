@@ -1,0 +1,20 @@
+Car/horsecart with rolling wheels
+firework (with sound)
+"the finger" (jerks toward player when done)
+axe
+bow
+thumbs up
+"magic distractions"
+triangle
+square
+pentagon
+pentagram
+jotunbash logo
+sun (he glow)
+specialisterne logo
+spaceship
+gun/artillery pointed at player(particles at player)
+beer/mead/drinkinghorn
+spinning mandala
+Slow spell effect, rewinds progress (taunts)
+spinning star, the faster it spins the more particiles it drops them in world space
