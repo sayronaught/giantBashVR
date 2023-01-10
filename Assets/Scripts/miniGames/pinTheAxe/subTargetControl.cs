@@ -20,6 +20,8 @@ public class subTargetControl : MonoBehaviour
     private float randomTimeTimer;
     private float randomMovementTimer;
 
+    public Transform splineAni;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,28 +43,36 @@ public class subTargetControl : MonoBehaviour
             myMC.enabled = false;
         }
 
-
-        transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * xTimer + offsetTimer) * xWidth, 3 + Mathf.Cos(Time.fixedTime * yTimer + offsetTimer) * yWidth, myTC.transform.localPosition.z-distanceFromTarget), Time.deltaTime);
-      
-        if(randomSpeed == true)
+        if (myTC.difficulty != 9)
         {
-            randomTimeTimer -= Time.deltaTime;
-            if(randomTimeTimer <= 0)
+
+            transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(Mathf.Sin(Time.fixedTime * xTimer + offsetTimer) * xWidth, 3 + Mathf.Cos(Time.fixedTime * yTimer + offsetTimer) * yWidth, myTC.transform.localPosition.z - distanceFromTarget), Time.deltaTime);
+
+            if (randomSpeed == true)
             {
-                xTimer = Random.Range( 4, 8);
-                yTimer = Random.Range( 4, 8);
-                randomTimeTimer = randomReset;
+                randomTimeTimer -= Time.deltaTime;
+                if (randomTimeTimer <= 0)
+                {
+                    xTimer = Random.Range(4, 8);
+                    yTimer = Random.Range(4, 8);
+                    randomTimeTimer = randomReset;
+                }
+            }
+            if (randomMovement == true)
+            {
+                randomMovementTimer -= Time.deltaTime;
+                if (randomMovementTimer <= 0)
+                {
+                    xWidth = Random.Range(10, 20);
+                    yWidth = Random.Range(4, 8);
+                    randomMovementTimer = randomReset;
+                }
             }
         }
-        if(randomMovement == true)
+        else if(myTC.difficulty == 9)
         {
-            randomMovementTimer -= Time.deltaTime;
-            if(randomMovementTimer <= 0)
-            {
-                xWidth = Random.Range(10, 20);
-                yWidth = Random.Range(4, 8);
-                randomMovementTimer = randomReset;
-            }
+            if (splineAni)
+            transform.position = Vector3.Lerp(transform.position, splineAni.position, Time.deltaTime * 10);
         }
     }
 }
