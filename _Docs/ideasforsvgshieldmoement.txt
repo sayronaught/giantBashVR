@@ -1,20 +1,20 @@
-Car/horsecart with rolling wheels
+Car/horsecart with rolling wheels (svg done)
 firework (with sound)
-"the finger" (jerks toward player when done)
-axe
-bow
-thumbs up
+"the finger" (jerks toward player when done) (svg done)
+axe (svg done)
+bow (svg done)
+thumbs up (svg done) 
 "magic distractions"
-triangle
-square
-pentagon
-pentagram
+triangle (svg done)
+square (svg done)
+pentagon (svg done)
+pentagram (svg done)
 jotunbash logo
-sun (he glow)
-specialisterne logo
-spaceship
+sun (he glow) (svg done)
+specialisterne logo (svg done)
+spaceship (svg done)
 gun/artillery pointed at player(particles at player)
-beer/mead/drinkinghorn
+beer/mead/drinkinghorn (svg done)
 spinning mandala
 Slow spell effect, rewinds progress (taunts)
 spinning star, the faster it spins the more particiles it drops them in world space
