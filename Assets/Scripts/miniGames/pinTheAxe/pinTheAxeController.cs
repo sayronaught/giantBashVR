@@ -143,6 +143,7 @@ public class pinTheAxeController : MonoBehaviour
                     break;
                 default:
                     myTC.difficulty = 1;
+                    myTC.stage = 0;
                     myTC.rangeReset = 1.7f;
                     myTC.rotationSpeed = 100f;
                     myTC.transform.position = new Vector3(0, 2, 3);
