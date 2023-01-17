@@ -8,10 +8,9 @@ public class pinTheAxeController : MonoBehaviour
 {
     public targetControl myTC;
     public wheelAxeControler myHC;
-    public GameObject myFTC1;
-    public GameObject myFTC2;
-    public falseTargetController myFTS1;
-    public falseTargetController myFTS2;
+    public falseTargetController myFTC1;
+    public falseTargetController myFTC2;
+    public multiSplineAnimator[] mySA;
     public mapObj myMO;
     public float chickRespawn = 0;
     bool chicklive;
@@ -36,13 +35,13 @@ public class pinTheAxeController : MonoBehaviour
     {
         if (myTC.difficulty == 5 || myTC.difficulty == 7)
         {
-            myFTC1.SetActive(true);
-            myFTC2.SetActive(true);
+            myFTC1.gameObject.SetActive(true);
+            myFTC2.gameObject.SetActive(true);
         }
         else
         {
-            myFTC1.SetActive(false);
-            myFTC2.SetActive(false);
+            myFTC1.gameObject.SetActive(false);
+            myFTC2.gameObject.SetActive(false);
         }
 
         if (chickRespawn >= 0) chickRespawn -= Time.deltaTime;
@@ -65,11 +64,17 @@ public class pinTheAxeController : MonoBehaviour
         watch.text = minutes.ToString("D2") + ":" + seconds.ToString("D2");
         watchGUI.SetFloat("Vector1_4",( (myMan.time / timeLimit )-0.5f) * -1);
 
-        if(myMan.time > timeLimit && !failed)
+        if (myMan.time > timeLimit)
         {
-            myTC.gameObject.SetActive(false);
-            failed = true;
-            myMan.buzzer.Play();
+            watch.text = "You Lost";
+            if (!failed)
+            {
+                myTC.gameObject.SetActive(false);
+                myFTC1.gameObject.SetActive(false);
+                myFTC2.gameObject.SetActive(false);
+                failed = true;
+                myMan.buzzer.Play();
+            }
         }
        
     }
@@ -79,11 +84,15 @@ public class pinTheAxeController : MonoBehaviour
         if (!Application.isEditor || Application.isPlaying)
         {
             myTC.stage = 0;
-            myFTS1.reset = true;
-            myFTS2.reset = true;
+            myFTC1.reset = true;
+            myFTC2.reset = true;
             myTC.transform.localRotation = Quaternion.Euler(0, 180, 0);
             myTC.rotationValue = 0;
             myMan.time = 0;
+            foreach (multiSplineAnimator Animator in mySA)
+            {
+                Animator.gameObject.SetActive(false);
+            }
             switch (myTC.difficulty++)
             {
                 case 1:
@@ -113,7 +122,6 @@ public class pinTheAxeController : MonoBehaviour
                     break;
 
                 case 5:
-                    myTC.stage = 0;
                     myTC.rangeReset = 0.3f;
                     myTC.rotationSpeed = 350f;
                     myTC.transform.localPosition = new Vector3(0, 3, 14);
@@ -121,29 +129,35 @@ public class pinTheAxeController : MonoBehaviour
                     break;
 
                 case 6:
-                    myTC.stage = 0;
                     myTC.rangeReset = 0.3f;
                     myTC.rotationSpeed = 350f;
                     myTC.transform.localPosition = new Vector3(0, 3, 14);
                     myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
                     break;
                 case 7:
-                    myTC.stage = 0;
                     myTC.rangeReset = 0.3f;
                     myTC.rotationSpeed = 400f;
                     myTC.transform.localPosition = new Vector3(0, 3, 14);
                     myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
                     break;
                 case 8:
-                    myTC.stage = 0;
                     myTC.rangeReset = 0.3f;
                     myTC.rotationSpeed = 400f;
                     myTC.transform.localPosition = new Vector3(0, 3, 14);
                     myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
                     break;
+                case 9:
+                    myTC.rangeReset = 0.3f;
+                    myTC.rotationSpeed = 400f;
+                    myTC.transform.localPosition = new Vector3(0, 3, 14);
+                    myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                    foreach (multiSplineAnimator Animator in mySA)
+                    {
+                        Animator.gameObject.SetActive(true);
+                    }
+                    break;
                 default:
                     myTC.difficulty = 1;
-                    myTC.stage = 0;
                     myTC.rangeReset = 1.7f;
                     myTC.rotationSpeed = 100f;
                     myTC.transform.position = new Vector3(0, 2, 3);

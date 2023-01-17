@@ -72,6 +72,11 @@ public class targetControl : MonoBehaviour
                 rotationSpeed = 400f;
                 transform.position = new Vector3(transform.position.x, transform.position.y, 14);
                 break;
+            case 9:
+                rangeReset = 0.3f;
+                rotationSpeed = 400f;
+                transform.position = new Vector3(transform.position.x, transform.position.y, 14);
+                break;
             default:
                 break;
         }

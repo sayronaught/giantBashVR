@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class multiSplineAnimator : MonoBehaviour
 {
+	public targetControl myTC;
 	public float Speed = 10.0f;
 	public bool OrientToPath = true;
 	public Spline[] Spline;
@@ -16,6 +17,8 @@ public class multiSplineAnimator : MonoBehaviour
 
 	void Start()
 	{
+		if (myTC.difficulty == 9)
+		gameObject.SetActive(false);
 		distanceTraveled = 0;
 	}
 
