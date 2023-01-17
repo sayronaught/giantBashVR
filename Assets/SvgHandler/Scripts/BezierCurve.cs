@@ -215,7 +215,10 @@ public class BezierCurve : MonoBehaviour
 
 	public void GuidelineSelected()
 	{
-		Selection.objects = new GameObject[4]{p0.gameObject, p1.gameObject, p2.gameObject, p3.gameObject};
+#if UNITY_EDITOR
+		Selection.objects = new GameObject[4] { p0.gameObject, p1.gameObject, p2.gameObject, p3.gameObject };
+#endif
+		//Selection.objects = new GameObject[4]{p0.gameObject, p1.gameObject, p2.gameObject, p3.gameObject};
 		foreach (GuideLine g in _guideLines)
 			g.SetSelected(true);
 	}
@@ -226,11 +229,13 @@ public class BezierCurve : MonoBehaviour
 		GameObject[] cps = new GameObject[4]{p0.gameObject, p1.gameObject, p2.gameObject, p3.gameObject};
 		foreach (GameObject cp in cps)
 		{
+#if UNITY_EDITOR
 			if (!Selection.Contains(cp))
 			{
 				flag = true;
 				break;
 			}
+#endif
 		}
 
 		if (flag)

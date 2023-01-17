@@ -6,6 +6,7 @@ using UnityEditor;
 [System.Serializable]
 public class GuideLine : MonoBehaviour 
 {
+	
 	[SerializeField]
 	Vector3 start;	
 	[SerializeField]
@@ -55,11 +56,14 @@ public class GuideLine : MonoBehaviour
 
 	void OnDrawGizmosSelected()
 	{
+#if UNITY_EDITOR
 		// Only send message if GuideLine was selected directly, not as part of the heirarchy
 		if (Selection.objects.Length == 1 && (Selection.objects[0] as GameObject) == gameObject)
 		{
 			parent.GuidelineSelected();
 		}
+#endif
+
 	}
 
 	public Vector3 GetStart()
@@ -81,4 +85,5 @@ public class GuideLine : MonoBehaviour
 	{
 		isSelected = flag;
 	}
+	
 }
