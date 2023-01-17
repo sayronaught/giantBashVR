@@ -7,7 +7,7 @@ using UnityEngine;
 public class pinTheAxeController : MonoBehaviour
 {
     public targetControl myTC;
-    public wheelAxeControler myHC;
+    public wheelAxeControler myWAC;
     public falseTargetController myFTC1;
     public falseTargetController myFTC2;
     public multiSplineAnimator[] mySA;
@@ -22,18 +22,19 @@ public class pinTheAxeController : MonoBehaviour
     public Material watchGUI;
     public float timeLimit = 180;
     public float debug = 0;
-    private bool failed = false;
+    public bool failed = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        myTC.stageCounter.text = ("stage\n" + myTC.stage.ToString() + "\ndifficulty\n" + myTC.difficulty.ToString());
+        watch.text = "3:00";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (myTC.difficulty == 5 || myTC.difficulty == 7)
+        if ((myTC.difficulty == 5 || myTC.difficulty == 7 )&& failed == false)
         {
             myFTC1.gameObject.SetActive(true);
             myFTC2.gameObject.SetActive(true);
@@ -67,23 +68,30 @@ public class pinTheAxeController : MonoBehaviour
         if (myMan.time > timeLimit)
         {
             watch.text = "You Lost";
-            if (!failed)
-            {
-                myTC.gameObject.SetActive(false);
-                myFTC1.gameObject.SetActive(false);
-                myFTC2.gameObject.SetActive(false);
-                failed = true;
-                myMan.buzzer.Play();
-            }
         }
        
     }
-    public async Task diffIncrease()
+
+    public void timedOut()
     {
-        await Task.Delay(5000);
+        myTC.gameObject.SetActive(false);
+        myFTC1.gameObject.SetActive(false);
+        myFTC2.gameObject.SetActive(false);
+        failed = true;
+        myMan.buzzer.Play();
+        myTC.difficulty = -1;
+        diffIncrease(30000);
+    }
+
+    public async Task diffIncrease(int delay)
+    {
+        await Task.Delay(delay);
         if (!Application.isEditor || Application.isPlaying)
         {
+            myMan.started = false;
             myTC.stage = 0;
+            myTC.gameObject.SetActive(true);
+            failed = false;
             myFTC1.reset = true;
             myFTC2.reset = true;
             myTC.transform.localRotation = Quaternion.Euler(0, 180, 0);
@@ -164,9 +172,9 @@ public class pinTheAxeController : MonoBehaviour
                     myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
                     break;
             }
-            myHC.Axes = 0;
-            myHC.Axecounter.text = myHC.Axes.ToString();
-            myTC.stageCounter.text = ("stage" + myTC.stage.ToString());
+            myWAC.Axes = 0;
+            myWAC.Axecounter.text = myWAC.Axes.ToString();
+            myTC.stageCounter.text = ("stage\n" + myTC.stage.ToString() + "\ndifficulty\n" + myTC.difficulty.ToString());
         }   
         await Task.Yield();
     }

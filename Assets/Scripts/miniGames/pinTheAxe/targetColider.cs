@@ -42,7 +42,7 @@ public class targetColider : MonoBehaviour
             if (transform.childCount > 0) child.SetActive(false);
             if (!falseTarget) mytc.stage += 1;
             if (falseTarget && myAS) myAS.Play();
-            if (mytc.stageCounter) mytc.stageCounter.text = ("stage" + mytc.stage.ToString());
+            if (mytc.stageCounter) mytc.stageCounter.text = ("stage\n" + mytc.stage.ToString() + "\ndifficulty\n" + mytc.difficulty.ToString());
             if (!falseTarget)
                 mytc.myGM.myMan.time -= 10;
             else mytc.myGM.myMan.time += 20;

@@ -9,6 +9,8 @@ public class circusMan : MonoBehaviour
     public AudioSource ambiance;
     public AudioSource buzzer;
 
+    public bool started = false;
+
     public float time = 0;
     public float tikvol = 0;
     public float tikpich = 0;
@@ -22,7 +24,10 @@ public class circusMan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time < controller.timeLimit)
+        if (!started)
+            if(controller.myWAC.myHC.beingHeld())
+                started = true;
+        if (time < controller.timeLimit && started)
         {
             time += Time.deltaTime;
             tikvol = Mathf.Clamp(-controller.timeLimit + time + 100, 0, 100);
@@ -38,6 +43,10 @@ public class circusMan : MonoBehaviour
             ambiance.volume = 0.25f;
             tikTok.volume = 0;
             tikTok.pitch = 0;
+        }
+        if (time > controller.timeLimit && controller.failed == false)
+        {
+            controller.timedOut();
         }
     }
 }

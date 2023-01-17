@@ -213,7 +213,7 @@ public class targetControl : MonoBehaviour
         {
             donePlaying = true;
             resultCheer.Play();
-            myGM.diffIncrease();
+            myGM.diffIncrease(5000);
         }
     }
     void rangeUpdate()

@@ -17,8 +17,10 @@ public class multiSplineAnimator : MonoBehaviour
 
 	void Start()
 	{
-		if (myTC.difficulty == 9)
+		if (myTC.difficulty != 9)
 		gameObject.SetActive(false);
+		else
+		gameObject.SetActive(true);
 		distanceTraveled = 0;
 	}
 

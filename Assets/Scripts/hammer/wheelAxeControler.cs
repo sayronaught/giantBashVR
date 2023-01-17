@@ -17,7 +17,7 @@ public class wheelAxeControler : MonoBehaviour
     public bool spinning = false;
     public bool holding = false;
 
-    private hammerControlerCircusMode myHC;
+    public hammerControlerCircusMode myHC;
     private Rigidbody myRB;
     private AudioSource myAS;
     public AudioSource myMiss;
