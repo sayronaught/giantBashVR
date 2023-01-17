@@ -34,7 +34,7 @@ public class pinTheAxeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((myTC.difficulty == 5 || myTC.difficulty == 7 )&& failed == false)
+        if ((myTC.difficulty == 5 || myTC.difficulty == 7) && failed == false)
         {
             myFTC1.gameObject.SetActive(true);
             myFTC2.gameObject.SetActive(true);
@@ -63,13 +63,12 @@ public class pinTheAxeController : MonoBehaviour
         var minutes = timeInSecondsInt / 60;  //Get total minutes
         var seconds = timeInSecondsInt - (minutes * 60);  //Get seconds for display alongside minutes
         watch.text = minutes.ToString("D2") + ":" + seconds.ToString("D2");
-        watchGUI.SetFloat("Vector1_4",( (myMan.time / timeLimit )-0.5f) * -1);
+        watchGUI.SetFloat("Vector1_4", ((myMan.time / timeLimit) - 0.5f) * -1);
 
         if (myMan.time > timeLimit)
         {
             watch.text = "You Lost";
         }
-       
     }
 
     public void timedOut()

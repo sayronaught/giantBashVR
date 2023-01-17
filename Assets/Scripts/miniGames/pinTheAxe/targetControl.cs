@@ -16,9 +16,12 @@ public class targetControl : MonoBehaviour
     public float rangeReset;
     public bool rangeChange;
     public bool beenHit = false;
+    public int curentspline = 0;
 
     bool donePlaying = false;
     private float randomSpeed = 0;
+
+    private float splineTime = 0;
 
     public GameObject mySpin;
     public GameObject bloodSplat;
@@ -26,6 +29,7 @@ public class targetControl : MonoBehaviour
     public AudioSource resultCheer;
     public TMP_Text stageCounter;
     public pinTheAxeController myGM;
+
 
     // Start is called before the first frame update
     void Start()
@@ -85,7 +89,7 @@ public class targetControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (stage != 0 && stage != 6) on();
+        if (stage > 0 && stage < 6) on();
         switch( stage )
         {
             case 1:
@@ -111,6 +115,10 @@ public class targetControl : MonoBehaviour
             default:
                 // if everything misses, typically an error message
                 break;
+        }
+        if (difficulty == 9)
+        {
+            splineChange();
         }
 
     }
@@ -181,12 +189,12 @@ public class targetControl : MonoBehaviour
     }
     void stage4()
     {
-        if (rangeChange && difficulty != 7)
+        if (rangeChange && difficulty < 7)
         {
             rotationDirection = Random.Range(0.15f, 1.5f);
             rangeChange = false;
         }
-        else if (rangeChange && difficulty == 7)
+        else if (rangeChange && difficulty >= 7)
         {
             rotationDirection = Random.Range(0.3f, 2.5f);
             rangeChange = false;
@@ -195,12 +203,12 @@ public class targetControl : MonoBehaviour
     void stage5()
     {
         if (donePlaying) donePlaying = false;
-        if (rangeChange && difficulty != 7)
+        if (rangeChange && difficulty < 7)
         {
             rotationDirection = Random.Range(-2f, 2f);
             rangeChange = false;
         }
-        else if (rangeChange && difficulty == 7)
+        else if (rangeChange && difficulty >= 7)
         {
             rotationDirection = Random.Range(-3f, 3f);
             rangeChange = false;
@@ -221,17 +229,51 @@ public class targetControl : MonoBehaviour
         rangeTimer -= Time.deltaTime;
         if (rangeTimer <= 0)
         {
-            if (difficulty != 6 && difficulty != 7 && difficulty != 8) rangeTimer = rangeReset;
-            else rangeTimer = Random.Range(0.2f, 1f);
-            if (difficulty == 4)
+            switch (difficulty)
             {
-                randomSpeed = Random.Range(-2f, 2f);
-            }
-            if (difficulty == 5)
-            {
-                randomSpeed = Random.Range(-4f, 4f);
+                case 4:
+                    randomSpeed = Random.Range(-2f, 2f);
+                    rangeTimer = rangeReset;
+                    break;
+                case 5:
+                    randomSpeed = Random.Range(-4f, 4f);
+                    rangeTimer = rangeReset;
+                    break;
+                case 6:
+                    randomSpeed = Random.Range(-4f, 4f);
+                    rangeTimer = Random.Range(0.2f, 1f);
+                    break;
+                case 7:
+                    randomSpeed = Random.Range(-4f, 4f);
+                    rangeTimer = Random.Range(0.2f, 1f);
+                    break;
+                case 8:
+                    randomSpeed = Random.Range(-4f, 4f);
+                    rangeTimer = Random.Range(0.2f, 1f);
+                    break;
+                case 9:
+                    randomSpeed = Random.Range(-4f, 4f);
+                    rangeTimer = Random.Range(0.2f, 1f);
+                    break;
+                default:
+                    rangeTimer = rangeReset;
+                    break;
             }
             rangeChange = true;
+        }
+    }
+
+    public void splineChange()
+    {
+        splineTime -= Time.deltaTime;
+        if (splineTime <= 0)
+        {
+            curentspline = Random.Range(0, myGM.mySA[1].Spline.Length);
+            foreach (multiSplineAnimator animator in myGM.mySA)
+            {
+                animator.mySpline = curentspline;
+            }
+            splineTime = 5;
         }
     }
 }

@@ -10,7 +10,7 @@ public class multiSplineAnimator : MonoBehaviour
 	public Spline[] Spline;
     [Range(0, 20)]
 	public int mySpline = 0;
-	public float randomTime = 0;
+	//public float randomTime = 0;
 
 
 	double distanceTraveled;
@@ -26,12 +26,12 @@ public class multiSplineAnimator : MonoBehaviour
 
 	void Update()
 	{
-		randomTime += Time.deltaTime;
-		if (randomTime >= 4)
-        {
-			mySpline =  Random.Range(0, Spline.Length);
-			randomTime = 0;
-        }
+		//randomTime += Time.deltaTime;
+		//if (randomTime >= 4)
+        //{
+		//	mySpline =  Random.Range(0, Spline.Length);
+		//	randomTime = 0;
+        //}
 		distanceTraveled += Time.deltaTime * Speed;
 
 		SplineData data = Spline[mySpline].NextDataPoint(distanceTraveled);
