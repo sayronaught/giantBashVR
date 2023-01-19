@@ -24,9 +24,8 @@ public class tallyBoard : MonoBehaviour
     {
         scores.Add(new score { totalscore = stage + diff * 6 - 6, stage = stage, diff = diff ,axes = axe ,contender = currentContender});
         testing = false;
-        Debug.Log(scores[currentContender].axes +" "+ scores[currentContender].totalscore +" " +currentContender);
         currentContender++;
-        scores.Sort();
+        scores.Sort((t1, t2) => t2.totalscore.CompareTo(t1.totalscore));
     }
     public void Update()
     {
