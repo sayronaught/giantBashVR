@@ -10,14 +10,17 @@ public class pinTheAxeController : MonoBehaviour
     public wheelAxeControler myWAC;
     public falseTargetController myFTC1;
     public falseTargetController myFTC2;
-    public multiSplineAnimator[] mySA;
+    public tallyBoard myTally;
+    public circusMan myMan;
     public mapObj myMO;
+    public multiSplineAnimator[] mySA;
+
     public float chickRespawn = 0;
     bool chicklive;
     public GameObject debugSpinPoint;
     public bool DegDebug90 = false;
 
-    public circusMan myMan;
+
     public TMP_Text watch;
     public Material watchGUI;
     public float timeLimit = 180;
@@ -48,12 +51,12 @@ public class pinTheAxeController : MonoBehaviour
         if (chickRespawn >= 0) chickRespawn -= Time.deltaTime;
         if (chickRespawn < 0 && !chicklive) myMO.myChicken.SetActive(true);
 
-        if (myTC.difficulty != 6 && myTC.difficulty != 7 && DegDebug90)
+        if (myTC.difficulty >= 6 && DegDebug90)
         {
             debugSpinPoint.transform.Rotate(Vector3.forward * -90);
             DegDebug90 = false;
         }
-        else if (!DegDebug90)
+        else if (myTC.difficulty < 6 && !DegDebug90)
         {
             debugSpinPoint.transform.Rotate(Vector3.forward * 90);
             DegDebug90 = true;
@@ -79,6 +82,7 @@ public class pinTheAxeController : MonoBehaviour
         failed = true;
         myMan.buzzer.Play();
         myTC.difficulty = -1;
+        myTally.newScore(myTC.stage , myTC.difficulty , myWAC.Axes);
         diffIncrease(30000);
     }
 
