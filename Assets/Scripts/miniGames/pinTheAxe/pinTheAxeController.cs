@@ -82,7 +82,7 @@ public class pinTheAxeController : MonoBehaviour
         failed = true;
         myMan.buzzer.Play();
         myTC.difficulty = -1;
-        myTally.newScore(myTC.stage , myTC.difficulty , myWAC.Axes);
+        myTally.newScore(myTC.stage , myTC.difficulty , myWAC.Axes, null);
         diffIncrease(30000);
     }
 
