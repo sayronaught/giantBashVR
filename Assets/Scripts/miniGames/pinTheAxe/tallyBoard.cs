@@ -52,7 +52,7 @@ public class tallyBoard : MonoBehaviour
 
     public void finished()
     {
-        keyboard = false;
+        Debug.Log(TouchScreenKeyboard.isSupported);
         overlayKeyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
         TouchScreenKeyboard.Open("");
         if (overlayKeyboard != null)
@@ -62,7 +62,7 @@ public class tallyBoard : MonoBehaviour
     {
         if (testing) newScore(Random.Range(0,6),Random.Range(1,8),Random.Range(1,999),null);
         testing = false;
-       // if (keyboard) finished();
+        if (keyboard) finished();
             keyboard = false;
     }
 }
