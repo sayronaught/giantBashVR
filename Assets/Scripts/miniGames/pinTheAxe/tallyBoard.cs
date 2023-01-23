@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class tallyBoard : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class tallyBoard : MonoBehaviour
     public int currentContender = 1;
 
     public TMP_Text scoreboard;
+
+
+    public bool keyboard = false;
+    public TouchScreenKeyboard overlayKeyboard;
+    public static string inputText = "";
 
     [System.Serializable]
     public class score
@@ -36,15 +42,27 @@ public class tallyBoard : MonoBehaviour
 
     public void boardUpdate()
     {
+
         scoreboard.text = ("name\t\t\tscore\tstage\tlevel");
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 10 || i == scores.Count; i++)
         {
             scoreboard.text += ("\n" + scores[i].tag + "\t\t" + scores[i].totalscore + "\t" + scores[i].stage + "\t" + scores[i].diff);
         }
+    }
 
+    public void finished()
+    {
+        keyboard = false;
+        overlayKeyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+        TouchScreenKeyboard.Open("");
+        if (overlayKeyboard != null)
+            scoreboard.text = overlayKeyboard.text;
     }
     public void Update()
     {
-        if (testing) newScore(Random.Range(1,7), Random.Range(1, 7), Random.Range(1, 7) , null);
+        if (testing) newScore(Random.Range(0,6),Random.Range(1,8),Random.Range(1,999),null);
+        testing = false;
+       // if (keyboard) finished();
+            keyboard = false;
     }
 }
