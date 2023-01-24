@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pinTheAxeController : MonoBehaviour
 {
+    public bool Demo = false;
     public targetControl myTC;
     public wheelAxeControler myWAC;
     public falseTargetController myFTC1;
@@ -81,15 +83,23 @@ public class pinTheAxeController : MonoBehaviour
         myFTC2.gameObject.SetActive(false);
         failed = true;
         myMan.buzzer.Play();
-        myTC.difficulty = -1;
+        myTally.scoreboardOBJ.SetActive(true);
         myTally.newScore(myTC.stage , myTC.difficulty , myWAC.Axes, null);
+        
         diffIncrease(30000);
     }
 
     public async Task diffIncrease(int delay)
     {
+        if (myTC.difficulty == 8)
+        {
+            myTally.newScore(myTC.stage, myTC.difficulty, myWAC.Axes, null);
+
+            delay = 30000;
+        }
+
         await Task.Delay(delay);
-        if (!Application.isEditor || Application.isPlaying)
+        if ((!Application.isEditor || Application.isPlaying) && !failed)
         {
             myMan.started = false;
             myTC.stage = 0;
@@ -157,7 +167,7 @@ public class pinTheAxeController : MonoBehaviour
                     myTC.transform.localPosition = new Vector3(0, 3, 14);
                     myTC.mySpin.transform.localRotation = Quaternion.Euler(0, 0, 0);
                     break;
-                case 9:
+                    //case 9:
                     myTC.rangeReset = 0.3f;
                     myTC.rotationSpeed = 400f;
                     myTC.transform.localPosition = new Vector3(0, 3, 14);
@@ -168,17 +178,14 @@ public class pinTheAxeController : MonoBehaviour
                     }
                     break;
                 default:
-                    myTC.difficulty = 1;
-                    myTC.rangeReset = 1.7f;
-                    myTC.rotationSpeed = 100f;
-                    myTC.transform.position = new Vector3(0, 2, 3);
-                    myTC.mySpin.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    SceneManager.LoadScene(0);
                     break;
             }
             myWAC.Axes = 0;
             myWAC.Axecounter.text = myWAC.Axes.ToString();
             myTC.stageCounter.text = ("stage\n" + myTC.stage.ToString() + "\ndifficulty\n" + myTC.difficulty.ToString());
-        }   
-        await Task.Yield();
+        }
+        else if ((!Application.isEditor || Application.isPlaying) && failed) SceneManager.LoadScene(0);
+            await Task.Yield();
     }
 }

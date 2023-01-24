@@ -11,12 +11,11 @@ public class tallyBoard : MonoBehaviour
     public bool testing = false;
     public int currentContender = 1;
 
-    public TMP_Text scoreboard;
+    public TMP_Text tags;
+    public TMP_Text levels;
+    public GameObject scoreboardOBJ;
 
-
-    public bool keyboard = false;
-    public TouchScreenKeyboard overlayKeyboard;
-    public static string inputText = "";
+    public string[] names;
 
     [System.Serializable]
     public class score
@@ -32,7 +31,15 @@ public class tallyBoard : MonoBehaviour
 
     public void newScore(int stage , int diff , int axe , string tag)
     {
-        if (tag == null) tag = "Contender" + currentContender;
+        if (tag == null)
+        {
+            if (diff == 1) tag = names[Random.Range(0, 2)] + currentContender;
+            if (diff >= 2 && diff <= 4) tag = names[Random.Range(3, 7)] + currentContender;
+            if (diff >= 5 && diff <= 6) tag = names[Random.Range(8, 13)] + currentContender;
+            if (diff == 7) tag = names[Random.Range(14, 16)] + currentContender;
+            if (diff == 8) tag = names[Random.Range(17,18)] + currentContender;
+
+        }
         scores.Add(new score { totalscore = stage + diff * 6 - 6, stage = stage, diff = diff ,axes = axe ,contender = currentContender ,tag = tag});
         testing = false;
         currentContender++;
@@ -42,27 +49,21 @@ public class tallyBoard : MonoBehaviour
 
     public void boardUpdate()
     {
-
-        scoreboard.text = ("name\t\t\tscore\tstage\tlevel");
-        for (int i = 0; i < 10 || i == scores.Count; i++)
+        tags.text = "";
+        levels.text = "";
+        for (int i = 0; i < 10; i++)
         {
-            scoreboard.text += ("\n" + scores[i].tag + "\t\t" + scores[i].totalscore + "\t" + scores[i].stage + "\t" + scores[i].diff);
+            if (i < scores.Count)
+            {
+                tags.text += scores[i].tag + "\n";
+                levels.text += scores[i].totalscore + "\t\t" + scores[i].stage + "\t\t" + scores[i].diff +"\n";
+            }
         }
     }
 
-    public void finished()
-    {
-        Debug.Log(TouchScreenKeyboard.isSupported);
-        overlayKeyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
-        TouchScreenKeyboard.Open("");
-        if (overlayKeyboard != null)
-            scoreboard.text = overlayKeyboard.text;
-    }
     public void Update()
     {
         if (testing) newScore(Random.Range(0,6),Random.Range(1,8),Random.Range(1,999),null);
         testing = false;
-        if (keyboard) finished();
-            keyboard = false;
     }
 }
