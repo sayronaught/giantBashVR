@@ -181,7 +181,6 @@ public class pinTheAxeController : MonoBehaviour
                     SceneManager.LoadScene(0);
                     break;
             }
-            myWAC.Axes = 0;
             myWAC.Axecounter.text = myWAC.Axes.ToString();
             myTC.stageCounter.text = ("stage\n" + myTC.stage.ToString() + "\ndifficulty\n" + myTC.difficulty.ToString());
         }

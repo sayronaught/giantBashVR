@@ -29,8 +29,22 @@ public class tallyBoard : MonoBehaviour
     }
     public List<score> scores = new List<score>();
 
+    public void loadScore()
+    {
+        if (PlayerPrefs.GetString("pinTheAxeHighScore").Length > 0)
+        {
+            string temp = PlayerPrefs.GetString("pinTheAxeHighScore");
+            scores = JsonUtility.FromJson<List<score>>(temp);
+        }
+        if (PlayerPrefs.GetInt("pinTheAxeCurrentContender") > 0)
+        {
+            currentContender = PlayerPrefs.GetInt("pinTheAxeCurrentContender");
+        }
+    }
+
     public void newScore(int stage , int diff , int axe , string tag)
     {
+        loadScore();
         if (tag == null)
         {
             if (diff == 1) tag = names[Random.Range(0, 2)] + currentContender;
@@ -44,6 +58,18 @@ public class tallyBoard : MonoBehaviour
         testing = false;
         currentContender++;
         scores.Sort((t1, t2) => t2.totalscore.CompareTo(t1.totalscore));
+        saveScore();
+    }
+
+    public void saveScore()
+    {
+        Debug.Log(scores);
+        string temp = JsonUtility.ToJson(scores.ToArray());
+        Debug.Log(temp);
+        PlayerPrefs.SetString("pinTheAxeHighScore", temp);
+        PlayerPrefs.SetInt("pinTheAxeCurrentContender", currentContender);
+        PlayerPrefs.Save();
+        
         boardUpdate();
     }
 
