@@ -27,15 +27,38 @@ public class tallyBoard : MonoBehaviour
         public int contender;
         public string tag;
     }
+
     public List<score> scores = new List<score>();
+    public string Json;
+    public void toJson10() //fuse the top 10 scores
+    {
+        Json = null;
+        for (int i = 0; i < 10; i++)
+        {
+            if (i < scores.Count)
+            {
+                Json += JsonUtility.ToJson(scores[i]);
+            }
+        }
+    }
+
+    public void fromJson10() //split the top 10 scores
+    {
+        Json = PlayerPrefs.GetString("pinTheAxeHighScore");
+        string[] temp = Json.Split('{');
+        scores.Clear();
+        for (var i = 0; i < 10; i++)
+        {
+            if (i + 1 < temp.Length)
+            {
+                scores.Add(JsonUtility.FromJson<score>("{" + temp[i + 1]));
+            }
+        }
+
+    }
 
     public void loadScore()
     {
-        if (PlayerPrefs.GetString("pinTheAxeHighScore").Length > 0)
-        {
-            string temp = PlayerPrefs.GetString("pinTheAxeHighScore");
-            scores = JsonUtility.FromJson<List<score>>(temp);
-        }
         if (PlayerPrefs.GetInt("pinTheAxeCurrentContender") > 0)
         {
             currentContender = PlayerPrefs.GetInt("pinTheAxeCurrentContender");
@@ -45,6 +68,8 @@ public class tallyBoard : MonoBehaviour
     public void newScore(int stage , int diff , int axe , string tag)
     {
         loadScore();
+        fromJson10();
+
         if (tag == null)
         {
             if (diff == 1) tag = names[Random.Range(0, 2)] + currentContender;
@@ -63,10 +88,8 @@ public class tallyBoard : MonoBehaviour
 
     public void saveScore()
     {
-        Debug.Log(scores);
-        string temp = JsonUtility.ToJson(scores.ToArray());
-        Debug.Log(temp);
-        PlayerPrefs.SetString("pinTheAxeHighScore", temp);
+        toJson10();
+        PlayerPrefs.SetString("pinTheAxeHighScore", Json);
         PlayerPrefs.SetInt("pinTheAxeCurrentContender", currentContender);
         PlayerPrefs.Save();
         
