@@ -45,7 +45,7 @@ public class tallyBoard : MonoBehaviour
 
     public void fromJson10() //split the top 10 scores
     {
-        if (PlayerPrefs.GetString("pinTheAxeHighScore") != "") // checks if there is a string to load
+        if (PlayerPrefs.GetString("pinTheAxeHighScore") != "" && PlayerPrefs.GetString("pinTheAxeHighScore") != "{}") // checks if there is a string to load
         {
             Json = PlayerPrefs.GetString("pinTheAxeHighScore"); //grabs string Json from playerPrefs and assigns it to Json
             string[] temp = Json.Split('}'); //splits the Json string into an array and deleting a } on each
