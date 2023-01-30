@@ -11809,6 +11809,97 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8263499382980546204, guid: 67e207bd4c1d0e943b8a8e357e63d970, type: 3}
   m_PrefabInstance: {fileID: 1531417192}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1534096858
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173321, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173322, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: worlds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173322, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: worlds.Array.data[4].story
+      value: 'fight
+
+        enemies
+
+        and bad
+
+        hygeine'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173322, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: worlds.Array.data[4].title
+      value: Storyheim
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173322, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: allSkinsForStore.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173322, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: worlds.Array.data[4].loadOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820916081030173322, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: worlds.Array.data[4].videoclip
+      value: 
+      objectReference: {fileID: 32900000, guid: 1ec40dd473192d24082730b1ca60c9ad, type: 3}
+    - target: {fileID: 1820916081030173322, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: allSkinsForStore.Array.data[11]
+      value: 
+      objectReference: {fileID: 1831553276902406517, guid: 4a5f801bdfe12c947a9ef981cfb9c02a, type: 3}
+    - target: {fileID: 1820916081030173323, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
+      propertyPath: m_Name
+      value: _SettingsPermanentObject
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b48eb58e237a014bac2b8dd37cd6da5, type: 3}
 --- !u!1 &1537521738 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7406365440989737887, guid: f035077baa672864e9c2247435167358, type: 3}

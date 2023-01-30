@@ -5,22 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/5_Scenes/_mainheim.unity
     guid: ad640a76503b52c4cb024e3fab987935
   - enabled: 1
     path: Assets/5_Scenes/_trainingheim2.unity
     guid: c9a3a8d147c16c742b39bf277765afcb
-  - enabled: 1
+  - enabled: 0
     path: Assets/5_Scenes/_jotunnheim.unity
     guid: 40309eb0d6848244f98033be749d6a82
-  - enabled: 1
+  - enabled: 0
     path: Assets/5_Scenes/2_MountianScene.unity
     guid: f1fb97b993cad6548905f96ffe1e7949
   - enabled: 1
     path: Assets/5_Scenes/betaMiniGames.unity
     guid: 3596bc6e528074043b65d50177098cd3
-  - enabled: 1
+  - enabled: 0
     path: Assets/5_Scenes/scenario 1.tester.unity
     guid: e134e30e0534e174ea8687588ad2504c
   m_configObjects:
